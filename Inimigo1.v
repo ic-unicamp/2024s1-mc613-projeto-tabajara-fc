@@ -1,16 +1,17 @@
 module Inimigo1(
+    input clk,
+    input [9:0] posX,
+	input [9:0] posY,
     input [9:0] h_counter,
-    input reset,
     input [9:0] v_counter,
-    input [10:0] posX,
-	 input [10:0] posY,
+    input reset,
     output reg [7:0] R,
     output reg [7:0] G,
     output reg [7:0] B
 );
 
     // Defina a escala do objeto
-    localparam SCALE = 3;
+    localparam SCALE = 2;
 
     // Defina a posição vertical inicial do objeto
     localparam START_Y = 300; // Modifique este valor para ajustar a posição vertical

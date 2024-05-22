@@ -6,7 +6,7 @@ JedecChain;
 	P ActionCode(Ign)
 		Device PartName(SOCVHPS) MfrSpec(OpMask(0));
 	P ActionCode(Cfg)
-		Device PartName(5CSEMA5F31) Path("/home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/output_files/") File("SpaceInvaders.sof") MfrSpec(OpMask(1));
+		Device PartName(5CSEMA5F31) Path("/home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/output_files/") File("SpaceInvaders.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 

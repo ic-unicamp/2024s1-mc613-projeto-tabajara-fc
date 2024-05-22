@@ -1,5 +1,5 @@
 Analysis & Synthesis report for SpaceInvaders
-Wed May 22 16:57:59 2024
+Wed May 22 18:06:08 2024
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -13,22 +13,20 @@ Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. State Machine - |SpaceInvaders|estado_bola
-  9. State Machine - |SpaceInvaders|estado_barra
- 10. User-Specified and Inferred Latches
- 11. Registers Removed During Synthesis
- 12. Removed Registers Triggering Further Register Optimizations
- 13. General Register Statistics
- 14. Multiplexer Restructuring Statistics (Restructuring Performed)
- 15. Parameter Settings for Inferred Entity Instance: Inimigo1:Inimigo1|lpm_divide:Div1
- 16. Parameter Settings for Inferred Entity Instance: Inimigo1:Inimigo1|lpm_divide:Div0
- 17. Port Connectivity Checks: "display:display1|bcd_display:u2"
- 18. Port Connectivity Checks: "display:display1|bcd_display:u1"
- 19. Port Connectivity Checks: "display:display1|bcd_display:u0"
- 20. Port Connectivity Checks: "Inimigo1:Inimigo1"
- 21. Post-Synthesis Netlist Statistics for Top Partition
- 22. Elapsed Time Per Partition
- 23. Analysis & Synthesis Messages
+  8. General Register Statistics
+  9. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 10. Port Connectivity Checks: "Inimigo1:inimigos[7].inimigo_inst"
+ 11. Port Connectivity Checks: "Inimigo1:inimigos[6].inimigo_inst"
+ 12. Port Connectivity Checks: "Inimigo1:inimigos[5].inimigo_inst"
+ 13. Port Connectivity Checks: "Inimigo1:inimigos[4].inimigo_inst"
+ 14. Port Connectivity Checks: "Inimigo1:inimigos[3].inimigo_inst"
+ 15. Port Connectivity Checks: "Inimigo1:inimigos[2].inimigo_inst"
+ 16. Port Connectivity Checks: "Inimigo1:inimigos[1].inimigo_inst"
+ 17. Port Connectivity Checks: "Inimigo1:inimigos[0].inimigo_inst"
+ 18. Post-Synthesis Netlist Statistics for Top Partition
+ 19. Elapsed Time Per Partition
+ 20. Analysis & Synthesis Messages
+ 21. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -54,14 +52,14 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Wed May 22 16:57:59 2024       ;
+; Analysis & Synthesis Status     ; Successful - Wed May 22 18:06:08 2024       ;
 ; Quartus Prime Version           ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                   ; SpaceInvaders                               ;
 ; Top-level Entity Name           ; SpaceInvaders                               ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 142                                         ;
-; Total pins                      ; 77                                          ;
+; Total registers                 ; 21                                          ;
+; Total pins                      ; 35                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
 ; Total DSP Blocks                ; 0                                           ;
@@ -179,213 +177,61 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                          ;
-+----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                      ; Library ;
-+----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------+---------+
-; SpaceInvaders.v                  ; yes             ; Auto-Found Verilog HDL File  ; /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/SpaceInvaders.v            ;         ;
-; Inimigo1.v                       ; yes             ; Auto-Found Verilog HDL File  ; /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/Inimigo1.v                 ;         ;
-; vga.v                            ; yes             ; Auto-Found Verilog HDL File  ; /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/vga.v                      ;         ;
-; display.v                        ; yes             ; Auto-Found Verilog HDL File  ; /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/display.v                  ;         ;
-; bin_to_bcd.v                     ; yes             ; Auto-Found Verilog HDL File  ; /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/bin_to_bcd.v               ;         ;
-; bcd_display.v                    ; yes             ; Auto-Found Verilog HDL File  ; /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/bcd_display.v              ;         ;
-; lpm_divide.tdf                   ; yes             ; Megafunction                 ; /opt/altera/17.1/quartus/libraries/megafunctions/lpm_divide.tdf                   ;         ;
-; abs_divider.inc                  ; yes             ; Megafunction                 ; /opt/altera/17.1/quartus/libraries/megafunctions/abs_divider.inc                  ;         ;
-; sign_div_unsign.inc              ; yes             ; Megafunction                 ; /opt/altera/17.1/quartus/libraries/megafunctions/sign_div_unsign.inc              ;         ;
-; aglobal171.inc                   ; yes             ; Megafunction                 ; /opt/altera/17.1/quartus/libraries/megafunctions/aglobal171.inc                   ;         ;
-; db/lpm_divide_gbm.tdf            ; yes             ; Auto-Generated Megafunction  ; /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/db/lpm_divide_gbm.tdf      ;         ;
-; db/sign_div_unsign_mlh.tdf       ; yes             ; Auto-Generated Megafunction  ; /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/db/sign_div_unsign_mlh.tdf ;         ;
-; db/alt_u_div_ive.tdf             ; yes             ; Auto-Generated Megafunction  ; /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/db/alt_u_div_ive.tdf       ;         ;
-+----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------+---------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                      ;
++----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                  ; Library ;
++----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------------------+---------+
+; SpaceInvaders.v                  ; yes             ; Auto-Found Verilog HDL File  ; /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v ;         ;
+; vga.v                            ; yes             ; Auto-Found Verilog HDL File  ; /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/vga.v           ;         ;
+; Inimigo1.v                       ; yes             ; Auto-Found Verilog HDL File  ; /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/Inimigo1.v      ;         ;
++----------------------------------+-----------------+------------------------------+-----------------------------------------------------------------------------------------------+---------+
 
 
-+---------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary             ;
-+---------------------------------------------+-----------+
-; Resource                                    ; Usage     ;
-+---------------------------------------------+-----------+
-; Estimate of Logic utilization (ALMs needed) ; 481       ;
-;                                             ;           ;
-; Combinational ALUT usage for logic          ; 781       ;
-;     -- 7 input functions                    ; 5         ;
-;     -- 6 input functions                    ; 173       ;
-;     -- 5 input functions                    ; 83        ;
-;     -- 4 input functions                    ; 98        ;
-;     -- <=3 input functions                  ; 422       ;
-;                                             ;           ;
-; Dedicated logic registers                   ; 142       ;
-;                                             ;           ;
-; I/O pins                                    ; 77        ;
-;                                             ;           ;
-; Total DSP Blocks                            ; 0         ;
-;                                             ;           ;
-; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 122       ;
-; Total fan-out                               ; 3476      ;
-; Average fan-out                             ; 3.23      ;
-+---------------------------------------------+-----------+
++--------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                        ;
++---------------------------------------------+----------------------+
+; Resource                                    ; Usage                ;
++---------------------------------------------+----------------------+
+; Estimate of Logic utilization (ALMs needed) ; 150                  ;
+;                                             ;                      ;
+; Combinational ALUT usage for logic          ; 228                  ;
+;     -- 7 input functions                    ; 0                    ;
+;     -- 6 input functions                    ; 72                   ;
+;     -- 5 input functions                    ; 12                   ;
+;     -- 4 input functions                    ; 5                    ;
+;     -- <=3 input functions                  ; 139                  ;
+;                                             ;                      ;
+; Dedicated logic registers                   ; 21                   ;
+;                                             ;                      ;
+; I/O pins                                    ; 35                   ;
+;                                             ;                      ;
+; Total DSP Blocks                            ; 0                    ;
+;                                             ;                      ;
+; Maximum fan-out node                        ; vga:vga|v_counter[1] ;
+; Maximum fan-out                             ; 32                   ;
+; Total fan-out                               ; 916                  ;
+; Average fan-out                             ; 2.87                 ;
++---------------------------------------------+----------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                        ;
-+-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
-; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                              ; Entity Name         ; Library Name ;
-+-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
-; |SpaceInvaders                            ; 781 (458)           ; 142 (122)                 ; 0                 ; 0          ; 77   ; 0            ; |SpaceInvaders                                                                                                                   ; SpaceInvaders       ; work         ;
-;    |Inimigo1:Inimigo1|                    ; 157 (47)            ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:Inimigo1                                                                                                 ; Inimigo1            ; work         ;
-;       |lpm_divide:Div0|                   ; 61 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:Inimigo1|lpm_divide:Div0                                                                                 ; lpm_divide          ; work         ;
-;          |lpm_divide_gbm:auto_generated|  ; 61 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:Inimigo1|lpm_divide:Div0|lpm_divide_gbm:auto_generated                                                   ; lpm_divide_gbm      ; work         ;
-;             |sign_div_unsign_mlh:divider| ; 61 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:Inimigo1|lpm_divide:Div0|lpm_divide_gbm:auto_generated|sign_div_unsign_mlh:divider                       ; sign_div_unsign_mlh ; work         ;
-;                |alt_u_div_ive:divider|    ; 61 (61)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:Inimigo1|lpm_divide:Div0|lpm_divide_gbm:auto_generated|sign_div_unsign_mlh:divider|alt_u_div_ive:divider ; alt_u_div_ive       ; work         ;
-;       |lpm_divide:Div1|                   ; 49 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:Inimigo1|lpm_divide:Div1                                                                                 ; lpm_divide          ; work         ;
-;          |lpm_divide_gbm:auto_generated|  ; 49 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:Inimigo1|lpm_divide:Div1|lpm_divide_gbm:auto_generated                                                   ; lpm_divide_gbm      ; work         ;
-;             |sign_div_unsign_mlh:divider| ; 49 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:Inimigo1|lpm_divide:Div1|lpm_divide_gbm:auto_generated|sign_div_unsign_mlh:divider                       ; sign_div_unsign_mlh ; work         ;
-;                |alt_u_div_ive:divider|    ; 49 (49)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:Inimigo1|lpm_divide:Div1|lpm_divide_gbm:auto_generated|sign_div_unsign_mlh:divider|alt_u_div_ive:divider ; alt_u_div_ive       ; work         ;
-;    |display:display1|                     ; 70 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SpaceInvaders|display:display1                                                                                                  ; display             ; work         ;
-;       |bcd_display:u0|                    ; 15 (15)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SpaceInvaders|display:display1|bcd_display:u0                                                                                   ; bcd_display         ; work         ;
-;       |bcd_display:u1|                    ; 15 (15)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SpaceInvaders|display:display1|bcd_display:u1                                                                                   ; bcd_display         ; work         ;
-;       |bcd_display:u2|                    ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SpaceInvaders|display:display1|bcd_display:u2                                                                                   ; bcd_display         ; work         ;
-;       |bin_to_bcd:b2bcd|                  ; 33 (33)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SpaceInvaders|display:display1|bin_to_bcd:b2bcd                                                                                 ; bin_to_bcd          ; work         ;
-;    |display:display2|                     ; 70 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SpaceInvaders|display:display2                                                                                                  ; display             ; work         ;
-;       |bcd_display:u0|                    ; 15 (15)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SpaceInvaders|display:display2|bcd_display:u0                                                                                   ; bcd_display         ; work         ;
-;       |bcd_display:u1|                    ; 15 (15)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SpaceInvaders|display:display2|bcd_display:u1                                                                                   ; bcd_display         ; work         ;
-;       |bcd_display:u2|                    ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SpaceInvaders|display:display2|bcd_display:u2                                                                                   ; bcd_display         ; work         ;
-;       |bin_to_bcd:b2bcd|                  ; 33 (33)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SpaceInvaders|display:display2|bin_to_bcd:b2bcd                                                                                 ; bin_to_bcd          ; work         ;
-;    |vga:vga|                              ; 26 (26)             ; 20 (20)                   ; 0                 ; 0          ; 0    ; 0            ; |SpaceInvaders|vga:vga                                                                                                           ; vga                 ; work         ;
-+-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                               ;
++----------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------+---------------+--------------+
+; Compilation Hierarchy Node             ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                              ; Entity Name   ; Library Name ;
++----------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------+---------------+--------------+
+; |SpaceInvaders                         ; 228 (34)            ; 21 (1)                    ; 0                 ; 0          ; 35   ; 0            ; |SpaceInvaders                                   ; SpaceInvaders ; work         ;
+;    |Inimigo1:inimigos[0].inimigo_inst| ; 34 (34)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:inimigos[0].inimigo_inst ; Inimigo1      ; work         ;
+;    |Inimigo1:inimigos[1].inimigo_inst| ; 25 (25)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:inimigos[1].inimigo_inst ; Inimigo1      ; work         ;
+;    |Inimigo1:inimigos[2].inimigo_inst| ; 10 (10)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:inimigos[2].inimigo_inst ; Inimigo1      ; work         ;
+;    |Inimigo1:inimigos[3].inimigo_inst| ; 19 (19)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:inimigos[3].inimigo_inst ; Inimigo1      ; work         ;
+;    |Inimigo1:inimigos[4].inimigo_inst| ; 10 (10)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:inimigos[4].inimigo_inst ; Inimigo1      ; work         ;
+;    |Inimigo1:inimigos[5].inimigo_inst| ; 19 (19)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:inimigos[5].inimigo_inst ; Inimigo1      ; work         ;
+;    |Inimigo1:inimigos[6].inimigo_inst| ; 25 (25)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:inimigos[6].inimigo_inst ; Inimigo1      ; work         ;
+;    |Inimigo1:inimigos[7].inimigo_inst| ; 25 (25)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:inimigos[7].inimigo_inst ; Inimigo1      ; work         ;
+;    |vga:vga|                           ; 27 (27)             ; 20 (20)                   ; 0                 ; 0          ; 0    ; 0            ; |SpaceInvaders|vga:vga                           ; vga           ; work         ;
++----------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------+---------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-Encoding Type:  One-Hot
-+-----------------------------------------------------------------------------------------------------------------+
-; State Machine - |SpaceInvaders|estado_bola                                                                      ;
-+------------------+------------------+------------------+------------------+------------------+------------------+
-; Name             ; estado_bola.0011 ; estado_bola.0010 ; estado_bola.0001 ; estado_bola.0000 ; estado_bola.0100 ;
-+------------------+------------------+------------------+------------------+------------------+------------------+
-; estado_bola.0000 ; 0                ; 0                ; 0                ; 0                ; 0                ;
-; estado_bola.0001 ; 0                ; 0                ; 1                ; 1                ; 0                ;
-; estado_bola.0010 ; 0                ; 1                ; 0                ; 1                ; 0                ;
-; estado_bola.0011 ; 1                ; 0                ; 0                ; 1                ; 0                ;
-; estado_bola.0100 ; 0                ; 0                ; 0                ; 1                ; 1                ;
-+------------------+------------------+------------------+------------------+------------------+------------------+
-
-
-Encoding Type:  One-Hot
-+---------------------------------------------------------------------------------------------------+
-; State Machine - |SpaceInvaders|estado_barra                                                       ;
-+-------------------+-------------------+-------------------+-------------------+-------------------+
-; Name              ; estado_barra.0011 ; estado_barra.0010 ; estado_barra.0001 ; estado_barra.0000 ;
-+-------------------+-------------------+-------------------+-------------------+-------------------+
-; estado_barra.0000 ; 0                 ; 0                 ; 0                 ; 0                 ;
-; estado_barra.0001 ; 0                 ; 0                 ; 1                 ; 1                 ;
-; estado_barra.0010 ; 0                 ; 1                 ; 0                 ; 1                 ;
-; estado_barra.0011 ; 1                 ; 0                 ; 0                 ; 1                 ;
-+-------------------+-------------------+-------------------+-------------------+-------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------------+
-; User-Specified and Inferred Latches                                                                                  ;
-+-----------------------------------------------------+---------------------------------------+------------------------+
-; Latch Name                                          ; Latch Enable Signal                   ; Free of Timing Hazards ;
-+-----------------------------------------------------+---------------------------------------+------------------------+
-; display:display1|bcd_display:u0|saida[0]            ; display:display1|bcd_display:u0|Mux13 ; yes                    ;
-; display:display1|bcd_display:u0|saida[1]            ; display:display1|bcd_display:u0|Mux13 ; yes                    ;
-; display:display1|bcd_display:u0|saida[2]            ; display:display1|bcd_display:u0|Mux13 ; yes                    ;
-; display:display1|bcd_display:u0|saida[3]            ; display:display1|bcd_display:u0|Mux13 ; yes                    ;
-; display:display1|bcd_display:u0|saida[4]            ; display:display1|bcd_display:u0|Mux13 ; yes                    ;
-; display:display1|bcd_display:u0|saida[5]            ; display:display1|bcd_display:u0|Mux13 ; yes                    ;
-; display:display1|bcd_display:u0|saida[6]            ; display:display1|bcd_display:u0|Mux13 ; yes                    ;
-; display:display1|bcd_display:u1|saida[0]            ; display:display1|bcd_display:u1|Mux13 ; yes                    ;
-; display:display1|bcd_display:u1|saida[1]            ; display:display1|bcd_display:u1|Mux13 ; yes                    ;
-; display:display1|bcd_display:u1|saida[2]            ; display:display1|bcd_display:u1|Mux13 ; yes                    ;
-; display:display1|bcd_display:u1|saida[3]            ; display:display1|bcd_display:u1|Mux13 ; yes                    ;
-; display:display1|bcd_display:u1|saida[4]            ; display:display1|bcd_display:u1|Mux13 ; yes                    ;
-; display:display1|bcd_display:u1|saida[5]            ; display:display1|bcd_display:u1|Mux13 ; yes                    ;
-; display:display1|bcd_display:u1|saida[6]            ; display:display1|bcd_display:u1|Mux13 ; yes                    ;
-; display:display1|bcd_display:u2|saida[0]            ; display:display1|bcd_display:u2|Mux13 ; yes                    ;
-; display:display1|bcd_display:u2|saida[1]            ; display:display1|bcd_display:u2|Mux13 ; yes                    ;
-; display:display1|bcd_display:u2|saida[2]            ; display:display1|bcd_display:u2|Mux13 ; yes                    ;
-; display:display1|bcd_display:u2|saida[3]            ; display:display1|bcd_display:u2|Mux13 ; yes                    ;
-; display:display1|bcd_display:u2|saida[4]            ; display:display1|bcd_display:u2|Mux13 ; yes                    ;
-; display:display1|bcd_display:u2|saida[5]            ; display:display1|bcd_display:u2|Mux13 ; yes                    ;
-; display:display1|bcd_display:u2|saida[6]            ; display:display1|bcd_display:u2|Mux13 ; yes                    ;
-; display:display2|bcd_display:u0|saida[0]            ; display:display2|bcd_display:u0|Mux13 ; yes                    ;
-; display:display2|bcd_display:u0|saida[1]            ; display:display2|bcd_display:u0|Mux13 ; yes                    ;
-; display:display2|bcd_display:u0|saida[2]            ; display:display2|bcd_display:u0|Mux13 ; yes                    ;
-; display:display2|bcd_display:u0|saida[3]            ; display:display2|bcd_display:u0|Mux13 ; yes                    ;
-; display:display2|bcd_display:u0|saida[4]            ; display:display2|bcd_display:u0|Mux13 ; yes                    ;
-; display:display2|bcd_display:u0|saida[5]            ; display:display2|bcd_display:u0|Mux13 ; yes                    ;
-; display:display2|bcd_display:u0|saida[6]            ; display:display2|bcd_display:u0|Mux13 ; yes                    ;
-; display:display2|bcd_display:u1|saida[0]            ; display:display2|bcd_display:u1|Mux13 ; yes                    ;
-; display:display2|bcd_display:u1|saida[1]            ; display:display2|bcd_display:u1|Mux13 ; yes                    ;
-; display:display2|bcd_display:u1|saida[2]            ; display:display2|bcd_display:u1|Mux13 ; yes                    ;
-; display:display2|bcd_display:u1|saida[3]            ; display:display2|bcd_display:u1|Mux13 ; yes                    ;
-; display:display2|bcd_display:u1|saida[4]            ; display:display2|bcd_display:u1|Mux13 ; yes                    ;
-; display:display2|bcd_display:u1|saida[5]            ; display:display2|bcd_display:u1|Mux13 ; yes                    ;
-; display:display2|bcd_display:u1|saida[6]            ; display:display2|bcd_display:u1|Mux13 ; yes                    ;
-; display:display2|bcd_display:u2|saida[0]            ; display:display2|bcd_display:u2|Mux13 ; yes                    ;
-; display:display2|bcd_display:u2|saida[1]            ; display:display2|bcd_display:u2|Mux13 ; yes                    ;
-; display:display2|bcd_display:u2|saida[2]            ; display:display2|bcd_display:u2|Mux13 ; yes                    ;
-; display:display2|bcd_display:u2|saida[3]            ; display:display2|bcd_display:u2|Mux13 ; yes                    ;
-; display:display2|bcd_display:u2|saida[4]            ; display:display2|bcd_display:u2|Mux13 ; yes                    ;
-; display:display2|bcd_display:u2|saida[5]            ; display:display2|bcd_display:u2|Mux13 ; yes                    ;
-; display:display2|bcd_display:u2|saida[6]            ; display:display2|bcd_display:u2|Mux13 ; yes                    ;
-; Number of user-specified and inferred latches = 42  ;                                       ;                        ;
-+-----------------------------------------------------+---------------------------------------+------------------------+
-Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
-
-
-+---------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                              ;
-+----------------------------------------+----------------------------------------+
-; Register name                          ; Reason for Removal                     ;
-+----------------------------------------+----------------------------------------+
-; memo_X_barra[0..3]                     ; Stuck at GND due to stuck port data_in ;
-; mem_X_barra[1..3]                      ; Merged with mem_X_barra[0]             ;
-; memo_Y_bola[10]                        ; Merged with mem_Y_bola[10]             ;
-; memo_Y_bola[9]                         ; Merged with mem_Y_bola[9]              ;
-; memo_Y_bola[8]                         ; Merged with mem_Y_bola[8]              ;
-; memo_Y_bola[7]                         ; Merged with mem_Y_bola[7]              ;
-; memo_Y_bola[6]                         ; Merged with mem_Y_bola[6]              ;
-; memo_Y_bola[5]                         ; Merged with mem_Y_bola[5]              ;
-; memo_Y_bola[4]                         ; Merged with mem_Y_bola[4]              ;
-; memo_Y_bola[3]                         ; Merged with mem_Y_bola[3]              ;
-; memo_Y_bola[2]                         ; Merged with mem_Y_bola[2]              ;
-; memo_Y_bola[1]                         ; Merged with mem_Y_bola[1]              ;
-; memo_Y_bola[0]                         ; Merged with mem_Y_bola[0]              ;
-; memo_X_bola[10]                        ; Merged with mem_X_bola[10]             ;
-; memo_X_bola[9]                         ; Merged with mem_X_bola[9]              ;
-; memo_X_bola[8]                         ; Merged with mem_X_bola[8]              ;
-; memo_X_bola[7]                         ; Merged with mem_X_bola[7]              ;
-; memo_X_bola[6]                         ; Merged with mem_X_bola[6]              ;
-; memo_X_bola[5]                         ; Merged with mem_X_bola[5]              ;
-; memo_X_bola[4]                         ; Merged with mem_X_bola[4]              ;
-; memo_X_bola[3]                         ; Merged with mem_X_bola[3]              ;
-; memo_X_bola[2]                         ; Merged with mem_X_bola[2]              ;
-; memo_X_bola[1]                         ; Merged with mem_X_bola[1]              ;
-; memo_X_bola[0]                         ; Merged with mem_X_bola[0]              ;
-; mem_X_barra[0]                         ; Stuck at GND due to stuck port data_in ;
-; delta_Y_bola[6]                        ; Stuck at GND due to stuck port data_in ;
-; estado_bola~7                          ; Lost fanout                            ;
-; estado_bola~8                          ; Lost fanout                            ;
-; estado_bola~10                         ; Lost fanout                            ;
-; estado_barra~6                         ; Lost fanout                            ;
-; estado_barra~7                         ; Lost fanout                            ;
-; estado_barra~8                         ; Lost fanout                            ;
-; estado_barra~9                         ; Lost fanout                            ;
-; Total Number of Removed Registers = 38 ;                                        ;
-+----------------------------------------+----------------------------------------+
-
-
-+--------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                          ;
-+-----------------+---------------------------+----------------------------------------+
-; Register name   ; Reason for Removal        ; Registers Removed due to This Register ;
-+-----------------+---------------------------+----------------------------------------+
-; memo_X_barra[0] ; Stuck at GND              ; mem_X_barra[0], delta_Y_bola[6]        ;
-;                 ; due to stuck port data_in ;                                        ;
-+-----------------+---------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -393,12 +239,12 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 142   ;
-; Number of registers using Synchronous Clear  ; 47    ;
-; Number of registers using Synchronous Load   ; 30    ;
+; Total registers                              ; 21    ;
+; Number of registers using Synchronous Clear  ; 20    ;
+; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 85    ;
+; Number of registers using Clock Enable       ; 10    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -408,110 +254,158 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output          ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------+
-; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |SpaceInvaders|mem_X_barra[5]       ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |SpaceInvaders|mem_X_barra[4]       ;
-; 3:1                ; 12 bits   ; 24 LEs        ; 0 LEs                ; 24 LEs                 ; Yes        ; |SpaceInvaders|record[8]            ;
-; 3:1                ; 10 bits   ; 20 LEs        ; 0 LEs                ; 20 LEs                 ; Yes        ; |SpaceInvaders|vga:vga|h_counter[8] ;
-; 4:1                ; 10 bits   ; 20 LEs        ; 0 LEs                ; 20 LEs                 ; Yes        ; |SpaceInvaders|vga:vga|v_counter[2] ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |SpaceInvaders|memo_X_barra[9]      ;
-; 6:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |SpaceInvaders|memo_X_barra[7]      ;
-; 7:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |SpaceInvaders|mem_Y_bola[4]        ;
-; 7:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |SpaceInvaders|mem_X_bola[4]        ;
-; 7:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; Yes        ; |SpaceInvaders|mem_Y_bola[7]        ;
-; 7:1                ; 7 bits    ; 28 LEs        ; 14 LEs               ; 14 LEs                 ; Yes        ; |SpaceInvaders|mem_X_bola[9]        ;
-; 7:1                ; 12 bits   ; 48 LEs        ; 0 LEs                ; 48 LEs                 ; Yes        ; |SpaceInvaders|pontuacao[0]         ;
-; 9:1                ; 6 bits    ; 36 LEs        ; 18 LEs               ; 18 LEs                 ; Yes        ; |SpaceInvaders|delta_Y_bola[2]      ;
-; 9:1                ; 6 bits    ; 36 LEs        ; 18 LEs               ; 18 LEs                 ; Yes        ; |SpaceInvaders|delta_X_bola[0]      ;
-; 3:1                ; 12 bits   ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |SpaceInvaders|delta_Y_bola         ;
-; 3:1                ; 12 bits   ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |SpaceInvaders|delta_X_bola         ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |SpaceInvaders|estado_barra         ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |SpaceInvaders|estado_barra         ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |SpaceInvaders|estado_barra         ;
-; 18:1               ; 2 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; No         ; |SpaceInvaders|estado_bola          ;
-; 17:1               ; 2 bits    ; 22 LEs        ; 12 LEs               ; 10 LEs                 ; No         ; |SpaceInvaders|estado_bola          ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 0 LEs                ; 20 LEs                 ; Yes        ; |SpaceInvaders|vga:vga|h_counter[9] ;
+; 4:1                ; 10 bits   ; 20 LEs        ; 0 LEs                ; 20 LEs                 ; Yes        ; |SpaceInvaders|vga:vga|v_counter[0] ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------+
 
 
-+------------------------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: Inimigo1:Inimigo1|lpm_divide:Div1 ;
-+------------------------+----------------+------------------------------------------+
-; Parameter Name         ; Value          ; Type                                     ;
-+------------------------+----------------+------------------------------------------+
-; LPM_WIDTHN             ; 32             ; Untyped                                  ;
-; LPM_WIDTHD             ; 2              ; Untyped                                  ;
-; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                  ;
-; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                  ;
-; LPM_PIPELINE           ; 0              ; Untyped                                  ;
-; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                  ;
-; MAXIMIZE_SPEED         ; 5              ; Untyped                                  ;
-; CBXI_PARAMETER         ; lpm_divide_gbm ; Untyped                                  ;
-; CARRY_CHAIN            ; MANUAL         ; Untyped                                  ;
-; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                  ;
-; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                               ;
-; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                             ;
-; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                             ;
-; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                           ;
-+------------------------+----------------+------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
++---------------------------------------------------------------+
+; Port Connectivity Checks: "Inimigo1:inimigos[7].inimigo_inst" ;
++------------+-------+----------+-------------------------------+
+; Port       ; Type  ; Severity ; Details                       ;
++------------+-------+----------+-------------------------------+
+; posX[2..1] ; Input ; Info     ; Stuck at VCC                  ;
+; posX[8..6] ; Input ; Info     ; Stuck at GND                  ;
+; posX[4..3] ; Input ; Info     ; Stuck at GND                  ;
+; posX[9]    ; Input ; Info     ; Stuck at VCC                  ;
+; posX[5]    ; Input ; Info     ; Stuck at VCC                  ;
+; posX[0]    ; Input ; Info     ; Stuck at GND                  ;
+; posY[5..4] ; Input ; Info     ; Stuck at VCC                  ;
+; posY[9..6] ; Input ; Info     ; Stuck at GND                  ;
+; posY[3..2] ; Input ; Info     ; Stuck at GND                  ;
+; posY[1]    ; Input ; Info     ; Stuck at VCC                  ;
+; posY[0]    ; Input ; Info     ; Stuck at GND                  ;
++------------+-------+----------+-------------------------------+
 
 
-+------------------------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: Inimigo1:Inimigo1|lpm_divide:Div0 ;
-+------------------------+----------------+------------------------------------------+
-; Parameter Name         ; Value          ; Type                                     ;
-+------------------------+----------------+------------------------------------------+
-; LPM_WIDTHN             ; 32             ; Untyped                                  ;
-; LPM_WIDTHD             ; 2              ; Untyped                                  ;
-; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                  ;
-; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                  ;
-; LPM_PIPELINE           ; 0              ; Untyped                                  ;
-; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                  ;
-; MAXIMIZE_SPEED         ; 5              ; Untyped                                  ;
-; CBXI_PARAMETER         ; lpm_divide_gbm ; Untyped                                  ;
-; CARRY_CHAIN            ; MANUAL         ; Untyped                                  ;
-; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                  ;
-; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                               ;
-; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                             ;
-; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                             ;
-; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                           ;
-+------------------------+----------------+------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
++---------------------------------------------------------------+
+; Port Connectivity Checks: "Inimigo1:inimigos[6].inimigo_inst" ;
++------------+-------+----------+-------------------------------+
+; Port       ; Type  ; Severity ; Details                       ;
++------------+-------+----------+-------------------------------+
+; posX[8..4] ; Input ; Info     ; Stuck at VCC                  ;
+; posX[1..0] ; Input ; Info     ; Stuck at GND                  ;
+; posX[9]    ; Input ; Info     ; Stuck at GND                  ;
+; posX[3]    ; Input ; Info     ; Stuck at GND                  ;
+; posX[2]    ; Input ; Info     ; Stuck at VCC                  ;
+; posY[5..4] ; Input ; Info     ; Stuck at VCC                  ;
+; posY[9..6] ; Input ; Info     ; Stuck at GND                  ;
+; posY[3..2] ; Input ; Info     ; Stuck at GND                  ;
+; posY[1]    ; Input ; Info     ; Stuck at VCC                  ;
+; posY[0]    ; Input ; Info     ; Stuck at GND                  ;
++------------+-------+----------+-------------------------------+
 
 
-+-------------------------------------------------------------+
-; Port Connectivity Checks: "display:display1|bcd_display:u2" ;
-+-------+-------+----------+----------------------------------+
-; Port  ; Type  ; Severity ; Details                          ;
-+-------+-------+----------+----------------------------------+
-; first ; Input ; Info     ; Stuck at GND                     ;
-+-------+-------+----------+----------------------------------+
++---------------------------------------------------------------+
+; Port Connectivity Checks: "Inimigo1:inimigos[5].inimigo_inst" ;
++------------+-------+----------+-------------------------------+
+; Port       ; Type  ; Severity ; Details                       ;
++------------+-------+----------+-------------------------------+
+; posX[8..6] ; Input ; Info     ; Stuck at VCC                  ;
+; posX[5..2] ; Input ; Info     ; Stuck at GND                  ;
+; posX[9]    ; Input ; Info     ; Stuck at GND                  ;
+; posX[1]    ; Input ; Info     ; Stuck at VCC                  ;
+; posX[0]    ; Input ; Info     ; Stuck at GND                  ;
+; posY[5..4] ; Input ; Info     ; Stuck at VCC                  ;
+; posY[9..6] ; Input ; Info     ; Stuck at GND                  ;
+; posY[3..2] ; Input ; Info     ; Stuck at GND                  ;
+; posY[1]    ; Input ; Info     ; Stuck at VCC                  ;
+; posY[0]    ; Input ; Info     ; Stuck at GND                  ;
++------------+-------+----------+-------------------------------+
 
 
-+-------------------------------------------------------------+
-; Port Connectivity Checks: "display:display1|bcd_display:u1" ;
-+-------+-------+----------+----------------------------------+
-; Port  ; Type  ; Severity ; Details                          ;
-+-------+-------+----------+----------------------------------+
-; first ; Input ; Info     ; Stuck at GND                     ;
-+-------+-------+----------+----------------------------------+
++---------------------------------------------------------------+
+; Port Connectivity Checks: "Inimigo1:inimigos[4].inimigo_inst" ;
++------------+-------+----------+-------------------------------+
+; Port       ; Type  ; Severity ; Details                       ;
++------------+-------+----------+-------------------------------+
+; posX[8..7] ; Input ; Info     ; Stuck at VCC                  ;
+; posX[6..5] ; Input ; Info     ; Stuck at GND                  ;
+; posX[3..0] ; Input ; Info     ; Stuck at GND                  ;
+; posX[9]    ; Input ; Info     ; Stuck at GND                  ;
+; posX[4]    ; Input ; Info     ; Stuck at VCC                  ;
+; posY[5..4] ; Input ; Info     ; Stuck at VCC                  ;
+; posY[9..6] ; Input ; Info     ; Stuck at GND                  ;
+; posY[3..2] ; Input ; Info     ; Stuck at GND                  ;
+; posY[1]    ; Input ; Info     ; Stuck at VCC                  ;
+; posY[0]    ; Input ; Info     ; Stuck at GND                  ;
++------------+-------+----------+-------------------------------+
 
 
-+-------------------------------------------------------------+
-; Port Connectivity Checks: "display:display1|bcd_display:u0" ;
-+-------+-------+----------+----------------------------------+
-; Port  ; Type  ; Severity ; Details                          ;
-+-------+-------+----------+----------------------------------+
-; first ; Input ; Info     ; Stuck at VCC                     ;
-+-------+-------+----------+----------------------------------+
++---------------------------------------------------------------+
+; Port Connectivity Checks: "Inimigo1:inimigos[3].inimigo_inst" ;
++------------+-------+----------+-------------------------------+
+; Port       ; Type  ; Severity ; Details                       ;
++------------+-------+----------+-------------------------------+
+; posX[4..1] ; Input ; Info     ; Stuck at VCC                  ;
+; posX[9]    ; Input ; Info     ; Stuck at GND                  ;
+; posX[8]    ; Input ; Info     ; Stuck at VCC                  ;
+; posX[7]    ; Input ; Info     ; Stuck at GND                  ;
+; posX[6]    ; Input ; Info     ; Stuck at VCC                  ;
+; posX[5]    ; Input ; Info     ; Stuck at GND                  ;
+; posX[0]    ; Input ; Info     ; Stuck at GND                  ;
+; posY[5..4] ; Input ; Info     ; Stuck at VCC                  ;
+; posY[9..6] ; Input ; Info     ; Stuck at GND                  ;
+; posY[3..2] ; Input ; Info     ; Stuck at GND                  ;
+; posY[1]    ; Input ; Info     ; Stuck at VCC                  ;
+; posY[0]    ; Input ; Info     ; Stuck at GND                  ;
++------------+-------+----------+-------------------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "Inimigo1:Inimigo1"                                                                                                                          ;
-+------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; Port ; Type  ; Severity ; Details                                                                                                                                      ;
-+------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; posY ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-+------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------+
+; Port Connectivity Checks: "Inimigo1:inimigos[2].inimigo_inst" ;
++------------+-------+----------+-------------------------------+
+; Port       ; Type  ; Severity ; Details                       ;
++------------+-------+----------+-------------------------------+
+; posX[3..2] ; Input ; Info     ; Stuck at VCC                  ;
+; posX[7..6] ; Input ; Info     ; Stuck at GND                  ;
+; posX[1..0] ; Input ; Info     ; Stuck at GND                  ;
+; posX[9]    ; Input ; Info     ; Stuck at GND                  ;
+; posX[8]    ; Input ; Info     ; Stuck at VCC                  ;
+; posX[5]    ; Input ; Info     ; Stuck at VCC                  ;
+; posX[4]    ; Input ; Info     ; Stuck at GND                  ;
+; posY[5..4] ; Input ; Info     ; Stuck at VCC                  ;
+; posY[9..6] ; Input ; Info     ; Stuck at GND                  ;
+; posY[3..2] ; Input ; Info     ; Stuck at GND                  ;
+; posY[1]    ; Input ; Info     ; Stuck at VCC                  ;
+; posY[0]    ; Input ; Info     ; Stuck at GND                  ;
++------------+-------+----------+-------------------------------+
+
+
++---------------------------------------------------------------+
+; Port Connectivity Checks: "Inimigo1:inimigos[1].inimigo_inst" ;
++------------+-------+----------+-------------------------------+
+; Port       ; Type  ; Severity ; Details                       ;
++------------+-------+----------+-------------------------------+
+; posX[7..3] ; Input ; Info     ; Stuck at VCC                  ;
+; posX[9..8] ; Input ; Info     ; Stuck at GND                  ;
+; posX[2]    ; Input ; Info     ; Stuck at GND                  ;
+; posX[1]    ; Input ; Info     ; Stuck at VCC                  ;
+; posX[0]    ; Input ; Info     ; Stuck at GND                  ;
+; posY[5..4] ; Input ; Info     ; Stuck at VCC                  ;
+; posY[9..6] ; Input ; Info     ; Stuck at GND                  ;
+; posY[3..2] ; Input ; Info     ; Stuck at GND                  ;
+; posY[1]    ; Input ; Info     ; Stuck at VCC                  ;
+; posY[0]    ; Input ; Info     ; Stuck at GND                  ;
++------------+-------+----------+-------------------------------+
+
+
++---------------------------------------------------------------+
+; Port Connectivity Checks: "Inimigo1:inimigos[0].inimigo_inst" ;
++------------+-------+----------+-------------------------------+
+; Port       ; Type  ; Severity ; Details                       ;
++------------+-------+----------+-------------------------------+
+; posX[7..6] ; Input ; Info     ; Stuck at VCC                  ;
+; posX[9..8] ; Input ; Info     ; Stuck at GND                  ;
+; posX[5..4] ; Input ; Info     ; Stuck at GND                  ;
+; posX[2..0] ; Input ; Info     ; Stuck at GND                  ;
+; posX[3]    ; Input ; Info     ; Stuck at VCC                  ;
+; posY[5..4] ; Input ; Info     ; Stuck at VCC                  ;
+; posY[9..6] ; Input ; Info     ; Stuck at GND                  ;
+; posY[3..2] ; Input ; Info     ; Stuck at GND                  ;
+; posY[1]    ; Input ; Info     ; Stuck at VCC                  ;
+; posY[0]    ; Input ; Info     ; Stuck at GND                  ;
++------------+-------+----------+-------------------------------+
 
 
 +-----------------------------------------------------+
@@ -519,38 +413,30 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 142                         ;
-;     ENA               ; 22                          ;
-;     ENA SCLR          ; 37                          ;
-;     ENA SLD           ; 26                          ;
+; arriav_ff             ; 21                          ;
+;     ENA SCLR          ; 10                          ;
 ;     SCLR              ; 10                          ;
-;     SLD               ; 4                           ;
-;     plain             ; 43                          ;
-; arriav_lcell_comb     ; 785                         ;
-;     arith             ; 277                         ;
-;         0 data inputs ; 26                          ;
-;         1 data inputs ; 143                         ;
-;         2 data inputs ; 28                          ;
-;         3 data inputs ; 47                          ;
-;         4 data inputs ; 33                          ;
-;     extend            ; 5                           ;
-;         7 data inputs ; 5                           ;
-;     normal            ; 480                         ;
-;         0 data inputs ; 2                           ;
-;         1 data inputs ; 6                           ;
-;         2 data inputs ; 99                          ;
-;         3 data inputs ; 52                          ;
-;         4 data inputs ; 65                          ;
-;         5 data inputs ; 83                          ;
-;         6 data inputs ; 173                         ;
-;     shared            ; 23                          ;
+;     plain             ; 1                           ;
+; arriav_lcell_comb     ; 230                         ;
+;     arith             ; 54                          ;
+;         0 data inputs ; 4                           ;
+;         1 data inputs ; 49                          ;
+;         2 data inputs ; 1                           ;
+;     normal            ; 132                         ;
 ;         0 data inputs ; 1                           ;
-;         1 data inputs ; 9                           ;
-;         2 data inputs ; 13                          ;
-; boundary_port         ; 77                          ;
+;         1 data inputs ; 2                           ;
+;         2 data inputs ; 30                          ;
+;         3 data inputs ; 10                          ;
+;         4 data inputs ; 5                           ;
+;         5 data inputs ; 12                          ;
+;         6 data inputs ; 72                          ;
+;     shared            ; 44                          ;
+;         0 data inputs ; 4                           ;
+;         1 data inputs ; 40                          ;
+; boundary_port         ; 35                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 18.20                       ;
-; Average LUT depth     ; 7.44                        ;
+; Max LUT depth         ; 6.70                        ;
+; Average LUT depth     ; 5.28                        ;
 +-----------------------+-----------------------------+
 
 
@@ -559,7 +445,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:02     ;
+; Top            ; 00:00:00     ;
 +----------------+--------------+
 
 
@@ -569,199 +455,35 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Wed May 22 16:57:51 2024
+    Info: Processing started: Wed May 22 18:06:03 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off SpaceInvaders -c SpaceInvaders
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
-Warning (12019): Can't analyze file -- file top1.v is missing
+Info (12021): Found 1 design units, including 1 entities, in source file top1.v
+    Info (12023): Found entity 1: top1 File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/top1.v Line: 1
 Warning (12125): Using design file SpaceInvaders.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
-    Info (12023): Found entity 1: SpaceInvaders File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/SpaceInvaders.v Line: 1
+    Info (12023): Found entity 1: SpaceInvaders File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 1
 Info (12127): Elaborating entity "SpaceInvaders" for the top level hierarchy
-Warning (10858): Verilog HDL warning at SpaceInvaders.v(30): object R_bola used but never assigned File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/SpaceInvaders.v Line: 30
-Warning (10858): Verilog HDL warning at SpaceInvaders.v(31): object G_bola used but never assigned File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/SpaceInvaders.v Line: 31
-Warning (10858): Verilog HDL warning at SpaceInvaders.v(32): object B_bola used but never assigned File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/SpaceInvaders.v Line: 32
-Warning (10230): Verilog HDL assignment warning at SpaceInvaders.v(147): truncated value with size 32 to match size of target (11) File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/SpaceInvaders.v Line: 147
-Warning (10230): Verilog HDL assignment warning at SpaceInvaders.v(149): truncated value with size 32 to match size of target (11) File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/SpaceInvaders.v Line: 149
-Warning (10230): Verilog HDL assignment warning at SpaceInvaders.v(154): truncated value with size 32 to match size of target (11) File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/SpaceInvaders.v Line: 154
-Warning (10230): Verilog HDL assignment warning at SpaceInvaders.v(156): truncated value with size 32 to match size of target (11) File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/SpaceInvaders.v Line: 156
-Info (10264): Verilog HDL Case Statement information at SpaceInvaders.v(136): all case item expressions in this case statement are onehot File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/SpaceInvaders.v Line: 136
-Warning (10230): Verilog HDL assignment warning at SpaceInvaders.v(166): truncated value with size 32 to match size of target (19) File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/SpaceInvaders.v Line: 166
-Warning (10230): Verilog HDL assignment warning at SpaceInvaders.v(194): truncated value with size 32 to match size of target (12) File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/SpaceInvaders.v Line: 194
-Warning (10230): Verilog HDL assignment warning at SpaceInvaders.v(195): truncated value with size 32 to match size of target (7) File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/SpaceInvaders.v Line: 195
-Warning (10230): Verilog HDL assignment warning at SpaceInvaders.v(196): truncated value with size 32 to match size of target (7) File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/SpaceInvaders.v Line: 196
-Warning (10230): Verilog HDL assignment warning at SpaceInvaders.v(200): truncated value with size 32 to match size of target (7) File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/SpaceInvaders.v Line: 200
-Warning (10230): Verilog HDL assignment warning at SpaceInvaders.v(201): truncated value with size 32 to match size of target (7) File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/SpaceInvaders.v Line: 201
-Warning (10230): Verilog HDL assignment warning at SpaceInvaders.v(207): truncated value with size 32 to match size of target (7) File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/SpaceInvaders.v Line: 207
-Warning (10230): Verilog HDL assignment warning at SpaceInvaders.v(208): truncated value with size 32 to match size of target (7) File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/SpaceInvaders.v Line: 208
-Warning (10230): Verilog HDL assignment warning at SpaceInvaders.v(234): truncated value with size 32 to match size of target (12) File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/SpaceInvaders.v Line: 234
-Warning (10230): Verilog HDL assignment warning at SpaceInvaders.v(235): truncated value with size 32 to match size of target (7) File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/SpaceInvaders.v Line: 235
-Warning (10230): Verilog HDL assignment warning at SpaceInvaders.v(236): truncated value with size 32 to match size of target (7) File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/SpaceInvaders.v Line: 236
-Warning (10230): Verilog HDL assignment warning at SpaceInvaders.v(240): truncated value with size 32 to match size of target (7) File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/SpaceInvaders.v Line: 240
-Warning (10230): Verilog HDL assignment warning at SpaceInvaders.v(241): truncated value with size 32 to match size of target (7) File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/SpaceInvaders.v Line: 241
-Warning (10230): Verilog HDL assignment warning at SpaceInvaders.v(247): truncated value with size 32 to match size of target (7) File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/SpaceInvaders.v Line: 247
-Warning (10230): Verilog HDL assignment warning at SpaceInvaders.v(248): truncated value with size 32 to match size of target (7) File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/SpaceInvaders.v Line: 248
-Warning (10230): Verilog HDL assignment warning at SpaceInvaders.v(305): truncated value with size 32 to match size of target (20) File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/SpaceInvaders.v Line: 305
-Warning (10030): Net "R_bola" at SpaceInvaders.v(30) has no driver or initial value, using a default initial value '0' File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/SpaceInvaders.v Line: 30
-Warning (10030): Net "G_bola" at SpaceInvaders.v(31) has no driver or initial value, using a default initial value '0' File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/SpaceInvaders.v Line: 31
-Warning (10030): Net "B_bola" at SpaceInvaders.v(32) has no driver or initial value, using a default initial value '0' File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/SpaceInvaders.v Line: 32
-Warning (12125): Using design file Inimigo1.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
-    Info (12023): Found entity 1: Inimigo1 File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/Inimigo1.v Line: 1
-Info (12128): Elaborating entity "Inimigo1" for hierarchy "Inimigo1:Inimigo1" File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/SpaceInvaders.v Line: 48
-Warning (10235): Verilog HDL Always Construct warning at Inimigo1.v(33): variable "posX" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/Inimigo1.v Line: 33
-Warning (10235): Verilog HDL Always Construct warning at Inimigo1.v(36): variable "posX" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/Inimigo1.v Line: 36
-Warning (10762): Verilog HDL Case Statement warning at Inimigo1.v(40): can't check case statement for completeness because the case expression has too many possible states File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/Inimigo1.v Line: 40
-Warning (10270): Verilog HDL Case Statement warning at Inimigo1.v(40): incomplete case statement has no default case item File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/Inimigo1.v Line: 40
 Warning (12125): Using design file vga.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
-    Info (12023): Found entity 1: vga File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/vga.v Line: 1
-Info (12128): Elaborating entity "vga" for hierarchy "vga:vga" File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/SpaceInvaders.v Line: 73
-Warning (10036): Verilog HDL or VHDL warning at vga.v(18): object "Ativo" assigned a value but never read File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/vga.v Line: 18
-Warning (10230): Verilog HDL assignment warning at vga.v(25): truncated value with size 32 to match size of target (10) File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/vga.v Line: 25
-Warning (10230): Verilog HDL assignment warning at vga.v(28): truncated value with size 32 to match size of target (10) File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/vga.v Line: 28
-Warning (10230): Verilog HDL assignment warning at vga.v(40): truncated value with size 32 to match size of target (1) File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/vga.v Line: 40
-Warning (10230): Verilog HDL assignment warning at vga.v(41): truncated value with size 32 to match size of target (1) File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/vga.v Line: 41
-Warning (10230): Verilog HDL assignment warning at vga.v(42): truncated value with size 32 to match size of target (1) File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/vga.v Line: 42
-Warning (12125): Using design file display.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
-    Info (12023): Found entity 1: display File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/display.v Line: 1
-Info (12128): Elaborating entity "display" for hierarchy "display:display1" File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/SpaceInvaders.v Line: 91
-Warning (12125): Using design file bin_to_bcd.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
-    Info (12023): Found entity 1: bin_to_bcd File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/bin_to_bcd.v Line: 1
-Info (12128): Elaborating entity "bin_to_bcd" for hierarchy "display:display1|bin_to_bcd:b2bcd" File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/display.v Line: 19
-Warning (10230): Verilog HDL assignment warning at bin_to_bcd.v(14): truncated value with size 32 to match size of target (4) File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/bin_to_bcd.v Line: 14
-Warning (10230): Verilog HDL assignment warning at bin_to_bcd.v(17): truncated value with size 32 to match size of target (4) File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/bin_to_bcd.v Line: 17
-Warning (10230): Verilog HDL assignment warning at bin_to_bcd.v(20): truncated value with size 32 to match size of target (4) File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/bin_to_bcd.v Line: 20
-Warning (12125): Using design file bcd_display.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
-    Info (12023): Found entity 1: bcd_display File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/bcd_display.v Line: 1
-Info (12128): Elaborating entity "bcd_display" for hierarchy "display:display1|bcd_display:u0" File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/display.v Line: 25
-Warning (10235): Verilog HDL Always Construct warning at bcd_display.v(9): variable "first" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/bcd_display.v Line: 9
-Warning (10270): Verilog HDL Case Statement warning at bcd_display.v(10): incomplete case statement has no default case item File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/bcd_display.v Line: 10
-Warning (10270): Verilog HDL Case Statement warning at bcd_display.v(23): incomplete case statement has no default case item File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/bcd_display.v Line: 23
-Warning (10240): Verilog HDL Always Construct warning at bcd_display.v(7): inferring latch(es) for variable "saida", which holds its previous value in one or more paths through the always construct File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/bcd_display.v Line: 7
-Info (10041): Inferred latch for "saida[0]" at bcd_display.v(23) File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/bcd_display.v Line: 23
-Info (10041): Inferred latch for "saida[1]" at bcd_display.v(23) File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/bcd_display.v Line: 23
-Info (10041): Inferred latch for "saida[2]" at bcd_display.v(23) File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/bcd_display.v Line: 23
-Info (10041): Inferred latch for "saida[3]" at bcd_display.v(23) File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/bcd_display.v Line: 23
-Info (10041): Inferred latch for "saida[4]" at bcd_display.v(23) File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/bcd_display.v Line: 23
-Info (10041): Inferred latch for "saida[5]" at bcd_display.v(23) File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/bcd_display.v Line: 23
-Info (10041): Inferred latch for "saida[6]" at bcd_display.v(23) File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/bcd_display.v Line: 23
-Info (278001): Inferred 2 megafunctions from design logic
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Inimigo1:Inimigo1|Div1" File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/Inimigo1.v Line: 37
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Inimigo1:Inimigo1|Div0" File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/Inimigo1.v Line: 36
-Info (12130): Elaborated megafunction instantiation "Inimigo1:Inimigo1|lpm_divide:Div1" File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/Inimigo1.v Line: 37
-Info (12133): Instantiated megafunction "Inimigo1:Inimigo1|lpm_divide:Div1" with the following parameter: File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/Inimigo1.v Line: 37
-    Info (12134): Parameter "LPM_WIDTHN" = "32"
-    Info (12134): Parameter "LPM_WIDTHD" = "2"
-    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
-    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
-Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_gbm.tdf
-    Info (12023): Found entity 1: lpm_divide_gbm File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/db/lpm_divide_gbm.tdf Line: 24
-Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_mlh.tdf
-    Info (12023): Found entity 1: sign_div_unsign_mlh File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/db/sign_div_unsign_mlh.tdf Line: 24
-Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_ive.tdf
-    Info (12023): Found entity 1: alt_u_div_ive File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/db/alt_u_div_ive.tdf Line: 22
-Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
-Warning (13012): Latch display:display1|bcd_display:u0|saida[0] has unsafe behavior File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/bcd_display.v Line: 23
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal pontuacao[1] File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/SpaceInvaders.v Line: 170
-Warning (13012): Latch display:display1|bcd_display:u0|saida[1] has unsafe behavior File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/bcd_display.v Line: 23
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal pontuacao[1] File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/SpaceInvaders.v Line: 170
-Warning (13012): Latch display:display1|bcd_display:u0|saida[2] has unsafe behavior File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/bcd_display.v Line: 23
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal pontuacao[1] File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/SpaceInvaders.v Line: 170
-Warning (13012): Latch display:display1|bcd_display:u0|saida[3] has unsafe behavior File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/bcd_display.v Line: 23
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal pontuacao[1] File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/SpaceInvaders.v Line: 170
-Warning (13012): Latch display:display1|bcd_display:u0|saida[4] has unsafe behavior File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/bcd_display.v Line: 23
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal pontuacao[1] File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/SpaceInvaders.v Line: 170
-Warning (13012): Latch display:display1|bcd_display:u0|saida[5] has unsafe behavior File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/bcd_display.v Line: 23
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal pontuacao[1] File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/SpaceInvaders.v Line: 170
-Warning (13012): Latch display:display1|bcd_display:u0|saida[6] has unsafe behavior File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/bcd_display.v Line: 23
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal pontuacao[1] File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/SpaceInvaders.v Line: 170
-Warning (13012): Latch display:display1|bcd_display:u1|saida[0] has unsafe behavior File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/bcd_display.v Line: 23
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal display:display1|bin_to_bcd:b2bcd|bcd[5]~synth File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/bin_to_bcd.v Line: 5
-Warning (13012): Latch display:display1|bcd_display:u1|saida[1] has unsafe behavior File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/bcd_display.v Line: 23
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal display:display1|bin_to_bcd:b2bcd|bcd[5]~synth File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/bin_to_bcd.v Line: 5
-Warning (13012): Latch display:display1|bcd_display:u1|saida[2] has unsafe behavior File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/bcd_display.v Line: 23
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal display:display1|bin_to_bcd:b2bcd|bcd[7]~synth File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/bin_to_bcd.v Line: 5
-Warning (13012): Latch display:display1|bcd_display:u1|saida[3] has unsafe behavior File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/bcd_display.v Line: 23
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal display:display1|bin_to_bcd:b2bcd|bcd[5]~synth File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/bin_to_bcd.v Line: 5
-Warning (13012): Latch display:display1|bcd_display:u1|saida[4] has unsafe behavior File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/bcd_display.v Line: 23
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal display:display1|bin_to_bcd:b2bcd|bcd[7]~synth File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/bin_to_bcd.v Line: 5
-Warning (13012): Latch display:display1|bcd_display:u1|saida[5] has unsafe behavior File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/bcd_display.v Line: 23
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal display:display1|bin_to_bcd:b2bcd|bcd[5]~synth File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/bin_to_bcd.v Line: 5
-Warning (13012): Latch display:display1|bcd_display:u1|saida[6] has unsafe behavior File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/bcd_display.v Line: 23
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal display:display1|bin_to_bcd:b2bcd|bcd[5]~synth File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/bin_to_bcd.v Line: 5
-Warning (13012): Latch display:display1|bcd_display:u2|saida[0] has unsafe behavior File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/bcd_display.v Line: 23
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal pontuacao[11] File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/SpaceInvaders.v Line: 170
-Warning (13012): Latch display:display1|bcd_display:u2|saida[1] has unsafe behavior File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/bcd_display.v Line: 23
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal pontuacao[11] File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/SpaceInvaders.v Line: 170
-Warning (13012): Latch display:display1|bcd_display:u2|saida[2] has unsafe behavior File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/bcd_display.v Line: 23
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal pontuacao[11] File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/SpaceInvaders.v Line: 170
-Warning (13012): Latch display:display1|bcd_display:u2|saida[3] has unsafe behavior File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/bcd_display.v Line: 23
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal pontuacao[11] File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/SpaceInvaders.v Line: 170
-Warning (13012): Latch display:display1|bcd_display:u2|saida[4] has unsafe behavior File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/bcd_display.v Line: 23
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal pontuacao[11] File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/SpaceInvaders.v Line: 170
-Warning (13012): Latch display:display1|bcd_display:u2|saida[5] has unsafe behavior File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/bcd_display.v Line: 23
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal pontuacao[11] File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/SpaceInvaders.v Line: 170
-Warning (13012): Latch display:display1|bcd_display:u2|saida[6] has unsafe behavior File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/bcd_display.v Line: 23
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal pontuacao[11] File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/SpaceInvaders.v Line: 170
-Warning (13012): Latch display:display2|bcd_display:u0|saida[0] has unsafe behavior File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/bcd_display.v Line: 23
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal record[1] File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/SpaceInvaders.v Line: 170
-Warning (13012): Latch display:display2|bcd_display:u0|saida[1] has unsafe behavior File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/bcd_display.v Line: 23
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal record[1] File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/SpaceInvaders.v Line: 170
-Warning (13012): Latch display:display2|bcd_display:u0|saida[2] has unsafe behavior File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/bcd_display.v Line: 23
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal record[1] File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/SpaceInvaders.v Line: 170
-Warning (13012): Latch display:display2|bcd_display:u0|saida[3] has unsafe behavior File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/bcd_display.v Line: 23
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal record[1] File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/SpaceInvaders.v Line: 170
-Warning (13012): Latch display:display2|bcd_display:u0|saida[4] has unsafe behavior File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/bcd_display.v Line: 23
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal record[1] File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/SpaceInvaders.v Line: 170
-Warning (13012): Latch display:display2|bcd_display:u0|saida[5] has unsafe behavior File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/bcd_display.v Line: 23
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal record[1] File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/SpaceInvaders.v Line: 170
-Warning (13012): Latch display:display2|bcd_display:u0|saida[6] has unsafe behavior File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/bcd_display.v Line: 23
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal record[1] File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/SpaceInvaders.v Line: 170
-Warning (13012): Latch display:display2|bcd_display:u1|saida[0] has unsafe behavior File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/bcd_display.v Line: 23
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal display:display2|bin_to_bcd:b2bcd|bcd[5]~synth File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/bin_to_bcd.v Line: 5
-Warning (13012): Latch display:display2|bcd_display:u1|saida[1] has unsafe behavior File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/bcd_display.v Line: 23
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal display:display2|bin_to_bcd:b2bcd|bcd[5]~synth File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/bin_to_bcd.v Line: 5
-Warning (13012): Latch display:display2|bcd_display:u1|saida[2] has unsafe behavior File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/bcd_display.v Line: 23
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal display:display2|bin_to_bcd:b2bcd|bcd[7]~synth File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/bin_to_bcd.v Line: 5
-Warning (13012): Latch display:display2|bcd_display:u1|saida[3] has unsafe behavior File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/bcd_display.v Line: 23
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal display:display2|bin_to_bcd:b2bcd|bcd[5]~synth File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/bin_to_bcd.v Line: 5
-Warning (13012): Latch display:display2|bcd_display:u1|saida[4] has unsafe behavior File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/bcd_display.v Line: 23
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal display:display2|bin_to_bcd:b2bcd|bcd[7]~synth File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/bin_to_bcd.v Line: 5
-Warning (13012): Latch display:display2|bcd_display:u1|saida[5] has unsafe behavior File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/bcd_display.v Line: 23
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal display:display2|bin_to_bcd:b2bcd|bcd[5]~synth File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/bin_to_bcd.v Line: 5
-Warning (13012): Latch display:display2|bcd_display:u1|saida[6] has unsafe behavior File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/bcd_display.v Line: 23
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal display:display2|bin_to_bcd:b2bcd|bcd[5]~synth File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/bin_to_bcd.v Line: 5
-Warning (13012): Latch display:display2|bcd_display:u2|saida[0] has unsafe behavior File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/bcd_display.v Line: 23
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal record[11] File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/SpaceInvaders.v Line: 170
-Warning (13012): Latch display:display2|bcd_display:u2|saida[1] has unsafe behavior File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/bcd_display.v Line: 23
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal record[11] File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/SpaceInvaders.v Line: 170
-Warning (13012): Latch display:display2|bcd_display:u2|saida[2] has unsafe behavior File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/bcd_display.v Line: 23
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal record[11] File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/SpaceInvaders.v Line: 170
-Warning (13012): Latch display:display2|bcd_display:u2|saida[3] has unsafe behavior File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/bcd_display.v Line: 23
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal record[11] File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/SpaceInvaders.v Line: 170
-Warning (13012): Latch display:display2|bcd_display:u2|saida[4] has unsafe behavior File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/bcd_display.v Line: 23
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal record[11] File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/SpaceInvaders.v Line: 170
-Warning (13012): Latch display:display2|bcd_display:u2|saida[5] has unsafe behavior File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/bcd_display.v Line: 23
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal record[11] File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/SpaceInvaders.v Line: 170
-Warning (13012): Latch display:display2|bcd_display:u2|saida[6] has unsafe behavior File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/bcd_display.v Line: 23
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal record[11] File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/SpaceInvaders.v Line: 170
+    Info (12023): Found entity 1: vga File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/vga.v Line: 1
+Info (12128): Elaborating entity "vga" for hierarchy "vga:vga" File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 28
+Warning (10036): Verilog HDL or VHDL warning at vga.v(18): object "Ativo" assigned a value but never read File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/vga.v Line: 18
+Warning (10230): Verilog HDL assignment warning at vga.v(25): truncated value with size 32 to match size of target (10) File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/vga.v Line: 25
+Warning (10230): Verilog HDL assignment warning at vga.v(28): truncated value with size 32 to match size of target (10) File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/vga.v Line: 28
+Warning (10230): Verilog HDL assignment warning at vga.v(40): truncated value with size 32 to match size of target (1) File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/vga.v Line: 40
+Warning (10230): Verilog HDL assignment warning at vga.v(41): truncated value with size 32 to match size of target (1) File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/vga.v Line: 41
+Warning (10230): Verilog HDL assignment warning at vga.v(42): truncated value with size 32 to match size of target (1) File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/vga.v Line: 42
+Warning (12125): Using design file Inimigo1.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: Inimigo1 File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/Inimigo1.v Line: 1
+Info (12128): Elaborating entity "Inimigo1" for hierarchy "Inimigo1:inimigos[0].inimigo_inst" File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 66
+Warning (10235): Verilog HDL Always Construct warning at Inimigo1.v(34): variable "posX" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/Inimigo1.v Line: 34
+Warning (10235): Verilog HDL Always Construct warning at Inimigo1.v(37): variable "posX" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/Inimigo1.v Line: 37
+Warning (10762): Verilog HDL Case Statement warning at Inimigo1.v(41): can't check case statement for completeness because the case expression has too many possible states File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/Inimigo1.v Line: 41
+Warning (10270): Verilog HDL Case Statement warning at Inimigo1.v(41): incomplete case statement has no default case item File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/Inimigo1.v Line: 41
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "VGA_BLANK_N" is stuck at VCC File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/SpaceInvaders.v Line: 11
-    Warning (13410): Pin "VGA_SYNC_N" is stuck at VCC File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/SpaceInvaders.v Line: 12
+    Warning (13410): Pin "VGA_BLANK_N" is stuck at VCC File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 11
+    Warning (13410): Pin "VGA_SYNC_N" is stuck at VCC File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 12
 Info (286030): Timing-Driven Synthesis is running
-Warning (14026): LATCH primitive "display:display1|bcd_display:u2|saida[0]" is permanently enabled File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/bcd_display.v Line: 23
-Warning (14026): LATCH primitive "display:display1|bcd_display:u2|saida[1]" is permanently enabled File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/bcd_display.v Line: 23
-Warning (14026): LATCH primitive "display:display1|bcd_display:u2|saida[2]" is permanently enabled File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/bcd_display.v Line: 23
-Warning (14026): LATCH primitive "display:display1|bcd_display:u2|saida[3]" is permanently enabled File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/bcd_display.v Line: 23
-Warning (14026): LATCH primitive "display:display1|bcd_display:u2|saida[4]" is permanently enabled File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/bcd_display.v Line: 23
-Warning (14026): LATCH primitive "display:display1|bcd_display:u2|saida[5]" is permanently enabled File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/bcd_display.v Line: 23
-Warning (14026): LATCH primitive "display:display1|bcd_display:u2|saida[6]" is permanently enabled File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/bcd_display.v Line: 23
-Warning (14026): LATCH primitive "display:display2|bcd_display:u2|saida[0]" is permanently enabled File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/bcd_display.v Line: 23
-Warning (14026): LATCH primitive "display:display2|bcd_display:u2|saida[1]" is permanently enabled File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/bcd_display.v Line: 23
-Warning (14026): LATCH primitive "display:display2|bcd_display:u2|saida[2]" is permanently enabled File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/bcd_display.v Line: 23
-Warning (14026): LATCH primitive "display:display2|bcd_display:u2|saida[3]" is permanently enabled File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/bcd_display.v Line: 23
-Warning (14026): LATCH primitive "display:display2|bcd_display:u2|saida[4]" is permanently enabled File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/bcd_display.v Line: 23
-Warning (14026): LATCH primitive "display:display2|bcd_display:u2|saida[5]" is permanently enabled File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/bcd_display.v Line: 23
-Warning (14026): LATCH primitive "display:display2|bcd_display:u2|saida[6]" is permanently enabled File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/bcd_display.v Line: 23
-Info (17049): 7 registers lost all their fanouts during netlist optimizations.
 Warning (20013): Ignored 571 assignments for entity "DE1_SoC" -- entity does not exist in design
     Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_ADDR[0] -entity DE1_SoC was ignored
     Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_ADDR[10] -entity DE1_SoC was ignored
@@ -1334,18 +1056,28 @@ Warning (20013): Ignored 571 assignments for entity "DE1_SoC" -- entity does not
     Warning (20014): Assignment for entity set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to HPS_DDR3_DQ[9] -entity DE1_SoC was ignored
     Warning (20014): Assignment for entity set_instance_assignment -name D5_DELAY 2 -to HPS_DDR3_CK_N -entity DE1_SoC was ignored
     Warning (20014): Assignment for entity set_instance_assignment -name D5_DELAY 2 -to HPS_DDR3_CK_P -entity DE1_SoC was ignored
+Info (144001): Generated suppressed messages file /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/output_files/SpaceInvaders.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 1 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "btn_C" File: /home/ec2022/ra247064/Circuitos Digitais/SpaceInvaders/SpaceInvaders.v Line: 6
-Info (21057): Implemented 890 device resources after synthesis - the final resource count might be different
+Warning (21074): Design contains 4 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "btn_A" File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 4
+    Warning (15610): No output dependent on input pin "btn_B" File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 5
+    Warning (15610): No output dependent on input pin "btn_C" File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 6
+    Warning (15610): No output dependent on input pin "btn_D" File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 7
+Info (21057): Implemented 283 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 6 input pins
-    Info (21059): Implemented 71 output pins
-    Info (21061): Implemented 813 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 727 warnings
-    Info: Peak virtual memory: 1339 megabytes
-    Info: Processing ended: Wed May 22 16:57:59 2024
-    Info: Elapsed time: 00:00:08
-    Info: Total CPU time (on all processors): 00:00:15
+    Info (21059): Implemented 29 output pins
+    Info (21061): Implemented 248 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 594 warnings
+    Info: Peak virtual memory: 1318 megabytes
+    Info: Processing ended: Wed May 22 18:06:08 2024
+    Info: Elapsed time: 00:00:05
+    Info: Total CPU time (on all processors): 00:00:13
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/output_files/SpaceInvaders.map.smsg.
 
 
