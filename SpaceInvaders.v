@@ -37,10 +37,10 @@ reg [18:0] contador_botao;
 reg [3:0] estado_barra;
 reg [3:0] estado_bola;
 
-Inimigo1 Inimigo1(
+nave nave(
     .h_counter(h_counter),
     .v_counter(v_counter),
-	.reset(reset),
+	 .reset(reset),
     .posX(mem_X_barra),
     .R(R_barra),
     .G(G_barra),
@@ -59,7 +59,6 @@ bola2 bola(
     .B(B_bola)
 );
 */
-
 
 vga vga(
     .VGA_CLK2(VGA_CLK2),
@@ -127,10 +126,10 @@ always @(posedge clk) begin
 	 
     if (~btn_D) begin
         // Resetando posição da barra
-        mem_X_barra = 464;
+        mem_X_barra = 445;
         estado_barra = 3'b000;
-		memo_X_barra = 464;
-		contador_botao = 0;
+		  memo_X_barra = 445;
+		  contador_botao = 0;
 
     end else begin
         case (estado_barra)
@@ -145,14 +144,14 @@ always @(posedge clk) begin
 		end
         3'b001: begin
             memo_X_barra = memo_X_barra + 16;					 
-			if(memo_X_barra > 784)begin
+			if(memo_X_barra > 765)begin
 			    memo_X_barra = memo_X_barra - 16;	 
 			end
             estado_barra = 3'b011;
         end
         3'b010: begin
             memo_X_barra = memo_X_barra - 16;	 
-			if(memo_X_barra < 300) begin
+			if(memo_X_barra < 134) begin
 				memo_X_barra = memo_X_barra + 16;	 
 			end	 
             estado_barra = 3'b011;
@@ -166,6 +165,7 @@ always @(posedge clk) begin
 	 contador_botao = contador_botao + 1;
 end
 
+/*
 // Máquina de estados da bola
 always @(posedge clk) begin
 
@@ -304,6 +304,7 @@ always @(posedge clk) begin
     mem_Y_bola = memo_Y_bola;
     contador = contador + 1;
 end
+*/
 
 
 endmodule
