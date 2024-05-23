@@ -27,10 +27,6 @@ wire [9:0] v_counter;
 wire [7:0] R_barra;
 wire [7:0] G_barra;
 wire [7:0] B_barra;
-wire [7:0] R_Inimigo1;
-wire [7:0] G_Inimigo1;
-wire [7:0] B_Inimigo1;
-
 wire [7:0] R_bola;
 wire [7:0] G_bola;
 wire [7:0] B_bola;
@@ -41,26 +37,27 @@ reg [18:0] contador_botao;
 reg [3:0] estado_barra;
 reg [3:0] estado_bola;
 
-
-Inimigo1 Inimigo1(
+nave nave(
     .h_counter(h_counter),
     .v_counter(v_counter),
-	.reset(reset),
-    .posX(memo_X_barra),
+	 .reset(reset),
+	 .clk(clk),
+    .posX(memo_X_nave),
     .R(R_barra),
     .G(G_barra),
     .B(B_barra)
 );
 
 /*
-nave nave(
+bola2 bola(
     .h_counter(h_counter),
     .v_counter(v_counter),
 	.reset(reset),
-    .mem_X_barra(mem_X_barra),
-    .R(R_barra),
-    .G(G_barra),
-    .B(B_barra)
+    .mem_X(mem_X_bola),
+    .mem_Y(mem_Y_bola),
+    .R(R_bola),
+    .G(G_bola),
+    .B(B_bola)
 );
 */
 
@@ -74,7 +71,6 @@ vga vga(
     .VGA_HS(VGA_HS),
     .VGA_VS(VGA_VS)
 );
-
 
 // Display
 
@@ -106,7 +102,8 @@ display display2(
 reg VGA_CLK2; // 25Mhz
 assign VGA_CLK = VGA_CLK2;
 
-reg [10:0] memo_X_barra;
+reg [10:0] memo_X_nave;
+reg [10:0] mem_X_nave;
 reg [10:0] memo_X_bola;
 reg [10:0] memo_Y_bola;
 reg [10:0] mem_X_bola;
@@ -114,34 +111,9 @@ reg [10:0] mem_Y_bola;
 reg [6:0] delta_X_bola;
 reg [6:0] delta_Y_bola;
 
-/*
-assign VGA_R = R_barra && R_bola && R_inimigo[0] && R_barra;
-assign VGA_G = G_barra && G_bola && G_inimigo[0] && G_barra;
-assign VGA_B = B_barra && B_bola && B_inimigo[0] && B_barra;
-*/
-
-assign VGA_R = R_barra ^ R_bola ^ R_barra;
-assign VGA_G = G_barra ^ G_bola ^ G_barra;
-assign VGA_B = B_barra ^ B_bola ^ B_barra;
-
-
-reg [10:0] posX [7:0];
-reg [10:0] posY [7:0];
-reg [7:0] R_inimigo [7:0];
-reg [7:0] G_inimigo [7:0];
-reg [7:0] B_inimigo [7:0];
-
-genvar i;
-
-generate 
-
-	for (i = 0; i < 1; i = i+1) begin : Inimigos
-	
-		Inimigo1 inimigo (h_counter, reset, v_counter, posX[i], posY[i], R_inimigo[i], G_inimigo[i], B_inimigo[i]);
-	
-	end
-
-endgenerate 
+assign VGA_R = R_barra ^ R_bola;
+assign VGA_G = G_barra ^ G_bola;
+assign VGA_B = B_barra ^ B_bola;
 
 
 always @(posedge clk) begin
@@ -155,23 +127,15 @@ always @(posedge clk) begin
 	 
     if (~btn_D) begin
         // Resetando posição da barra
-
-        integer k;
-        for (k = 0; k < 1; k = k+1) begin 
-		
-            posX[k] = 64+(64*k);
-            posY[k] = 300;
-	
-	    end
-          
-      estado_barra = 3'b000;
-		memo_X_barra = 464;
-		contador_botao = 0;
+        mem_X_nave = 445;
+        estado_barra = 3'b000;
+		  memo_X_nave = 445;
+		  contador_botao = 0;
 
     end else begin
         case (estado_barra)
         3'b000: begin
-            //posX = memo_X_barra;
+            mem_X_nave = memo_X_nave;
             if (~btn_B) begin
               estado_barra = 3'b001;
             end else 
@@ -180,16 +144,16 @@ always @(posedge clk) begin
             end 
 		end
         3'b001: begin
-            memo_X_barra = memo_X_barra + 16;					 
-			if(memo_X_barra > 784)begin
-			    memo_X_barra = memo_X_barra - 16;	 
+            memo_X_nave = memo_X_nave + 16;					 
+			if(memo_X_nave > 765)begin
+			    memo_X_nave = memo_X_nave - 16;	 
 			end
             estado_barra = 3'b011;
         end
         3'b010: begin
-            memo_X_barra = memo_X_barra - 16;	 
-			if(memo_X_barra < 300) begin
-				memo_X_barra = memo_X_barra + 16;	 
+            memo_X_nave = memo_X_nave - 16;	 
+			if(memo_X_nave < 134) begin
+				memo_X_nave = memo_X_nave + 16;	 
 			end	 
             estado_barra = 3'b011;
         end
@@ -201,27 +165,6 @@ always @(posedge clk) begin
 	 
 	 contador_botao = contador_botao + 1;
 end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /*
 // Máquina de estados da bola
@@ -363,5 +306,6 @@ always @(posedge clk) begin
     contador = contador + 1;
 end
 */
+
 
 endmodule

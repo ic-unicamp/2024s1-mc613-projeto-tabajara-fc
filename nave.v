@@ -1,4 +1,8 @@
 module nave(
+    input clk,
+	 input btn_A,
+	 input btn_B,
+	 input btn_C,
     input [9:0] h_counter,
     input reset,
     input [9:0] v_counter,
@@ -8,13 +12,23 @@ module nave(
     output reg [7:0] B
 );
 
+	reg [10:0] posXTeste;
+
     // Defina a escala do objeto
     localparam SCALE = 2;
 
     // Defina a posição vertical inicial do objeto
     localparam START_Y = 490; // Modifique este valor para ajustar a posição vertical
 
-    always @(h_counter or v_counter or reset) begin
+    always @(clk) begin
+	 
+	 
+		//posXTeste = posX;
+	 
+	 
+	 
+	 
+	 
         integer orig_x;
         integer orig_y;
 

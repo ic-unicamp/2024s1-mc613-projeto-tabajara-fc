@@ -41,7 +41,11 @@ nave nave(
     .h_counter(h_counter),
     .v_counter(v_counter),
 	 .reset(reset),
-    .posX(mem_X_barra),
+	 .clk(clk),
+	 .btn_A(btn_A),
+	 .btn_B(btn_B),
+	 .btn_C(btn_C),
+    .posX(mem_X_nave),
     .R(R_barra),
     .G(G_barra),
     .B(B_barra)
@@ -101,8 +105,8 @@ display display2(
 reg VGA_CLK2; // 25Mhz
 assign VGA_CLK = VGA_CLK2;
 
-reg [10:0] memo_X_barra;
-reg [10:0] mem_X_barra;
+reg [10:0] memo_X_nave;
+reg [10:0] mem_X_nave;
 reg [10:0] memo_X_bola;
 reg [10:0] memo_Y_bola;
 reg [10:0] mem_X_bola;
@@ -122,19 +126,20 @@ end
 // Máquina de estados da barra
 always @(posedge clk) begin
 
+	/*
 	if(contador_botao == 0)begin 
 	 
     if (~btn_D) begin
         // Resetando posição da barra
-        mem_X_barra = 445;
+        mem_X_nave = 445;
         estado_barra = 3'b000;
-		  memo_X_barra = 445;
+		  memo_X_nave = 445;
 		  contador_botao = 0;
 
     end else begin
         case (estado_barra)
         3'b000: begin
-            mem_X_barra = memo_X_barra;
+            mem_X_nave = memo_X_nave;
             if (~btn_B) begin
               estado_barra = 3'b001;
             end else 
@@ -143,16 +148,16 @@ always @(posedge clk) begin
             end 
 		end
         3'b001: begin
-            memo_X_barra = memo_X_barra + 16;					 
-			if(memo_X_barra > 765)begin
-			    memo_X_barra = memo_X_barra - 16;	 
+            memo_X_nave = memo_X_nave + 16;					 
+			if(memo_X_nave > 765)begin
+			    memo_X_nave = memo_X_nave - 16;	 
 			end
             estado_barra = 3'b011;
         end
         3'b010: begin
-            memo_X_barra = memo_X_barra - 16;	 
-			if(memo_X_barra < 134) begin
-				memo_X_barra = memo_X_barra + 16;	 
+            memo_X_nave = memo_X_nave - 16;	 
+			if(memo_X_nave < 134) begin
+				memo_X_nave = memo_X_nave + 16;	 
 			end	 
             estado_barra = 3'b011;
         end
@@ -164,6 +169,23 @@ always @(posedge clk) begin
 	 
 	 contador_botao = contador_botao + 1;
 end
+
+*/
+
+if(contador_botao == 0)begin 
+	 
+    if (~btn_D) begin
+        // Resetando posição da barra
+        mem_X_nave = 445;
+        estado_barra = 3'b000;
+		  memo_X_nave = 445;
+		  contador_botao = 0;
+	 end
+	 
+	 contador_botao = contador_botao + 1;
+end
+end
+
 
 /*
 // Máquina de estados da bola
