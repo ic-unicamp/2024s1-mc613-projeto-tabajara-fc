@@ -1,7 +1,12 @@
 
-State Machine - |SpaceInvaders|estado_barra
-Name estado_barra.0011 estado_barra.0010 estado_barra.0001 estado_barra.0000 
-estado_barra.0000 0 0 0 0 
-estado_barra.0001 0 0 1 1 
-estado_barra.0010 0 1 0 1 
-estado_barra.0011 1 0 0 1 
+State Machine - |SpaceInvaders|municao1:municao1|verifica_tiro
+Name verifica_tiro.01 
+verifica_tiro.00 0 
+verifica_tiro.01 1 
+
+State Machine - |SpaceInvaders|nave:nave|estado_nave
+Name estado_nave.0011 estado_nave.0010 estado_nave.0001 estado_nave.0000 
+estado_nave.0000 0 0 0 0 
+estado_nave.0001 0 0 1 1 
+estado_nave.0010 0 1 0 1 
+estado_nave.0011 1 0 0 1 

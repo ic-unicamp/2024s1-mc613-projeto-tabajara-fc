@@ -4,6 +4,38 @@
 			"name" : "Top",
 			"pins" : [
 				{
+					"name" : "posX_Nave[4]",
+					"strict" : false
+				},
+				{
+					"name" : "posX_Nave[5]",
+					"strict" : false
+				},
+				{
+					"name" : "posX_Nave[6]",
+					"strict" : false
+				},
+				{
+					"name" : "posX_Nave[7]",
+					"strict" : false
+				},
+				{
+					"name" : "posX_Nave[8]",
+					"strict" : false
+				},
+				{
+					"name" : "posX_Nave[9]",
+					"strict" : false
+				},
+				{
+					"name" : "posX_Nave[10]",
+					"strict" : false
+				},
+				{
+					"name" : "tiro_ativo[0]",
+					"strict" : false
+				},
+				{
 					"name" : "VGA_R[0]",
 					"strict" : false
 				},
@@ -117,6 +149,22 @@
 				},
 				{
 					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "btn_D",
+					"strict" : false
+				},
+				{
+					"name" : "btn_C",
+					"strict" : false
+				},
+				{
+					"name" : "btn_A",
+					"strict" : false
+				},
+				{
+					"name" : "btn_B",
 					"strict" : false
 				}
 			]
