@@ -32,7 +32,91 @@
 					"strict" : false
 				},
 				{
-					"name" : "tiro_ativo[0]",
+					"name" : "posX_Municao1[0]",
+					"strict" : false
+				},
+				{
+					"name" : "posX_Municao1[1]",
+					"strict" : false
+				},
+				{
+					"name" : "posX_Municao1[2]",
+					"strict" : false
+				},
+				{
+					"name" : "posX_Municao1[4]",
+					"strict" : false
+				},
+				{
+					"name" : "posX_Municao1[5]",
+					"strict" : false
+				},
+				{
+					"name" : "posX_Municao1[6]",
+					"strict" : false
+				},
+				{
+					"name" : "posX_Municao1[7]",
+					"strict" : false
+				},
+				{
+					"name" : "posX_Municao1[8]",
+					"strict" : false
+				},
+				{
+					"name" : "posX_Municao1[9]",
+					"strict" : false
+				},
+				{
+					"name" : "posX_Municao1[10]",
+					"strict" : false
+				},
+				{
+					"name" : "posY_Municao1[0]",
+					"strict" : false
+				},
+				{
+					"name" : "posY_Municao1[1]",
+					"strict" : false
+				},
+				{
+					"name" : "posY_Municao1[2]",
+					"strict" : false
+				},
+				{
+					"name" : "posY_Municao1[3]",
+					"strict" : false
+				},
+				{
+					"name" : "posY_Municao1[4]",
+					"strict" : false
+				},
+				{
+					"name" : "posY_Municao1[5]",
+					"strict" : false
+				},
+				{
+					"name" : "posY_Municao1[6]",
+					"strict" : false
+				},
+				{
+					"name" : "posY_Municao1[7]",
+					"strict" : false
+				},
+				{
+					"name" : "posY_Municao1[8]",
+					"strict" : false
+				},
+				{
+					"name" : "posY_Municao1[9]",
+					"strict" : false
+				},
+				{
+					"name" : "posY_Municao1[10]",
+					"strict" : false
+				},
+				{
+					"name" : "tiro_ativo_jogador[0]",
 					"strict" : false
 				},
 				{

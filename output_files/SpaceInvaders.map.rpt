@@ -1,5 +1,5 @@
 Analysis & Synthesis report for SpaceInvaders
-Mon May 27 15:26:47 2024
+Mon May 27 17:45:14 2024
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -19,17 +19,11 @@ Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
  11. Removed Registers Triggering Further Register Optimizations
  12. General Register Statistics
  13. Multiplexer Restructuring Statistics (Restructuring Performed)
- 14. Port Connectivity Checks: "display:display2"
- 15. Port Connectivity Checks: "display:display1|bcd_display:u2"
- 16. Port Connectivity Checks: "display:display1|bcd_display:u1"
- 17. Port Connectivity Checks: "display:display1|bcd_display:u0"
- 18. Port Connectivity Checks: "display:display1"
- 19. Port Connectivity Checks: "municao1:municao1"
- 20. Port Connectivity Checks: "nave:nave"
- 21. Post-Synthesis Netlist Statistics for Top Partition
- 22. Elapsed Time Per Partition
- 23. Analysis & Synthesis Messages
- 24. Analysis & Synthesis Suppressed Messages
+ 14. Port Connectivity Checks: "municao1:municao1"
+ 15. Post-Synthesis Netlist Statistics for Top Partition
+ 16. Elapsed Time Per Partition
+ 17. Analysis & Synthesis Messages
+ 18. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -55,14 +49,14 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Mon May 27 15:26:47 2024       ;
+; Analysis & Synthesis Status     ; Successful - Mon May 27 17:45:14 2024       ;
 ; Quartus Prime Version           ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                   ; SpaceInvaders                               ;
 ; Top-level Entity Name           ; SpaceInvaders                               ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 133                                         ;
-; Total pins                      ; 90                                          ;
+; Total registers                 ; 154                                         ;
+; Total pins                      ; 136                                         ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
 ; Total DSP Blocks                ; 0                                           ;
@@ -188,9 +182,6 @@ refer to the applicable agreement for further details.
 ; nave.v                           ; yes             ; Auto-Found Verilog HDL File  ; /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/nave.v          ;         ;
 ; municao1.v                       ; yes             ; Auto-Found Verilog HDL File  ; /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/municao1.v      ;         ;
 ; vga.v                            ; yes             ; Auto-Found Verilog HDL File  ; /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/vga.v           ;         ;
-; display.v                        ; yes             ; Auto-Found Verilog HDL File  ; /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/display.v       ;         ;
-; bin_to_bcd.v                     ; yes             ; Auto-Found Verilog HDL File  ; /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/bin_to_bcd.v    ;         ;
-; bcd_display.v                    ; yes             ; Auto-Found Verilog HDL File  ; /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/bcd_display.v   ;         ;
 +----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------------+---------+
 
 
@@ -199,25 +190,25 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimate of Logic utilization (ALMs needed) ; 176       ;
+; Estimate of Logic utilization (ALMs needed) ; 182       ;
 ;                                             ;           ;
-; Combinational ALUT usage for logic          ; 312       ;
+; Combinational ALUT usage for logic          ; 318       ;
 ;     -- 7 input functions                    ; 0         ;
-;     -- 6 input functions                    ; 39        ;
-;     -- 5 input functions                    ; 18        ;
-;     -- 4 input functions                    ; 41        ;
-;     -- <=3 input functions                  ; 214       ;
+;     -- 6 input functions                    ; 41        ;
+;     -- 5 input functions                    ; 20        ;
+;     -- 4 input functions                    ; 39        ;
+;     -- <=3 input functions                  ; 218       ;
 ;                                             ;           ;
-; Dedicated logic registers                   ; 133       ;
+; Dedicated logic registers                   ; 154       ;
 ;                                             ;           ;
-; I/O pins                                    ; 90        ;
+; I/O pins                                    ; 136       ;
 ;                                             ;           ;
 ; Total DSP Blocks                            ; 0         ;
 ;                                             ;           ;
 ; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 113       ;
-; Total fan-out                               ; 1530      ;
-; Average fan-out                             ; 2.45      ;
+; Maximum fan-out                             ; 134       ;
+; Total fan-out                               ; 1665      ;
+; Average fan-out                             ; 2.24      ;
 +---------------------------------------------+-----------+
 
 
@@ -226,23 +217,24 @@ refer to the applicable agreement for further details.
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------+---------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name              ; Entity Name   ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------+---------------+--------------+
-; |SpaceInvaders             ; 312 (2)             ; 133 (1)                   ; 0                 ; 0          ; 90   ; 0            ; |SpaceInvaders                   ; SpaceInvaders ; work         ;
-;    |municao1:municao1|     ; 99 (99)             ; 41 (41)                   ; 0                 ; 0          ; 0    ; 0            ; |SpaceInvaders|municao1:municao1 ; municao1      ; work         ;
-;    |nave:nave|             ; 184 (184)           ; 71 (71)                   ; 0                 ; 0          ; 0    ; 0            ; |SpaceInvaders|nave:nave         ; nave          ; work         ;
+; |SpaceInvaders             ; 318 (2)             ; 154 (1)                   ; 0                 ; 0          ; 136  ; 0            ; |SpaceInvaders                   ; SpaceInvaders ; work         ;
+;    |municao1:municao1|     ; 104 (104)           ; 62 (62)                   ; 0                 ; 0          ; 0    ; 0            ; |SpaceInvaders|municao1:municao1 ; municao1      ; work         ;
+;    |nave:nave|             ; 185 (185)           ; 71 (71)                   ; 0                 ; 0          ; 0    ; 0            ; |SpaceInvaders|nave:nave         ; nave          ; work         ;
 ;    |vga:vga|               ; 27 (27)             ; 20 (20)                   ; 0                 ; 0          ; 0    ; 0            ; |SpaceInvaders|vga:vga           ; vga           ; work         ;
 +----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------+---------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
 Encoding Type:  One-Hot
-+----------------------------------------------------------------+
-; State Machine - |SpaceInvaders|municao1:municao1|verifica_tiro ;
-+------------------+---------------------------------------------+
-; Name             ; verifica_tiro.01                            ;
-+------------------+---------------------------------------------+
-; verifica_tiro.00 ; 0                                           ;
-; verifica_tiro.01 ; 1                                           ;
-+------------------+---------------------------------------------+
++---------------------------------------------------------------------------+
+; State Machine - |SpaceInvaders|municao1:municao1|verifica_tiro            ;
++------------------+------------------+------------------+------------------+
+; Name             ; verifica_tiro.00 ; verifica_tiro.10 ; verifica_tiro.01 ;
++------------------+------------------+------------------+------------------+
+; verifica_tiro.00 ; 0                ; 0                ; 0                ;
+; verifica_tiro.01 ; 1                ; 0                ; 1                ;
+; verifica_tiro.10 ; 1                ; 1                ; 0                ;
++------------------+------------------+------------------+------------------+
 
 
 Encoding Type:  One-Hot
@@ -271,34 +263,38 @@ Encoding Type:  One-Hot
 ; municao1:municao1|B[1..7]              ; Merged with municao1:municao1|B[0]             ;
 ; municao1:municao1|G[0..7]              ; Merged with municao1:municao1|B[0]             ;
 ; municao1:municao1|R[0..7]              ; Merged with municao1:municao1|B[0]             ;
-; nave:nave|tiro_ativo[1]                ; Stuck at GND due to stuck port data_in         ;
+; nave:nave|vivo_jogador[1]              ; Stuck at GND due to stuck port data_in         ;
+; nave:nave|vivo_jogador[0]              ; Stuck at VCC due to stuck port data_in         ;
+; nave:nave|tiro_ativo_jogador[1]        ; Stuck at GND due to stuck port data_in         ;
 ; nave:nave|mem_X_nave[1]                ; Stuck at GND due to stuck port data_in         ;
 ; nave:nave|posX_Nave[1]                 ; Stuck at GND due to stuck port data_in         ;
 ; nave:nave|mem_X_nave[0]                ; Stuck at VCC due to stuck port data_in         ;
 ; nave:nave|posX_Nave[0]                 ; Stuck at VCC due to stuck port data_in         ;
 ; municao1:municao1|mem_X_municao[3]     ; Stuck at GND due to stuck port data_in         ;
-; municao1:municao1|verifica_tiro~4      ; Lost fanout                                    ;
+; municao1:municao1|posX_Municao1[3]     ; Stuck at GND due to stuck port data_in         ;
+; municao1:municao1|verifica_tiro.01     ; Lost fanout                                    ;
 ; nave:nave|estado_nave~6                ; Lost fanout                                    ;
 ; nave:nave|estado_nave~7                ; Lost fanout                                    ;
 ; nave:nave|estado_nave~8                ; Lost fanout                                    ;
 ; nave:nave|estado_nave~9                ; Lost fanout                                    ;
+; municao1:municao1|verifica_tiro.10     ; Lost fanout                                    ;
 ; municao1:municao1|mem_X_municao[2]     ; Merged with municao1:municao1|mem_X_municao[0] ;
-; Total Number of Removed Registers = 43 ;                                                ;
+; Total Number of Removed Registers = 47 ;                                                ;
 +----------------------------------------+------------------------------------------------+
 
 
-+--------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                            ;
-+--------------------------+---------------------------+-------------------------------------------------+
-; Register name            ; Reason for Removal        ; Registers Removed due to This Register          ;
-+--------------------------+---------------------------+-------------------------------------------------+
-; nave:nave|memo_X_nave[1] ; Stuck at GND              ; nave:nave|mem_X_nave[1], nave:nave|posX_Nave[1] ;
-;                          ; due to stuck port data_in ;                                                 ;
-; nave:nave|memo_X_nave[0] ; Stuck at VCC              ; nave:nave|mem_X_nave[0], nave:nave|posX_Nave[0] ;
-;                          ; due to stuck port data_in ;                                                 ;
-; nave:nave|tiro_ativo[1]  ; Stuck at GND              ; municao1:municao1|mem_X_municao[3]              ;
-;                          ; due to stuck port data_in ;                                                 ;
-+--------------------------+---------------------------+-------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                          ;
++---------------------------------+---------------------------+------------------------------------------------------------------------+
+; Register name                   ; Reason for Removal        ; Registers Removed due to This Register                                 ;
++---------------------------------+---------------------------+------------------------------------------------------------------------+
+; nave:nave|memo_X_nave[1]        ; Stuck at GND              ; nave:nave|mem_X_nave[1], nave:nave|posX_Nave[1]                        ;
+;                                 ; due to stuck port data_in ;                                                                        ;
+; nave:nave|memo_X_nave[0]        ; Stuck at VCC              ; nave:nave|mem_X_nave[0], nave:nave|posX_Nave[0]                        ;
+;                                 ; due to stuck port data_in ;                                                                        ;
+; nave:nave|tiro_ativo_jogador[1] ; Stuck at GND              ; municao1:municao1|mem_X_municao[3], municao1:municao1|posX_Municao1[3] ;
+;                                 ; due to stuck port data_in ;                                                                        ;
++---------------------------------+---------------------------+------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -306,7 +302,7 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 133   ;
+; Total registers                              ; 154   ;
 ; Number of registers using Synchronous Clear  ; 103   ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
@@ -316,91 +312,37 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                    ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                          ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------+
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |SpaceInvaders|nave:nave|mem_X_nave[5]              ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |SpaceInvaders|nave:nave|mem_X_nave[10]             ;
-; 3:1                ; 10 bits   ; 20 LEs        ; 0 LEs                ; 20 LEs                 ; Yes        ; |SpaceInvaders|vga:vga|h_counter[8]                 ;
-; 3:1                ; 19 bits   ; 38 LEs        ; 0 LEs                ; 38 LEs                 ; Yes        ; |SpaceInvaders|nave:nave|contador_botao[2]          ;
-; 3:1                ; 19 bits   ; 38 LEs        ; 0 LEs                ; 38 LEs                 ; Yes        ; |SpaceInvaders|municao1:municao1|contador_botao[10] ;
-; 4:1                ; 10 bits   ; 20 LEs        ; 0 LEs                ; 20 LEs                 ; Yes        ; |SpaceInvaders|municao1:municao1|mem_X_municao[3]   ;
-; 4:1                ; 10 bits   ; 20 LEs        ; 0 LEs                ; 20 LEs                 ; Yes        ; |SpaceInvaders|vga:vga|v_counter[0]                 ;
-; 4:1                ; 26 bits   ; 52 LEs        ; 26 LEs               ; 26 LEs                 ; Yes        ; |SpaceInvaders|nave:nave|contador_botao_c[16]       ;
-; 5:1                ; 11 bits   ; 33 LEs        ; 11 LEs               ; 22 LEs                 ; Yes        ; |SpaceInvaders|municao1:municao1|mem_Y_municao[10]  ;
-; 7:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |SpaceInvaders|nave:nave|memo_X_nave[7]             ;
-; 7:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |SpaceInvaders|nave:nave|memo_X_nave[6]             ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |SpaceInvaders|nave:nave|estado_nave                ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |SpaceInvaders|nave:nave|estado_nave                ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |SpaceInvaders|municao1:municao1|verifica_tiro      ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |SpaceInvaders|nave:nave|estado_nave                ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------+
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |SpaceInvaders|nave:nave|mem_X_nave[5]            ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |SpaceInvaders|nave:nave|mem_X_nave[10]           ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 0 LEs                ; 20 LEs                 ; Yes        ; |SpaceInvaders|vga:vga|h_counter[7]               ;
+; 3:1                ; 19 bits   ; 38 LEs        ; 0 LEs                ; 38 LEs                 ; Yes        ; |SpaceInvaders|nave:nave|contador_botao[10]       ;
+; 3:1                ; 19 bits   ; 38 LEs        ; 0 LEs                ; 38 LEs                 ; Yes        ; |SpaceInvaders|municao1:municao1|contador[8]      ;
+; 4:1                ; 10 bits   ; 20 LEs        ; 0 LEs                ; 20 LEs                 ; Yes        ; |SpaceInvaders|vga:vga|v_counter[2]               ;
+; 4:1                ; 26 bits   ; 52 LEs        ; 26 LEs               ; 26 LEs                 ; Yes        ; |SpaceInvaders|nave:nave|contador_botao_c[17]     ;
+; 5:1                ; 10 bits   ; 30 LEs        ; 0 LEs                ; 30 LEs                 ; Yes        ; |SpaceInvaders|municao1:municao1|mem_X_municao[8] ;
+; 6:1                ; 11 bits   ; 44 LEs        ; 11 LEs               ; 33 LEs                 ; Yes        ; |SpaceInvaders|municao1:municao1|mem_Y_municao[9] ;
+; 7:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |SpaceInvaders|nave:nave|memo_X_nave[8]           ;
+; 7:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |SpaceInvaders|nave:nave|memo_X_nave[9]           ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |SpaceInvaders|nave:nave|estado_nave              ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |SpaceInvaders|nave:nave|estado_nave              ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 9 LEs                ; 0 LEs                  ; No         ; |SpaceInvaders|municao1:municao1|verifica_tiro    ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |SpaceInvaders|nave:nave|estado_nave              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------+
 
 
-+----------------------------------------------+
-; Port Connectivity Checks: "display:display2" ;
-+---------+-------+----------+-----------------+
-; Port    ; Type  ; Severity ; Details         ;
-+---------+-------+----------+-----------------+
-; entrada ; Input ; Info     ; Stuck at GND    ;
-+---------+-------+----------+-----------------+
-
-
-+-------------------------------------------------------------+
-; Port Connectivity Checks: "display:display1|bcd_display:u2" ;
-+-------+-------+----------+----------------------------------+
-; Port  ; Type  ; Severity ; Details                          ;
-+-------+-------+----------+----------------------------------+
-; first ; Input ; Info     ; Stuck at GND                     ;
-+-------+-------+----------+----------------------------------+
-
-
-+-------------------------------------------------------------+
-; Port Connectivity Checks: "display:display1|bcd_display:u1" ;
-+-------+-------+----------+----------------------------------+
-; Port  ; Type  ; Severity ; Details                          ;
-+-------+-------+----------+----------------------------------+
-; first ; Input ; Info     ; Stuck at GND                     ;
-+-------+-------+----------+----------------------------------+
-
-
-+-------------------------------------------------------------+
-; Port Connectivity Checks: "display:display1|bcd_display:u0" ;
-+-------+-------+----------+----------------------------------+
-; Port  ; Type  ; Severity ; Details                          ;
-+-------+-------+----------+----------------------------------+
-; first ; Input ; Info     ; Stuck at VCC                     ;
-+-------+-------+----------+----------------------------------+
-
-
-+----------------------------------------------+
-; Port Connectivity Checks: "display:display1" ;
-+---------+-------+----------+-----------------+
-; Port    ; Type  ; Severity ; Details         ;
-+---------+-------+----------+-----------------+
-; entrada ; Input ; Info     ; Stuck at GND    ;
-+---------+-------+----------+-----------------+
-
-
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "municao1:municao1"                                                                                                                                   ;
-+---------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; Port          ; Type  ; Severity ; Details                                                                                                                                      ;
-+---------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; btn_C         ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-; posX_Municao1 ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-+---------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-
-
-+-------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "nave:nave"                                                                                               ;
-+------+--------+----------+----------------------------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                                                  ;
-+------+--------+----------+----------------------------------------------------------------------------------------------------------+
-; vivo ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+----------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "municao1:municao1"                                                                                                                                                ;
++-----------------+-------+----------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port            ; Type  ; Severity ; Details                                                                                                                                                 ;
++-----------------+-------+----------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
+; colisao_inimigo ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (2 bits) it drives.  Extra input bit(s) "colisao_inimigo[1..1]" will be connected to GND. ;
+; btn_C           ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND.            ;
++-----------------+-------+----------+---------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -408,33 +350,33 @@ Encoding Type:  One-Hot
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 133                         ;
+; arriav_ff             ; 154                         ;
 ;     ENA               ; 16                          ;
 ;     ENA SCLR          ; 29                          ;
 ;     SCLR              ; 74                          ;
-;     plain             ; 14                          ;
-; arriav_lcell_comb     ; 315                         ;
+;     plain             ; 35                          ;
+; arriav_lcell_comb     ; 321                         ;
 ;     arith             ; 150                         ;
 ;         0 data inputs ; 7                           ;
 ;         1 data inputs ; 111                         ;
 ;         2 data inputs ; 6                           ;
 ;         3 data inputs ; 26                          ;
-;     normal            ; 141                         ;
+;     normal            ; 147                         ;
 ;         0 data inputs ; 2                           ;
 ;         1 data inputs ; 2                           ;
 ;         2 data inputs ; 16                          ;
-;         3 data inputs ; 23                          ;
-;         4 data inputs ; 41                          ;
-;         5 data inputs ; 18                          ;
-;         6 data inputs ; 39                          ;
+;         3 data inputs ; 27                          ;
+;         4 data inputs ; 39                          ;
+;         5 data inputs ; 20                          ;
+;         6 data inputs ; 41                          ;
 ;     shared            ; 24                          ;
 ;         0 data inputs ; 2                           ;
 ;         1 data inputs ; 3                           ;
 ;         2 data inputs ; 19                          ;
-; boundary_port         ; 90                          ;
+; boundary_port         ; 136                         ;
 ;                       ;                             ;
 ; Max LUT depth         ; 5.40                        ;
-; Average LUT depth     ; 3.39                        ;
+; Average LUT depth     ; 3.32                        ;
 +-----------------------+-----------------------------+
 
 
@@ -453,7 +395,7 @@ Encoding Type:  One-Hot
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Mon May 27 15:26:41 2024
+    Info: Processing started: Mon May 27 17:45:09 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off SpaceInvaders -c SpaceInvaders
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
@@ -461,134 +403,131 @@ Info (12021): Found 1 design units, including 1 entities, in source file top1.v
     Info (12023): Found entity 1: top1 File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/top1.v Line: 1
 Warning (12125): Using design file SpaceInvaders.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
     Info (12023): Found entity 1: SpaceInvaders File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 2
+Warning (10236): Verilog HDL Implicit Net warning at SpaceInvaders.v(82): created implicit net for "colisao_inimigo" File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 82
 Info (12127): Elaborating entity "SpaceInvaders" for the top level hierarchy
-Warning (10858): Verilog HDL warning at SpaceInvaders.v(87): object pontuacao used but never assigned File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 87
-Warning (10858): Verilog HDL warning at SpaceInvaders.v(88): object record used but never assigned File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 88
-Warning (10030): Net "pontuacao" at SpaceInvaders.v(87) has no driver or initial value, using a default initial value '0' File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 87
-Warning (10030): Net "record" at SpaceInvaders.v(88) has no driver or initial value, using a default initial value '0' File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 88
+Warning (10858): Verilog HDL warning at SpaceInvaders.v(51): object R_municao2 used but never assigned File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 51
+Warning (10858): Verilog HDL warning at SpaceInvaders.v(52): object G_municao2 used but never assigned File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 52
+Warning (10858): Verilog HDL warning at SpaceInvaders.v(53): object B_municao2 used but never assigned File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 53
+Warning (10030): Net "R_municao2" at SpaceInvaders.v(51) has no driver or initial value, using a default initial value '0' File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 51
+Warning (10030): Net "G_municao2" at SpaceInvaders.v(52) has no driver or initial value, using a default initial value '0' File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 52
+Warning (10030): Net "B_municao2" at SpaceInvaders.v(53) has no driver or initial value, using a default initial value '0' File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 53
+Warning (10034): Output port "HEX0" at SpaceInvaders.v(32) has no driver File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 32
+Warning (10034): Output port "HEX1" at SpaceInvaders.v(33) has no driver File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 33
+Warning (10034): Output port "HEX2" at SpaceInvaders.v(34) has no driver File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 34
+Warning (10034): Output port "HEX3" at SpaceInvaders.v(35) has no driver File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 35
+Warning (10034): Output port "HEX4" at SpaceInvaders.v(36) has no driver File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 36
+Warning (10034): Output port "HEX5" at SpaceInvaders.v(38) has no driver File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 38
 Warning (12125): Using design file nave.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
     Info (12023): Found entity 1: nave File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/nave.v Line: 2
-Info (12128): Elaborating entity "nave" for hierarchy "nave:nave" File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 58
-Warning (10230): Verilog HDL assignment warning at nave.v(40): truncated value with size 32 to match size of target (19) File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/nave.v Line: 40
-Warning (10230): Verilog HDL assignment warning at nave.v(50): truncated value with size 32 to match size of target (26) File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/nave.v Line: 50
+Info (12128): Elaborating entity "nave" for hierarchy "nave:nave" File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 73
+Warning (10230): Verilog HDL assignment warning at nave.v(43): truncated value with size 32 to match size of target (19) File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/nave.v Line: 43
+Warning (10230): Verilog HDL assignment warning at nave.v(54): truncated value with size 32 to match size of target (26) File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/nave.v Line: 54
 Warning (10230): Verilog HDL assignment warning at nave.v(86): truncated value with size 32 to match size of target (11) File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/nave.v Line: 86
 Warning (10230): Verilog HDL assignment warning at nave.v(92): truncated value with size 32 to match size of target (11) File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/nave.v Line: 92
 Info (10264): Verilog HDL Case Statement information at nave.v(75): all case item expressions in this case statement are onehot File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/nave.v Line: 75
-Warning (10235): Verilog HDL Always Construct warning at nave.v(107): variable "reset" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/nave.v Line: 107
-Warning (10235): Verilog HDL Always Construct warning at nave.v(118): variable "h_counter" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/nave.v Line: 118
-Warning (10235): Verilog HDL Always Construct warning at nave.v(118): variable "mem_X_nave" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/nave.v Line: 118
-Warning (10235): Verilog HDL Always Construct warning at nave.v(119): variable "v_counter" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/nave.v Line: 119
-Warning (10235): Verilog HDL Always Construct warning at nave.v(121): variable "h_counter" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/nave.v Line: 121
-Warning (10235): Verilog HDL Always Construct warning at nave.v(121): variable "mem_X_nave" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/nave.v Line: 121
-Warning (10235): Verilog HDL Always Construct warning at nave.v(122): variable "v_counter" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/nave.v Line: 122
-Warning (10762): Verilog HDL Case Statement warning at nave.v(125): can't check case statement for completeness because the case expression has too many possible states File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/nave.v Line: 125
-Warning (10270): Verilog HDL Case Statement warning at nave.v(125): incomplete case statement has no default case item File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/nave.v Line: 125
-Warning (10229): Verilog HDL Expression warning at municao1.v(21): truncated literal to match 17 bits File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/municao1.v Line: 21
+Warning (10235): Verilog HDL Always Construct warning at nave.v(119): variable "reset" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/nave.v Line: 119
+Warning (10235): Verilog HDL Always Construct warning at nave.v(130): variable "h_counter" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/nave.v Line: 130
+Warning (10235): Verilog HDL Always Construct warning at nave.v(130): variable "mem_X_nave" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/nave.v Line: 130
+Warning (10235): Verilog HDL Always Construct warning at nave.v(131): variable "v_counter" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/nave.v Line: 131
+Warning (10235): Verilog HDL Always Construct warning at nave.v(133): variable "h_counter" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/nave.v Line: 133
+Warning (10235): Verilog HDL Always Construct warning at nave.v(133): variable "mem_X_nave" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/nave.v Line: 133
+Warning (10235): Verilog HDL Always Construct warning at nave.v(134): variable "v_counter" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/nave.v Line: 134
+Warning (10762): Verilog HDL Case Statement warning at nave.v(137): can't check case statement for completeness because the case expression has too many possible states File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/nave.v Line: 137
+Warning (10270): Verilog HDL Case Statement warning at nave.v(137): incomplete case statement has no default case item File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/nave.v Line: 137
+Warning (10229): Verilog HDL Expression warning at municao1.v(24): truncated literal to match 17 bits File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/municao1.v Line: 24
 Warning (12125): Using design file municao1.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
     Info (12023): Found entity 1: municao1 File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/municao1.v Line: 1
-Info (12128): Elaborating entity "municao1" for hierarchy "municao1:municao1" File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 71
-Warning (10230): Verilog HDL assignment warning at municao1.v(27): truncated value with size 32 to match size of target (19) File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/municao1.v Line: 27
-Warning (10230): Verilog HDL assignment warning at municao1.v(40): truncated value with size 32 to match size of target (11) File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/municao1.v Line: 40
-Warning (10230): Verilog HDL assignment warning at municao1.v(47): truncated value with size 32 to match size of target (11) File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/municao1.v Line: 47
+Info (12128): Elaborating entity "municao1" for hierarchy "municao1:municao1" File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 89
+Warning (10230): Verilog HDL assignment warning at municao1.v(31): truncated value with size 32 to match size of target (19) File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/municao1.v Line: 31
+Warning (10230): Verilog HDL assignment warning at municao1.v(51): truncated value with size 32 to match size of target (11) File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/municao1.v Line: 51
+Warning (10230): Verilog HDL assignment warning at municao1.v(58): truncated value with size 32 to match size of target (11) File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/municao1.v Line: 58
 Warning (12125): Using design file vga.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
     Info (12023): Found entity 1: vga File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/vga.v Line: 1
-Info (12128): Elaborating entity "vga" for hierarchy "vga:vga" File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 83
+Info (12128): Elaborating entity "vga" for hierarchy "vga:vga" File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 119
 Warning (10036): Verilog HDL or VHDL warning at vga.v(18): object "Ativo" assigned a value but never read File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/vga.v Line: 18
 Warning (10230): Verilog HDL assignment warning at vga.v(25): truncated value with size 32 to match size of target (10) File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/vga.v Line: 25
 Warning (10230): Verilog HDL assignment warning at vga.v(28): truncated value with size 32 to match size of target (10) File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/vga.v Line: 28
 Warning (10230): Verilog HDL assignment warning at vga.v(40): truncated value with size 32 to match size of target (1) File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/vga.v Line: 40
 Warning (10230): Verilog HDL assignment warning at vga.v(41): truncated value with size 32 to match size of target (1) File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/vga.v Line: 41
 Warning (10230): Verilog HDL assignment warning at vga.v(42): truncated value with size 32 to match size of target (1) File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/vga.v Line: 42
-Warning (12125): Using design file display.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
-    Info (12023): Found entity 1: display File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/display.v Line: 1
-Info (12128): Elaborating entity "display" for hierarchy "display:display1" File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 101
-Warning (12125): Using design file bin_to_bcd.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
-    Info (12023): Found entity 1: bin_to_bcd File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/bin_to_bcd.v Line: 1
-Info (12128): Elaborating entity "bin_to_bcd" for hierarchy "display:display1|bin_to_bcd:b2bcd" File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/display.v Line: 19
-Warning (10230): Verilog HDL assignment warning at bin_to_bcd.v(14): truncated value with size 32 to match size of target (4) File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/bin_to_bcd.v Line: 14
-Warning (10230): Verilog HDL assignment warning at bin_to_bcd.v(17): truncated value with size 32 to match size of target (4) File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/bin_to_bcd.v Line: 17
-Warning (10230): Verilog HDL assignment warning at bin_to_bcd.v(20): truncated value with size 32 to match size of target (4) File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/bin_to_bcd.v Line: 20
-Warning (12125): Using design file bcd_display.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
-    Info (12023): Found entity 1: bcd_display File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/bcd_display.v Line: 1
-Info (12128): Elaborating entity "bcd_display" for hierarchy "display:display1|bcd_display:u0" File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/display.v Line: 25
-Warning (10235): Verilog HDL Always Construct warning at bcd_display.v(9): variable "first" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/bcd_display.v Line: 9
-Warning (10270): Verilog HDL Case Statement warning at bcd_display.v(10): incomplete case statement has no default case item File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/bcd_display.v Line: 10
-Warning (10270): Verilog HDL Case Statement warning at bcd_display.v(23): incomplete case statement has no default case item File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/bcd_display.v Line: 23
-Warning (10240): Verilog HDL Always Construct warning at bcd_display.v(7): inferring latch(es) for variable "saida", which holds its previous value in one or more paths through the always construct File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/bcd_display.v Line: 7
-Info (10041): Inferred latch for "saida[0]" at bcd_display.v(23) File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/bcd_display.v Line: 23
-Info (10041): Inferred latch for "saida[1]" at bcd_display.v(23) File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/bcd_display.v Line: 23
-Info (10041): Inferred latch for "saida[2]" at bcd_display.v(23) File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/bcd_display.v Line: 23
-Info (10041): Inferred latch for "saida[3]" at bcd_display.v(23) File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/bcd_display.v Line: 23
-Info (10041): Inferred latch for "saida[4]" at bcd_display.v(23) File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/bcd_display.v Line: 23
-Info (10041): Inferred latch for "saida[5]" at bcd_display.v(23) File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/bcd_display.v Line: 23
-Info (10041): Inferred latch for "saida[6]" at bcd_display.v(23) File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/bcd_display.v Line: 23
-Warning (14026): LATCH primitive "display:display2|bcd_display:u2|saida[0]" is permanently enabled File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/bcd_display.v Line: 23
-Warning (14026): LATCH primitive "display:display2|bcd_display:u2|saida[1]" is permanently enabled File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/bcd_display.v Line: 23
-Warning (14026): LATCH primitive "display:display2|bcd_display:u2|saida[2]" is permanently enabled File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/bcd_display.v Line: 23
-Warning (14026): LATCH primitive "display:display2|bcd_display:u2|saida[3]" is permanently enabled File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/bcd_display.v Line: 23
-Warning (14026): LATCH primitive "display:display2|bcd_display:u2|saida[4]" is permanently enabled File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/bcd_display.v Line: 23
-Warning (14026): LATCH primitive "display:display2|bcd_display:u2|saida[5]" is permanently enabled File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/bcd_display.v Line: 23
-Warning (14026): LATCH primitive "display:display2|bcd_display:u2|saida[6]" is permanently enabled File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/bcd_display.v Line: 23
-Warning (14026): LATCH primitive "display:display1|bcd_display:u2|saida[0]" is permanently enabled File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/bcd_display.v Line: 23
-Warning (14026): LATCH primitive "display:display1|bcd_display:u2|saida[1]" is permanently enabled File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/bcd_display.v Line: 23
-Warning (14026): LATCH primitive "display:display1|bcd_display:u2|saida[2]" is permanently enabled File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/bcd_display.v Line: 23
-Warning (14026): LATCH primitive "display:display1|bcd_display:u2|saida[3]" is permanently enabled File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/bcd_display.v Line: 23
-Warning (14026): LATCH primitive "display:display1|bcd_display:u2|saida[4]" is permanently enabled File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/bcd_display.v Line: 23
-Warning (14026): LATCH primitive "display:display1|bcd_display:u2|saida[5]" is permanently enabled File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/bcd_display.v Line: 23
-Warning (14026): LATCH primitive "display:display1|bcd_display:u2|saida[6]" is permanently enabled File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/bcd_display.v Line: 23
-Warning (12241): 2 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "posX_Nave[0]" is stuck at VCC File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 9
-    Warning (13410): Pin "posX_Nave[1]" is stuck at GND File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 9
-    Warning (13410): Pin "posX_Nave[2]" is stuck at VCC File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 9
-    Warning (13410): Pin "posX_Nave[3]" is stuck at VCC File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 9
-    Warning (13410): Pin "tiro_ativo[1]" is stuck at GND File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 10
-    Warning (13410): Pin "VGA_BLANK_N" is stuck at VCC File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 14
-    Warning (13410): Pin "VGA_SYNC_N" is stuck at VCC File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 15
-    Warning (13410): Pin "HEX0[0]" is stuck at GND File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 19
-    Warning (13410): Pin "HEX0[1]" is stuck at GND File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 19
-    Warning (13410): Pin "HEX0[2]" is stuck at GND File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 19
-    Warning (13410): Pin "HEX0[3]" is stuck at GND File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 19
-    Warning (13410): Pin "HEX0[4]" is stuck at GND File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 19
-    Warning (13410): Pin "HEX0[5]" is stuck at GND File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 19
-    Warning (13410): Pin "HEX0[6]" is stuck at VCC File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 19
-    Warning (13410): Pin "HEX1[0]" is stuck at VCC File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 20
-    Warning (13410): Pin "HEX1[1]" is stuck at VCC File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 20
-    Warning (13410): Pin "HEX1[2]" is stuck at VCC File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 20
-    Warning (13410): Pin "HEX1[3]" is stuck at VCC File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 20
-    Warning (13410): Pin "HEX1[4]" is stuck at VCC File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 20
-    Warning (13410): Pin "HEX1[5]" is stuck at VCC File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 20
-    Warning (13410): Pin "HEX1[6]" is stuck at VCC File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 20
-    Warning (13410): Pin "HEX2[0]" is stuck at VCC File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 21
-    Warning (13410): Pin "HEX2[1]" is stuck at VCC File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 21
-    Warning (13410): Pin "HEX2[2]" is stuck at VCC File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 21
-    Warning (13410): Pin "HEX2[3]" is stuck at VCC File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 21
-    Warning (13410): Pin "HEX2[4]" is stuck at VCC File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 21
-    Warning (13410): Pin "HEX2[5]" is stuck at VCC File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 21
-    Warning (13410): Pin "HEX2[6]" is stuck at VCC File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 21
-    Warning (13410): Pin "HEX3[0]" is stuck at GND File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 22
-    Warning (13410): Pin "HEX3[1]" is stuck at GND File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 22
-    Warning (13410): Pin "HEX3[2]" is stuck at GND File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 22
-    Warning (13410): Pin "HEX3[3]" is stuck at GND File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 22
-    Warning (13410): Pin "HEX3[4]" is stuck at GND File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 22
-    Warning (13410): Pin "HEX3[5]" is stuck at GND File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 22
-    Warning (13410): Pin "HEX3[6]" is stuck at VCC File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 22
-    Warning (13410): Pin "HEX4[0]" is stuck at VCC File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 23
-    Warning (13410): Pin "HEX4[1]" is stuck at VCC File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 23
-    Warning (13410): Pin "HEX4[2]" is stuck at VCC File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 23
-    Warning (13410): Pin "HEX4[3]" is stuck at VCC File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 23
-    Warning (13410): Pin "HEX4[4]" is stuck at VCC File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 23
-    Warning (13410): Pin "HEX4[5]" is stuck at VCC File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 23
-    Warning (13410): Pin "HEX4[6]" is stuck at VCC File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 23
-    Warning (13410): Pin "HEX5[0]" is stuck at VCC File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 25
-    Warning (13410): Pin "HEX5[1]" is stuck at VCC File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 25
-    Warning (13410): Pin "HEX5[2]" is stuck at VCC File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 25
-    Warning (13410): Pin "HEX5[3]" is stuck at VCC File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 25
-    Warning (13410): Pin "HEX5[4]" is stuck at VCC File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 25
-    Warning (13410): Pin "HEX5[5]" is stuck at VCC File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 25
-    Warning (13410): Pin "HEX5[6]" is stuck at VCC File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 25
+    Warning (13410): Pin "posX_Nave[0]" is stuck at VCC File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 11
+    Warning (13410): Pin "posX_Nave[1]" is stuck at GND File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 11
+    Warning (13410): Pin "posX_Nave[2]" is stuck at VCC File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 11
+    Warning (13410): Pin "posX_Nave[3]" is stuck at VCC File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 11
+    Warning (13410): Pin "posX_Municao1[3]" is stuck at GND File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 12
+    Warning (13410): Pin "posX_Municao2[0]" is stuck at GND File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 14
+    Warning (13410): Pin "posX_Municao2[1]" is stuck at GND File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 14
+    Warning (13410): Pin "posX_Municao2[2]" is stuck at GND File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 14
+    Warning (13410): Pin "posX_Municao2[3]" is stuck at GND File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 14
+    Warning (13410): Pin "posX_Municao2[4]" is stuck at GND File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 14
+    Warning (13410): Pin "posX_Municao2[5]" is stuck at GND File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 14
+    Warning (13410): Pin "posX_Municao2[6]" is stuck at GND File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 14
+    Warning (13410): Pin "posX_Municao2[7]" is stuck at GND File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 14
+    Warning (13410): Pin "posX_Municao2[8]" is stuck at GND File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 14
+    Warning (13410): Pin "posX_Municao2[9]" is stuck at GND File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 14
+    Warning (13410): Pin "posX_Municao2[10]" is stuck at GND File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 14
+    Warning (13410): Pin "posY_Municao2[0]" is stuck at GND File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 15
+    Warning (13410): Pin "posY_Municao2[1]" is stuck at GND File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 15
+    Warning (13410): Pin "posY_Municao2[2]" is stuck at GND File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 15
+    Warning (13410): Pin "posY_Municao2[3]" is stuck at GND File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 15
+    Warning (13410): Pin "posY_Municao2[4]" is stuck at GND File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 15
+    Warning (13410): Pin "posY_Municao2[5]" is stuck at GND File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 15
+    Warning (13410): Pin "posY_Municao2[6]" is stuck at GND File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 15
+    Warning (13410): Pin "posY_Municao2[7]" is stuck at GND File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 15
+    Warning (13410): Pin "posY_Municao2[8]" is stuck at GND File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 15
+    Warning (13410): Pin "posY_Municao2[9]" is stuck at GND File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 15
+    Warning (13410): Pin "posY_Municao2[10]" is stuck at GND File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 15
+    Warning (13410): Pin "tiro_ativo_jogador[1]" is stuck at GND File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 17
+    Warning (13410): Pin "vivo_jogador[0]" is stuck at VCC File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 19
+    Warning (13410): Pin "vivo_jogador[1]" is stuck at GND File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 19
+    Warning (13410): Pin "VGA_BLANK_N" is stuck at VCC File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 25
+    Warning (13410): Pin "VGA_SYNC_N" is stuck at VCC File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 26
+    Warning (13410): Pin "HEX0[0]" is stuck at GND File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 32
+    Warning (13410): Pin "HEX0[1]" is stuck at GND File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 32
+    Warning (13410): Pin "HEX0[2]" is stuck at GND File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 32
+    Warning (13410): Pin "HEX0[3]" is stuck at GND File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 32
+    Warning (13410): Pin "HEX0[4]" is stuck at GND File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 32
+    Warning (13410): Pin "HEX0[5]" is stuck at GND File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 32
+    Warning (13410): Pin "HEX0[6]" is stuck at GND File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 32
+    Warning (13410): Pin "HEX1[0]" is stuck at GND File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 33
+    Warning (13410): Pin "HEX1[1]" is stuck at GND File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 33
+    Warning (13410): Pin "HEX1[2]" is stuck at GND File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 33
+    Warning (13410): Pin "HEX1[3]" is stuck at GND File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 33
+    Warning (13410): Pin "HEX1[4]" is stuck at GND File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 33
+    Warning (13410): Pin "HEX1[5]" is stuck at GND File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 33
+    Warning (13410): Pin "HEX1[6]" is stuck at GND File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 33
+    Warning (13410): Pin "HEX2[0]" is stuck at GND File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 34
+    Warning (13410): Pin "HEX2[1]" is stuck at GND File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 34
+    Warning (13410): Pin "HEX2[2]" is stuck at GND File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 34
+    Warning (13410): Pin "HEX2[3]" is stuck at GND File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 34
+    Warning (13410): Pin "HEX2[4]" is stuck at GND File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 34
+    Warning (13410): Pin "HEX2[5]" is stuck at GND File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 34
+    Warning (13410): Pin "HEX2[6]" is stuck at GND File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 34
+    Warning (13410): Pin "HEX3[0]" is stuck at GND File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 35
+    Warning (13410): Pin "HEX3[1]" is stuck at GND File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 35
+    Warning (13410): Pin "HEX3[2]" is stuck at GND File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 35
+    Warning (13410): Pin "HEX3[3]" is stuck at GND File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 35
+    Warning (13410): Pin "HEX3[4]" is stuck at GND File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 35
+    Warning (13410): Pin "HEX3[5]" is stuck at GND File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 35
+    Warning (13410): Pin "HEX3[6]" is stuck at GND File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 35
+    Warning (13410): Pin "HEX4[0]" is stuck at GND File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 36
+    Warning (13410): Pin "HEX4[1]" is stuck at GND File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 36
+    Warning (13410): Pin "HEX4[2]" is stuck at GND File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 36
+    Warning (13410): Pin "HEX4[3]" is stuck at GND File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 36
+    Warning (13410): Pin "HEX4[4]" is stuck at GND File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 36
+    Warning (13410): Pin "HEX4[5]" is stuck at GND File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 36
+    Warning (13410): Pin "HEX4[6]" is stuck at GND File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 36
+    Warning (13410): Pin "HEX5[0]" is stuck at GND File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 38
+    Warning (13410): Pin "HEX5[1]" is stuck at GND File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 38
+    Warning (13410): Pin "HEX5[2]" is stuck at GND File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 38
+    Warning (13410): Pin "HEX5[3]" is stuck at GND File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 38
+    Warning (13410): Pin "HEX5[4]" is stuck at GND File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 38
+    Warning (13410): Pin "HEX5[5]" is stuck at GND File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 38
+    Warning (13410): Pin "HEX5[6]" is stuck at GND File: /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 38
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 5 registers lost all their fanouts during netlist optimizations.
+Info (17049): 6 registers lost all their fanouts during netlist optimizations.
 Warning (20013): Ignored 571 assignments for entity "DE1_SoC" -- entity does not exist in design
     Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_ADDR[0] -entity DE1_SoC was ignored
     Warning (20014): Assignment for entity set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_ADDR[10] -entity DE1_SoC was ignored
@@ -1164,14 +1103,14 @@ Warning (20013): Ignored 571 assignments for entity "DE1_SoC" -- entity does not
 Info (144001): Generated suppressed messages file /home/ec2022/ra247064/Circuitos Digitais/2024s1-mc613-projeto-tabajara-fc/output_files/SpaceInvaders.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 431 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 503 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 6 input pins
-    Info (21059): Implemented 84 output pins
-    Info (21061): Implemented 341 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 679 warnings
-    Info: Peak virtual memory: 1277 megabytes
-    Info: Processing ended: Mon May 27 15:26:47 2024
-    Info: Elapsed time: 00:00:06
+    Info (21059): Implemented 130 output pins
+    Info (21061): Implemented 367 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 689 warnings
+    Info: Peak virtual memory: 1276 megabytes
+    Info: Processing ended: Mon May 27 17:45:14 2024
+    Info: Elapsed time: 00:00:05
     Info: Total CPU time (on all processors): 00:00:14
 
 

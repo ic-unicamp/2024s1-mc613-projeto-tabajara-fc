@@ -8,14 +8,17 @@ module nave(
 	 input btn_D,
     input [9:0] h_counter,
     input [9:0] v_counter,
-	 output reg [1:0] vivo,
+	 input [10:0] posX_Municao2, //liga SpaceInvaders com municao2
+	 input [10:0] posY_Municao2, //liga SpaceInvaders com municao2
+	 output reg [1:0] vivo_jogador,
     output reg [10:0] posX_Nave,
-	 output reg [1:0] tiro_ativo,
+	 output reg [1:0] tiro_ativo_jogador,
     output reg [7:0] R,
     output reg [7:0] G,
     output reg [7:0] B
 );
 
+	//variaveis internas
 	reg [10:0] memo_X_nave;
 	reg [10:0] mem_X_nave;
 	reg [18:0] contador_botao;
@@ -29,35 +32,35 @@ module nave(
     localparam START_Y = 490; // Modifique este valor para ajustar a posição vertical
 	 
 localparam BOTAO_DELAY = 19'd500000; // Ajuste este valor conforme necessário
-localparam BOTAO_DELAY_C = 32'd500000; // Ajuste este valor conforme necessário
 
 always @(posedge clk) begin
+	 /*Reseta a nave e contador para impedir que os botoes sejam pressionados muitas vezes*/
     if (~(btn_D) || (reset)) begin
         contador_botao = 0;
-		   contador_botao_c = 0;
-		  tiro_ativo = 0;
+		  contador_botao_c = 0;
+		  tiro_ativo_jogador = 0;
     end else if (contador_botao < BOTAO_DELAY) begin
         contador_botao <= contador_botao + 1;
     end else begin
         contador_botao = 0;
     end
 	 
-	 if (~btn_C && tiro_ativo == 0) begin
-		  tiro_ativo <= 1;
+	 /*Contador para impedir multiplos tiros*/
+	 if (~btn_C && tiro_ativo_jogador == 0) begin
+		  tiro_ativo_jogador <= 1;
 		  contador_botao_c = 0;
 		  
-	 end else if (tiro_ativo == 1) begin
+	 end else if (tiro_ativo_jogador == 1) begin
 		  contador_botao_c = contador_botao_c + 1;
 		  
 		  if(contador_botao_c >= 50000000)begin
 				contador_botao_c = 0;
-				tiro_ativo = 0;
+				tiro_ativo_jogador = 0;
 		  end
 	end
-	 
 end
 
-
+/*Parte que trata o movimento da nave*/
 always @(posedge clk) begin
 
 	 posX_Nave = mem_X_nave;
@@ -66,10 +69,9 @@ always @(posedge clk) begin
         mem_X_nave <= 445;
         estado_nave <= 3'b000;
         memo_X_nave <= 445;
-		  vivo <= 1;
 	 
     end else if (contador_botao == BOTAO_DELAY) begin
-		//tiro_ativo = 0;
+		//tiro_ativo_jogador = 0;
         case (estado_nave)
             3'b000: begin
                 mem_X_nave <= memo_X_nave;
@@ -95,8 +97,20 @@ always @(posedge clk) begin
         endcase
     end
 end
+
+
+/*Parte que trata se o jogador ainda esta vivo*/
+always @(posedge clk) begin
 	
-	 
+	if (~(btn_D) || (reset)) begin
+		  vivo_jogador <= 1;
+	end else if(posY_Municao2 >= 489 && (posX_Municao2 > mem_X_nave -2 && posX_Municao2 < mem_X_nave + 23))begin 
+		  vivo_jogador <= 0;
+	end 
+
+end
+	
+	 /*Parte que trata de montar a imagem da nave na tela*/
     always @(clk) begin
 	 
         integer orig_x;

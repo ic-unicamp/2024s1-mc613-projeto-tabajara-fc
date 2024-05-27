@@ -1,8 +1,9 @@
 
 State Machine - |SpaceInvaders|municao1:municao1|verifica_tiro
-Name verifica_tiro.01 
-verifica_tiro.00 0 
-verifica_tiro.01 1 
+Name verifica_tiro.00 verifica_tiro.10 verifica_tiro.01 
+verifica_tiro.00 0 0 0 
+verifica_tiro.01 1 0 1 
+verifica_tiro.10 1 1 0 
 
 State Machine - |SpaceInvaders|nave:nave|estado_nave
 Name estado_nave.0011 estado_nave.0010 estado_nave.0001 estado_nave.0000 
