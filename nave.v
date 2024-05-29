@@ -1,18 +1,18 @@
 /*modulo da nave*/
 module nave(
     input clk,
-	input reset,
-	input btn_A,
-	input btn_B,
-	input btn_C,
-	input btn_D,
+	 input reset,
+	 input btn_A,
+	 input btn_B,
+	 input btn_C,
+	 input btn_D,
     input [9:0] h_counter,
     input [9:0] v_counter,
-	input [10:0] posX_Municao2, //liga SpaceInvaders com municao2
-	input [10:0] posY_Municao2, //liga SpaceInvaders com municao2
-	output reg [1:0] vivo_jogador,
+	 input [10:0] posX_Municao2, //liga SpaceInvaders com municao2
+	 input [10:0] posY_Municao2, //liga SpaceInvaders com municao2
+	 output reg [1:0] vivo_jogador,
     output reg [10:0] posX_Nave,
-	output reg [1:0] tiro_ativo_jogador,
+	 output reg [1:0] tiro_ativo_jogador,
     output reg [7:0] R,
     output reg [7:0] G,
     output reg [7:0] B
