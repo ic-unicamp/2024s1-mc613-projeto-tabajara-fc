@@ -3,6 +3,6 @@ tb_vga
 gabarito
 teste.txt
 *.vcd
-db/*
-incremental_db/*
-simulation/*
+db
+incremental_db
+simulation
