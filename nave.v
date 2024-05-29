@@ -1,20 +1,118 @@
+/*modulo da nave*/
 module nave(
+    input clk,
+	input reset,
+	input btn_A,
+	input btn_B,
+	input btn_C,
+	input btn_D,
     input [9:0] h_counter,
-    input reset,
     input [9:0] v_counter,
-    input [10:0] mem_X_barra,
+	input [10:0] posX_Municao2, //liga SpaceInvaders com municao2
+	input [10:0] posY_Municao2, //liga SpaceInvaders com municao2
+	output reg [1:0] vivo_jogador,
+    output reg [10:0] posX_Nave,
+	output reg [1:0] tiro_ativo_jogador,
     output reg [7:0] R,
     output reg [7:0] G,
     output reg [7:0] B
 );
 
+	//variaveis internas
+	reg [10:0] memo_X_nave;
+	reg [10:0] mem_X_nave;
+	reg [18:0] contador_botao;
+	reg [25:0] contador_botao_c;
+	reg [3:0] estado_nave;
+
     // Defina a escala do objeto
-    localparam SCALE = 1;
+    localparam SCALE = 2;
 
     // Defina a posição vertical inicial do objeto
-    localparam START_Y = 150; // Modifique este valor para ajustar a posição vertical
+    localparam START_Y = 490; // Modifique este valor para ajustar a posição vertical
+	 
+localparam BOTAO_DELAY = 19'd500000; // Ajuste este valor conforme necessário
 
-    always @(h_counter or v_counter or reset) begin
+always @(posedge clk) begin
+	 /*Reseta a nave e contador para impedir que os botoes sejam pressionados muitas vezes*/
+    if (~(btn_D) || (reset)) begin
+        contador_botao = 0;
+		  contador_botao_c = 0;
+		  tiro_ativo_jogador = 0;
+    end else if (contador_botao < BOTAO_DELAY) begin
+        contador_botao <= contador_botao + 1;
+    end else begin
+        contador_botao = 0;
+    end
+	 
+	 /*Contador para impedir multiplos tiros*/
+	 if (~btn_C && tiro_ativo_jogador == 0) begin
+		  tiro_ativo_jogador <= 1;
+		  contador_botao_c = 0;
+		  
+	 end else if (tiro_ativo_jogador == 1) begin
+		  contador_botao_c = contador_botao_c + 1;
+		  
+		  if(contador_botao_c >= 50000000)begin
+				contador_botao_c = 0;
+				tiro_ativo_jogador = 0;
+		  end
+	end
+end
+
+/*Parte que trata o movimento da nave*/
+always @(posedge clk) begin
+
+	 posX_Nave = mem_X_nave;
+
+    if (~(btn_D) || (reset)) begin
+        mem_X_nave <= 445;
+        estado_nave <= 3'b000;
+        memo_X_nave <= 445;
+	 
+    end else if (contador_botao == BOTAO_DELAY) begin
+		//tiro_ativo_jogador = 0;
+        case (estado_nave)
+            3'b000: begin
+                mem_X_nave <= memo_X_nave;
+                if (~btn_B) begin
+                    estado_nave <= 3'b001;
+                end else if (~btn_A) begin
+                    estado_nave <= 3'b010;
+                end
+            end
+            3'b001: begin
+                if ((memo_X_nave + 16) < 765) begin
+                    memo_X_nave <= memo_X_nave + 16;
+                end
+                estado_nave <= 3'b011;
+            end
+            3'b010: begin
+                if ((memo_X_nave - 16) > 134) begin
+                    memo_X_nave <= memo_X_nave - 16;
+                end
+                estado_nave <= 3'b011;
+            end
+            default: estado_nave <= 3'b000;
+        endcase
+    end
+end
+
+
+/*Parte que trata se o jogador ainda esta vivo*/
+always @(posedge clk) begin
+	
+	if (~(btn_D) || (reset)) begin
+		  vivo_jogador <= 1;
+	end else if(posY_Municao2 >= 489 && (posX_Municao2 > mem_X_nave -2 && posX_Municao2 < mem_X_nave + 23))begin 
+		  vivo_jogador <= 0;
+	end 
+
+end
+	
+	 /*Parte que trata de montar a imagem da nave na tela*/
+    always @(clk) begin
+	 
         integer orig_x;
         integer orig_y;
 
@@ -29,10 +127,10 @@ module nave(
             B = 8'b0;
 
             // Defina o padrão da nave espacial
-            if ((h_counter >= mem_X_barra) && (h_counter < mem_X_barra + 11 * SCALE) && 
+            if ((h_counter >= mem_X_nave) && (h_counter < mem_X_nave + 11 * SCALE) && 
                 (v_counter >= START_Y) && (v_counter < START_Y + 11 * SCALE)) begin
                 // Calcule a posição na grade original de 11x11
-                orig_x = (h_counter - mem_X_barra) / SCALE;
+                orig_x = (h_counter - mem_X_nave) / SCALE;
                 orig_y = (v_counter - START_Y) / SCALE;
 
                 // Verifique o bit correspondente no padrão
