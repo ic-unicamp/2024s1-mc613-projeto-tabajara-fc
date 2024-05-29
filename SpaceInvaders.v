@@ -71,6 +71,21 @@ wire [7:0] inimigoR [23:0];
 wire [7:0] inimigoG [23:0];
 wire [7:0] inimigoB [23:0];
 
+// Variáveis intermediárias para as cores das naves
+wire [7:0] R_nave;
+wire [7:0] G_nave;
+wire [7:0] B_nave;
+wire [7:0] R_municao1;
+wire [7:0] G_municao1;
+wire [7:0] B_municao1;
+
+//alterar se quiser
+wire [7:0] R_municao2;
+wire [7:0] G_municao2;
+wire [7:0] B_municao2;
+
+
+
 // Inicializando as posições das naves
 integer i, k;
 
@@ -118,9 +133,9 @@ always @(clk) begin
                 VGA_B = VGA_B | inimigoB[j];
         end
 
-        VGA_R = VGA_R | R_nave | R_municao1 && 255;        
-        VGA_G = VGA_G | G_nave | G_municao1 && 255;
-        VGA_B = VGA_B | B_nave | B_municao1 && 255;
+        VGA_R = VGA_R | R_nave | R_municao1;        
+        VGA_G = VGA_G | G_nave | G_municao1;
+        VGA_B = VGA_B | B_nave | B_municao1;
     end
 
 
