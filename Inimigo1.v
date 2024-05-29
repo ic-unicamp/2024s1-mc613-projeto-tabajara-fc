@@ -11,7 +11,7 @@ module Inimigo1(
 );
 
     // Defina a escala do objeto
-    localparam SCALE = 2;
+    localparam SCALE = 3;
 
     always @(h_counter or v_counter or reset) begin
         integer orig_x;

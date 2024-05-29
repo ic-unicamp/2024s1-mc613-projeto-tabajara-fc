@@ -71,6 +71,20 @@ wire [7:0] inimigoR [23:0];
 wire [7:0] inimigoG [23:0];
 wire [7:0] inimigoB [23:0];
 
+
+//Fios de comunicação nave munição
+/*Posicoes dos modulos*/
+wire [10:0] posX_Nave; //liga SpaceInvaders com nave
+wire [10:0] posX_Municao1; //liga SpaceInvaders com municao1
+wire [10:0] posY_Municao1; //liga SpaceInvaders com municao1
+wire [10:0] posX_Municao2; //liga SpaceInvaders com municao2
+wire [10:0] posY_Municao2; //liga SpaceInvaders com municao2
+
+wire [1:0] colisao_inimigo; //ALTERAR QUANDO TIVER O INIMIGO
+wire [1:0] tiro_ativo_jogador;
+wire [1:0] vivo_jogador;
+
+
 // Variáveis intermediárias para as cores das naves
 wire [7:0] R_nave;
 wire [7:0] G_nave;

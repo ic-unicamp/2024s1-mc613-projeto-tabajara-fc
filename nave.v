@@ -31,7 +31,7 @@ module nave(
     // Defina a posição vertical inicial do objeto
     localparam START_Y = 490; // Modifique este valor para ajustar a posição vertical
 	 
-localparam BOTAO_DELAY = 19'd500000; // Ajuste este valor conforme necessário
+localparam BOTAO_DELAY = 20'd750000; // Ajuste este valor conforme necessário
 
 always @(posedge clk) begin
 	 /*Reseta a nave e contador para impedir que os botoes sejam pressionados muitas vezes*/
@@ -82,14 +82,14 @@ always @(posedge clk) begin
                 end
             end
             3'b001: begin
-                if ((memo_X_nave + 16) < 765) begin
-                    memo_X_nave <= memo_X_nave + 16;
+                if ((memo_X_nave + 1) < 765) begin
+                    memo_X_nave <= memo_X_nave + 1;
                 end
                 estado_nave <= 3'b011;
             end
             3'b010: begin
-                if ((memo_X_nave - 16) > 134) begin
-                    memo_X_nave <= memo_X_nave - 16;
+                if ((memo_X_nave - 1) > 134) begin
+                    memo_X_nave <= memo_X_nave - 1;
                 end
                 estado_nave <= 3'b011;
             end

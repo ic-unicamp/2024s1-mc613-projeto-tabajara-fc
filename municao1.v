@@ -5,14 +5,14 @@
 	input btn_C,
 	input [1:0] tiro_ativo_jogador,
 	input [10:0] posX_Nave,
-   input [9:0] h_counter,
-   input [9:0] v_counter,
-	input [1:0] colisao_inimigo, 
+	input [9:0] h_counter,
+	input [9:0] v_counter,
+	input colisao_inimigo, 
 	output reg [10:0] posX_Municao1,
 	output reg [10:0] posY_Municao1,
-   output reg [7:0]R,
-   output reg [7:0]G,
-   output reg [7:0]B
+   	output reg [7:0]R,
+   	output reg [7:0]G,
+   	output reg [7:0]B
 );
 
 //variaveis internas
@@ -43,7 +43,8 @@ always @(posedge clk) begin
         mem_X_municao = 0;
 		  mem_Y_municao = 0;
 		  verifica_tiro = 0;
-	 end else if(mem_Y_municao <= 200 && mem_Y_municao != 0) begin /////ALTERAR AQUI PARA AS COLISOES
+	// end else if(mem_Y_municao <= 200 && mem_Y_municao != 0) begin /////ALTERAR AQUI PARA AS COLISOES
+	end else if(colisao_inimigo) begin
 		  mem_X_municao = 0;
 		  mem_Y_municao = 0;
 		  verifica_tiro = 2;
