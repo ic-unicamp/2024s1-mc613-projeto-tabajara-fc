@@ -85,6 +85,63 @@ always @(clk) begin
         end
     end
 
+nave nave(
+    .h_counter(h_counter),
+    .v_counter(v_counter),
+	.reset(reset),
+	.clk(clk),
+	.btn_A(btn_A),
+	.btn_B(btn_B),
+	.btn_C(btn_C),
+	.btn_D(btn_D),
+	.posX_Municao2(posX_Municao2),
+	.posY_Municao2(posY_Municao2),
+	.tiro_ativo_jogador(tiro_ativo_jogador),
+	.vivo_jogador(vivo_jogador),
+   .posX_Nave(posX_Nave),
+   .R(R_nave),
+   .G(G_nave),
+   .B(B_nave)
+);
+
+municao1 municao1(
+   .h_counter(h_counter),
+   .v_counter(v_counter),
+	.reset(reset),
+	.clk(clk),
+	.tiro_ativo_jogador(tiro_ativo_jogador),
+	.btn_D(btn_D),
+	.colisao_inimigo(colisao_inimigo),
+   .posX_Nave(posX_Nave),
+	.posX_Municao1(posX_Municao1),
+	.posY_Municao1(posY_Municao1),
+   .R(R_municao1),
+   .G(G_municao1),
+   .B(B_municao1)
+);
+
+///Tem que alterar para o inimigo
+/*
+municao2 municao2(
+   .h_counter(h_counter),
+   .v_counter(v_counter),
+	.reset(reset),
+	.clk(clk),
+	.tiro_ativo_jogador(tiro_ativo_jogador),
+	.btn_D(btn_D),
+   .posX_Nave(posX_Nave),
+	.posX_Municao2(posX_Municao2),
+	.posY_Municao2(posY_Municao2),
+   .R(R_municao2),
+   .G(G_municao2),
+   .B(B_municao2)
+);
+*/
+
+
+
+
+
 // Circuitos
 reg VGA_CLK2; // 25Mhz
 assign VGA_CLK = VGA_CLK2;
