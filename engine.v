@@ -13,8 +13,8 @@ module engine (
     output wire [1:0] estado_jogo // 0 = jogo rodando, 1 = jogador venceu, 2 = jogador perdeu    
     );
 
-`define N 5 // Número de inimigos
-`define ATRASO_TIRO 20'd 1000000 // Atraso para o inimigo atirar
+localparam N = 5; // Número de inimigos
+localparam ATRASO_TIRO = 20'd 1000000; // Atraso para o inimigo atirar
 
 reg [19:0] contador_tiro;
 
@@ -37,9 +37,9 @@ always @(posedge clk ) begin
     end
     else begin
         if (contador_tiro == ATRASO_TIRO) begin
-            k = $urandom_range(N, 0);
+            k = 2 //$urandom_range(N, 0); -- implementar gerador de numeros aleatorios baseado em operações lógicas
             while (enemy_vivos[k] == 0) begin
-                k = $urandom_range(N, 0);
+                k =  2//$urandom_range(N, 0);
             end
             for ( i = 0 ; i < N ; i = i + 1 ) begin
                 if (i == k) begin

@@ -12,9 +12,33 @@ module SpaceInvaders(
    output wire VGA_SYNC_N,
    output wire VGA_HS,
    output wire VGA_VS,
-   output wire VGA_CLK 
+   output wire VGA_CLK,
+
+   /*LEDs*/
+    output [6:0] HEX0, // digito da direita
+    output [6:0] HEX1,
+    output [6:0] HEX2,
+    output [6:0] HEX3,
+    output [6:0] HEX4,
+    output [6:0] HEX5 // digito da esquerda
 
 );
+
+
+// engine engine(
+//     .clk(clk),
+//     .reset(reset),
+//     .enemy_vivos(),
+//     .jogador_vivo(vivo_jogador),
+//     .vitoria_enemy(),
+//     .btn_D(btn_D),
+//     .restart(restart),
+//     .vitoria_jogador(),
+//     .bloco_pos_X(),
+//     .bloco_pos_Y(),
+//     .estado_jogo(estado_jogo),
+//     .ID_enemy_tiro()
+// );
 
 vga vga(
     .VGA_CLK2(VGA_CLK2),
@@ -83,6 +107,11 @@ wire [10:0] posY_Municao2; //liga SpaceInvaders com municao2
 wire [1:0] colisao_inimigo; //ALTERAR QUANDO TIVER O INIMIGO
 wire [1:0] tiro_ativo_jogador;
 wire [1:0] vivo_jogador;
+
+//variaveis de controle
+
+wire restart;
+wire [1:0] estado_jogo;
 
 
 // Variáveis intermediárias para as cores das naves
@@ -171,10 +200,6 @@ municao2 municao2(
 );
 */
 
-
-
-
-
 // Circuitos
 reg VGA_CLK2; // 25Mhz
 assign VGA_CLK = VGA_CLK2;
@@ -182,5 +207,55 @@ assign VGA_CLK = VGA_CLK2;
 always @(posedge clk) begin
     VGA_CLK2 = ~VGA_CLK2;
 end
+
+//TESTE NUMERO ALEATORIO
+random_number rn_inst (
+    .clk(clk),
+    .reset(reset),
+    .enable(enable),
+    .min_value(min_value),
+    .max_value(max_value),
+    .random_output(random_output)
+);
+
+display display(
+    .entrada(resultado),
+    .digito0(HEX0), // digito da direita
+    .digito1(HEX1),
+    .digito2(HEX2),
+    // .digito3(HEX3),
+    // .digito4(HEX4),
+    // .digito5(HEX5)// digito da esquerda
+);
+
+reg enable;
+wire [31:0] min_value;
+wire [31:0] max_value;
+wire [31:0] random_output;
+reg [31:0] resultado;
+reg [18:0] contador;
+
+assign min_value = 2;
+assign max_value = 90;
+
+
+always @(posedge clk ) begin
+    if (reset) begin
+        contador = 0;
+        resultado = 0;
+        enable = 0;
+    end
+    else begin
+    contador = contador + 1;
+    enable = ~enable;
+    end
+    if (contador == 0) begin
+        resultado = random_output;
+    end
+
+
+    
+end
+
 
 endmodule
