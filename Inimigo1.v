@@ -13,9 +13,6 @@ module Inimigo1(
     // Defina a escala do objeto
     localparam SCALE = 2;
 
-    // Defina a posição vertical inicial do objeto
-    localparam START_Y = 300; // Modifique este valor para ajustar a posição vertical
-
     always @(h_counter or v_counter or reset) begin
         integer orig_x;
         integer orig_y;
@@ -32,10 +29,10 @@ module Inimigo1(
 
             // Defina o padrão do alienígena
             if ((h_counter >= posX) && (h_counter < posX + 8 * SCALE) && 
-                (v_counter >= START_Y) && (v_counter < START_Y + 8 * SCALE)) begin
+                (v_counter >= posY) && (v_counter < posY + 8 * SCALE)) begin
                 // Calcule a posição na grade original de 8x8
                 orig_x = (h_counter - posX) / SCALE;
-                orig_y = (v_counter - START_Y) / SCALE;
+                orig_y = (v_counter - posY) / SCALE;
 
                 // Verifique o bit correspondente no padrão
                 case (orig_y)

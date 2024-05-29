@@ -2,100 +2,100 @@
 TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
-Type  : Slow 1100mV 85C Model Setup 'clk'
-Slack : -3.403
-TNS   : -3.403
-
 Type  : Slow 1100mV 85C Model Setup 'VGA_CLK2'
-Slack : -3.016
-TNS   : -58.916
+Slack : -3.170
+TNS   : -58.010
+
+Type  : Slow 1100mV 85C Model Setup 'clk'
+Slack : -3.038
+TNS   : -3.038
 
 Type  : Slow 1100mV 85C Model Hold 'VGA_CLK2'
-Slack : 0.670
+Slack : 0.682
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Hold 'clk'
-Slack : 1.120
+Slack : 0.894
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'clk'
-Slack : -0.812
-TNS   : -1.381
+Slack : -0.805
+TNS   : -1.367
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'VGA_CLK2'
 Slack : -0.394
-TNS   : -10.942
-
-Type  : Slow 1100mV 0C Model Setup 'clk'
-Slack : -3.312
-TNS   : -3.312
+TNS   : -10.297
 
 Type  : Slow 1100mV 0C Model Setup 'VGA_CLK2'
-Slack : -3.036
-TNS   : -59.636
+Slack : -3.169
+TNS   : -58.446
+
+Type  : Slow 1100mV 0C Model Setup 'clk'
+Slack : -3.027
+TNS   : -3.027
 
 Type  : Slow 1100mV 0C Model Hold 'VGA_CLK2'
-Slack : 0.660
+Slack : 0.673
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Hold 'clk'
-Slack : 1.086
+Slack : 0.989
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'clk'
-Slack : -0.822
-TNS   : -1.434
+Slack : -0.817
+TNS   : -1.424
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'VGA_CLK2'
 Slack : -0.394
-TNS   : -10.868
+TNS   : -10.296
 
 Type  : Fast 1100mV 85C Model Setup 'clk'
-Slack : -2.815
-TNS   : -2.815
+Slack : -2.587
+TNS   : -2.587
 
 Type  : Fast 1100mV 85C Model Setup 'VGA_CLK2'
-Slack : -1.322
-TNS   : -26.004
+Slack : -1.438
+TNS   : -25.740
 
 Type  : Fast 1100mV 85C Model Hold 'VGA_CLK2'
-Slack : 0.349
+Slack : 0.327
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Hold 'clk'
-Slack : 1.239
+Slack : 1.194
 TNS   : 0.000
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'clk'
-Slack : -0.743
-TNS   : -1.135
+Slack : -0.726
+TNS   : -1.101
 
 Type  : Fast 1100mV 85C Model Minimum Pulse Width 'VGA_CLK2'
-Slack : 0.046
+Slack : 0.098
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Setup 'clk'
-Slack : -2.419
-TNS   : -2.419
+Slack : -2.274
+TNS   : -2.274
 
 Type  : Fast 1100mV 0C Model Setup 'VGA_CLK2'
-Slack : -1.210
-TNS   : -23.755
+Slack : -1.296
+TNS   : -23.390
 
 Type  : Fast 1100mV 0C Model Hold 'VGA_CLK2'
-Slack : 0.315
+Slack : 0.294
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Hold 'clk'
-Slack : 0.988
+Slack : 1.009
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'clk'
-Slack : -0.717
-TNS   : -1.093
+Slack : -0.712
+TNS   : -1.083
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'VGA_CLK2'
-Slack : 0.066
+Slack : 0.119
 TNS   : 0.000
 
 ------------------------------------------------------------
