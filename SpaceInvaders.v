@@ -29,16 +29,13 @@ engine engine(
     .clk(clk),
     .reset(reset),
     .enemy_vivos(enemy_vivos),
-    .jogador_vivo(vivo_jogador),
+    .jogador_vivo(),
     .vitoria_enemy(),
     .btn_D(btn_D),
-    .restart(restart),
-    .vitoria_jogador(),
-    .bloco_pos_X(),
-    .bloco_pos_Y(),
-    .estado_jogo(estado_jogo),
+    .restart(),
+    .score(resultado),
     .ID_enemy_tiro(),
-    .resultado(resultado)
+    .estado_jogo()
 );
 
 reg [23:0] enemy_vivos;

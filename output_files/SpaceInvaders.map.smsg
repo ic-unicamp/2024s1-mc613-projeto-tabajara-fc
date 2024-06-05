@@ -1,5 +1,0 @@
-Warning (10268): Verilog HDL information at engine.v(53): always construct contains both blocking and non-blocking assignments File: /home/ec2022/ra260511/Documents/MC613/2024s1-mc613-projeto-tabajara-fc/engine.v Line: 53
-Warning (10268): Verilog HDL information at random_number.v(14): always construct contains both blocking and non-blocking assignments File: /home/ec2022/ra260511/Documents/MC613/2024s1-mc613-projeto-tabajara-fc/random_number.v Line: 14
-Warning (10268): Verilog HDL information at nave.v(36): always construct contains both blocking and non-blocking assignments File: /home/ec2022/ra260511/Documents/MC613/2024s1-mc613-projeto-tabajara-fc/nave.v Line: 36
-Warning (10268): Verilog HDL information at nave.v(64): always construct contains both blocking and non-blocking assignments File: /home/ec2022/ra260511/Documents/MC613/2024s1-mc613-projeto-tabajara-fc/nave.v Line: 64
-Warning (10268): Verilog HDL information at municao1.v(27): always construct contains both blocking and non-blocking assignments File: /home/ec2022/ra260511/Documents/MC613/2024s1-mc613-projeto-tabajara-fc/municao1.v Line: 27
