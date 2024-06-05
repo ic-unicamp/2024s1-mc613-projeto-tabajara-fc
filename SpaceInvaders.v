@@ -25,20 +25,51 @@ module SpaceInvaders(
 );
 
 
-// engine engine(
-//     .clk(clk),
-//     .reset(reset),
-//     .enemy_vivos(),
-//     .jogador_vivo(vivo_jogador),
-//     .vitoria_enemy(),
-//     .btn_D(btn_D),
-//     .restart(restart),
-//     .vitoria_jogador(),
-//     .bloco_pos_X(),
-//     .bloco_pos_Y(),
-//     .estado_jogo(estado_jogo),
-//     .ID_enemy_tiro()
-// );
+engine engine(
+    .clk(clk),
+    .reset(reset),
+    .enemy_vivos(enemy_vivos),
+    .jogador_vivo(vivo_jogador),
+    .vitoria_enemy(),
+    .btn_D(btn_D),
+    .restart(restart),
+    .vitoria_jogador(),
+    .bloco_pos_X(),
+    .bloco_pos_Y(),
+    .estado_jogo(estado_jogo),
+    .ID_enemy_tiro(),
+    .resultado(resultado)
+);
+
+reg [23:0] enemy_vivos;
+always @(posedge clk) begin
+    if (reset) begin
+        enemy_vivos[0]  <= 8'd1;
+        enemy_vivos[1]  <= 8'd1;
+        enemy_vivos[2]  <= 8'd1;
+        enemy_vivos[3]  <= 8'd1;
+        enemy_vivos[4]  <= 8'd1;
+        enemy_vivos[5]  <= 8'd1;
+        enemy_vivos[6]  <= 8'd1;
+        enemy_vivos[7]  <= 8'd1;
+        enemy_vivos[8]  <= 8'd1;
+        enemy_vivos[9]  <= 8'd1;
+        enemy_vivos[10] <= 8'd1;
+        enemy_vivos[11] <= 8'd1;
+        enemy_vivos[12] <= 8'd1;
+        enemy_vivos[13] <= 8'd1;
+        enemy_vivos[14] <= 8'd1;
+        enemy_vivos[15] <= 8'd1;
+        enemy_vivos[16] <= 8'd1;
+        enemy_vivos[17] <= 8'd1;
+        enemy_vivos[18] <= 8'd1;
+        enemy_vivos[19] <= 8'd1;
+        enemy_vivos[20] <= 8'd1;
+        enemy_vivos[21] <= 8'd1;
+        enemy_vivos[22] <= 8'd1;
+        enemy_vivos[23] <= 8'd1;
+    end
+end
 
 vga vga(
     .VGA_CLK2(VGA_CLK2),
@@ -208,15 +239,6 @@ always @(posedge clk) begin
     VGA_CLK2 = ~VGA_CLK2;
 end
 
-//TESTE NUMERO ALEATORIO
-random_number rn_inst (
-    .clk(clk),
-    .reset(reset),
-    .enable(enable),
-    .max_value(max_value),
-    .random_output(random_output)
-);
-
 display display(
     .entrada(resultado),
     .digito0(HEX0), // digito da direita
@@ -227,33 +249,23 @@ display display(
     // .digito5(HEX5)// digito da esquerda
 );
 
-reg enable;
-wire [31:0] max_value;
-wire [31:0] random_output;
+
 reg [31:0] resultado;
-reg [19:0] contador;
 
-assign max_value = 82;
+integer contador;
 
-
-always @(posedge clk ) begin
-    if (reset) begin
-        contador = 0;
-        resultado = 0;
-        enable = 0;
-    end
-    else begin
-        contador = contador + 1;
-        if (contador == 1000000) begin
-            contador = 0;
-            enable = 1;
-            resultado = random_output;
-        end
-        else begin
-            enable = 0;
-        end
-    end
-end
-
+// always @(posedge clk ) begin
+//     if (reset) begin
+//         contador = 0;
+//         resultado = 0;
+//     end
+//     else begin
+//         contador = contador + 1;
+//         if (contador == 1000000) begin
+//             contador = 0;
+//             resultado = random_output;
+//         end
+//     end
+// end
 
 endmodule

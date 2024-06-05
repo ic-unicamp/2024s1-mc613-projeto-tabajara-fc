@@ -1,5 +1,5 @@
 Fitter report for SpaceInvaders
-Wed Jun  5 16:07:54 2024
+Wed Jun  5 18:27:03 2024
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -63,15 +63,15 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Fitter Summary                                                                ;
 +---------------------------------+---------------------------------------------+
-; Fitter Status                   ; Successful - Wed Jun  5 16:07:54 2024       ;
+; Fitter Status                   ; Successful - Wed Jun  5 18:27:03 2024       ;
 ; Quartus Prime Version           ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                   ; SpaceInvaders                               ;
 ; Top-level Entity Name           ; SpaceInvaders                               ;
 ; Family                          ; Cyclone V                                   ;
 ; Device                          ; 5CSEMA5F31C6                                ;
 ; Timing Models                   ; Final                                       ;
-; Logic utilization (in ALMs)     ; 682 / 32,070 ( 2 % )                        ;
-; Total registers                 ; 184                                         ;
+; Logic utilization (in ALMs)     ; 707 / 32,070 ( 2 % )                        ;
+; Total registers                 ; 204                                         ;
 ; Total pins                      ; 77 / 457 ( 17 % )                           ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0 / 4,065,280 ( 0 % )                       ;
@@ -153,22 +153,22 @@ refer to the applicable agreement for further details.
 ; Number detected on machine ; 20          ;
 ; Maximum allowed            ; 12          ;
 ;                            ;             ;
-; Average used               ; 1.11        ;
+; Average used               ; 1.12        ;
 ; Maximum used               ; 12          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   1.2%      ;
-;     Processor 3            ;   1.1%      ;
-;     Processor 4            ;   1.1%      ;
-;     Processor 5            ;   1.0%      ;
-;     Processor 6            ;   1.0%      ;
-;     Processor 7            ;   1.0%      ;
-;     Processor 8            ;   1.0%      ;
-;     Processor 9            ;   1.0%      ;
-;     Processor 10           ;   1.0%      ;
-;     Processor 11           ;   1.0%      ;
-;     Processor 12           ;   1.0%      ;
+;     Processor 2            ;   1.4%      ;
+;     Processor 3            ;   1.2%      ;
+;     Processor 4            ;   1.2%      ;
+;     Processor 5            ;   1.1%      ;
+;     Processor 6            ;   1.1%      ;
+;     Processor 7            ;   1.1%      ;
+;     Processor 8            ;   1.1%      ;
+;     Processor 9            ;   1.1%      ;
+;     Processor 10           ;   1.1%      ;
+;     Processor 11           ;   1.1%      ;
+;     Processor 12           ;   1.1%      ;
 +----------------------------+-------------+
 
 
@@ -376,8 +376,8 @@ refer to the applicable agreement for further details.
 ; Type                ; Total [A + B]       ; From Design Partitions [A] ; From Rapid Recompile [B] ;
 +---------------------+---------------------+----------------------------+--------------------------+
 ; Placement (by node) ;                     ;                            ;                          ;
-;     -- Requested    ; 0.00 % ( 0 / 1577 ) ; 0.00 % ( 0 / 1577 )        ; 0.00 % ( 0 / 1577 )      ;
-;     -- Achieved     ; 0.00 % ( 0 / 1577 ) ; 0.00 % ( 0 / 1577 )        ; 0.00 % ( 0 / 1577 )      ;
+;     -- Requested    ; 0.00 % ( 0 / 1648 ) ; 0.00 % ( 0 / 1648 )        ; 0.00 % ( 0 / 1648 )      ;
+;     -- Achieved     ; 0.00 % ( 0 / 1648 ) ; 0.00 % ( 0 / 1648 )        ; 0.00 % ( 0 / 1648 )      ;
 ;                     ;                     ;                            ;                          ;
 ; Routing (by net)    ;                     ;                            ;                          ;
 ;     -- Requested    ; 0.00 % ( 0 / 0 )    ; 0.00 % ( 0 / 0 )           ; 0.00 % ( 0 / 0 )         ;
@@ -400,7 +400,7 @@ refer to the applicable agreement for further details.
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 ; Partition Name                 ; Preservation Achieved ; Preservation Level Used ; Netlist Type Used ; Preservation Method ; Notes ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
-; Top                            ; 0.00 % ( 0 / 1577 )   ; N/A                     ; Source File       ; N/A                 ;       ;
+; Top                            ; 0.00 % ( 0 / 1648 )   ; N/A                     ; Source File       ; N/A                 ;       ;
 ; hard_block:auto_generated_inst ; 0.00 % ( 0 / 0 )      ; N/A                     ; Source File       ; N/A                 ;       ;
 +--------------------------------+-----------------------+-------------------------+-------------------+---------------------+-------+
 
@@ -416,14 +416,14 @@ The pin-out file can be found in /home/ec2022/ra260511/Documents/MC613/2024s1-mc
 +-------------------------------------------------------------+--------------------+-------+
 ; Resource                                                    ; Usage              ; %     ;
 +-------------------------------------------------------------+--------------------+-------+
-; Logic utilization (ALMs needed / total ALMs on device)      ; 682 / 32,070       ; 2 %   ;
-; ALMs needed [=A-B+C]                                        ; 682                ;       ;
-;     [A] ALMs used in final placement [=a+b+c+d]             ; 700 / 32,070       ; 2 %   ;
-;         [a] ALMs used for LUT logic and registers           ; 83                 ;       ;
-;         [b] ALMs used for LUT logic                         ; 608                ;       ;
-;         [c] ALMs used for registers                         ; 9                  ;       ;
+; Logic utilization (ALMs needed / total ALMs on device)      ; 707 / 32,070       ; 2 %   ;
+; ALMs needed [=A-B+C]                                        ; 707                ;       ;
+;     [A] ALMs used in final placement [=a+b+c+d]             ; 729 / 32,070       ; 2 %   ;
+;         [a] ALMs used for LUT logic and registers           ; 88                 ;       ;
+;         [b] ALMs used for LUT logic                         ; 626                ;       ;
+;         [c] ALMs used for registers                         ; 15                 ;       ;
 ;         [d] ALMs used for memory (up to half of total ALMs) ; 0                  ;       ;
-;     [B] Estimate of ALMs recoverable by dense packing       ; 19 / 32,070        ; < 1 % ;
+;     [B] Estimate of ALMs recoverable by dense packing       ; 23 / 32,070        ; < 1 % ;
 ;     [C] Estimate of ALMs unavailable [=a+b+c+d]             ; 1 / 32,070         ; < 1 % ;
 ;         [a] Due to location constrained logic               ; 0                  ;       ;
 ;         [b] Due to LAB-wide signal conflicts                ; 0                  ;       ;
@@ -432,24 +432,24 @@ The pin-out file can be found in /home/ec2022/ra260511/Documents/MC613/2024s1-mc
 ;                                                             ;                    ;       ;
 ; Difficulty packing design                                   ; Low                ;       ;
 ;                                                             ;                    ;       ;
-; Total LABs:  partially or completely used                   ; 99 / 3,207         ; 3 %   ;
-;     -- Logic LABs                                           ; 99                 ;       ;
+; Total LABs:  partially or completely used                   ; 105 / 3,207        ; 3 %   ;
+;     -- Logic LABs                                           ; 105                ;       ;
 ;     -- Memory LABs (up to half of total LABs)               ; 0                  ;       ;
 ;                                                             ;                    ;       ;
-; Combinational ALUT usage for logic                          ; 1,239              ;       ;
+; Combinational ALUT usage for logic                          ; 1,290              ;       ;
 ;     -- 7 input functions                                    ; 0                  ;       ;
-;     -- 6 input functions                                    ; 134                ;       ;
-;     -- 5 input functions                                    ; 77                 ;       ;
-;     -- 4 input functions                                    ; 176                ;       ;
-;     -- <=3 input functions                                  ; 852                ;       ;
-; Combinational ALUT usage for route-throughs                 ; 1                  ;       ;
+;     -- 6 input functions                                    ; 135                ;       ;
+;     -- 5 input functions                                    ; 79                 ;       ;
+;     -- 4 input functions                                    ; 180                ;       ;
+;     -- <=3 input functions                                  ; 896                ;       ;
+; Combinational ALUT usage for route-throughs                 ; 6                  ;       ;
 ;                                                             ;                    ;       ;
-; Dedicated logic registers                                   ; 184                ;       ;
+; Dedicated logic registers                                   ; 204                ;       ;
 ;     -- By type:                                             ;                    ;       ;
-;         -- Primary logic registers                          ; 184 / 64,140       ; < 1 % ;
+;         -- Primary logic registers                          ; 204 / 64,140       ; < 1 % ;
 ;         -- Secondary logic registers                        ; 0 / 64,140         ; 0 %   ;
 ;     -- By function:                                         ;                    ;       ;
-;         -- Design implementation registers                  ; 184                ;       ;
+;         -- Design implementation registers                  ; 204                ;       ;
 ;         -- Routing optimization registers                   ; 0                  ;       ;
 ;                                                             ;                    ;       ;
 ; Virtual pins                                                ; 0                  ;       ;
@@ -506,10 +506,10 @@ The pin-out file can be found in /home/ec2022/ra260511/Documents/MC613/2024s1-mc
 ; Impedance control blocks                                    ; 0 / 4              ; 0 %   ;
 ; Hard Memory Controllers                                     ; 0 / 2              ; 0 %   ;
 ; Average interconnect usage (total/H/V)                      ; 0.4% / 0.4% / 0.4% ;       ;
-; Peak interconnect usage (total/H/V)                         ; 7.9% / 8.3% / 6.5% ;       ;
-; Maximum fan-out                                             ; 163                ;       ;
-; Highest non-global fan-out                                  ; 83                 ;       ;
-; Total fan-out                                               ; 4442               ;       ;
+; Peak interconnect usage (total/H/V)                         ; 7.8% / 8.6% / 5.4% ;       ;
+; Maximum fan-out                                             ; 183                ;       ;
+; Highest non-global fan-out                                  ; 68                 ;       ;
+; Total fan-out                                               ; 4649               ;       ;
 ; Average fan-out                                             ; 2.81               ;       ;
 +-------------------------------------------------------------+--------------------+-------+
 
@@ -519,14 +519,14 @@ The pin-out file can be found in /home/ec2022/ra260511/Documents/MC613/2024s1-mc
 +-------------------------------------------------------------+-----------------------+--------------------------------+
 ; Statistic                                                   ; Top                   ; hard_block:auto_generated_inst ;
 +-------------------------------------------------------------+-----------------------+--------------------------------+
-; Logic utilization (ALMs needed / total ALMs on device)      ; 682 / 32070 ( 2 % )   ; 0 / 32070 ( 0 % )              ;
-; ALMs needed [=A-B+C]                                        ; 682                   ; 0                              ;
-;     [A] ALMs used in final placement [=a+b+c+d]             ; 700 / 32070 ( 2 % )   ; 0 / 32070 ( 0 % )              ;
-;         [a] ALMs used for LUT logic and registers           ; 83                    ; 0                              ;
-;         [b] ALMs used for LUT logic                         ; 608                   ; 0                              ;
-;         [c] ALMs used for registers                         ; 9                     ; 0                              ;
+; Logic utilization (ALMs needed / total ALMs on device)      ; 707 / 32070 ( 2 % )   ; 0 / 32070 ( 0 % )              ;
+; ALMs needed [=A-B+C]                                        ; 707                   ; 0                              ;
+;     [A] ALMs used in final placement [=a+b+c+d]             ; 729 / 32070 ( 2 % )   ; 0 / 32070 ( 0 % )              ;
+;         [a] ALMs used for LUT logic and registers           ; 88                    ; 0                              ;
+;         [b] ALMs used for LUT logic                         ; 626                   ; 0                              ;
+;         [c] ALMs used for registers                         ; 15                    ; 0                              ;
 ;         [d] ALMs used for memory (up to half of total ALMs) ; 0                     ; 0                              ;
-;     [B] Estimate of ALMs recoverable by dense packing       ; 19 / 32070 ( < 1 % )  ; 0 / 32070 ( 0 % )              ;
+;     [B] Estimate of ALMs recoverable by dense packing       ; 23 / 32070 ( < 1 % )  ; 0 / 32070 ( 0 % )              ;
 ;     [C] Estimate of ALMs unavailable [=a+b+c+d]             ; 1 / 32070 ( < 1 % )   ; 0 / 32070 ( 0 % )              ;
 ;         [a] Due to location constrained logic               ; 0                     ; 0                              ;
 ;         [b] Due to LAB-wide signal conflicts                ; 0                     ; 0                              ;
@@ -535,27 +535,27 @@ The pin-out file can be found in /home/ec2022/ra260511/Documents/MC613/2024s1-mc
 ;                                                             ;                       ;                                ;
 ; Difficulty packing design                                   ; Low                   ; Low                            ;
 ;                                                             ;                       ;                                ;
-; Total LABs:  partially or completely used                   ; 99 / 3207 ( 3 % )     ; 0 / 3207 ( 0 % )               ;
-;     -- Logic LABs                                           ; 99                    ; 0                              ;
+; Total LABs:  partially or completely used                   ; 105 / 3207 ( 3 % )    ; 0 / 3207 ( 0 % )               ;
+;     -- Logic LABs                                           ; 105                   ; 0                              ;
 ;     -- Memory LABs (up to half of total LABs)               ; 0                     ; 0                              ;
 ;                                                             ;                       ;                                ;
-; Combinational ALUT usage for logic                          ; 1239                  ; 0                              ;
+; Combinational ALUT usage for logic                          ; 1290                  ; 0                              ;
 ;     -- 7 input functions                                    ; 0                     ; 0                              ;
-;     -- 6 input functions                                    ; 134                   ; 0                              ;
-;     -- 5 input functions                                    ; 77                    ; 0                              ;
-;     -- 4 input functions                                    ; 176                   ; 0                              ;
-;     -- <=3 input functions                                  ; 852                   ; 0                              ;
-; Combinational ALUT usage for route-throughs                 ; 1                     ; 0                              ;
+;     -- 6 input functions                                    ; 135                   ; 0                              ;
+;     -- 5 input functions                                    ; 79                    ; 0                              ;
+;     -- 4 input functions                                    ; 180                   ; 0                              ;
+;     -- <=3 input functions                                  ; 896                   ; 0                              ;
+; Combinational ALUT usage for route-throughs                 ; 6                     ; 0                              ;
 ; Memory ALUT usage                                           ; 0                     ; 0                              ;
 ;     -- 64-address deep                                      ; 0                     ; 0                              ;
 ;     -- 32-address deep                                      ; 0                     ; 0                              ;
 ;                                                             ;                       ;                                ;
 ; Dedicated logic registers                                   ; 0                     ; 0                              ;
 ;     -- By type:                                             ;                       ;                                ;
-;         -- Primary logic registers                          ; 184 / 64140 ( < 1 % ) ; 0 / 64140 ( 0 % )              ;
+;         -- Primary logic registers                          ; 204 / 64140 ( < 1 % ) ; 0 / 64140 ( 0 % )              ;
 ;         -- Secondary logic registers                        ; 0 / 64140 ( 0 % )     ; 0 / 64140 ( 0 % )              ;
 ;     -- By function:                                         ;                       ;                                ;
-;         -- Design implementation registers                  ; 184                   ; 0                              ;
+;         -- Design implementation registers                  ; 204                   ; 0                              ;
 ;         -- Routing optimization registers                   ; 0                     ; 0                              ;
 ;                                                             ;                       ;                                ;
 ;                                                             ;                       ;                                ;
@@ -573,8 +573,8 @@ The pin-out file can be found in /home/ec2022/ra260511/Documents/MC613/2024s1-mc
 ;     -- Registered Output Connections                        ; 0                     ; 0                              ;
 ;                                                             ;                       ;                                ;
 ; Internal Connections                                        ;                       ;                                ;
-;     -- Total Connections                                    ; 4464                  ; 0                              ;
-;     -- Registered Connections                               ; 857                   ; 0                              ;
+;     -- Total Connections                                    ; 4671                  ; 0                              ;
+;     -- Registered Connections                               ; 948                   ; 0                              ;
 ;                                                             ;                       ;                                ;
 ; External Connections                                        ;                       ;                                ;
 ;     -- Top                                                  ; 0                     ; 0                              ;
@@ -609,9 +609,9 @@ The pin-out file can be found in /home/ec2022/ra260511/Documents/MC613/2024s1-mc
 ; btn_A ; Y16   ; 3B       ; 40           ; 0            ; 17           ; 2                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; User                 ; no        ;
 ; btn_B ; W15   ; 3B       ; 40           ; 0            ; 0            ; 4                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; User                 ; no        ;
 ; btn_C ; AA15  ; 3B       ; 36           ; 0            ; 17           ; 2                     ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; User                 ; no        ;
-; btn_D ; AA14  ; 3B       ; 36           ; 0            ; 0            ; 43                    ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; User                 ; no        ;
-; clk   ; AF14  ; 3B       ; 32           ; 0            ; 0            ; 164                   ; 0                  ; yes    ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; User                 ; no        ;
-; reset ; AB12  ; 3A       ; 12           ; 0            ; 17           ; 83                    ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; User                 ; no        ;
+; btn_D ; AA14  ; 3B       ; 36           ; 0            ; 0            ; 41                    ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; User                 ; no        ;
+; clk   ; AF14  ; 3B       ; 32           ; 0            ; 0            ; 184                   ; 0                  ; yes    ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; User                 ; no        ;
+; reset ; AB12  ; 3A       ; 12           ; 0            ; 17           ; 68                    ; 0                  ; no     ; no             ; no              ; no       ; Off          ; 2.5 V        ; Off         ; --                        ; User                 ; no        ;
 +-------+-------+----------+--------------+--------------+--------------+-----------------------+--------------------+--------+----------------+-----------------+----------+--------------+--------------+-------------+---------------------------+----------------------+-----------+
 
 
@@ -1711,83 +1711,82 @@ Note: Pin directions (input, output or bidir) are based on device operating in u
 +-----------------------------------------------+----------------------+----------------------------------+---------------------------------------------------+----------------------------------+----------------------+---------------------+---------------------------+---------------+-------------------+-------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
 ; Compilation Hierarchy Node                    ; ALMs needed [=A-B+C] ; [A] ALMs used in final placement ; [B] Estimate of ALMs recoverable by dense packing ; [C] Estimate of ALMs unavailable ; ALMs used for memory ; Combinational ALUTs ; Dedicated Logic Registers ; I/O Registers ; Block Memory Bits ; M10Ks ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                     ; Entity Name         ; Library Name ;
 +-----------------------------------------------+----------------------+----------------------------------+---------------------------------------------------+----------------------------------+----------------------+---------------------+---------------------------+---------------+-------------------+-------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
-; |SpaceInvaders                                ; 681.5 (33.7)         ; 699.5 (33.9)                     ; 18.5 (0.3)                                        ; 0.5 (0.0)                        ; 0.0 (0.0)            ; 1239 (51)           ; 184 (29)                  ; 0 (0)         ; 0                 ; 0     ; 0          ; 77   ; 0            ; |SpaceInvaders                                                                                                                                          ; SpaceInvaders       ; work         ;
-;    |Inimigo1:row[0].inimigos[0].inimigo_inst| ; 65.0 (16.5)          ; 65.0 (16.5)                      ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 130 (32)            ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[0].inimigos[0].inimigo_inst                                                                                                 ; Inimigo1            ; work         ;
-;       |lpm_divide:Div0|                       ; 24.0 (0.0)           ; 24.0 (0.0)                       ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 49 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[0].inimigos[0].inimigo_inst|lpm_divide:Div0                                                                                 ; lpm_divide          ; work         ;
-;          |lpm_divide_gbm:auto_generated|      ; 24.0 (0.0)           ; 24.0 (0.0)                       ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 49 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[0].inimigos[0].inimigo_inst|lpm_divide:Div0|lpm_divide_gbm:auto_generated                                                   ; lpm_divide_gbm      ; work         ;
-;             |sign_div_unsign_mlh:divider|     ; 24.0 (0.0)           ; 24.0 (0.0)                       ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 49 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[0].inimigos[0].inimigo_inst|lpm_divide:Div0|lpm_divide_gbm:auto_generated|sign_div_unsign_mlh:divider                       ; sign_div_unsign_mlh ; work         ;
-;                |alt_u_div_ive:divider|        ; 24.0 (24.0)          ; 24.0 (24.0)                      ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 49 (49)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[0].inimigos[0].inimigo_inst|lpm_divide:Div0|lpm_divide_gbm:auto_generated|sign_div_unsign_mlh:divider|alt_u_div_ive:divider ; alt_u_div_ive       ; work         ;
+; |SpaceInvaders                                ; 707.0 (13.8)         ; 727.5 (14.1)                     ; 21.5 (0.3)                                        ; 1.0 (0.0)                        ; 0.0 (0.0)            ; 1290 (17)           ; 204 (1)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 77   ; 0            ; |SpaceInvaders                                                                                                                                          ; SpaceInvaders       ; work         ;
+;    |Inimigo1:row[0].inimigos[0].inimigo_inst| ; 65.2 (16.2)          ; 65.2 (16.2)                      ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 130 (32)            ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[0].inimigos[0].inimigo_inst                                                                                                 ; Inimigo1            ; work         ;
+;       |lpm_divide:Div0|                       ; 24.5 (0.0)           ; 24.5 (0.0)                       ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 49 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[0].inimigos[0].inimigo_inst|lpm_divide:Div0                                                                                 ; lpm_divide          ; work         ;
+;          |lpm_divide_gbm:auto_generated|      ; 24.5 (0.0)           ; 24.5 (0.0)                       ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 49 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[0].inimigos[0].inimigo_inst|lpm_divide:Div0|lpm_divide_gbm:auto_generated                                                   ; lpm_divide_gbm      ; work         ;
+;             |sign_div_unsign_mlh:divider|     ; 24.5 (0.0)           ; 24.5 (0.0)                       ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 49 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[0].inimigos[0].inimigo_inst|lpm_divide:Div0|lpm_divide_gbm:auto_generated|sign_div_unsign_mlh:divider                       ; sign_div_unsign_mlh ; work         ;
+;                |alt_u_div_ive:divider|        ; 24.5 (24.5)          ; 24.5 (24.5)                      ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 49 (49)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[0].inimigos[0].inimigo_inst|lpm_divide:Div0|lpm_divide_gbm:auto_generated|sign_div_unsign_mlh:divider|alt_u_div_ive:divider ; alt_u_div_ive       ; work         ;
 ;       |lpm_divide:Div1|                       ; 24.5 (0.0)           ; 24.5 (0.0)                       ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 49 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[0].inimigos[0].inimigo_inst|lpm_divide:Div1                                                                                 ; lpm_divide          ; work         ;
 ;          |lpm_divide_gbm:auto_generated|      ; 24.5 (0.0)           ; 24.5 (0.0)                       ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 49 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[0].inimigos[0].inimigo_inst|lpm_divide:Div1|lpm_divide_gbm:auto_generated                                                   ; lpm_divide_gbm      ; work         ;
 ;             |sign_div_unsign_mlh:divider|     ; 24.5 (0.0)           ; 24.5 (0.0)                       ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 49 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[0].inimigos[0].inimigo_inst|lpm_divide:Div1|lpm_divide_gbm:auto_generated|sign_div_unsign_mlh:divider                       ; sign_div_unsign_mlh ; work         ;
 ;                |alt_u_div_ive:divider|        ; 24.5 (24.5)          ; 24.5 (24.5)                      ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 49 (49)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[0].inimigos[0].inimigo_inst|lpm_divide:Div1|lpm_divide_gbm:auto_generated|sign_div_unsign_mlh:divider|alt_u_div_ive:divider ; alt_u_div_ive       ; work         ;
-;    |Inimigo1:row[0].inimigos[1].inimigo_inst| ; 35.0 (10.5)          ; 35.5 (11.0)                      ; 0.5 (0.5)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 67 (18)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[0].inimigos[1].inimigo_inst                                                                                                 ; Inimigo1            ; work         ;
-;       |lpm_divide:Div0|                       ; 24.5 (0.0)           ; 24.5 (0.0)                       ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 49 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[0].inimigos[1].inimigo_inst|lpm_divide:Div0                                                                                 ; lpm_divide          ; work         ;
-;          |lpm_divide_gbm:auto_generated|      ; 24.5 (0.0)           ; 24.5 (0.0)                       ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 49 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[0].inimigos[1].inimigo_inst|lpm_divide:Div0|lpm_divide_gbm:auto_generated                                                   ; lpm_divide_gbm      ; work         ;
-;             |sign_div_unsign_mlh:divider|     ; 24.5 (0.0)           ; 24.5 (0.0)                       ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 49 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[0].inimigos[1].inimigo_inst|lpm_divide:Div0|lpm_divide_gbm:auto_generated|sign_div_unsign_mlh:divider                       ; sign_div_unsign_mlh ; work         ;
-;                |alt_u_div_ive:divider|        ; 24.5 (24.5)          ; 24.5 (24.5)                      ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 49 (49)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[0].inimigos[1].inimigo_inst|lpm_divide:Div0|lpm_divide_gbm:auto_generated|sign_div_unsign_mlh:divider|alt_u_div_ive:divider ; alt_u_div_ive       ; work         ;
-;    |Inimigo1:row[0].inimigos[2].inimigo_inst| ; 34.5 (10.0)          ; 35.0 (10.5)                      ; 0.5 (0.5)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 67 (18)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[0].inimigos[2].inimigo_inst                                                                                                 ; Inimigo1            ; work         ;
-;       |lpm_divide:Div0|                       ; 24.5 (0.0)           ; 24.5 (0.0)                       ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 49 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[0].inimigos[2].inimigo_inst|lpm_divide:Div0                                                                                 ; lpm_divide          ; work         ;
-;          |lpm_divide_gbm:auto_generated|      ; 24.5 (0.0)           ; 24.5 (0.0)                       ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 49 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[0].inimigos[2].inimigo_inst|lpm_divide:Div0|lpm_divide_gbm:auto_generated                                                   ; lpm_divide_gbm      ; work         ;
-;             |sign_div_unsign_mlh:divider|     ; 24.5 (0.0)           ; 24.5 (0.0)                       ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 49 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[0].inimigos[2].inimigo_inst|lpm_divide:Div0|lpm_divide_gbm:auto_generated|sign_div_unsign_mlh:divider                       ; sign_div_unsign_mlh ; work         ;
-;                |alt_u_div_ive:divider|        ; 24.5 (24.5)          ; 24.5 (24.5)                      ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 49 (49)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[0].inimigos[2].inimigo_inst|lpm_divide:Div0|lpm_divide_gbm:auto_generated|sign_div_unsign_mlh:divider|alt_u_div_ive:divider ; alt_u_div_ive       ; work         ;
-;    |Inimigo1:row[0].inimigos[3].inimigo_inst| ; 34.0 (10.0)          ; 35.5 (11.0)                      ; 1.5 (1.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 67 (18)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[0].inimigos[3].inimigo_inst                                                                                                 ; Inimigo1            ; work         ;
+;    |Inimigo1:row[0].inimigos[1].inimigo_inst| ; 34.5 (10.5)          ; 34.5 (10.5)                      ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 67 (18)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[0].inimigos[1].inimigo_inst                                                                                                 ; Inimigo1            ; work         ;
+;       |lpm_divide:Div0|                       ; 24.0 (0.0)           ; 24.0 (0.0)                       ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 49 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[0].inimigos[1].inimigo_inst|lpm_divide:Div0                                                                                 ; lpm_divide          ; work         ;
+;          |lpm_divide_gbm:auto_generated|      ; 24.0 (0.0)           ; 24.0 (0.0)                       ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 49 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[0].inimigos[1].inimigo_inst|lpm_divide:Div0|lpm_divide_gbm:auto_generated                                                   ; lpm_divide_gbm      ; work         ;
+;             |sign_div_unsign_mlh:divider|     ; 24.0 (0.0)           ; 24.0 (0.0)                       ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 49 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[0].inimigos[1].inimigo_inst|lpm_divide:Div0|lpm_divide_gbm:auto_generated|sign_div_unsign_mlh:divider                       ; sign_div_unsign_mlh ; work         ;
+;                |alt_u_div_ive:divider|        ; 24.0 (24.0)          ; 24.0 (24.0)                      ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 49 (49)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[0].inimigos[1].inimigo_inst|lpm_divide:Div0|lpm_divide_gbm:auto_generated|sign_div_unsign_mlh:divider|alt_u_div_ive:divider ; alt_u_div_ive       ; work         ;
+;    |Inimigo1:row[0].inimigos[2].inimigo_inst| ; 34.0 (10.5)          ; 34.5 (10.5)                      ; 0.5 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 67 (18)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[0].inimigos[2].inimigo_inst                                                                                                 ; Inimigo1            ; work         ;
+;       |lpm_divide:Div0|                       ; 23.5 (0.0)           ; 24.0 (0.0)                       ; 0.5 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 49 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[0].inimigos[2].inimigo_inst|lpm_divide:Div0                                                                                 ; lpm_divide          ; work         ;
+;          |lpm_divide_gbm:auto_generated|      ; 23.5 (0.0)           ; 24.0 (0.0)                       ; 0.5 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 49 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[0].inimigos[2].inimigo_inst|lpm_divide:Div0|lpm_divide_gbm:auto_generated                                                   ; lpm_divide_gbm      ; work         ;
+;             |sign_div_unsign_mlh:divider|     ; 23.5 (0.0)           ; 24.0 (0.0)                       ; 0.5 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 49 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[0].inimigos[2].inimigo_inst|lpm_divide:Div0|lpm_divide_gbm:auto_generated|sign_div_unsign_mlh:divider                       ; sign_div_unsign_mlh ; work         ;
+;                |alt_u_div_ive:divider|        ; 23.5 (23.5)          ; 24.0 (24.0)                      ; 0.5 (0.5)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 49 (49)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[0].inimigos[2].inimigo_inst|lpm_divide:Div0|lpm_divide_gbm:auto_generated|sign_div_unsign_mlh:divider|alt_u_div_ive:divider ; alt_u_div_ive       ; work         ;
+;    |Inimigo1:row[0].inimigos[3].inimigo_inst| ; 34.0 (10.0)          ; 35.0 (10.5)                      ; 1.0 (0.5)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 67 (18)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[0].inimigos[3].inimigo_inst                                                                                                 ; Inimigo1            ; work         ;
 ;       |lpm_divide:Div0|                       ; 24.0 (0.0)           ; 24.5 (0.0)                       ; 0.5 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 49 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[0].inimigos[3].inimigo_inst|lpm_divide:Div0                                                                                 ; lpm_divide          ; work         ;
 ;          |lpm_divide_gbm:auto_generated|      ; 24.0 (0.0)           ; 24.5 (0.0)                       ; 0.5 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 49 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[0].inimigos[3].inimigo_inst|lpm_divide:Div0|lpm_divide_gbm:auto_generated                                                   ; lpm_divide_gbm      ; work         ;
 ;             |sign_div_unsign_mlh:divider|     ; 24.0 (0.0)           ; 24.5 (0.0)                       ; 0.5 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 49 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[0].inimigos[3].inimigo_inst|lpm_divide:Div0|lpm_divide_gbm:auto_generated|sign_div_unsign_mlh:divider                       ; sign_div_unsign_mlh ; work         ;
 ;                |alt_u_div_ive:divider|        ; 24.0 (24.0)          ; 24.5 (24.5)                      ; 0.5 (0.5)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 49 (49)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[0].inimigos[3].inimigo_inst|lpm_divide:Div0|lpm_divide_gbm:auto_generated|sign_div_unsign_mlh:divider|alt_u_div_ive:divider ; alt_u_div_ive       ; work         ;
-;    |Inimigo1:row[0].inimigos[4].inimigo_inst| ; 34.5 (10.5)          ; 34.5 (10.5)                      ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 69 (20)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[0].inimigos[4].inimigo_inst                                                                                                 ; Inimigo1            ; work         ;
-;       |lpm_divide:Div0|                       ; 24.0 (0.0)           ; 24.0 (0.0)                       ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 49 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[0].inimigos[4].inimigo_inst|lpm_divide:Div0                                                                                 ; lpm_divide          ; work         ;
-;          |lpm_divide_gbm:auto_generated|      ; 24.0 (0.0)           ; 24.0 (0.0)                       ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 49 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[0].inimigos[4].inimigo_inst|lpm_divide:Div0|lpm_divide_gbm:auto_generated                                                   ; lpm_divide_gbm      ; work         ;
-;             |sign_div_unsign_mlh:divider|     ; 24.0 (0.0)           ; 24.0 (0.0)                       ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 49 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[0].inimigos[4].inimigo_inst|lpm_divide:Div0|lpm_divide_gbm:auto_generated|sign_div_unsign_mlh:divider                       ; sign_div_unsign_mlh ; work         ;
-;                |alt_u_div_ive:divider|        ; 24.0 (24.0)          ; 24.0 (24.0)                      ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 49 (49)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[0].inimigos[4].inimigo_inst|lpm_divide:Div0|lpm_divide_gbm:auto_generated|sign_div_unsign_mlh:divider|alt_u_div_ive:divider ; alt_u_div_ive       ; work         ;
-;    |Inimigo1:row[0].inimigos[5].inimigo_inst| ; 34.0 (9.5)           ; 34.0 (9.5)                       ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 65 (16)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[0].inimigos[5].inimigo_inst                                                                                                 ; Inimigo1            ; work         ;
-;       |lpm_divide:Div0|                       ; 24.5 (0.0)           ; 24.5 (0.0)                       ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 49 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[0].inimigos[5].inimigo_inst|lpm_divide:Div0                                                                                 ; lpm_divide          ; work         ;
-;          |lpm_divide_gbm:auto_generated|      ; 24.5 (0.0)           ; 24.5 (0.0)                       ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 49 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[0].inimigos[5].inimigo_inst|lpm_divide:Div0|lpm_divide_gbm:auto_generated                                                   ; lpm_divide_gbm      ; work         ;
-;             |sign_div_unsign_mlh:divider|     ; 24.5 (0.0)           ; 24.5 (0.0)                       ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 49 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[0].inimigos[5].inimigo_inst|lpm_divide:Div0|lpm_divide_gbm:auto_generated|sign_div_unsign_mlh:divider                       ; sign_div_unsign_mlh ; work         ;
-;                |alt_u_div_ive:divider|        ; 24.5 (24.5)          ; 24.5 (24.5)                      ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 49 (49)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[0].inimigos[5].inimigo_inst|lpm_divide:Div0|lpm_divide_gbm:auto_generated|sign_div_unsign_mlh:divider|alt_u_div_ive:divider ; alt_u_div_ive       ; work         ;
-;    |Inimigo1:row[0].inimigos[6].inimigo_inst| ; 35.0 (11.0)          ; 35.5 (11.0)                      ; 0.5 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 67 (18)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[0].inimigos[6].inimigo_inst                                                                                                 ; Inimigo1            ; work         ;
-;       |lpm_divide:Div0|                       ; 24.0 (0.0)           ; 24.5 (0.0)                       ; 0.5 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 49 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[0].inimigos[6].inimigo_inst|lpm_divide:Div0                                                                                 ; lpm_divide          ; work         ;
-;          |lpm_divide_gbm:auto_generated|      ; 24.0 (0.0)           ; 24.5 (0.0)                       ; 0.5 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 49 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[0].inimigos[6].inimigo_inst|lpm_divide:Div0|lpm_divide_gbm:auto_generated                                                   ; lpm_divide_gbm      ; work         ;
-;             |sign_div_unsign_mlh:divider|     ; 24.0 (0.0)           ; 24.5 (0.0)                       ; 0.5 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 49 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[0].inimigos[6].inimigo_inst|lpm_divide:Div0|lpm_divide_gbm:auto_generated|sign_div_unsign_mlh:divider                       ; sign_div_unsign_mlh ; work         ;
-;                |alt_u_div_ive:divider|        ; 24.0 (24.0)          ; 24.5 (24.5)                      ; 0.5 (0.5)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 49 (49)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[0].inimigos[6].inimigo_inst|lpm_divide:Div0|lpm_divide_gbm:auto_generated|sign_div_unsign_mlh:divider|alt_u_div_ive:divider ; alt_u_div_ive       ; work         ;
-;    |Inimigo1:row[0].inimigos[7].inimigo_inst| ; 34.5 (10.0)          ; 35.0 (10.5)                      ; 0.5 (0.5)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 66 (17)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[0].inimigos[7].inimigo_inst                                                                                                 ; Inimigo1            ; work         ;
-;       |lpm_divide:Div0|                       ; 24.5 (0.0)           ; 24.5 (0.0)                       ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 49 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[0].inimigos[7].inimigo_inst|lpm_divide:Div0                                                                                 ; lpm_divide          ; work         ;
-;          |lpm_divide_gbm:auto_generated|      ; 24.5 (0.0)           ; 24.5 (0.0)                       ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 49 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[0].inimigos[7].inimigo_inst|lpm_divide:Div0|lpm_divide_gbm:auto_generated                                                   ; lpm_divide_gbm      ; work         ;
-;             |sign_div_unsign_mlh:divider|     ; 24.5 (0.0)           ; 24.5 (0.0)                       ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 49 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[0].inimigos[7].inimigo_inst|lpm_divide:Div0|lpm_divide_gbm:auto_generated|sign_div_unsign_mlh:divider                       ; sign_div_unsign_mlh ; work         ;
-;                |alt_u_div_ive:divider|        ; 24.5 (24.5)          ; 24.5 (24.5)                      ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 49 (49)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[0].inimigos[7].inimigo_inst|lpm_divide:Div0|lpm_divide_gbm:auto_generated|sign_div_unsign_mlh:divider|alt_u_div_ive:divider ; alt_u_div_ive       ; work         ;
-;    |Inimigo1:row[1].inimigos[0].inimigo_inst| ; 37.0 (12.5)          ; 38.0 (13.5)                      ; 1.0 (1.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 71 (22)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[1].inimigos[0].inimigo_inst                                                                                                 ; Inimigo1            ; work         ;
-;       |lpm_divide:Div1|                       ; 24.5 (0.0)           ; 24.5 (0.0)                       ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 49 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[1].inimigos[0].inimigo_inst|lpm_divide:Div1                                                                                 ; lpm_divide          ; work         ;
-;          |lpm_divide_gbm:auto_generated|      ; 24.5 (0.0)           ; 24.5 (0.0)                       ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 49 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[1].inimigos[0].inimigo_inst|lpm_divide:Div1|lpm_divide_gbm:auto_generated                                                   ; lpm_divide_gbm      ; work         ;
-;             |sign_div_unsign_mlh:divider|     ; 24.5 (0.0)           ; 24.5 (0.0)                       ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 49 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[1].inimigos[0].inimigo_inst|lpm_divide:Div1|lpm_divide_gbm:auto_generated|sign_div_unsign_mlh:divider                       ; sign_div_unsign_mlh ; work         ;
-;                |alt_u_div_ive:divider|        ; 24.5 (24.5)          ; 24.5 (24.5)                      ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 49 (49)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[1].inimigos[0].inimigo_inst|lpm_divide:Div1|lpm_divide_gbm:auto_generated|sign_div_unsign_mlh:divider|alt_u_div_ive:divider ; alt_u_div_ive       ; work         ;
-;    |Inimigo1:row[1].inimigos[1].inimigo_inst| ; 4.5 (4.5)            ; 4.5 (4.5)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 6 (6)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[1].inimigos[1].inimigo_inst                                                                                                 ; Inimigo1            ; work         ;
+;    |Inimigo1:row[0].inimigos[4].inimigo_inst| ; 34.0 (10.5)          ; 35.0 (11.0)                      ; 1.0 (0.5)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 69 (20)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[0].inimigos[4].inimigo_inst                                                                                                 ; Inimigo1            ; work         ;
+;       |lpm_divide:Div0|                       ; 23.5 (0.0)           ; 24.0 (0.0)                       ; 0.5 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 49 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[0].inimigos[4].inimigo_inst|lpm_divide:Div0                                                                                 ; lpm_divide          ; work         ;
+;          |lpm_divide_gbm:auto_generated|      ; 23.5 (0.0)           ; 24.0 (0.0)                       ; 0.5 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 49 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[0].inimigos[4].inimigo_inst|lpm_divide:Div0|lpm_divide_gbm:auto_generated                                                   ; lpm_divide_gbm      ; work         ;
+;             |sign_div_unsign_mlh:divider|     ; 23.5 (0.0)           ; 24.0 (0.0)                       ; 0.5 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 49 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[0].inimigos[4].inimigo_inst|lpm_divide:Div0|lpm_divide_gbm:auto_generated|sign_div_unsign_mlh:divider                       ; sign_div_unsign_mlh ; work         ;
+;                |alt_u_div_ive:divider|        ; 23.5 (23.5)          ; 24.0 (24.0)                      ; 0.5 (0.5)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 49 (49)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[0].inimigos[4].inimigo_inst|lpm_divide:Div0|lpm_divide_gbm:auto_generated|sign_div_unsign_mlh:divider|alt_u_div_ive:divider ; alt_u_div_ive       ; work         ;
+;    |Inimigo1:row[0].inimigos[5].inimigo_inst| ; 33.0 (9.5)           ; 34.5 (10.0)                      ; 1.5 (0.5)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 65 (16)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[0].inimigos[5].inimigo_inst                                                                                                 ; Inimigo1            ; work         ;
+;       |lpm_divide:Div0|                       ; 23.5 (0.0)           ; 24.5 (0.0)                       ; 1.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 49 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[0].inimigos[5].inimigo_inst|lpm_divide:Div0                                                                                 ; lpm_divide          ; work         ;
+;          |lpm_divide_gbm:auto_generated|      ; 23.5 (0.0)           ; 24.5 (0.0)                       ; 1.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 49 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[0].inimigos[5].inimigo_inst|lpm_divide:Div0|lpm_divide_gbm:auto_generated                                                   ; lpm_divide_gbm      ; work         ;
+;             |sign_div_unsign_mlh:divider|     ; 23.5 (0.0)           ; 24.5 (0.0)                       ; 1.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 49 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[0].inimigos[5].inimigo_inst|lpm_divide:Div0|lpm_divide_gbm:auto_generated|sign_div_unsign_mlh:divider                       ; sign_div_unsign_mlh ; work         ;
+;                |alt_u_div_ive:divider|        ; 23.5 (23.5)          ; 24.5 (24.5)                      ; 1.0 (1.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 49 (49)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[0].inimigos[5].inimigo_inst|lpm_divide:Div0|lpm_divide_gbm:auto_generated|sign_div_unsign_mlh:divider|alt_u_div_ive:divider ; alt_u_div_ive       ; work         ;
+;    |Inimigo1:row[0].inimigos[6].inimigo_inst| ; 35.0 (11.0)          ; 35.0 (11.0)                      ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 67 (18)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[0].inimigos[6].inimigo_inst                                                                                                 ; Inimigo1            ; work         ;
+;       |lpm_divide:Div0|                       ; 24.0 (0.0)           ; 24.0 (0.0)                       ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 49 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[0].inimigos[6].inimigo_inst|lpm_divide:Div0                                                                                 ; lpm_divide          ; work         ;
+;          |lpm_divide_gbm:auto_generated|      ; 24.0 (0.0)           ; 24.0 (0.0)                       ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 49 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[0].inimigos[6].inimigo_inst|lpm_divide:Div0|lpm_divide_gbm:auto_generated                                                   ; lpm_divide_gbm      ; work         ;
+;             |sign_div_unsign_mlh:divider|     ; 24.0 (0.0)           ; 24.0 (0.0)                       ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 49 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[0].inimigos[6].inimigo_inst|lpm_divide:Div0|lpm_divide_gbm:auto_generated|sign_div_unsign_mlh:divider                       ; sign_div_unsign_mlh ; work         ;
+;                |alt_u_div_ive:divider|        ; 24.0 (24.0)          ; 24.0 (24.0)                      ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 49 (49)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[0].inimigos[6].inimigo_inst|lpm_divide:Div0|lpm_divide_gbm:auto_generated|sign_div_unsign_mlh:divider|alt_u_div_ive:divider ; alt_u_div_ive       ; work         ;
+;    |Inimigo1:row[0].inimigos[7].inimigo_inst| ; 34.0 (10.0)          ; 35.0 (10.5)                      ; 1.0 (0.5)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 66 (17)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[0].inimigos[7].inimigo_inst                                                                                                 ; Inimigo1            ; work         ;
+;       |lpm_divide:Div0|                       ; 24.0 (0.0)           ; 24.5 (0.0)                       ; 0.5 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 49 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[0].inimigos[7].inimigo_inst|lpm_divide:Div0                                                                                 ; lpm_divide          ; work         ;
+;          |lpm_divide_gbm:auto_generated|      ; 24.0 (0.0)           ; 24.5 (0.0)                       ; 0.5 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 49 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[0].inimigos[7].inimigo_inst|lpm_divide:Div0|lpm_divide_gbm:auto_generated                                                   ; lpm_divide_gbm      ; work         ;
+;             |sign_div_unsign_mlh:divider|     ; 24.0 (0.0)           ; 24.5 (0.0)                       ; 0.5 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 49 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[0].inimigos[7].inimigo_inst|lpm_divide:Div0|lpm_divide_gbm:auto_generated|sign_div_unsign_mlh:divider                       ; sign_div_unsign_mlh ; work         ;
+;                |alt_u_div_ive:divider|        ; 24.0 (24.0)          ; 24.5 (24.5)                      ; 0.5 (0.5)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 49 (49)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[0].inimigos[7].inimigo_inst|lpm_divide:Div0|lpm_divide_gbm:auto_generated|sign_div_unsign_mlh:divider|alt_u_div_ive:divider ; alt_u_div_ive       ; work         ;
+;    |Inimigo1:row[1].inimigos[0].inimigo_inst| ; 36.5 (12.5)          ; 37.0 (12.5)                      ; 0.5 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 71 (22)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[1].inimigos[0].inimigo_inst                                                                                                 ; Inimigo1            ; work         ;
+;       |lpm_divide:Div1|                       ; 24.0 (0.0)           ; 24.5 (0.0)                       ; 0.5 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 49 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[1].inimigos[0].inimigo_inst|lpm_divide:Div1                                                                                 ; lpm_divide          ; work         ;
+;          |lpm_divide_gbm:auto_generated|      ; 24.0 (0.0)           ; 24.5 (0.0)                       ; 0.5 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 49 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[1].inimigos[0].inimigo_inst|lpm_divide:Div1|lpm_divide_gbm:auto_generated                                                   ; lpm_divide_gbm      ; work         ;
+;             |sign_div_unsign_mlh:divider|     ; 24.0 (0.0)           ; 24.5 (0.0)                       ; 0.5 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 49 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[1].inimigos[0].inimigo_inst|lpm_divide:Div1|lpm_divide_gbm:auto_generated|sign_div_unsign_mlh:divider                       ; sign_div_unsign_mlh ; work         ;
+;                |alt_u_div_ive:divider|        ; 24.0 (24.0)          ; 24.5 (24.5)                      ; 0.5 (0.5)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 49 (49)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[1].inimigos[0].inimigo_inst|lpm_divide:Div1|lpm_divide_gbm:auto_generated|sign_div_unsign_mlh:divider|alt_u_div_ive:divider ; alt_u_div_ive       ; work         ;
+;    |Inimigo1:row[1].inimigos[1].inimigo_inst| ; 5.0 (5.0)            ; 5.5 (5.5)                        ; 0.5 (0.5)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 6 (6)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[1].inimigos[1].inimigo_inst                                                                                                 ; Inimigo1            ; work         ;
 ;    |Inimigo1:row[1].inimigos[2].inimigo_inst| ; 4.0 (4.0)            ; 4.0 (4.0)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 6 (6)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[1].inimigos[2].inimigo_inst                                                                                                 ; Inimigo1            ; work         ;
-;    |Inimigo1:row[1].inimigos[3].inimigo_inst| ; 4.0 (4.0)            ; 5.0 (5.0)                        ; 1.0 (1.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 6 (6)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[1].inimigos[3].inimigo_inst                                                                                                 ; Inimigo1            ; work         ;
-;    |Inimigo1:row[1].inimigos[4].inimigo_inst| ; 5.0 (5.0)            ; 5.0 (5.0)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 6 (6)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[1].inimigos[4].inimigo_inst                                                                                                 ; Inimigo1            ; work         ;
-;    |Inimigo1:row[1].inimigos[5].inimigo_inst| ; 4.5 (4.5)            ; 5.0 (5.0)                        ; 0.5 (0.5)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 6 (6)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[1].inimigos[5].inimigo_inst                                                                                                 ; Inimigo1            ; work         ;
+;    |Inimigo1:row[1].inimigos[3].inimigo_inst| ; 4.5 (4.5)            ; 4.5 (4.5)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 6 (6)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[1].inimigos[3].inimigo_inst                                                                                                 ; Inimigo1            ; work         ;
+;    |Inimigo1:row[1].inimigos[4].inimigo_inst| ; 4.5 (4.5)            ; 4.5 (4.5)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 6 (6)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[1].inimigos[4].inimigo_inst                                                                                                 ; Inimigo1            ; work         ;
+;    |Inimigo1:row[1].inimigos[5].inimigo_inst| ; 4.5 (4.5)            ; 5.5 (5.5)                        ; 1.0 (1.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 6 (6)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[1].inimigos[5].inimigo_inst                                                                                                 ; Inimigo1            ; work         ;
 ;    |Inimigo1:row[1].inimigos[6].inimigo_inst| ; 4.5 (4.5)            ; 5.0 (5.0)                        ; 0.5 (0.5)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 6 (6)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[1].inimigos[6].inimigo_inst                                                                                                 ; Inimigo1            ; work         ;
-;    |Inimigo1:row[1].inimigos[7].inimigo_inst| ; 5.0 (5.0)            ; 5.0 (5.0)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 7 (7)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[1].inimigos[7].inimigo_inst                                                                                                 ; Inimigo1            ; work         ;
+;    |Inimigo1:row[1].inimigos[7].inimigo_inst| ; 4.0 (4.0)            ; 4.5 (4.5)                        ; 0.5 (0.5)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 7 (7)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[1].inimigos[7].inimigo_inst                                                                                                 ; Inimigo1            ; work         ;
 ;    |Inimigo1:row[2].inimigos[0].inimigo_inst| ; 36.5 (12.0)          ; 36.5 (12.0)                      ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 72 (23)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[2].inimigos[0].inimigo_inst                                                                                                 ; Inimigo1            ; work         ;
 ;       |lpm_divide:Div1|                       ; 24.5 (0.0)           ; 24.5 (0.0)                       ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 49 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[2].inimigos[0].inimigo_inst|lpm_divide:Div1                                                                                 ; lpm_divide          ; work         ;
 ;          |lpm_divide_gbm:auto_generated|      ; 24.5 (0.0)           ; 24.5 (0.0)                       ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 49 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[2].inimigos[0].inimigo_inst|lpm_divide:Div1|lpm_divide_gbm:auto_generated                                                   ; lpm_divide_gbm      ; work         ;
 ;             |sign_div_unsign_mlh:divider|     ; 24.5 (0.0)           ; 24.5 (0.0)                       ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 49 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[2].inimigos[0].inimigo_inst|lpm_divide:Div1|lpm_divide_gbm:auto_generated|sign_div_unsign_mlh:divider                       ; sign_div_unsign_mlh ; work         ;
 ;                |alt_u_div_ive:divider|        ; 24.5 (24.5)          ; 24.5 (24.5)                      ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 49 (49)             ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[2].inimigos[0].inimigo_inst|lpm_divide:Div1|lpm_divide_gbm:auto_generated|sign_div_unsign_mlh:divider|alt_u_div_ive:divider ; alt_u_div_ive       ; work         ;
-;    |Inimigo1:row[2].inimigos[1].inimigo_inst| ; 4.5 (4.5)            ; 5.0 (5.0)                        ; 0.5 (0.5)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 5 (5)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[2].inimigos[1].inimigo_inst                                                                                                 ; Inimigo1            ; work         ;
-;    |Inimigo1:row[2].inimigos[2].inimigo_inst| ; 3.7 (3.7)            ; 4.0 (4.0)                        ; 0.3 (0.3)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 5 (5)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[2].inimigos[2].inimigo_inst                                                                                                 ; Inimigo1            ; work         ;
-;    |Inimigo1:row[2].inimigos[3].inimigo_inst| ; 3.5 (3.5)            ; 5.0 (5.0)                        ; 1.5 (1.5)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 5 (5)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[2].inimigos[3].inimigo_inst                                                                                                 ; Inimigo1            ; work         ;
-;    |Inimigo1:row[2].inimigos[4].inimigo_inst| ; 3.5 (3.5)            ; 3.5 (3.5)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 5 (5)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[2].inimigos[4].inimigo_inst                                                                                                 ; Inimigo1            ; work         ;
-;    |Inimigo1:row[2].inimigos[5].inimigo_inst| ; 4.5 (4.5)            ; 4.5 (4.5)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 5 (5)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[2].inimigos[5].inimigo_inst                                                                                                 ; Inimigo1            ; work         ;
-;    |Inimigo1:row[2].inimigos[6].inimigo_inst| ; 4.2 (4.2)            ; 5.0 (5.0)                        ; 0.8 (0.8)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 6 (6)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[2].inimigos[6].inimigo_inst                                                                                                 ; Inimigo1            ; work         ;
-;    |Inimigo1:row[2].inimigos[7].inimigo_inst| ; 5.0 (5.0)            ; 5.0 (5.0)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 6 (6)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[2].inimigos[7].inimigo_inst                                                                                                 ; Inimigo1            ; work         ;
-;    |display:display|                          ; 12.8 (0.0)           ; 14.0 (0.0)                       ; 1.2 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 22 (0)              ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|display:display                                                                                                                          ; display             ; work         ;
+;    |Inimigo1:row[2].inimigos[1].inimigo_inst| ; 4.0 (4.0)            ; 4.5 (4.5)                        ; 0.5 (0.5)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 5 (5)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[2].inimigos[1].inimigo_inst                                                                                                 ; Inimigo1            ; work         ;
+;    |Inimigo1:row[2].inimigos[2].inimigo_inst| ; 4.5 (4.5)            ; 4.5 (4.5)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 5 (5)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[2].inimigos[2].inimigo_inst                                                                                                 ; Inimigo1            ; work         ;
+;    |Inimigo1:row[2].inimigos[3].inimigo_inst| ; 3.5 (3.5)            ; 3.5 (3.5)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 5 (5)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[2].inimigos[3].inimigo_inst                                                                                                 ; Inimigo1            ; work         ;
+;    |Inimigo1:row[2].inimigos[4].inimigo_inst| ; 3.5 (3.5)            ; 4.0 (4.0)                        ; 0.5 (0.5)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 5 (5)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[2].inimigos[4].inimigo_inst                                                                                                 ; Inimigo1            ; work         ;
+;    |Inimigo1:row[2].inimigos[5].inimigo_inst| ; 3.5 (3.5)            ; 4.5 (4.5)                        ; 1.0 (1.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 5 (5)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[2].inimigos[5].inimigo_inst                                                                                                 ; Inimigo1            ; work         ;
+;    |Inimigo1:row[2].inimigos[6].inimigo_inst| ; 4.5 (4.5)            ; 5.0 (5.0)                        ; 0.5 (0.5)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 6 (6)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[2].inimigos[6].inimigo_inst                                                                                                 ; Inimigo1            ; work         ;
+;    |Inimigo1:row[2].inimigos[7].inimigo_inst| ; 4.5 (4.5)            ; 4.5 (4.5)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 6 (6)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[2].inimigos[7].inimigo_inst                                                                                                 ; Inimigo1            ; work         ;
+;    |display:display|                          ; 3.5 (0.0)            ; 3.5 (0.0)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 7 (0)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|display:display                                                                                                                          ; display             ; work         ;
 ;       |bcd_display:u0|                        ; 3.5 (3.5)            ; 3.5 (3.5)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 7 (7)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|display:display|bcd_display:u0                                                                                                           ; bcd_display         ; work         ;
-;       |bcd_display:u1|                        ; 3.3 (3.3)            ; 3.5 (3.5)                        ; 0.2 (0.2)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 7 (7)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|display:display|bcd_display:u1                                                                                                           ; bcd_display         ; work         ;
-;       |bin_to_bcd:b2bcd|                      ; 6.0 (6.0)            ; 7.0 (7.0)                        ; 1.0 (1.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 8 (8)               ; 0 (0)                     ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|display:display|bin_to_bcd:b2bcd                                                                                                         ; bin_to_bcd          ; work         ;
-;    |municao1:municao1|                        ; 49.6 (49.6)          ; 53.4 (53.4)                      ; 4.1 (4.1)                                         ; 0.3 (0.3)                        ; 0.0 (0.0)            ; 100 (100)           ; 43 (43)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|municao1:municao1                                                                                                                        ; municao1            ; work         ;
-;    |nave:nave|                                ; 117.7 (117.7)        ; 123.5 (123.5)                    ; 5.8 (5.8)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 205 (205)           ; 80 (80)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|nave:nave                                                                                                                                ; nave                ; work         ;
-;    |random_number:rn_inst|                    ; 6.2 (6.2)            ; 6.2 (6.2)                        ; 0.0 (0.0)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 12 (12)             ; 12 (12)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|random_number:rn_inst                                                                                                                    ; random_number       ; work         ;
-;    |vga:vga|                                  ; 18.7 (18.7)          ; 18.5 (18.5)                      ; 0.0 (0.0)                                         ; 0.2 (0.2)                        ; 0.0 (0.0)            ; 28 (28)             ; 20 (20)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|vga:vga                                                                                                                                  ; vga                 ; work         ;
+;    |engine:engine|                            ; 64.0 (16.5)          ; 65.5 (17.2)                      ; 1.5 (0.8)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 113 (30)            ; 60 (24)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|engine:engine                                                                                                                            ; engine              ; work         ;
+;       |random_number:rn_inst|                 ; 47.5 (47.5)          ; 48.2 (48.2)                      ; 0.7 (0.7)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 83 (83)             ; 36 (36)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|engine:engine|random_number:rn_inst                                                                                                      ; random_number       ; work         ;
+;    |municao1:municao1|                        ; 50.3 (50.3)          ; 52.5 (52.5)                      ; 2.8 (2.8)                                         ; 0.6 (0.6)                        ; 0.0 (0.0)            ; 101 (101)           ; 43 (43)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|municao1:municao1                                                                                                                        ; municao1            ; work         ;
+;    |nave:nave|                                ; 117.3 (117.3)        ; 125.6 (125.6)                    ; 8.3 (8.3)                                         ; 0.0 (0.0)                        ; 0.0 (0.0)            ; 204 (204)           ; 80 (80)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|nave:nave                                                                                                                                ; nave                ; work         ;
+;    |vga:vga|                                  ; 20.5 (20.5)          ; 20.1 (20.1)                      ; 0.0 (0.0)                                         ; 0.4 (0.4)                        ; 0.0 (0.0)            ; 27 (27)             ; 20 (20)                   ; 0 (0)         ; 0                 ; 0     ; 0          ; 0    ; 0            ; |SpaceInvaders|vga:vga                                                                                                                                  ; vga                 ; work         ;
 +-----------------------------------------------+----------------------+----------------------------------+---------------------------------------------------+----------------------------------+----------------------+---------------------+---------------------------+---------------+-------------------+-------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -1869,9 +1868,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; HEX5[5]     ; Output   ; -- ; --   ; --   ; -- ; (0)  ; (31)  ; --     ; --                     ; --                       ;
 ; HEX5[6]     ; Output   ; -- ; --   ; --   ; -- ; (0)  ; (31)  ; --     ; --                     ; --                       ;
 ; reset       ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
-; clk         ; Input    ; -- ; (0)  ; (0)  ; -- ; --   ; --    ; --     ; --                     ; --                       ;
-; btn_D       ; Input    ; -- ; --   ; (0)  ; -- ; --   ; --    ; --     ; --                     ; --                       ;
-; btn_A       ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
+; clk         ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
+; btn_D       ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
+; btn_A       ; Input    ; -- ; --   ; (0)  ; -- ; --   ; --    ; --     ; --                     ; --                       ;
 ; btn_B       ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
 ; btn_C       ; Input    ; -- ; (0)  ; --   ; -- ; --   ; --    ; --     ; --                     ; --                       ;
 +-------------+----------+----+------+------+----+------+-------+--------+------------------------+--------------------------+
@@ -1883,17 +1882,11 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Source Pin / Fanout                                    ; Pad To Core Index ; Setting ;
 +--------------------------------------------------------+-------------------+---------+
 ; reset                                                  ;                   ;         ;
-;      - random_number:rn_inst|numero[6]                 ; 0                 ; 0       ;
-;      - random_number:rn_inst|numero[5]                 ; 0                 ; 0       ;
-;      - random_number:rn_inst|numero[4]                 ; 0                 ; 0       ;
-;      - random_number:rn_inst|numero[3]                 ; 0                 ; 0       ;
-;      - random_number:rn_inst|numero[2]                 ; 0                 ; 0       ;
-;      - random_number:rn_inst|numero[1]                 ; 0                 ; 0       ;
-;      - random_number:rn_inst|numero[0]                 ; 0                 ; 0       ;
-;      - random_number:rn_inst|i[3]                      ; 0                 ; 0       ;
-;      - random_number:rn_inst|i[2]                      ; 0                 ; 0       ;
-;      - random_number:rn_inst|i[1]                      ; 0                 ; 0       ;
-;      - random_number:rn_inst|i[0]                      ; 0                 ; 0       ;
+;      - engine:engine|random_number:rn_inst|numero[0]   ; 0                 ; 0       ;
+;      - engine:engine|random_number:rn_inst|numero[1]   ; 0                 ; 0       ;
+;      - engine:engine|random_number:rn_inst|numero[2]   ; 0                 ; 0       ;
+;      - engine:engine|momento                           ; 0                 ; 0       ;
+;      - engine:engine|certo                             ; 0                 ; 0       ;
 ;      - nave:nave|Add1~101                              ; 0                 ; 0       ;
 ;      - nave:nave|Add1~97                               ; 0                 ; 0       ;
 ;      - nave:nave|Add1~93                               ; 0                 ; 0       ;
@@ -1936,19 +1929,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - Inimigo1:row[2].inimigos[3].inimigo_inst|R[0]~1 ; 0                 ; 0       ;
 ;      - Inimigo1:row[2].inimigos[4].inimigo_inst|R[0]~1 ; 0                 ; 0       ;
 ;      - Inimigo1:row[2].inimigos[5].inimigo_inst|R[0]~1 ; 0                 ; 0       ;
-;      - vga:vga|v_counter[3]~0                          ; 0                 ; 0       ;
-;      - vga:vga|v_counter[3]~1                          ; 0                 ; 0       ;
+;      - vga:vga|v_counter[4]~0                          ; 0                 ; 0       ;
+;      - vga:vga|v_counter[4]~1                          ; 0                 ; 0       ;
 ;      - municao1:municao1|verifica_tiro~7               ; 0                 ; 0       ;
-;      - nave:nave|mem_X_nave[10]~1                      ; 0                 ; 0       ;
-;      - resultado~0                                     ; 0                 ; 0       ;
-;      - resultado[2]~1                                  ; 0                 ; 0       ;
-;      - resultado~2                                     ; 0                 ; 0       ;
-;      - resultado~3                                     ; 0                 ; 0       ;
-;      - resultado~4                                     ; 0                 ; 0       ;
-;      - resultado~5                                     ; 0                 ; 0       ;
-;      - resultado~6                                     ; 0                 ; 0       ;
+;      - nave:nave|mem_X_nave[1]~1                       ; 0                 ; 0       ;
+;      - engine:engine|random_number:rn_inst|enable_prev ; 0                 ; 0       ;
+;      - engine:engine|random_number:rn_inst|numero[1]~0 ; 0                 ; 0       ;
 ;      - nave:nave|memo_X_nave~0                         ; 0                 ; 0       ;
-;      - nave:nave|memo_X_nave[6]~4                      ; 0                 ; 0       ;
+;      - nave:nave|memo_X_nave[9]~4                      ; 0                 ; 0       ;
 ;      - nave:nave|memo_X_nave~5                         ; 0                 ; 0       ;
 ;      - nave:nave|memo_X_nave~6                         ; 0                 ; 0       ;
 ;      - nave:nave|memo_X_nave~7                         ; 0                 ; 0       ;
@@ -1958,63 +1946,57 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - nave:nave|memo_X_nave~11                        ; 0                 ; 0       ;
 ;      - nave:nave|memo_X_nave~12                        ; 0                 ; 0       ;
 ;      - nave:nave|memo_X_nave~13                        ; 0                 ; 0       ;
-;      - resultado~7                                     ; 0                 ; 0       ;
-;      - random_number:rn_inst|enable_prev               ; 0                 ; 0       ;
-;      - random_number:rn_inst|i[23]~0                   ; 0                 ; 0       ;
+;      - engine:engine|random_number:rn_inst|i[13]~12    ; 0                 ; 0       ;
+;      - engine:engine|enable~0                          ; 0                 ; 0       ;
 ;      - municao1:municao1|verifica_tiro~8               ; 0                 ; 0       ;
-;      - municao1:municao1|mem_X_municao[5]~0            ; 0                 ; 0       ;
-;      - municao1:municao1|mem_X_municao[5]~1            ; 0                 ; 0       ;
 ;      - nave:nave|estado_nave~16                        ; 0                 ; 0       ;
-;      - enable~0                                        ; 0                 ; 0       ;
 ; clk                                                    ;                   ;         ;
-;      - VGA_CLK2                                        ; 1                 ; 0       ;
+;      - VGA_CLK2                                        ; 0                 ; 0       ;
 ; btn_D                                                  ;                   ;         ;
-;      - nave:nave|Add1~101                              ; 1                 ; 0       ;
-;      - nave:nave|Add1~97                               ; 1                 ; 0       ;
-;      - nave:nave|Add1~93                               ; 1                 ; 0       ;
-;      - nave:nave|Add1~89                               ; 1                 ; 0       ;
-;      - nave:nave|Add1~85                               ; 1                 ; 0       ;
-;      - nave:nave|Add1~81                               ; 1                 ; 0       ;
-;      - nave:nave|Add1~77                               ; 1                 ; 0       ;
-;      - nave:nave|Add1~29                               ; 1                 ; 0       ;
-;      - nave:nave|Add1~33                               ; 1                 ; 0       ;
-;      - nave:nave|Add1~37                               ; 1                 ; 0       ;
-;      - nave:nave|Add1~41                               ; 1                 ; 0       ;
-;      - nave:nave|Add1~45                               ; 1                 ; 0       ;
-;      - nave:nave|Add1~25                               ; 1                 ; 0       ;
-;      - nave:nave|Add1~49                               ; 1                 ; 0       ;
-;      - nave:nave|Add1~53                               ; 1                 ; 0       ;
-;      - nave:nave|Add1~21                               ; 1                 ; 0       ;
-;      - nave:nave|Add1~17                               ; 1                 ; 0       ;
-;      - nave:nave|Add1~13                               ; 1                 ; 0       ;
-;      - nave:nave|Add1~9                                ; 1                 ; 0       ;
-;      - nave:nave|Add1~57                               ; 1                 ; 0       ;
-;      - nave:nave|Add1~61                               ; 1                 ; 0       ;
-;      - nave:nave|Add1~65                               ; 1                 ; 0       ;
-;      - nave:nave|Add1~69                               ; 1                 ; 0       ;
-;      - nave:nave|Add1~73                               ; 1                 ; 0       ;
-;      - nave:nave|Add1~5                                ; 1                 ; 0       ;
-;      - nave:nave|Add1~1                                ; 1                 ; 0       ;
-;      - municao1:municao1|verifica_tiro~7               ; 1                 ; 0       ;
-;      - nave:nave|mem_X_nave[10]~1                      ; 1                 ; 0       ;
-;      - nave:nave|memo_X_nave~0                         ; 1                 ; 0       ;
-;      - nave:nave|memo_X_nave[6]~4                      ; 1                 ; 0       ;
-;      - nave:nave|memo_X_nave~5                         ; 1                 ; 0       ;
-;      - nave:nave|memo_X_nave~6                         ; 1                 ; 0       ;
-;      - nave:nave|memo_X_nave~7                         ; 1                 ; 0       ;
-;      - nave:nave|memo_X_nave~8                         ; 1                 ; 0       ;
-;      - nave:nave|memo_X_nave~9                         ; 1                 ; 0       ;
-;      - nave:nave|memo_X_nave~10                        ; 1                 ; 0       ;
-;      - nave:nave|memo_X_nave~11                        ; 1                 ; 0       ;
-;      - nave:nave|memo_X_nave~12                        ; 1                 ; 0       ;
-;      - nave:nave|memo_X_nave~13                        ; 1                 ; 0       ;
-;      - municao1:municao1|verifica_tiro~8               ; 1                 ; 0       ;
-;      - municao1:municao1|mem_X_municao[5]~0            ; 1                 ; 0       ;
-;      - municao1:municao1|mem_X_municao[5]~1            ; 1                 ; 0       ;
-;      - nave:nave|estado_nave~16                        ; 1                 ; 0       ;
-; btn_A                                                  ;                   ;         ;
-;      - nave:nave|estado_nave~14                        ; 0                 ; 0       ;
+;      - nave:nave|Add1~101                              ; 0                 ; 0       ;
+;      - nave:nave|Add1~97                               ; 0                 ; 0       ;
+;      - nave:nave|Add1~93                               ; 0                 ; 0       ;
+;      - nave:nave|Add1~89                               ; 0                 ; 0       ;
+;      - nave:nave|Add1~85                               ; 0                 ; 0       ;
+;      - nave:nave|Add1~81                               ; 0                 ; 0       ;
+;      - nave:nave|Add1~77                               ; 0                 ; 0       ;
+;      - nave:nave|Add1~29                               ; 0                 ; 0       ;
+;      - nave:nave|Add1~33                               ; 0                 ; 0       ;
+;      - nave:nave|Add1~37                               ; 0                 ; 0       ;
+;      - nave:nave|Add1~41                               ; 0                 ; 0       ;
+;      - nave:nave|Add1~45                               ; 0                 ; 0       ;
+;      - nave:nave|Add1~25                               ; 0                 ; 0       ;
+;      - nave:nave|Add1~49                               ; 0                 ; 0       ;
+;      - nave:nave|Add1~53                               ; 0                 ; 0       ;
+;      - nave:nave|Add1~21                               ; 0                 ; 0       ;
+;      - nave:nave|Add1~17                               ; 0                 ; 0       ;
+;      - nave:nave|Add1~13                               ; 0                 ; 0       ;
+;      - nave:nave|Add1~9                                ; 0                 ; 0       ;
+;      - nave:nave|Add1~57                               ; 0                 ; 0       ;
+;      - nave:nave|Add1~61                               ; 0                 ; 0       ;
+;      - nave:nave|Add1~65                               ; 0                 ; 0       ;
+;      - nave:nave|Add1~69                               ; 0                 ; 0       ;
+;      - nave:nave|Add1~73                               ; 0                 ; 0       ;
+;      - nave:nave|Add1~5                                ; 0                 ; 0       ;
+;      - nave:nave|Add1~1                                ; 0                 ; 0       ;
+;      - municao1:municao1|verifica_tiro~7               ; 0                 ; 0       ;
+;      - nave:nave|mem_X_nave[1]~1                       ; 0                 ; 0       ;
+;      - nave:nave|memo_X_nave~0                         ; 0                 ; 0       ;
+;      - nave:nave|memo_X_nave[9]~4                      ; 0                 ; 0       ;
+;      - nave:nave|memo_X_nave~5                         ; 0                 ; 0       ;
+;      - nave:nave|memo_X_nave~6                         ; 0                 ; 0       ;
+;      - nave:nave|memo_X_nave~7                         ; 0                 ; 0       ;
+;      - nave:nave|memo_X_nave~8                         ; 0                 ; 0       ;
+;      - nave:nave|memo_X_nave~9                         ; 0                 ; 0       ;
+;      - nave:nave|memo_X_nave~10                        ; 0                 ; 0       ;
+;      - nave:nave|memo_X_nave~11                        ; 0                 ; 0       ;
+;      - nave:nave|memo_X_nave~12                        ; 0                 ; 0       ;
+;      - nave:nave|memo_X_nave~13                        ; 0                 ; 0       ;
+;      - municao1:municao1|verifica_tiro~8               ; 0                 ; 0       ;
 ;      - nave:nave|estado_nave~16                        ; 0                 ; 0       ;
+; btn_A                                                  ;                   ;         ;
+;      - nave:nave|estado_nave~14                        ; 1                 ; 0       ;
+;      - nave:nave|estado_nave~16                        ; 1                 ; 0       ;
 ; btn_B                                                  ;                   ;         ;
 ;      - nave:nave|estado_nave~14                        ; 0                 ; 0       ;
 ;      - nave:nave|estado_nave~15                        ; 0                 ; 0       ;
@@ -2022,34 +2004,36 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - nave:nave|estado_nave~17                        ; 0                 ; 0       ;
 ; btn_C                                                  ;                   ;         ;
 ;      - nave:nave|tiro_ativo_jogador~0                  ; 0                 ; 0       ;
-;      - nave:nave|contador_botao_c[6]~1                 ; 0                 ; 0       ;
+;      - nave:nave|contador_botao_c[13]~1                ; 0                 ; 0       ;
 +--------------------------------------------------------+-------------------+---------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Control Signals                                                                                                                                                                 ;
-+--------------------------------------+---------------------+---------+---------------------------+--------+----------------------+------------------+---------------------------+
-; Name                                 ; Location            ; Fan-Out ; Usage                     ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
-+--------------------------------------+---------------------+---------+---------------------------+--------+----------------------+------------------+---------------------------+
-; VGA_CLK2                             ; FF_X46_Y6_N17       ; 22      ; Clock                     ; no     ; --                   ; --               ; --                        ;
-; clk                                  ; PIN_AF14            ; 163     ; Clock                     ; yes    ; Global Clock         ; GCLK6            ; --                        ;
-; clk                                  ; PIN_AF14            ; 2       ; Clock                     ; no     ; --                   ; --               ; --                        ;
-; municao1:municao1|contador[7]~0      ; LABCELL_X42_Y5_N12  ; 19      ; Sync. clear               ; no     ; --                   ; --               ; --                        ;
-; municao1:municao1|mem_X_municao[5]~0 ; LABCELL_X40_Y6_N57  ; 11      ; Sync. clear               ; no     ; --                   ; --               ; --                        ;
-; municao1:municao1|mem_X_municao[5]~1 ; LABCELL_X40_Y6_N39  ; 11      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
-; municao1:municao1|mem_Y_municao[7]~4 ; LABCELL_X42_Y5_N6   ; 11      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
-; municao1:municao1|verifica_tiro~8    ; LABCELL_X42_Y2_N39  ; 14      ; Sync. clear               ; no     ; --                   ; --               ; --                        ;
-; nave:nave|contador_botao[0]~0        ; LABCELL_X37_Y1_N51  ; 19      ; Sync. clear               ; no     ; --                   ; --               ; --                        ;
-; nave:nave|contador_botao_c[6]~1      ; LABCELL_X42_Y1_N9   ; 26      ; Sync. clear               ; no     ; --                   ; --               ; --                        ;
-; nave:nave|estado_nave~16             ; LABCELL_X37_Y1_N0   ; 2       ; Clock enable              ; no     ; --                   ; --               ; --                        ;
-; nave:nave|mem_X_nave[10]~1           ; LABCELL_X37_Y1_N30  ; 10      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
-; nave:nave|memo_X_nave[6]~4           ; MLABCELL_X39_Y4_N48 ; 10      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
-; random_number:rn_inst|i[23]~0        ; LABCELL_X88_Y10_N6  ; 11      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
-; reset                                ; PIN_AB12            ; 83      ; Clock enable, Sync. clear ; no     ; --                   ; --               ; --                        ;
-; resultado[2]~1                       ; LABCELL_X88_Y10_N36 ; 27      ; Clock enable, Sync. clear ; no     ; --                   ; --               ; --                        ;
-; vga:vga|v_counter[3]~0               ; LABCELL_X45_Y6_N45  ; 10      ; Sync. clear               ; no     ; --                   ; --               ; --                        ;
-; vga:vga|v_counter[3]~1               ; LABCELL_X46_Y6_N45  ; 20      ; Clock enable, Sync. clear ; no     ; --                   ; --               ; --                        ;
-+--------------------------------------+---------------------+---------+---------------------------+--------+----------------------+------------------+---------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Control Signals                                                                                                                                                                            ;
++-------------------------------------------------+---------------------+---------+---------------------------+--------+----------------------+------------------+---------------------------+
+; Name                                            ; Location            ; Fan-Out ; Usage                     ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
++-------------------------------------------------+---------------------+---------+---------------------------+--------+----------------------+------------------+---------------------------+
+; VGA_CLK2                                        ; FF_X50_Y6_N14       ; 22      ; Clock                     ; no     ; --                   ; --               ; --                        ;
+; clk                                             ; PIN_AF14            ; 183     ; Clock                     ; yes    ; Global Clock         ; GCLK6            ; --                        ;
+; clk                                             ; PIN_AF14            ; 2       ; Clock                     ; no     ; --                   ; --               ; --                        ;
+; engine:engine|contador_tiro[13]~0               ; LABCELL_X48_Y8_N39  ; 20      ; Sync. clear               ; no     ; --                   ; --               ; --                        ;
+; engine:engine|contador_tiro[13]~1               ; LABCELL_X48_Y8_N36  ; 20      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; engine:engine|random_number:rn_inst|i[13]~12    ; LABCELL_X50_Y8_N15  ; 32      ; Sync. clear               ; no     ; --                   ; --               ; --                        ;
+; engine:engine|random_number:rn_inst|numero[1]~0 ; LABCELL_X53_Y10_N18 ; 3       ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; municao1:municao1|contador[5]~0                 ; MLABCELL_X52_Y9_N51 ; 19      ; Sync. clear               ; no     ; --                   ; --               ; --                        ;
+; municao1:municao1|mem_X_municao[9]~0            ; MLABCELL_X52_Y6_N27 ; 12      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; municao1:municao1|mem_X_municao[9]~1            ; MLABCELL_X52_Y6_N6  ; 11      ; Sync. clear               ; no     ; --                   ; --               ; --                        ;
+; municao1:municao1|mem_Y_municao[8]~4            ; LABCELL_X53_Y7_N30  ; 11      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; municao1:municao1|verifica_tiro~8               ; MLABCELL_X52_Y6_N0  ; 15      ; Sync. clear               ; no     ; --                   ; --               ; --                        ;
+; nave:nave|contador_botao[18]~1                  ; LABCELL_X46_Y4_N18  ; 19      ; Sync. clear               ; no     ; --                   ; --               ; --                        ;
+; nave:nave|contador_botao_c[13]~1                ; LABCELL_X51_Y4_N27  ; 26      ; Sync. clear               ; no     ; --                   ; --               ; --                        ;
+; nave:nave|estado_nave~16                        ; LABCELL_X45_Y4_N54  ; 2       ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; nave:nave|mem_X_nave[1]~1                       ; LABCELL_X45_Y4_N6   ; 10      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; nave:nave|memo_X_nave[9]~4                      ; LABCELL_X43_Y4_N45  ; 10      ; Clock enable              ; no     ; --                   ; --               ; --                        ;
+; reset                                           ; PIN_AB12            ; 68      ; Clock enable, Sync. clear ; no     ; --                   ; --               ; --                        ;
+; vga:vga|v_counter[4]~0                          ; LABCELL_X51_Y7_N57  ; 10      ; Sync. clear               ; no     ; --                   ; --               ; --                        ;
+; vga:vga|v_counter[4]~1                          ; LABCELL_X50_Y6_N15  ; 20      ; Clock enable, Sync. clear ; no     ; --                   ; --               ; --                        ;
++-------------------------------------------------+---------------------+---------+---------------------------+--------+----------------------+------------------+---------------------------+
 
 
 +-------------------------------------------------------------------------------------------------+
@@ -2057,7 +2041,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------+----------+---------+----------------------+------------------+---------------------------+
 ; Name ; Location ; Fan-Out ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +------+----------+---------+----------------------+------------------+---------------------------+
-; clk  ; PIN_AF14 ; 163     ; Global Clock         ; GCLK6            ; --                        ;
+; clk  ; PIN_AF14 ; 183     ; Global Clock         ; GCLK6            ; --                        ;
 +------+----------+---------+----------------------+------------------+---------------------------+
 
 
@@ -2066,14 +2050,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +---------------------------------------------+---------------------------+
 ; Routing Resource Type                       ; Usage                     ;
 +---------------------------------------------+---------------------------+
-; Block interconnects                         ; 1,516 / 289,320 ( < 1 % ) ;
-; C12 interconnects                           ; 27 / 13,420 ( < 1 % )     ;
-; C2 interconnects                            ; 434 / 119,108 ( < 1 % )   ;
-; C4 interconnects                            ; 272 / 56,300 ( < 1 % )    ;
+; Block interconnects                         ; 1,632 / 289,320 ( < 1 % ) ;
+; C12 interconnects                           ; 24 / 13,420 ( < 1 % )     ;
+; C2 interconnects                            ; 421 / 119,108 ( < 1 % )   ;
+; C4 interconnects                            ; 251 / 56,300 ( < 1 % )    ;
 ; DQS bus muxes                               ; 0 / 25 ( 0 % )            ;
 ; DQS-18 I/O buses                            ; 0 / 25 ( 0 % )            ;
 ; DQS-9 I/O buses                             ; 0 / 25 ( 0 % )            ;
-; Direct links                                ; 243 / 289,320 ( < 1 % )   ;
+; Direct links                                ; 337 / 289,320 ( < 1 % )   ;
 ; Global clocks                               ; 1 / 16 ( 6 % )            ;
 ; HPS SDRAM PLL inputs                        ; 0 / 1 ( 0 % )             ;
 ; HPS SDRAM PLL outputs                       ; 0 / 1 ( 0 % )             ;
@@ -2129,13 +2113,13 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; HPS_INTERFACE_TPIU_TRACE_INPUTs             ; 0 / 2 ( 0 % )             ;
 ; HPS_INTERFACE_TPIU_TRACE_OUTPUTs            ; 0 / 33 ( 0 % )            ;
 ; Horizontal periphery clocks                 ; 0 / 72 ( 0 % )            ;
-; Local interconnects                         ; 540 / 84,580 ( < 1 % )    ;
+; Local interconnects                         ; 606 / 84,580 ( < 1 % )    ;
 ; Quadrant clocks                             ; 0 / 66 ( 0 % )            ;
-; R14 interconnects                           ; 82 / 12,676 ( < 1 % )     ;
-; R14/C12 interconnect drivers                ; 99 / 20,720 ( < 1 % )     ;
-; R3 interconnects                            ; 690 / 130,992 ( < 1 % )   ;
-; R6 interconnects                            ; 815 / 266,960 ( < 1 % )   ;
-; Spine clocks                                ; 3 / 360 ( < 1 % )         ;
+; R14 interconnects                           ; 75 / 12,676 ( < 1 % )     ;
+; R14/C12 interconnect drivers                ; 90 / 20,720 ( < 1 % )     ;
+; R3 interconnects                            ; 709 / 130,992 ( < 1 % )   ;
+; R6 interconnects                            ; 756 / 266,960 ( < 1 % )   ;
+; Spine clocks                                ; 2 / 360 ( < 1 % )         ;
 ; Wire stub REs                               ; 0 / 15,858 ( 0 % )        ;
 +---------------------------------------------+---------------------------+
 
@@ -2327,98 +2311,102 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------+----------------------+-------------------+
 ; Source Clock(s) ; Destination Clock(s) ; Delay Added in ns ;
 +-----------------+----------------------+-------------------+
-; VGA_CLK2        ; clk                  ; 43.4              ;
-; VGA_CLK2,clk    ; clk                  ; 31.8              ;
-; VGA_CLK2        ; clk,I/O              ; 13.1              ;
-; clk             ; clk                  ; 10.8              ;
+; VGA_CLK2        ; clk                  ; 33.9              ;
+; VGA_CLK2,clk    ; clk                  ; 25.3              ;
+; clk             ; clk                  ; 13.2              ;
+; VGA_CLK2        ; clk,I/O              ; 10.1              ;
 +-----------------+----------------------+-------------------+
 Note: For more information on problematic transfers, consider running the Fitter again with the Optimize hold timing option (Settings Menu) turned off.
 This will disable optimization of problematic paths and expose them for further analysis using the TimeQuest Timing Analyzer.
 
 
-+----------------------------------------------------------------------------------------------+
-; Estimated Delay Added for Hold Timing Details                                                ;
-+-------------------------------------+------------------------------------+-------------------+
-; Source Register                     ; Destination Register               ; Delay Added in ns ;
-+-------------------------------------+------------------------------------+-------------------+
-; VGA_CLK2                            ; VGA_CLK2                           ; 4.886             ;
-; vga:vga|h_counter[5]                ; municao1:municao1|B[0]             ; 3.968             ;
-; vga:vga|h_counter[4]                ; municao1:municao1|B[0]             ; 3.963             ;
-; vga:vga|h_counter[6]                ; municao1:municao1|B[0]             ; 3.894             ;
-; vga:vga|h_counter[3]                ; municao1:municao1|B[0]             ; 3.893             ;
-; vga:vga|h_counter[2]                ; municao1:municao1|B[0]             ; 3.800             ;
-; vga:vga|h_counter[8]                ; municao1:municao1|B[0]             ; 3.770             ;
-; vga:vga|v_counter[1]                ; municao1:municao1|B[0]             ; 3.765             ;
-; vga:vga|h_counter[1]                ; municao1:municao1|B[0]             ; 3.760             ;
-; vga:vga|v_counter[0]                ; municao1:municao1|B[0]             ; 3.745             ;
-; vga:vga|h_counter[0]                ; municao1:municao1|B[0]             ; 3.715             ;
-; vga:vga|h_counter[7]                ; municao1:municao1|B[0]             ; 3.714             ;
-; vga:vga|v_counter[2]                ; municao1:municao1|B[0]             ; 3.700             ;
-; vga:vga|v_counter[3]                ; municao1:municao1|B[0]             ; 3.699             ;
-; vga:vga|v_counter[6]                ; municao1:municao1|B[0]             ; 3.699             ;
-; vga:vga|h_counter[9]                ; municao1:municao1|B[0]             ; 3.673             ;
-; vga:vga|v_counter[5]                ; municao1:municao1|B[0]             ; 3.653             ;
-; vga:vga|v_counter[7]                ; municao1:municao1|B[0]             ; 3.644             ;
-; vga:vga|v_counter[9]                ; municao1:municao1|B[0]             ; 3.642             ;
-; vga:vga|v_counter[4]                ; municao1:municao1|B[0]             ; 3.637             ;
-; vga:vga|v_counter[8]                ; municao1:municao1|B[0]             ; 3.571             ;
-; municao1:municao1|mem_X_municao[0]  ; municao1:municao1|B[0]             ; 2.738             ;
-; municao1:municao1|mem_X_municao[1]  ; municao1:municao1|B[0]             ; 2.607             ;
-; municao1:municao1|mem_X_municao[2]  ; municao1:municao1|B[0]             ; 2.607             ;
-; municao1:municao1|mem_X_municao[3]  ; municao1:municao1|B[0]             ; 2.607             ;
-; municao1:municao1|mem_X_municao[4]  ; municao1:municao1|B[0]             ; 2.607             ;
-; municao1:municao1|mem_X_municao[5]  ; municao1:municao1|B[0]             ; 2.542             ;
-; municao1:municao1|mem_X_municao[6]  ; municao1:municao1|B[0]             ; 2.423             ;
-; municao1:municao1|mem_Y_municao[3]  ; municao1:municao1|B[0]             ; 2.417             ;
-; municao1:municao1|mem_Y_municao[2]  ; municao1:municao1|B[0]             ; 2.417             ;
-; municao1:municao1|mem_Y_municao[1]  ; municao1:municao1|B[0]             ; 2.417             ;
-; municao1:municao1|mem_Y_municao[0]  ; municao1:municao1|B[0]             ; 2.417             ;
-; municao1:municao1|mem_Y_municao[5]  ; municao1:municao1|B[0]             ; 2.188             ;
-; municao1:municao1|mem_Y_municao[4]  ; municao1:municao1|B[0]             ; 2.188             ;
-; municao1:municao1|mem_X_municao[7]  ; municao1:municao1|B[0]             ; 2.183             ;
-; municao1:municao1|mem_X_municao[8]  ; municao1:municao1|B[0]             ; 2.183             ;
-; municao1:municao1|mem_Y_municao[6]  ; municao1:municao1|B[0]             ; 2.040             ;
-; municao1:municao1|mem_X_municao[9]  ; municao1:municao1|B[0]             ; 2.008             ;
-; municao1:municao1|mem_Y_municao[7]  ; municao1:municao1|B[0]             ; 1.984             ;
-; municao1:municao1|mem_X_municao[10] ; municao1:municao1|B[0]             ; 1.923             ;
-; municao1:municao1|mem_Y_municao[8]  ; municao1:municao1|B[0]             ; 1.857             ;
-; municao1:municao1|mem_Y_municao[9]  ; municao1:municao1|B[0]             ; 1.783             ;
-; municao1:municao1|mem_Y_municao[10] ; municao1:municao1|B[0]             ; 1.575             ;
-; nave:nave|estado_nave.0001          ; nave:nave|estado_nave.0011         ; 0.356             ;
-; nave:nave|estado_nave.0010          ; nave:nave|estado_nave.0011         ; 0.354             ;
-; random_number:rn_inst|i[3]          ; random_number:rn_inst|numero[6]    ; 0.333             ;
-; random_number:rn_inst|i[0]          ; random_number:rn_inst|numero[6]    ; 0.313             ;
-; random_number:rn_inst|i[1]          ; random_number:rn_inst|numero[6]    ; 0.284             ;
-; municao1:municao1|verifica_tiro.00  ; municao1:municao1|mem_Y_municao[4] ; 0.282             ;
-; random_number:rn_inst|numero[2]     ; resultado[2]                       ; 0.268             ;
-; random_number:rn_inst|numero[3]     ; resultado[3]                       ; 0.268             ;
-; random_number:rn_inst|numero[5]     ; resultado[5]                       ; 0.268             ;
-; nave:nave|contador_botao[18]        ; nave:nave|estado_nave.0000         ; 0.261             ;
-; nave:nave|contador_botao[15]        ; nave:nave|estado_nave.0000         ; 0.261             ;
-; nave:nave|contador_botao[14]        ; nave:nave|estado_nave.0000         ; 0.261             ;
-; nave:nave|contador_botao[13]        ; nave:nave|estado_nave.0000         ; 0.261             ;
-; nave:nave|contador_botao[12]        ; nave:nave|estado_nave.0000         ; 0.261             ;
-; nave:nave|contador_botao[11]        ; nave:nave|estado_nave.0000         ; 0.261             ;
-; nave:nave|contador_botao[10]        ; nave:nave|estado_nave.0000         ; 0.261             ;
-; nave:nave|contador_botao[9]         ; nave:nave|estado_nave.0000         ; 0.261             ;
-; nave:nave|contador_botao[8]         ; nave:nave|estado_nave.0000         ; 0.261             ;
-; nave:nave|contador_botao[7]         ; nave:nave|estado_nave.0000         ; 0.261             ;
-; nave:nave|contador_botao[6]         ; nave:nave|estado_nave.0000         ; 0.261             ;
-; nave:nave|contador_botao[5]         ; nave:nave|estado_nave.0000         ; 0.261             ;
-; nave:nave|contador_botao[4]         ; nave:nave|estado_nave.0000         ; 0.261             ;
-; nave:nave|contador_botao[3]         ; nave:nave|estado_nave.0000         ; 0.261             ;
-; nave:nave|contador_botao[2]         ; nave:nave|estado_nave.0000         ; 0.261             ;
-; nave:nave|contador_botao[1]         ; nave:nave|estado_nave.0000         ; 0.261             ;
-; nave:nave|contador_botao[0]         ; nave:nave|estado_nave.0000         ; 0.261             ;
-; nave:nave|contador_botao[17]        ; nave:nave|estado_nave.0000         ; 0.261             ;
-; nave:nave|contador_botao[16]        ; nave:nave|estado_nave.0000         ; 0.261             ;
-; random_number:rn_inst|numero[0]     ; resultado[0]                       ; 0.252             ;
-; random_number:rn_inst|numero[1]     ; resultado[1]                       ; 0.252             ;
-; random_number:rn_inst|numero[4]     ; resultado[4]                       ; 0.252             ;
-; nave:nave|tiro_ativo_jogador[0]     ; nave:nave|contador_botao_c[21]     ; 0.163             ;
-; random_number:rn_inst|i[2]          ; random_number:rn_inst|numero[6]    ; 0.087             ;
-+-------------------------------------+------------------------------------+-------------------+
-Note: This table only shows the top 76 path(s) that have the largest delay added for hold.
++-----------------------------------------------------------------------------------------------------------------+
+; Estimated Delay Added for Hold Timing Details                                                                   ;
++-------------------------------------------------+-------------------------------------------+-------------------+
+; Source Register                                 ; Destination Register                      ; Delay Added in ns ;
++-------------------------------------------------+-------------------------------------------+-------------------+
+; VGA_CLK2                                        ; VGA_CLK2                                  ; 5.304             ;
+; vga:vga|h_counter[5]                            ; municao1:municao1|B[0]                    ; 3.576             ;
+; vga:vga|h_counter[6]                            ; municao1:municao1|B[0]                    ; 3.507             ;
+; vga:vga|h_counter[7]                            ; municao1:municao1|B[0]                    ; 3.431             ;
+; vga:vga|h_counter[1]                            ; municao1:municao1|B[0]                    ; 3.408             ;
+; vga:vga|h_counter[2]                            ; municao1:municao1|B[0]                    ; 3.404             ;
+; vga:vga|h_counter[9]                            ; municao1:municao1|B[0]                    ; 3.398             ;
+; vga:vga|h_counter[8]                            ; municao1:municao1|B[0]                    ; 3.365             ;
+; vga:vga|h_counter[0]                            ; municao1:municao1|B[0]                    ; 3.347             ;
+; vga:vga|h_counter[3]                            ; municao1:municao1|B[0]                    ; 3.322             ;
+; vga:vga|v_counter[1]                            ; municao1:municao1|B[0]                    ; 3.296             ;
+; vga:vga|v_counter[7]                            ; municao1:municao1|B[0]                    ; 3.288             ;
+; vga:vga|v_counter[0]                            ; municao1:municao1|B[0]                    ; 3.280             ;
+; vga:vga|h_counter[4]                            ; municao1:municao1|B[0]                    ; 3.262             ;
+; vga:vga|v_counter[6]                            ; municao1:municao1|B[0]                    ; 3.234             ;
+; vga:vga|v_counter[8]                            ; municao1:municao1|B[0]                    ; 3.227             ;
+; vga:vga|v_counter[9]                            ; municao1:municao1|B[0]                    ; 3.148             ;
+; vga:vga|v_counter[3]                            ; municao1:municao1|B[0]                    ; 2.873             ;
+; vga:vga|v_counter[5]                            ; municao1:municao1|B[0]                    ; 2.857             ;
+; vga:vga|v_counter[2]                            ; municao1:municao1|B[0]                    ; 2.847             ;
+; vga:vga|v_counter[4]                            ; municao1:municao1|B[0]                    ; 2.843             ;
+; municao1:municao1|mem_X_municao[0]              ; municao1:municao1|B[0]                    ; 2.494             ;
+; municao1:municao1|mem_X_municao[1]              ; municao1:municao1|B[0]                    ; 2.494             ;
+; municao1:municao1|mem_X_municao[2]              ; municao1:municao1|B[0]                    ; 2.245             ;
+; municao1:municao1|mem_X_municao[3]              ; municao1:municao1|B[0]                    ; 2.245             ;
+; municao1:municao1|mem_X_municao[4]              ; municao1:municao1|B[0]                    ; 2.118             ;
+; municao1:municao1|mem_X_municao[5]              ; municao1:municao1|B[0]                    ; 2.086             ;
+; municao1:municao1|mem_X_municao[6]              ; municao1:municao1|B[0]                    ; 2.086             ;
+; municao1:municao1|mem_Y_municao[2]              ; municao1:municao1|B[0]                    ; 2.081             ;
+; municao1:municao1|mem_Y_municao[1]              ; municao1:municao1|B[0]                    ; 2.081             ;
+; municao1:municao1|mem_Y_municao[0]              ; municao1:municao1|B[0]                    ; 2.081             ;
+; municao1:municao1|mem_X_municao[7]              ; municao1:municao1|B[0]                    ; 2.023             ;
+; municao1:municao1|mem_X_municao[8]              ; municao1:municao1|B[0]                    ; 2.023             ;
+; municao1:municao1|mem_X_municao[9]              ; municao1:municao1|B[0]                    ; 2.023             ;
+; municao1:municao1|mem_X_municao[10]             ; municao1:municao1|B[0]                    ; 2.023             ;
+; municao1:municao1|mem_Y_municao[3]              ; municao1:municao1|B[0]                    ; 1.919             ;
+; municao1:municao1|mem_Y_municao[4]              ; municao1:municao1|B[0]                    ; 1.804             ;
+; municao1:municao1|mem_Y_municao[6]              ; municao1:municao1|B[0]                    ; 1.775             ;
+; municao1:municao1|mem_Y_municao[5]              ; municao1:municao1|B[0]                    ; 1.775             ;
+; municao1:municao1|mem_Y_municao[9]              ; municao1:municao1|B[0]                    ; 1.761             ;
+; municao1:municao1|mem_Y_municao[8]              ; municao1:municao1|B[0]                    ; 1.761             ;
+; municao1:municao1|mem_Y_municao[7]              ; municao1:municao1|B[0]                    ; 1.761             ;
+; municao1:municao1|mem_Y_municao[10]             ; municao1:municao1|B[0]                    ; 1.761             ;
+; nave:nave|contador_botao[18]                    ; nave:nave|estado_nave.0000                ; 0.519             ;
+; nave:nave|contador_botao[16]                    ; nave:nave|estado_nave.0000                ; 0.519             ;
+; nave:nave|contador_botao[15]                    ; nave:nave|estado_nave.0000                ; 0.519             ;
+; nave:nave|contador_botao[14]                    ; nave:nave|estado_nave.0000                ; 0.519             ;
+; nave:nave|contador_botao[13]                    ; nave:nave|estado_nave.0000                ; 0.519             ;
+; nave:nave|contador_botao[12]                    ; nave:nave|estado_nave.0000                ; 0.519             ;
+; nave:nave|contador_botao[10]                    ; nave:nave|estado_nave.0000                ; 0.519             ;
+; nave:nave|contador_botao[9]                     ; nave:nave|estado_nave.0000                ; 0.519             ;
+; nave:nave|contador_botao[8]                     ; nave:nave|estado_nave.0000                ; 0.519             ;
+; nave:nave|contador_botao[7]                     ; nave:nave|estado_nave.0000                ; 0.519             ;
+; nave:nave|contador_botao[6]                     ; nave:nave|estado_nave.0000                ; 0.519             ;
+; nave:nave|contador_botao[5]                     ; nave:nave|estado_nave.0000                ; 0.519             ;
+; nave:nave|contador_botao[4]                     ; nave:nave|estado_nave.0000                ; 0.519             ;
+; nave:nave|contador_botao[3]                     ; nave:nave|estado_nave.0000                ; 0.519             ;
+; nave:nave|contador_botao[2]                     ; nave:nave|estado_nave.0000                ; 0.519             ;
+; nave:nave|contador_botao[1]                     ; nave:nave|estado_nave.0000                ; 0.519             ;
+; nave:nave|contador_botao[0]                     ; nave:nave|estado_nave.0000                ; 0.519             ;
+; nave:nave|contador_botao[17]                    ; nave:nave|estado_nave.0000                ; 0.519             ;
+; nave:nave|contador_botao[11]                    ; nave:nave|estado_nave.0000                ; 0.519             ;
+; nave:nave|estado_nave.0010                      ; nave:nave|memo_X_nave[8]                  ; 0.342             ;
+; engine:engine|certo                             ; engine:engine|seleciona                   ; 0.318             ;
+; nave:nave|estado_nave.0011                      ; nave:nave|estado_nave.0000                ; 0.303             ;
+; engine:engine|momento                           ; engine:engine|certo                       ; 0.296             ;
+; nave:nave|tiro_ativo_jogador[0]                 ; nave:nave|contador_botao_c[21]            ; 0.288             ;
+; engine:engine|random_number:rn_inst|enable_prev ; engine:engine|random_number:rn_inst|i[27] ; 0.283             ;
+; engine:engine|seleciona                         ; engine:engine|momento                     ; 0.280             ;
+; nave:nave|memo_X_nave[8]                        ; nave:nave|mem_X_nave[8]                   ; 0.257             ;
+; nave:nave|estado_nave.0000                      ; nave:nave|estado_nave.0001                ; 0.166             ;
+; nave:nave|memo_X_nave[10]                       ; nave:nave|mem_X_nave[10]                  ; 0.035             ;
+; nave:nave|memo_X_nave[6]                        ; nave:nave|mem_X_nave[6]                   ; 0.033             ;
+; nave:nave|memo_X_nave[5]                        ; nave:nave|mem_X_nave[5]                   ; 0.033             ;
+; nave:nave|memo_X_nave[4]                        ; nave:nave|mem_X_nave[4]                   ; 0.033             ;
+; nave:nave|memo_X_nave[3]                        ; nave:nave|mem_X_nave[3]                   ; 0.025             ;
+; nave:nave|memo_X_nave[9]                        ; nave:nave|mem_X_nave[9]                   ; 0.019             ;
+; nave:nave|memo_X_nave[7]                        ; nave:nave|mem_X_nave[7]                   ; 0.019             ;
+; nave:nave|memo_X_nave[1]                        ; nave:nave|mem_X_nave[1]                   ; 0.019             ;
+; nave:nave|memo_X_nave[2]                        ; nave:nave|mem_X_nave[2]                   ; 0.015             ;
++-------------------------------------------------+-------------------------------------------+-------------------+
+Note: This table only shows the top 80 path(s) that have the largest delay added for hold.
 
 
 +-----------------+
@@ -2434,7 +2422,7 @@ Warning (292013): Feature LogicLock is only available with a valid subscription 
 Warning (15714): Some pins have incomplete I/O assignments. Refer to the I/O Assignment Warnings report for details
 Info (184020): Starting Fitter periphery placement operations
 Info (11191): Automatically promoted 1 clock (1 global)
-    Info (11162): clk~inputCLKENA0 with 163 fanout uses global clock CLKCTRL_G6
+    Info (11162): clk~inputCLKENA0 with 183 fanout uses global clock CLKCTRL_G6
 Info (184021): Fitter periphery placement operations ending: elapsed time is 00:00:00
 Info (176233): Starting register packing
 Critical Warning (332012): Synopsys Design Constraints File file not found: 'SpaceInvaders.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
@@ -2626,32 +2614,32 @@ Warning (15705): Ignored locations or region assignments to the following nodes
     Warning (15706): Node "USB_SCL" is assigned to location or region, but does not exist in design
     Warning (15706): Node "USB_SDA" is assigned to location or region, but does not exist in design
     Warning (15706): Node "USB_WR_N" is assigned to location or region, but does not exist in design
-Info (11798): Fitter preparation operations ending: elapsed time is 00:00:05
+Info (11798): Fitter preparation operations ending: elapsed time is 00:00:06
 Info (170189): Fitter placement preparation operations beginning
 Info (14951): The Fitter is using Advanced Physical Optimization.
-Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:02
+Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:01
 Info (170191): Fitter placement operations beginning
 Info (170137): Fitter placement was successful
 Info (170192): Fitter placement operations ending: elapsed time is 00:00:01
 Info (170193): Fitter routing operations beginning
 Info (170195): Router estimated average interconnect usage is 0% of the available device resources
-    Info (170196): Router estimated peak interconnect usage is 6% of the available device resources in the region that extends from location X33_Y0 to location X44_Y10
+    Info (170196): Router estimated peak interconnect usage is 6% of the available device resources in the region that extends from location X45_Y0 to location X55_Y10
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:04
-Info (11888): Total time spent on timing analysis during the Fitter is 0.52 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.57 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
-Info (11801): Fitter post-fit operations ending: elapsed time is 00:00:02
+Info (11801): Fitter post-fit operations ending: elapsed time is 00:00:03
 Warning (171167): Found invalid Fitter assignments. See the Ignored Assignments panel in the Fitter Compilation Report for more information.
 Info (144001): Generated suppressed messages file /home/ec2022/ra260511/Documents/MC613/2024s1-mc613-projeto-tabajara-fc/output_files/SpaceInvaders.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 187 warnings
-    Info: Peak virtual memory: 3142 megabytes
-    Info: Processing ended: Wed Jun  5 16:07:55 2024
-    Info: Elapsed time: 00:00:24
-    Info: Total CPU time (on all processors): 00:01:36
+    Info: Peak virtual memory: 3150 megabytes
+    Info: Processing ended: Wed Jun  5 18:27:03 2024
+    Info: Elapsed time: 00:00:23
+    Info: Total CPU time (on all processors): 00:01:43
 
 
 +----------------------------+

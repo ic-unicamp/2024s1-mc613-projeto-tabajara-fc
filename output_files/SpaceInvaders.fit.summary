@@ -1,12 +1,12 @@
-Fitter Status : Successful - Wed Jun  5 16:07:54 2024
+Fitter Status : Successful - Wed Jun  5 18:27:03 2024
 Quartus Prime Version : 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 Revision Name : SpaceInvaders
 Top-level Entity Name : SpaceInvaders
 Family : Cyclone V
 Device : 5CSEMA5F31C6
 Timing Models : Final
-Logic utilization (in ALMs) : 682 / 32,070 ( 2 % )
-Total registers : 184
+Logic utilization (in ALMs) : 707 / 32,070 ( 2 % )
+Total registers : 204
 Total pins : 77 / 457 ( 17 % )
 Total virtual pins : 0
 Total block memory bits : 0 / 4,065,280 ( 0 % )
