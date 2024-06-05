@@ -213,7 +213,6 @@ random_number rn_inst (
     .clk(clk),
     .reset(reset),
     .enable(enable),
-    .min_value(min_value),
     .max_value(max_value),
     .random_output(random_output)
 );
@@ -229,13 +228,11 @@ display display(
 );
 
 reg enable;
-wire [31:0] min_value;
 wire [31:0] max_value;
 wire [31:0] random_output;
 reg [31:0] resultado;
 reg [18:0] contador;
 
-assign min_value = 2;
 assign max_value = 90;
 
 
@@ -247,9 +244,9 @@ always @(posedge clk ) begin
     end
     else begin
     contador = contador + 1;
-    enable = ~enable;
     end
     if (contador == 0) begin
+        enable = ~enable;
         resultado = random_output;
     end
 
