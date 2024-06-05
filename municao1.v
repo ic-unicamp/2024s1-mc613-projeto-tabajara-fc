@@ -44,7 +44,7 @@ always @(posedge clk) begin
 		  mem_Y_municao = 0;
 		  verifica_tiro = 0;
 	// end else if(mem_Y_municao <= 200 && mem_Y_municao != 0) begin /////ALTERAR AQUI PARA AS COLISOES
-	end else if(colisao_inimigo) begin
+	end else if(colisao_inimigo == 1) begin
 		  mem_X_municao = 0;
 		  mem_Y_municao = 0;
 		  verifica_tiro = 2;
