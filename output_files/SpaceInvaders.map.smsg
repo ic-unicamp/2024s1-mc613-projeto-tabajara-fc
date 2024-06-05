@@ -1,4 +1,0 @@
-Warning (10268): Verilog HDL information at SpaceInvaders.v(165): always construct contains both blocking and non-blocking assignments File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 165
-Warning (10268): Verilog HDL information at nave.v(36): always construct contains both blocking and non-blocking assignments File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/nave.v Line: 36
-Warning (10268): Verilog HDL information at nave.v(64): always construct contains both blocking and non-blocking assignments File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/nave.v Line: 64
-Warning (10268): Verilog HDL information at municao1.v(27): always construct contains both blocking and non-blocking assignments File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/municao1.v Line: 27
