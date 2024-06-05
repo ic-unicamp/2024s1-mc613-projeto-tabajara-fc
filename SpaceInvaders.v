@@ -231,9 +231,9 @@ reg enable;
 wire [31:0] max_value;
 wire [31:0] random_output;
 reg [31:0] resultado;
-reg [18:0] contador;
+reg [19:0] contador;
 
-assign max_value = 90;
+assign max_value = 82;
 
 
 always @(posedge clk ) begin
@@ -243,15 +243,16 @@ always @(posedge clk ) begin
         enable = 0;
     end
     else begin
-    contador = contador + 1;
+        contador = contador + 1;
+        if (contador == 1000000) begin
+            contador = 0;
+            enable = 1;
+            resultado = random_output;
+        end
+        else begin
+            enable = 0;
+        end
     end
-    if (contador == 0) begin
-        enable = ~enable;
-        resultado = random_output;
-    end
-
-
-    
 end
 
 
