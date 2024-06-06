@@ -186,8 +186,9 @@ reg [3:0] contador_mov_h;
 reg direction; // 0: direita; 1: esquerda
 
 // MOVIMENTO
+reg [10:0] max_x, min_x;
 always @(posedge clk) begin
-    if (reset) begin
+    if (reset || ~btn_D) begin
         contador_movimento = 1;
         contador_mov_h = 0;
         direction = 0;
@@ -199,6 +200,10 @@ always @(posedge clk) begin
         end
     end
     else if(estado == 1 && contador_movimento == 0) begin
+
+        for (l = 0; l < 24; l )
+
+
         if (contador_mov_h < 3) begin
             if (direction == 0) begin
                 for (i = 0; i < 8; i = i + 1) begin
@@ -236,6 +241,7 @@ generate
                 .h_counter(h_counter),
                 .v_counter(v_counter),
                 .reset(reset),
+                .btn_D(btn_D),
                 .posX_municao_player(posX_Municao1),
                 .posY_municao_player(posY_Municao1),
                 .R(inimigoR[gv_k * 8 + gv_i]),
@@ -270,7 +276,6 @@ always @(posedge clk) begin
                 p_btn_A = 1;
                 p_btn_B = 1;
                 p_btn_C = 1;
-
                 if ((~anterior & btn_D)) begin
                     estado = 1;
                 end
@@ -285,7 +290,6 @@ always @(posedge clk) begin
                 p_btn_D = btn_D;
                 posX_tiro_inimigo = posX[ID_enemy_tiro] + 10;
                 posY_tiro_inimigo = posY[ID_enemy_tiro] - 2;
-
                 VGA_R = 8'b0;
                 VGA_G = 8'b0;
                 VGA_B = 8'b0;

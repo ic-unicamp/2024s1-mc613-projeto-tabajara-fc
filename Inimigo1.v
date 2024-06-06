@@ -7,6 +7,7 @@ module Inimigo1(
     input [9:0] posX_municao_player,
     input [9:0] posY_municao_player,
     input reset,
+    input btn_D,
     output reg [7:0] R,
     output reg [7:0] G,
     output reg [7:0] B,
@@ -91,8 +92,8 @@ module Inimigo1(
     end
 
 // Bloco para verificar colisão entre inimigo e bala
-always @(posedge clk or posedge reset) begin
-    if (reset) begin
+always @(posedge clk) begin
+    if ((reset) || ~(btn_D)) begin
         vivo <= 1;
         venceu <= 0;
         colisao <= 0;
