@@ -172,11 +172,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "clk",
+					"name" : "btn_D",
 					"strict" : false
 				},
 				{
-					"name" : "btn_D",
+					"name" : "clk",
 					"strict" : false
 				},
 				{

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for SpaceInvaders
-Wed Jun  5 18:32:14 2024
+Wed Jun  5 21:03:49 2024
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -63,11 +63,10 @@ Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
  55. Port Connectivity Checks: "Inimigo1:row[0].inimigos[0].inimigo_inst"
  56. Port Connectivity Checks: "municao2:municao2"
  57. Port Connectivity Checks: "municao1:municao1"
- 58. Port Connectivity Checks: "nave:nave"
- 59. Post-Synthesis Netlist Statistics for Top Partition
- 60. Elapsed Time Per Partition
- 61. Analysis & Synthesis Messages
- 62. Analysis & Synthesis Suppressed Messages
+ 58. Post-Synthesis Netlist Statistics for Top Partition
+ 59. Elapsed Time Per Partition
+ 60. Analysis & Synthesis Messages
+ 61. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -93,13 +92,13 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Wed Jun  5 18:32:14 2024       ;
+; Analysis & Synthesis Status     ; Successful - Wed Jun  5 21:03:49 2024       ;
 ; Quartus Prime Version           ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                   ; SpaceInvaders                               ;
 ; Top-level Entity Name           ; SpaceInvaders                               ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 430                                         ;
+; Total registers                 ; 453                                         ;
 ; Total pins                      ; 77                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
@@ -213,14 +212,16 @@ refer to the applicable agreement for further details.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.0%      ;
+;     Processor 2            ;   0.1%      ;
 ;     Processor 3            ;   0.0%      ;
 ;     Processor 4            ;   0.0%      ;
 ;     Processor 5            ;   0.0%      ;
 ;     Processor 6            ;   0.0%      ;
 ;     Processor 7            ;   0.0%      ;
 ;     Processor 8            ;   0.0%      ;
-;     Processors 9-12        ;   0.0%      ;
+;     Processor 9            ;   0.0%      ;
+;     Processor 10           ;   0.0%      ;
+;     Processors 11-12       ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -231,6 +232,7 @@ refer to the applicable agreement for further details.
 +----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------------------------+---------+
 ; SpaceInvaders.v                  ; yes             ; Auto-Found Verilog HDL File  ; /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v            ;         ;
 ; vga.v                            ; yes             ; Auto-Found Verilog HDL File  ; /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/vga.v                      ;         ;
+; tela_derrota.v                   ; yes             ; Auto-Found Verilog HDL File  ; /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/tela_derrota.v             ;         ;
 ; nave.v                           ; yes             ; Auto-Found Verilog HDL File  ; /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/nave.v                     ;         ;
 ; municao1.v                       ; yes             ; Auto-Found Verilog HDL File  ; /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/municao1.v                 ;         ;
 ; municao2.v                       ; yes             ; Auto-Found Verilog HDL File  ; /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/municao2.v                 ;         ;
@@ -254,25 +256,25 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimate of Logic utilization (ALMs needed) ; 1042      ;
+; Estimate of Logic utilization (ALMs needed) ; 1107      ;
 ;                                             ;           ;
-; Combinational ALUT usage for logic          ; 1851      ;
-;     -- 7 input functions                    ; 0         ;
-;     -- 6 input functions                    ; 229       ;
-;     -- 5 input functions                    ; 204       ;
-;     -- 4 input functions                    ; 179       ;
-;     -- <=3 input functions                  ; 1239      ;
+; Combinational ALUT usage for logic          ; 1950      ;
+;     -- 7 input functions                    ; 2         ;
+;     -- 6 input functions                    ; 255       ;
+;     -- 5 input functions                    ; 211       ;
+;     -- 4 input functions                    ; 188       ;
+;     -- <=3 input functions                  ; 1294      ;
 ;                                             ;           ;
-; Dedicated logic registers                   ; 430       ;
+; Dedicated logic registers                   ; 453       ;
 ;                                             ;           ;
 ; I/O pins                                    ; 77        ;
 ;                                             ;           ;
 ; Total DSP Blocks                            ; 0         ;
 ;                                             ;           ;
 ; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 410       ;
-; Total fan-out                               ; 7505      ;
-; Average fan-out                             ; 3.08      ;
+; Maximum fan-out                             ; 433       ;
+; Total fan-out                               ; 7915      ;
+; Average fan-out                             ; 3.10      ;
 +---------------------------------------------+-----------+
 
 
@@ -281,7 +283,7 @@ refer to the applicable agreement for further details.
 +-----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
 ; Compilation Hierarchy Node                    ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                     ; Entity Name         ; Library Name ;
 +-----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
-; |SpaceInvaders                                ; 1851 (228)          ; 430 (145)                 ; 0                 ; 0          ; 77   ; 0            ; |SpaceInvaders                                                                                                                                          ; SpaceInvaders       ; work         ;
+; |SpaceInvaders                                ; 1950 (240)          ; 453 (145)                 ; 0                 ; 0          ; 77   ; 0            ; |SpaceInvaders                                                                                                                                          ; SpaceInvaders       ; work         ;
 ;    |Inimigo1:row[0].inimigos[0].inimigo_inst| ; 186 (88)            ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[0].inimigos[0].inimigo_inst                                                                                                 ; Inimigo1            ; work         ;
 ;       |lpm_divide:Div0|                       ; 49 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[0].inimigos[0].inimigo_inst|lpm_divide:Div0                                                                                 ; lpm_divide          ; work         ;
 ;          |lpm_divide_gbm:auto_generated|      ; 49 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SpaceInvaders|Inimigo1:row[0].inimigos[0].inimigo_inst|lpm_divide:Div0|lpm_divide_gbm:auto_generated                                                   ; lpm_divide_gbm      ; work         ;
@@ -354,9 +356,10 @@ refer to the applicable agreement for further details.
 ;       |bcd_display:u0|                        ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SpaceInvaders|display:display|bcd_display:u0                                                                                                           ; bcd_display         ; work         ;
 ;       |bcd_display:u1|                        ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SpaceInvaders|display:display|bcd_display:u1                                                                                                           ; bcd_display         ; work         ;
 ;    |municao1:municao1|                        ; 103 (103)           ; 61 (61)                   ; 0                 ; 0          ; 0    ; 0            ; |SpaceInvaders|municao1:municao1                                                                                                                        ; municao1            ; work         ;
-;    |municao2:municao2|                        ; 110 (110)           ; 65 (65)                   ; 0                 ; 0          ; 0    ; 0            ; |SpaceInvaders|municao2:municao2                                                                                                                        ; municao2            ; work         ;
-;    |nave:nave|                                ; 203 (203)           ; 80 (80)                   ; 0                 ; 0          ; 0    ; 0            ; |SpaceInvaders|nave:nave                                                                                                                                ; nave                ; work         ;
+;    |municao2:municao2|                        ; 121 (121)           ; 87 (87)                   ; 0                 ; 0          ; 0    ; 0            ; |SpaceInvaders|municao2:municao2                                                                                                                        ; municao2            ; work         ;
+;    |nave:nave|                                ; 246 (246)           ; 81 (81)                   ; 0                 ; 0          ; 0    ; 0            ; |SpaceInvaders|nave:nave                                                                                                                                ; nave                ; work         ;
 ;    |random_number:rn_inst|                    ; 7 (7)               ; 11 (11)                   ; 0                 ; 0          ; 0    ; 0            ; |SpaceInvaders|random_number:rn_inst                                                                                                                    ; random_number       ; work         ;
+;    |tela_derrota:tela_derrota|                ; 33 (33)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SpaceInvaders|tela_derrota:tela_derrota                                                                                                                ; tela_derrota        ; work         ;
 ;    |vga:vga|                                  ; 27 (27)             ; 20 (20)                   ; 0                 ; 0          ; 0    ; 0            ; |SpaceInvaders|vga:vga                                                                                                                                  ; vga                 ; work         ;
 +-----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
@@ -410,6 +413,8 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; Register name                                    ; Reason for Removal                     ;
 +--------------------------------------------------+----------------------------------------+
 ; nave:nave|memo_X_nave[0]                         ; Stuck at VCC due to stuck port data_in ;
+; posX[5][1]                                       ; Stuck at VCC due to stuck port data_in ;
+; posX[5][0]                                       ; Stuck at GND due to stuck port data_in ;
 ; posX[4][1]                                       ; Stuck at VCC due to stuck port data_in ;
 ; posX[4][0]                                       ; Stuck at GND due to stuck port data_in ;
 ; posX[3][1]                                       ; Stuck at VCC due to stuck port data_in ;
@@ -423,13 +428,12 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; posY[2][0]                                       ; Stuck at GND due to stuck port data_in ;
 ; posY[1][0]                                       ; Stuck at GND due to stuck port data_in ;
 ; posY[0][0]                                       ; Stuck at GND due to stuck port data_in ;
-; posX[5][0]                                       ; Stuck at GND due to stuck port data_in ;
-; posX[5][1]                                       ; Stuck at VCC due to stuck port data_in ;
 ; posX[6][0]                                       ; Stuck at GND due to stuck port data_in ;
 ; posX[6][1]                                       ; Stuck at VCC due to stuck port data_in ;
 ; posX[7][0]                                       ; Stuck at GND due to stuck port data_in ;
 ; posX[7][1]                                       ; Stuck at VCC due to stuck port data_in ;
 ; municao2:municao2|mem_X_municao[0]               ; Stuck at GND due to stuck port data_in ;
+; municao2:municao2|posX_Municao2[0]               ; Stuck at GND due to stuck port data_in ;
 ; random_number:rn_inst|random_number[0,2,5,7..11] ; Stuck at GND due to stuck port data_in ;
 ; municao1:municao1|B[1..7]                        ; Merged with municao1:municao1|B[0]     ;
 ; municao1:municao1|G[0..7]                        ; Merged with municao1:municao1|B[0]     ;
@@ -439,12 +443,12 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; municao2:municao2|R[0..7]                        ; Merged with municao2:municao2|B[0]     ;
 ; resultado[2,5,7..11]                             ; Merged with resultado[0]               ;
 ; resultado[0]                                     ; Stuck at GND due to stuck port data_in ;
+; nave:nave|vivo_jogador[1]                        ; Stuck at GND due to stuck port data_in ;
 ; nave:nave|tiro_ativo_jogador[1]                  ; Stuck at GND due to stuck port data_in ;
 ; municao1:municao1|posY_Municao1[0]               ; Lost fanout                            ;
 ; municao1:municao1|posX_Municao1[0]               ; Lost fanout                            ;
 ; nave:nave|mem_X_nave[0]                          ; Stuck at VCC due to stuck port data_in ;
 ; nave:nave|posX_Nave[0]                           ; Stuck at VCC due to stuck port data_in ;
-; municao2:municao2|mem_Y_municao[10]              ; Stuck at GND due to stuck port data_in ;
 ; municao1:municao1|verifica_tiro.01               ; Lost fanout                            ;
 ; nave:nave|estado_nave~6                          ; Lost fanout                            ;
 ; nave:nave|estado_nave~7                          ; Lost fanout                            ;
@@ -453,22 +457,22 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; municao1:municao1|verifica_tiro.10               ; Lost fanout                            ;
 ; random_number:rn_inst|seed[7..31]                ; Lost fanout                            ;
 ; contador_mov_h[2,3]                              ; Stuck at GND due to stuck port data_in ;
-; Total Number of Removed Registers = 122          ;                                        ;
+; Total Number of Removed Registers = 123          ;                                        ;
 +--------------------------------------------------+----------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                          ;
-+----------------------------------------+---------------------------+-------------------------------------------------+
-; Register name                          ; Reason for Removal        ; Registers Removed due to This Register          ;
-+----------------------------------------+---------------------------+-------------------------------------------------+
-; nave:nave|memo_X_nave[0]               ; Stuck at VCC              ; nave:nave|mem_X_nave[0], nave:nave|posX_Nave[0] ;
-;                                        ; due to stuck port data_in ;                                                 ;
-; posX[2][0]                             ; Stuck at GND              ; municao2:municao2|mem_X_municao[0]              ;
-;                                        ; due to stuck port data_in ;                                                 ;
-; random_number:rn_inst|random_number[0] ; Stuck at GND              ; resultado[0]                                    ;
-;                                        ; due to stuck port data_in ;                                                 ;
-+----------------------------------------+---------------------------+-------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                  ;
++----------------------------------------+---------------------------+-------------------------------------------------------------------------+
+; Register name                          ; Reason for Removal        ; Registers Removed due to This Register                                  ;
++----------------------------------------+---------------------------+-------------------------------------------------------------------------+
+; posX[2][0]                             ; Stuck at GND              ; municao2:municao2|mem_X_municao[0], municao2:municao2|posX_Municao2[0], ;
+;                                        ; due to stuck port data_in ; nave:nave|vivo_jogador[1]                                               ;
+; nave:nave|memo_X_nave[0]               ; Stuck at VCC              ; nave:nave|mem_X_nave[0], nave:nave|posX_Nave[0]                         ;
+;                                        ; due to stuck port data_in ;                                                                         ;
+; random_number:rn_inst|random_number[0] ; Stuck at GND              ; resultado[0]                                                            ;
+;                                        ; due to stuck port data_in ;                                                                         ;
++----------------------------------------+---------------------------+-------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -476,12 +480,12 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 430   ;
-; Number of registers using Synchronous Clear  ; 212   ;
-; Number of registers using Synchronous Load   ; 69    ;
-; Number of registers using Asynchronous Clear ; 124   ;
+; Total registers                              ; 453   ;
+; Number of registers using Synchronous Clear  ; 213   ;
+; Number of registers using Synchronous Load   ; 60    ;
+; Number of registers using Asynchronous Clear ; 146   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 182   ;
+; Number of registers using Clock Enable       ; 183   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -491,30 +495,30 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +-----------------------------------------------+---------+
 ; Inverted Register                             ; Fan out ;
 +-----------------------------------------------+---------+
-; Inimigo1:row[0].inimigos[7].inimigo_inst|vivo ; 3       ;
-; Inimigo1:row[1].inimigos[0].inimigo_inst|vivo ; 3       ;
-; Inimigo1:row[0].inimigos[0].inimigo_inst|vivo ; 3       ;
-; Inimigo1:row[1].inimigos[2].inimigo_inst|vivo ; 3       ;
-; Inimigo1:row[1].inimigos[3].inimigo_inst|vivo ; 3       ;
-; Inimigo1:row[1].inimigos[4].inimigo_inst|vivo ; 3       ;
-; Inimigo1:row[1].inimigos[5].inimigo_inst|vivo ; 3       ;
-; Inimigo1:row[1].inimigos[6].inimigo_inst|vivo ; 3       ;
-; Inimigo1:row[1].inimigos[7].inimigo_inst|vivo ; 3       ;
+; Inimigo1:row[2].inimigos[3].inimigo_inst|vivo ; 3       ;
 ; Inimigo1:row[2].inimigos[0].inimigo_inst|vivo ; 3       ;
 ; Inimigo1:row[2].inimigos[2].inimigo_inst|vivo ; 3       ;
-; Inimigo1:row[2].inimigos[3].inimigo_inst|vivo ; 3       ;
-; Inimigo1:row[0].inimigos[2].inimigo_inst|vivo ; 3       ;
+; Inimigo1:row[1].inimigos[7].inimigo_inst|vivo ; 3       ;
+; Inimigo1:row[1].inimigos[5].inimigo_inst|vivo ; 3       ;
+; Inimigo1:row[1].inimigos[6].inimigo_inst|vivo ; 3       ;
+; Inimigo1:row[1].inimigos[4].inimigo_inst|vivo ; 3       ;
+; Inimigo1:row[1].inimigos[2].inimigo_inst|vivo ; 3       ;
+; Inimigo1:row[1].inimigos[3].inimigo_inst|vivo ; 3       ;
+; Inimigo1:row[1].inimigos[0].inimigo_inst|vivo ; 3       ;
+; Inimigo1:row[0].inimigos[7].inimigo_inst|vivo ; 3       ;
+; Inimigo1:row[0].inimigos[0].inimigo_inst|vivo ; 3       ;
 ; Inimigo1:row[0].inimigos[3].inimigo_inst|vivo ; 3       ;
+; Inimigo1:row[0].inimigos[2].inimigo_inst|vivo ; 3       ;
+; Inimigo1:row[0].inimigos[6].inimigo_inst|vivo ; 3       ;
 ; Inimigo1:row[0].inimigos[4].inimigo_inst|vivo ; 3       ;
 ; Inimigo1:row[0].inimigos[5].inimigo_inst|vivo ; 3       ;
-; Inimigo1:row[0].inimigos[6].inimigo_inst|vivo ; 3       ;
-; Inimigo1:row[2].inimigos[4].inimigo_inst|vivo ; 3       ;
-; Inimigo1:row[2].inimigos[5].inimigo_inst|vivo ; 3       ;
-; Inimigo1:row[2].inimigos[6].inimigo_inst|vivo ; 3       ;
-; Inimigo1:row[2].inimigos[7].inimigo_inst|vivo ; 3       ;
+; Inimigo1:row[2].inimigos[1].inimigo_inst|vivo ; 3       ;
 ; Inimigo1:row[0].inimigos[1].inimigo_inst|vivo ; 3       ;
 ; Inimigo1:row[1].inimigos[1].inimigo_inst|vivo ; 3       ;
-; Inimigo1:row[2].inimigos[1].inimigo_inst|vivo ; 3       ;
+; Inimigo1:row[2].inimigos[7].inimigo_inst|vivo ; 3       ;
+; Inimigo1:row[2].inimigos[6].inimigo_inst|vivo ; 3       ;
+; Inimigo1:row[2].inimigos[4].inimigo_inst|vivo ; 3       ;
+; Inimigo1:row[2].inimigos[5].inimigo_inst|vivo ; 3       ;
 ; Total number of inverted registers = 24       ;         ;
 +-----------------------------------------------+---------+
 
@@ -524,25 +528,24 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                         ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------+
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |SpaceInvaders|resultado[3]                        ;
-; 3:1                ; 29 bits   ; 58 LEs        ; 29 LEs               ; 29 LEs                 ; Yes        ; |SpaceInvaders|posX[1][7]                          ;
-; 3:1                ; 35 bits   ; 70 LEs        ; 0 LEs                ; 70 LEs                 ; Yes        ; |SpaceInvaders|posX[3][7]                          ;
-; 3:1                ; 10 bits   ; 20 LEs        ; 0 LEs                ; 20 LEs                 ; Yes        ; |SpaceInvaders|vga:vga|h_counter[1]                ;
-; 3:1                ; 9 bits    ; 18 LEs        ; 9 LEs                ; 9 LEs                  ; Yes        ; |SpaceInvaders|posY[2][3]                          ;
-; 3:1                ; 19 bits   ; 38 LEs        ; 0 LEs                ; 38 LEs                 ; Yes        ; |SpaceInvaders|posY[1][9]                          ;
-; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |SpaceInvaders|nave:nave|mem_X_nave[3]             ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |SpaceInvaders|nave:nave|mem_X_nave[10]            ;
-; 3:1                ; 19 bits   ; 38 LEs        ; 0 LEs                ; 38 LEs                 ; Yes        ; |SpaceInvaders|nave:nave|contador_botao[5]         ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |SpaceInvaders|resultado[6]                        ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 0 LEs                ; 20 LEs                 ; Yes        ; |SpaceInvaders|vga:vga|h_counter[2]                ;
+; 3:1                ; 29 bits   ; 58 LEs        ; 29 LEs               ; 29 LEs                 ; Yes        ; |SpaceInvaders|posX[2][3]                          ;
+; 3:1                ; 35 bits   ; 70 LEs        ; 0 LEs                ; 70 LEs                 ; Yes        ; |SpaceInvaders|posX[3][2]                          ;
+; 3:1                ; 9 bits    ; 18 LEs        ; 9 LEs                ; 9 LEs                  ; Yes        ; |SpaceInvaders|posY[1][6]                          ;
+; 3:1                ; 19 bits   ; 38 LEs        ; 0 LEs                ; 38 LEs                 ; Yes        ; |SpaceInvaders|posY[2][8]                          ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |SpaceInvaders|nave:nave|mem_X_nave[8]             ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |SpaceInvaders|nave:nave|mem_X_nave[9]             ;
+; 3:1                ; 19 bits   ; 38 LEs        ; 0 LEs                ; 38 LEs                 ; Yes        ; |SpaceInvaders|nave:nave|contador_botao[0]         ;
 ; 3:1                ; 19 bits   ; 38 LEs        ; 0 LEs                ; 38 LEs                 ; Yes        ; |SpaceInvaders|municao1:municao1|contador[0]       ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |SpaceInvaders|contador_mov_h[1]                   ;
-; 4:1                ; 10 bits   ; 20 LEs        ; 0 LEs                ; 20 LEs                 ; Yes        ; |SpaceInvaders|vga:vga|v_counter[0]                ;
-; 4:1                ; 9 bits    ; 18 LEs        ; 0 LEs                ; 18 LEs                 ; Yes        ; |SpaceInvaders|municao2:municao2|mem_Y_municao[9]  ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |SpaceInvaders|municao2:municao2|mem_Y_municao[10] ;
-; 4:1                ; 26 bits   ; 52 LEs        ; 26 LEs               ; 26 LEs                 ; Yes        ; |SpaceInvaders|nave:nave|contador_botao_c[19]      ;
-; 5:1                ; 11 bits   ; 33 LEs        ; 0 LEs                ; 33 LEs                 ; Yes        ; |SpaceInvaders|municao1:municao1|mem_X_municao[5]  ;
-; 6:1                ; 11 bits   ; 44 LEs        ; 11 LEs               ; 33 LEs                 ; Yes        ; |SpaceInvaders|municao1:municao1|mem_Y_municao[2]  ;
-; 7:1                ; 6 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |SpaceInvaders|nave:nave|memo_X_nave[8]            ;
-; 7:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |SpaceInvaders|nave:nave|memo_X_nave[9]            ;
+; 4:1                ; 10 bits   ; 20 LEs        ; 0 LEs                ; 20 LEs                 ; Yes        ; |SpaceInvaders|vga:vga|v_counter[8]                ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |SpaceInvaders|contador_mov_h[2]                   ;
+; 4:1                ; 10 bits   ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |SpaceInvaders|municao2:municao2|mem_Y_municao[10] ;
+; 4:1                ; 26 bits   ; 52 LEs        ; 26 LEs               ; 26 LEs                 ; Yes        ; |SpaceInvaders|nave:nave|contador_botao_c[7]       ;
+; 5:1                ; 11 bits   ; 33 LEs        ; 0 LEs                ; 33 LEs                 ; Yes        ; |SpaceInvaders|municao1:municao1|mem_X_municao[9]  ;
+; 6:1                ; 11 bits   ; 44 LEs        ; 11 LEs               ; 33 LEs                 ; Yes        ; |SpaceInvaders|municao1:municao1|mem_Y_municao[0]  ;
+; 7:1                ; 6 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |SpaceInvaders|nave:nave|memo_X_nave[2]            ;
+; 7:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |SpaceInvaders|nave:nave|memo_X_nave[10]           ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |SpaceInvaders|nave:nave|estado_nave               ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |SpaceInvaders|nave:nave|estado_nave               ;
 ; 5:1                ; 3 bits    ; 9 LEs         ; 9 LEs                ; 0 LEs                  ; No         ; |SpaceInvaders|municao1:municao1|verifica_tiro     ;
@@ -1098,14 +1101,13 @@ Note: In order to hide this table in the UI and the text report file, please set
 +---------------------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "municao2:municao2"                                                                                                                                      ;
-+------------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; Port             ; Type  ; Severity ; Details                                                                                                                                      ;
-+------------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; posY_inimigo[10] ; Input ; Info     ; Stuck at GND                                                                                                                                 ;
-; btn_C            ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-+------------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "municao2:municao2"                                                                                                                           ;
++-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port  ; Type  ; Severity ; Details                                                                                                                                      ;
++-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; btn_C ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1119,54 +1121,49 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "nave:nave"                                                                                  ;
-+--------------+--------+----------+-------------------------------------------------------------------------------------+
-; Port         ; Type   ; Severity ; Details                                                                             ;
-+--------------+--------+----------+-------------------------------------------------------------------------------------+
-; vivo_jogador ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+--------------+--------+----------+-------------------------------------------------------------------------------------+
-
-
 +-----------------------------------------------------+
 ; Post-Synthesis Netlist Statistics for Top Partition ;
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 430                         ;
-;     CLR               ; 51                          ;
+; arriav_ff             ; 453                         ;
+;     CLR               ; 72                          ;
 ;     CLR SCLR          ; 43                          ;
 ;     ENA               ; 28                          ;
 ;     ENA CLR           ; 21                          ;
-;     ENA CLR SCLR SLD  ; 9                           ;
+;     ENA CLR SCLR      ; 10                          ;
 ;     ENA SCLR          ; 86                          ;
 ;     ENA SLD           ; 38                          ;
 ;     SCLR              ; 74                          ;
 ;     SLD               ; 22                          ;
-;     plain             ; 58                          ;
-; arriav_lcell_comb     ; 1858                        ;
-;     arith             ; 837                         ;
-;         0 data inputs ; 119                         ;
-;         1 data inputs ; 415                         ;
-;         2 data inputs ; 111                         ;
-;         3 data inputs ; 115                         ;
-;         4 data inputs ; 77                          ;
-;     normal            ; 864                         ;
+;     plain             ; 59                          ;
+; arriav_lcell_comb     ; 1957                        ;
+;     arith             ; 879                         ;
+;         0 data inputs ; 123                         ;
+;         1 data inputs ; 444                         ;
+;         2 data inputs ; 115                         ;
+;         3 data inputs ; 118                         ;
+;         4 data inputs ; 78                          ;
+;         5 data inputs ; 1                           ;
+;     extend            ; 2                           ;
+;         7 data inputs ; 2                           ;
+;     normal            ; 910                         ;
 ;         0 data inputs ; 2                           ;
 ;         1 data inputs ; 12                          ;
-;         2 data inputs ; 233                         ;
-;         3 data inputs ; 82                          ;
-;         4 data inputs ; 102                         ;
-;         5 data inputs ; 204                         ;
-;         6 data inputs ; 229                         ;
-;     shared            ; 157                         ;
-;         0 data inputs ; 15                          ;
-;         1 data inputs ; 21                          ;
-;         2 data inputs ; 121                         ;
+;         2 data inputs ; 242                         ;
+;         3 data inputs ; 79                          ;
+;         4 data inputs ; 110                         ;
+;         5 data inputs ; 210                         ;
+;         6 data inputs ; 255                         ;
+;     shared            ; 166                         ;
+;         0 data inputs ; 14                          ;
+;         1 data inputs ; 26                          ;
+;         2 data inputs ; 125                         ;
+;         3 data inputs ; 1                           ;
 ; boundary_port         ; 77                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 18.60                       ;
-; Average LUT depth     ; 9.62                        ;
+; Average LUT depth     ; 9.49                        ;
 +-----------------------+-----------------------------+
 
 
@@ -1185,52 +1182,61 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Wed Jun  5 18:32:07 2024
+    Info: Processing started: Wed Jun  5 21:03:42 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off SpaceInvaders -c SpaceInvaders
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file top1.v
     Info (12023): Found entity 1: top1 File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/top1.v Line: 1
-Warning (10275): Verilog HDL Module Instantiation warning at SpaceInvaders.v(223): ignored dangling comma in List of Port Connections File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 223
-Warning (10275): Verilog HDL Module Instantiation warning at SpaceInvaders.v(275): ignored dangling comma in List of Port Connections File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 275
+Warning (10275): Verilog HDL Module Instantiation warning at SpaceInvaders.v(237): ignored dangling comma in List of Port Connections File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 237
+Warning (10275): Verilog HDL Module Instantiation warning at SpaceInvaders.v(300): ignored dangling comma in List of Port Connections File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 300
 Warning (12125): Using design file SpaceInvaders.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
     Info (12023): Found entity 1: SpaceInvaders File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 1
-Warning (10236): Verilog HDL Implicit Net warning at SpaceInvaders.v(109): created implicit net for "tiro_ativo_inimigo" File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 109
+Warning (10236): Verilog HDL Implicit Net warning at SpaceInvaders.v(118): created implicit net for "tiro_ativo_inimigo" File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 118
 Info (12127): Elaborating entity "SpaceInvaders" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at SpaceInvaders.v(109): object "tiro_ativo_inimigo" assigned a value but never read File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 109
-Warning (10230): Verilog HDL assignment warning at SpaceInvaders.v(107): truncated value with size 32 to match size of target (11) File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 107
-Warning (10230): Verilog HDL assignment warning at SpaceInvaders.v(171): truncated value with size 32 to match size of target (10) File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 171
-Warning (10230): Verilog HDL assignment warning at SpaceInvaders.v(174): truncated value with size 32 to match size of target (10) File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 174
-Warning (10230): Verilog HDL assignment warning at SpaceInvaders.v(181): truncated value with size 32 to match size of target (10) File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 181
-Warning (10230): Verilog HDL assignment warning at SpaceInvaders.v(186): truncated value with size 32 to match size of target (10) File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 186
-Warning (10230): Verilog HDL assignment warning at SpaceInvaders.v(189): truncated value with size 32 to match size of target (4) File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 189
-Warning (10230): Verilog HDL assignment warning at SpaceInvaders.v(193): truncated value with size 32 to match size of target (10) File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 193
-Warning (10230): Verilog HDL assignment warning at SpaceInvaders.v(199): truncated value with size 32 to match size of target (26) File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 199
-Warning (10235): Verilog HDL Always Construct warning at SpaceInvaders.v(244): variable "R_nave" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 244
-Warning (10235): Verilog HDL Always Construct warning at SpaceInvaders.v(244): variable "R_municao1" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 244
-Warning (10235): Verilog HDL Always Construct warning at SpaceInvaders.v(244): variable "R_municao2" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 244
-Warning (10235): Verilog HDL Always Construct warning at SpaceInvaders.v(245): variable "G_nave" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 245
-Warning (10235): Verilog HDL Always Construct warning at SpaceInvaders.v(245): variable "G_municao1" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 245
-Warning (10235): Verilog HDL Always Construct warning at SpaceInvaders.v(245): variable "G_municao2" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 245
-Warning (10235): Verilog HDL Always Construct warning at SpaceInvaders.v(246): variable "B_nave" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 246
-Warning (10235): Verilog HDL Always Construct warning at SpaceInvaders.v(246): variable "B_municao1" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 246
-Warning (10235): Verilog HDL Always Construct warning at SpaceInvaders.v(246): variable "B_municao2" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 246
-Warning (10230): Verilog HDL assignment warning at SpaceInvaders.v(295): truncated value with size 32 to match size of target (19) File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 295
+Warning (10036): Verilog HDL or VHDL warning at SpaceInvaders.v(118): object "tiro_ativo_inimigo" assigned a value but never read File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 118
+Warning (10230): Verilog HDL assignment warning at SpaceInvaders.v(116): truncated value with size 32 to match size of target (11) File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 116
+Warning (10230): Verilog HDL assignment warning at SpaceInvaders.v(117): truncated value with size 32 to match size of target (11) File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 117
+Warning (10230): Verilog HDL assignment warning at SpaceInvaders.v(185): truncated value with size 32 to match size of target (10) File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 185
+Warning (10230): Verilog HDL assignment warning at SpaceInvaders.v(188): truncated value with size 32 to match size of target (10) File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 188
+Warning (10230): Verilog HDL assignment warning at SpaceInvaders.v(195): truncated value with size 32 to match size of target (10) File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 195
+Warning (10230): Verilog HDL assignment warning at SpaceInvaders.v(200): truncated value with size 32 to match size of target (10) File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 200
+Warning (10230): Verilog HDL assignment warning at SpaceInvaders.v(203): truncated value with size 32 to match size of target (4) File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 203
+Warning (10230): Verilog HDL assignment warning at SpaceInvaders.v(207): truncated value with size 32 to match size of target (10) File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 207
+Warning (10230): Verilog HDL assignment warning at SpaceInvaders.v(213): truncated value with size 32 to match size of target (26) File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 213
+Warning (10235): Verilog HDL Always Construct warning at SpaceInvaders.v(258): variable "derrota" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 258
+Warning (10235): Verilog HDL Always Construct warning at SpaceInvaders.v(259): variable "R_nave" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 259
+Warning (10235): Verilog HDL Always Construct warning at SpaceInvaders.v(259): variable "R_municao1" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 259
+Warning (10235): Verilog HDL Always Construct warning at SpaceInvaders.v(259): variable "R_municao2" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 259
+Warning (10235): Verilog HDL Always Construct warning at SpaceInvaders.v(260): variable "G_nave" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 260
+Warning (10235): Verilog HDL Always Construct warning at SpaceInvaders.v(260): variable "G_municao1" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 260
+Warning (10235): Verilog HDL Always Construct warning at SpaceInvaders.v(260): variable "G_municao2" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 260
+Warning (10235): Verilog HDL Always Construct warning at SpaceInvaders.v(261): variable "B_nave" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 261
+Warning (10235): Verilog HDL Always Construct warning at SpaceInvaders.v(261): variable "B_municao1" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 261
+Warning (10235): Verilog HDL Always Construct warning at SpaceInvaders.v(261): variable "B_municao2" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 261
+Warning (10235): Verilog HDL Always Construct warning at SpaceInvaders.v(264): variable "R_derrota" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 264
+Warning (10235): Verilog HDL Always Construct warning at SpaceInvaders.v(265): variable "G_derrota" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 265
+Warning (10235): Verilog HDL Always Construct warning at SpaceInvaders.v(266): variable "B_derrota" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 266
+Warning (10230): Verilog HDL assignment warning at SpaceInvaders.v(320): truncated value with size 32 to match size of target (19) File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 320
 Warning (10034): Output port "HEX3" at SpaceInvaders.v(21) has no driver File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 21
 Warning (10034): Output port "HEX4" at SpaceInvaders.v(22) has no driver File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 22
 Warning (10034): Output port "HEX5" at SpaceInvaders.v(25) has no driver File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 25
 Warning (12125): Using design file vga.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
     Info (12023): Found entity 1: vga File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/vga.v Line: 1
-Info (12128): Elaborating entity "vga" for hierarchy "vga:vga" File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 52
+Info (12128): Elaborating entity "vga" for hierarchy "vga:vga" File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 50
 Warning (10036): Verilog HDL or VHDL warning at vga.v(18): object "Ativo" assigned a value but never read File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/vga.v Line: 18
 Warning (10230): Verilog HDL assignment warning at vga.v(25): truncated value with size 32 to match size of target (10) File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/vga.v Line: 25
 Warning (10230): Verilog HDL assignment warning at vga.v(28): truncated value with size 32 to match size of target (10) File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/vga.v Line: 28
 Warning (10230): Verilog HDL assignment warning at vga.v(40): truncated value with size 32 to match size of target (1) File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/vga.v Line: 40
 Warning (10230): Verilog HDL assignment warning at vga.v(41): truncated value with size 32 to match size of target (1) File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/vga.v Line: 41
 Warning (10230): Verilog HDL assignment warning at vga.v(42): truncated value with size 32 to match size of target (1) File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/vga.v Line: 42
+Warning (10229): Verilog HDL Expression warning at tela_derrota.v(21): truncated literal to match 450 bits File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/tela_derrota.v Line: 21
+Warning (12125): Using design file tela_derrota.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: tela_derrota File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/tela_derrota.v Line: 1
+Info (12128): Elaborating entity "tela_derrota" for hierarchy "tela_derrota:tela_derrota" File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 60
 Warning (12125): Using design file nave.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
     Info (12023): Found entity 1: nave File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/nave.v Line: 2
-Info (12128): Elaborating entity "nave" for hierarchy "nave:nave" File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 71
+Info (12128): Elaborating entity "nave" for hierarchy "nave:nave" File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 79
 Warning (10230): Verilog HDL assignment warning at nave.v(43): truncated value with size 32 to match size of target (19) File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/nave.v Line: 43
 Warning (10230): Verilog HDL assignment warning at nave.v(54): truncated value with size 32 to match size of target (26) File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/nave.v Line: 54
 Warning (10230): Verilog HDL assignment warning at nave.v(86): truncated value with size 32 to match size of target (11) File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/nave.v Line: 86
@@ -1248,20 +1254,20 @@ Warning (10270): Verilog HDL Case Statement warning at nave.v(137): incomplete c
 Warning (10229): Verilog HDL Expression warning at municao1.v(24): truncated literal to match 17 bits File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/municao1.v Line: 24
 Warning (12125): Using design file municao1.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
     Info (12023): Found entity 1: municao1 File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/municao1.v Line: 1
-Info (12128): Elaborating entity "municao1" for hierarchy "municao1:municao1" File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 88
+Info (12128): Elaborating entity "municao1" for hierarchy "municao1:municao1" File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 96
 Warning (10230): Verilog HDL assignment warning at municao1.v(31): truncated value with size 32 to match size of target (19) File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/municao1.v Line: 31
 Warning (10230): Verilog HDL assignment warning at municao1.v(52): truncated value with size 32 to match size of target (11) File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/municao1.v Line: 52
 Warning (10230): Verilog HDL assignment warning at municao1.v(59): truncated value with size 32 to match size of target (11) File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/municao1.v Line: 59
 Warning (10229): Verilog HDL Expression warning at municao2.v(25): truncated literal to match 17 bits File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/municao2.v Line: 25
 Warning (12125): Using design file municao2.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
     Info (12023): Found entity 1: municao2 File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/municao2.v Line: 1
-Info (12128): Elaborating entity "municao2" for hierarchy "municao2:municao2" File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 104
+Info (12128): Elaborating entity "municao2" for hierarchy "municao2:municao2" File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 112
 Warning (10230): Verilog HDL assignment warning at municao2.v(41): truncated value with size 32 to match size of target (19) File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/municao2.v Line: 41
 Warning (10230): Verilog HDL assignment warning at municao2.v(47): truncated value with size 32 to match size of target (24) File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/municao2.v Line: 47
 Warning (10230): Verilog HDL assignment warning at municao2.v(61): truncated value with size 32 to match size of target (11) File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/municao2.v Line: 61
 Warning (12125): Using design file Inimigo1.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
     Info (12023): Found entity 1: Inimigo1 File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/Inimigo1.v Line: 1
-Info (12128): Elaborating entity "Inimigo1" for hierarchy "Inimigo1:row[0].inimigos[0].inimigo_inst" File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 223
+Info (12128): Elaborating entity "Inimigo1" for hierarchy "Inimigo1:row[0].inimigos[0].inimigo_inst" File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 237
 Warning (10235): Verilog HDL Always Construct warning at Inimigo1.v(36): variable "posX" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/Inimigo1.v Line: 36
 Warning (10235): Verilog HDL Always Construct warning at Inimigo1.v(37): variable "posY" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/Inimigo1.v Line: 37
 Warning (10235): Verilog HDL Always Construct warning at Inimigo1.v(39): variable "posX" is read inside the Always Construct but isn't in the Always Construct's Event Control File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/Inimigo1.v Line: 39
@@ -1270,10 +1276,10 @@ Warning (10762): Verilog HDL Case Statement warning at Inimigo1.v(43): can't che
 Warning (10270): Verilog HDL Case Statement warning at Inimigo1.v(43): incomplete case statement has no default case item File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/Inimigo1.v Line: 43
 Warning (12125): Using design file random_number.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
     Info (12023): Found entity 1: random_number File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/random_number.v Line: 1
-Info (12128): Elaborating entity "random_number" for hierarchy "random_number:rn_inst" File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 265
+Info (12128): Elaborating entity "random_number" for hierarchy "random_number:rn_inst" File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 290
 Warning (12125): Using design file display.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
     Info (12023): Found entity 1: display File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/display.v Line: 1
-Info (12128): Elaborating entity "display" for hierarchy "display:display" File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 275
+Info (12128): Elaborating entity "display" for hierarchy "display:display" File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 300
 Warning (12125): Using design file bin_to_bcd.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
     Info (12023): Found entity 1: bin_to_bcd File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/bin_to_bcd.v Line: 1
 Info (12128): Elaborating entity "bin_to_bcd" for hierarchy "display:display|bin_to_bcd:b2bcd" File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/display.v Line: 19
@@ -1338,13 +1344,13 @@ Info (13025): Duplicate LATCH primitives merged into single LATCH primitive
     Info (13026): Duplicate LATCH primitive "display:display|bcd_display:u0|saida[4]" merged with LATCH primitive "display:display|bcd_display:u0|saida[0]" File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/bcd_display.v Line: 23
     Info (13026): Duplicate LATCH primitive "display:display|bcd_display:u0|saida[5]" merged with LATCH primitive "display:display|bcd_display:u0|saida[2]" File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/bcd_display.v Line: 23
 Warning (13012): Latch display:display|bcd_display:u0|saida[0] has unsafe behavior File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/bcd_display.v Line: 23
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal resultado[1] File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 288
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal resultado[1] File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 313
 Warning (13012): Latch display:display|bcd_display:u0|saida[1] has unsafe behavior File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/bcd_display.v Line: 23
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal resultado[1] File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 288
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal resultado[1] File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 313
 Warning (13012): Latch display:display|bcd_display:u0|saida[2] has unsafe behavior File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/bcd_display.v Line: 23
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal resultado[1] File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 288
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal resultado[1] File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 313
 Warning (13012): Latch display:display|bcd_display:u0|saida[6] has unsafe behavior File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/bcd_display.v Line: 23
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal resultado[1] File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 288
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal resultado[1] File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/SpaceInvaders.v Line: 313
 Warning (14026): LATCH primitive "display:display|bcd_display:u0|saida[0]" is permanently enabled File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/bcd_display.v Line: 23
 Warning (14026): LATCH primitive "display:display|bcd_display:u0|saida[1]" is permanently enabled File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/bcd_display.v Line: 23
 Warning (14026): LATCH primitive "display:display|bcd_display:u0|saida[2]" is permanently enabled File: /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/bcd_display.v Line: 23
@@ -1957,13 +1963,13 @@ Warning (20013): Ignored 571 assignments for entity "DE1_SoC" -- entity does not
 Info (144001): Generated suppressed messages file /home/ec2022/ra244808/Documents/Lab lógicos/2024s1-mc613-projeto-tabajara-fc/output_files/SpaceInvaders.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 2010 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 2122 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 6 input pins
     Info (21059): Implemented 71 output pins
-    Info (21061): Implemented 1933 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 706 warnings
-    Info: Peak virtual memory: 1356 megabytes
-    Info: Processing ended: Wed Jun  5 18:32:14 2024
+    Info (21061): Implemented 2045 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 713 warnings
+    Info: Peak virtual memory: 1357 megabytes
+    Info: Processing ended: Wed Jun  5 21:03:49 2024
     Info: Elapsed time: 00:00:07
     Info: Total CPU time (on all processors): 00:00:16
 

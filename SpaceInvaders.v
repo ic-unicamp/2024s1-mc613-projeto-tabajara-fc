@@ -23,8 +23,6 @@ module SpaceInvaders(
     output [6:0] HEX5 // digito da esquerda
 
 );
-
-
 // engine engine(
 //     .clk(clk),
 //     .reset(reset),
@@ -49,6 +47,16 @@ vga vga(
     .VGA_SYNC_N(VGA_SYNC_N),
     .VGA_HS(VGA_HS),
     .VGA_VS(VGA_VS)
+);
+
+tela_derrota tela_derrota(
+    .clk(clk),
+    .reset(reset),
+    .h_counter(h_counter),
+    .v_counter(v_counter),
+    .R(R_derrota),
+    .G(G_derrota),
+    .B(B_derrota)
 );
 
 nave nave(
@@ -104,7 +112,8 @@ municao2 municao2(
 );
 
 
-assign posX_tiro_inimigo = posX[2] + 8;
+assign derrota = (vivo_jogador == 0);
+assign posX_tiro_inimigo = posX[2] + 10;
 assign posY_tiro_inimigo = posY[2]- 4;
 assign tiro_ativo_inimigo = 1;
 
@@ -114,6 +123,7 @@ reg [9:0] posX [7:0];
 reg [9:0] posY [7:0];
 wire [9:0] h_counter;
 wire [9:0] v_counter;
+wire derrota;
 
 // INIMIGO 
 reg vivo_inimigo [23:0];
@@ -154,6 +164,10 @@ wire [7:0] B_municao1;
 wire [7:0] R_municao2;
 wire [7:0] G_municao2;
 wire [7:0] B_municao2;
+
+wire [7:0] R_derrota;
+wire [7:0] G_derrota;
+wire [7:0] B_derrota;
 
 // Inicializando as posições das naves
 integer i, k, l;
@@ -241,10 +255,21 @@ always @(clk) begin
                 VGA_B = VGA_B | inimigoB[j];
             end
     end
-    VGA_R = VGA_R | R_nave | R_municao1 | R_municao2;        
-    VGA_G = VGA_G | G_nave | G_municao1 | G_municao2;
-    VGA_B = VGA_B | B_nave | B_municao1 | B_municao2;
+    if (derrota == 0) begin
+        VGA_R = VGA_R | R_nave | R_municao1 | R_municao2;        
+        VGA_G = VGA_G | G_nave | G_municao1 | G_municao2;
+        VGA_B = VGA_B | B_nave | B_municao1 | B_municao2;
+    end
+    else begin
+        VGA_R = R_derrota;
+        VGA_G = G_derrota;
+        VGA_B = B_derrota;
+    end
 end
+
+
+
+
 
 // Circuitos
 reg VGA_CLK2; // 25Mhz
