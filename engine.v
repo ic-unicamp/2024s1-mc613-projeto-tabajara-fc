@@ -89,9 +89,9 @@ always @(posedge clk ) begin
     else begin
         ID_enemy_tiro[6]  <= 8'd0;
         if (contador_tiro == ATRASO_TIRO) begin
-            if (enemy_vivos[random_output] == 1) begin
-                tiro_antigo = random_output;
-                ID_enemy_tiro[random_output] = 1;
+            tiro_antigo = random_output;
+            if (enemy_vivos[tiro_antigo] == 1) begin
+                ID_enemy_tiro[tiro_antigo] = 1;
                 contador_tiro = 0;
             end
         end

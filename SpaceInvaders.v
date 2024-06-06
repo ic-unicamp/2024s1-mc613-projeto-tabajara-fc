@@ -29,7 +29,7 @@ engine engine(
     .reset(reset),
     .enemy_vivos(enemy_vivos),
     .jogador_vivo(),
-    .vitoria_enemy(),
+    .vitoria_enemy(game_over),
     .btn_D(btn_D),
     .restart(),
     .score(resultado),
@@ -37,7 +37,9 @@ engine engine(
     .estado_jogo()
 );
 
-reg [23:0] enemy_vivos;
+wire [23:0] enemy_vivos;
+
+assign enemy_vivos = vivo_inimigo;
 
 vga vga(
     .VGA_CLK2(VGA_CLK2),
@@ -113,7 +115,7 @@ municao2 municao2(
 );
 
 
-assign derrota = (vivo_jogador == 0);
+assign derrota = (vivo_jogador == 0) || (|game_over);
 assign posX_tiro_inimigo = posX[2] + 10;
 assign posY_tiro_inimigo = posY[2]- 4;
 assign tiro_ativo_inimigo = 1;
@@ -127,12 +129,12 @@ wire [9:0] v_counter;
 wire derrota;
 
 // INIMIGO 
-reg vivo_inimigo [23:0];
+reg [23:0] vivo_inimigo;
 reg [23:0] colisao_inimigo;
 wire [10:0] posX_tiro_inimigo;
 wire [10:0] posY_tiro_inimigo;
 wire matar_bala;
-reg game_over;
+reg [23:0] game_over;
 wire [7:0] inimigoR [23:0];
 wire [7:0] inimigoG [23:0];
 wire [7:0] inimigoB [23:0];
@@ -234,7 +236,7 @@ generate
                 .B(inimigoB[gv_k * 8 + gv_i]),
                 .colisao(colisao_inimigo[gv_k * 8 + gv_i]),
                 .vivo(vivo_inimigo[gv_k * 8 + gv_i]),
-                .venceu(game_over),
+                .venceu(game_over[gv_k * 8 + gv_i]),
             );
         end
     end
