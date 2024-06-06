@@ -25,20 +25,20 @@ module SpaceInvaders(
 );
 
 
-// engine engine(
-//     .clk(clk),
-//     .reset(reset),
-//     .enemy_vivos(),
-//     .jogador_vivo(vivo_jogador),
-//     .vitoria_enemy(),
-//     .btn_D(btn_D),
-//     .restart(restart),
-//     .vitoria_jogador(),
-//     .bloco_pos_X(),
-//     .bloco_pos_Y(),
-//     .estado_jogo(estado_jogo),
-//     .ID_enemy_tiro()
-// );
+engine engine(
+    .clk(clk),
+    .reset(reset),
+    .enemy_vivos(enemy_vivos),
+    .jogador_vivo(),
+    .vitoria_enemy(),
+    .btn_D(btn_D),
+    .restart(),
+    .score(resultado),
+    .ID_enemy_tiro(),
+    .estado_jogo()
+);
+
+reg [23:0] enemy_vivos;
 
 vga vga(
     .VGA_CLK2(VGA_CLK2),
@@ -254,16 +254,6 @@ always @(posedge clk) begin
     VGA_CLK2 = ~VGA_CLK2;
 end
 
-//TESTE NUMERO ALEATORIO
-random_number rn_inst (
-    .clk(clk),
-    .reset(reset),
-    .enable(enable),
-    .min_value(min_value),
-    .max_value(max_value),
-    .random_output(random_output)
-);
-
 display display(
     .entrada(resultado),
     .digito0(HEX0), // digito da direita
@@ -274,34 +264,23 @@ display display(
     // .digito5(HEX5)// digito da esquerda
 );
 
-reg enable;
-wire [31:0] min_value;
-wire [31:0] max_value;
-wire [31:0] random_output;
+
 reg [31:0] resultado;
-reg [18:0] contador;
 
-assign min_value = 2;
-assign max_value = 90;
+integer contador;
 
-
-always @(posedge clk ) begin
-    if (reset) begin
-        contador = 0;
-        resultado = 0;
-        enable = 0;
-    end
-    else begin
-    contador = contador + 1;
-    enable = ~enable;
-    end
-    if (contador == 0) begin
-        resultado = random_output;
-    end
-
-
-    
-end
-
+// always @(posedge clk ) begin
+//     if (reset) begin
+//         contador = 0;
+//         resultado = 0;
+//     end
+//     else begin
+//         contador = contador + 1;
+//         if (contador == 1000000) begin
+//             contador = 0;
+//             resultado = random_output;
+//         end
+//     end
+// end
 
 endmodule
