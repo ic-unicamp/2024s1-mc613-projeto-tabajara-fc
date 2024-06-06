@@ -201,9 +201,6 @@ always @(posedge clk) begin
     end
     else if(estado == 1 && contador_movimento == 0) begin
 
-        for (l = 0; l < 24; l )
-
-
         if (contador_mov_h < 3) begin
             if (direction == 0) begin
                 for (i = 0; i < 8; i = i + 1) begin
