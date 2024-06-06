@@ -43,7 +43,7 @@
 *.ptf.*
 *.qar
 *.qarlog
-#*.qws
+*.qws
 *.rpt
 *.smsg
 # *.sof
@@ -54,15 +54,15 @@
 *~
 *example*
 *sopc_*
-# *.sdc # I want those timing files
+*.sdc # I want those timing files
 
 # ignore Quartus II generated folders
 */db/
 */incremental_db/
-*/simulation/
+simulation/*
 */timing/
 */testbench/
 */*_sim/
 incremental_db/
 db/
-_output_files/
+output_files/
