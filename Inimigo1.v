@@ -108,7 +108,7 @@ always @(posedge clk) begin
             colisao <= 0;
         end
         // Verifique se o jogador venceu (condição pode ser ajustada conforme necessário)
-        if (posY >= 480) begin
+        if (posY >= 480 && vivo) begin
             venceu <= 1'b1;
         end
     end

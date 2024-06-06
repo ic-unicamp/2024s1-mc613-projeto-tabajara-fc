@@ -124,7 +124,7 @@ wire [5:0] ID_enemy_tiro;
 
 // Variáveis intermediárias para as cores das naves
 //Fios
-reg [9:0] posX [7:0];
+reg [9:0] posX [23:0];
 reg [9:0] posY [7:0];
 wire [9:0] h_counter;
 wire [9:0] v_counter;
@@ -181,45 +181,71 @@ wire [7:0] B_vitoria;
 // Inicializando as posições das naves inimigas
 integer i, k, l;
 
-reg [25:0] contador_movimento;
-reg [3:0] contador_mov_h;
+reg [20:0] contador_movimento;
+reg mov_v;
+reg [4:0] contador_velocidade;
 reg direction; // 0: direita; 1: esquerda
+localparam DELTA_X = 1;
+localparam DELTA_Y = 50;
+
 
 // MOVIMENTO
 reg [10:0] max_x, min_x;
 always @(posedge clk) begin
     if (reset || ~btn_D) begin
         contador_movimento = 1;
-        contador_mov_h = 0;
+        contador_velocidade = 0;
+        mov_v = 0;
         direction = 0;
-        for (i = 0; i < 8; i = i + 1) begin
-            posX[i] <= 150 + i * 60;
-        end
         for (k = 0; k < 3; k = k + 1) begin
             posY[k] <= 40 + k * 50;
+            for (i = 0; i < 8; i = i + 1) begin
+                posX[k * 8 + i] <= 150 + i * 60;
+            end
         end
     end
     else if(estado == 1 && contador_movimento == 0) begin
 
-        if (contador_mov_h < 3) begin
+        max_x = 0;
+        min_x = 900;
+        for (i = 0; i < 24; i = i + 1) begin
+            if (posX[i] > max_x && vivo_inimigo[i] == 1) begin
+                max_x = posX[i];
+            end
+            else if (posX[i] < min_x && vivo_inimigo[i] == 1) begin
+                min_x = posX[i];
+            end
+        end
+        if (mov_v) begin
+            for (k = 0; k < 3; k = k + 1) begin
+                posY[k] <= posY[k] + DELTA_Y;
+            end
+            mov_v = 0;
+            contador_velocidade = contador_velocidade + 1;
+        end
+        else begin
             if (direction == 0) begin
-                for (i = 0; i < 8; i = i + 1) begin
-                    posX[i] <= posX[i] + 60;
+                if (max_x + 60 <= 800) begin
+                    for (i = 0; i < 24; i = i + 1) begin
+                        posX[i] <= posX[i] + (DELTA_X + contador_velocidade);
+                    end
+                end
+                else begin
+                    direction = ~direction;
+                    mov_v = 1;
                 end
             end
             else begin
-                for (i = 0; i < 8; i = i + 1) begin
-                    posX[i] <= posX[i] - 60;
+                if (min_x - 60 > 100) begin
+                    for (i = 0; i < 24; i = i + 1) begin
+                        posX[i] <= posX[i] - (DELTA_X + contador_velocidade);
+                    end
+                end
+                else begin
+                    direction = ~direction;
+                    mov_v = 1;
                 end
             end
-            contador_mov_h = contador_mov_h + 1;
-        end
-        else begin
-            for (k = 0; k < 3; k = k + 1) begin
-                posY[k] <= posY[k] + 50;
-            end
-            direction = ~direction;
-            contador_mov_h = 0;
         end
     end
     contador_movimento = contador_movimento + 1;
@@ -233,7 +259,7 @@ generate
         for (gv_i = 0; gv_i < 8; gv_i = gv_i + 1) begin: inimigos
             Inimigo1 inimigo_inst (
                 .clk(clk),
-                .posX(posX[gv_i]),
+                .posX(posX[gv_k * 8 + gv_i]),
                 .posY(posY[gv_k]),
                 .h_counter(h_counter),
                 .v_counter(v_counter),
@@ -273,6 +299,7 @@ always @(posedge clk) begin
                 p_btn_A = 1;
                 p_btn_B = 1;
                 p_btn_C = 1;
+                p_btn_D = 0;
                 if ((~anterior & btn_D)) begin
                     estado = 1;
                 end
