@@ -27,19 +27,15 @@ module SpaceInvaders(
 engine engine(
     .clk(clk),
     .reset(reset),
-    .enemy_vivos(enemy_vivos),
-    .jogador_vivo(),
+    .enemy_vivos(vivo_inimigo),
+    .jogador_vivo(vivo_jogador),
     .vitoria_enemy(game_over),
     .btn_D(btn_D),
     .restart(),
     .score(resultado),
-    .ID_enemy_tiro(),
+    .ID_enemy_tiro(ID_enemy_tiro),
     .estado_jogo()
 );
-
-wire [23:0] enemy_vivos;
-
-assign enemy_vivos = vivo_inimigo;
 
 vga vga(
     .VGA_CLK2(VGA_CLK2),
@@ -60,6 +56,16 @@ tela_derrota tela_derrota(
     .R(R_derrota),
     .G(G_derrota),
     .B(B_derrota)
+);
+
+tela_vitoria tela_vitoria(
+    .clk(clk),
+    .reset(reset),
+    .h_counter(h_counter),
+    .v_counter(v_counter),
+    .R(R_vitoria),
+    .G(G_vitoria),
+    .B(B_vitoria)
 );
 
 nave nave(
@@ -98,7 +104,7 @@ municao1 municao1(
    .B(B_municao1)
 );
 
-
+// MUNIÇÃO 2 - INIMIGO
 municao2 municao2(
    .h_counter(h_counter),
    .v_counter(v_counter),
@@ -115,9 +121,10 @@ municao2 municao2(
 );
 
 
-assign derrota = (vivo_jogador == 0) || (|game_over);
-assign posX_tiro_inimigo = posX[2] + 10;
-assign posY_tiro_inimigo = posY[2]- 4;
+// assign derrota = (vivo_jogador == 0) || (|game_over); // Modificar
+wire [5:0] ID_enemy_tiro;
+assign posX_tiro_inimigo = posX[ID_enemy_tiro] + 10;
+assign posY_tiro_inimigo = posY[ID_enemy_tiro]- 4;
 assign tiro_ativo_inimigo = 1;
 
 // Variáveis intermediárias para as cores das naves
@@ -172,13 +179,17 @@ wire [7:0] R_derrota;
 wire [7:0] G_derrota;
 wire [7:0] B_derrota;
 
-// Inicializando as posições das naves
+wire [7:0] R_vitoria;
+wire [7:0] G_vitoria;
+wire [7:0] B_vitoria;
+
+// Inicializando as posições das naves inimigas
 integer i, k, l;
 
 reg [25:0] contador_movimento;
 reg [3:0] contador_mov_h;
 reg direction; // 0: direita; 1: esquerda
-// Initializing the positions of the spaceships
+
 always @(posedge clk) begin
     if (reset) begin
         contador_movimento = 1;
@@ -242,35 +253,77 @@ generate
     end
 endgenerate
 
-// Combinação das saídas das naves usando OR
+
+//Máquina de estados do jogo
+
 integer j;
-always @(clk) begin
-    // Inicialmente, as cores são pretas (fundo)
-    VGA_R = 8'b0;
-    VGA_G = 8'b0;
-    VGA_B = 8'b0;
-    
-    // Verifica se algum pixel da nave está na posição atual
-    for (j = 0; j < 24; j = j + 1) begin
-            if (vivo_inimigo[j] == 1) begin
-                VGA_R = VGA_R | inimigoR[j];
-                VGA_G = VGA_G | inimigoG[j];
-                VGA_B = VGA_B | inimigoB[j];
-            end
-    end
-    if (derrota == 0) begin
-        VGA_R = VGA_R | R_nave | R_municao1 | R_municao2;        
-        VGA_G = VGA_G | G_nave | G_municao1 | G_municao2;
-        VGA_B = VGA_B | B_nave | B_municao1 | B_municao2;
-    end
+reg [1:0] estado;
+reg anterior;
+always @(posedge clk) begin
+    if (reset) begin
+        estado = 0;
+        anterior = 1;
+    end 
     else begin
-        VGA_R = R_derrota;
-        VGA_G = G_derrota;
-        VGA_B = B_derrota;
+        case (estado)
+            0: begin    // Pré-jogo
+                // Inicialmente, as cores são pretas (fundo)
+                VGA_R = R_vitoria;
+                VGA_G = ~G_vitoria;
+                VGA_B = B_vitoria;
+                if ((~anterior & btn_D)) begin
+                    estado = 1;
+                end
+                anterior = btn_D;
+            end
+            1: begin    // Jogo em andamento
+                //Saida das cores: VGA_R, VGA_G, VGA_B
+                // Inicialmente, as cores são pretas (fundo)
+                VGA_R = 8'b0;
+                VGA_G = 8'b0;
+                VGA_B = 8'b0;    
+                // Verifica se algum pixel da nave está na posição atual
+                for (j = 0; j < 24; j = j + 1) begin
+                    if (vivo_inimigo[j] == 1) begin
+                        VGA_R = VGA_R | inimigoR[j];
+                        VGA_G = VGA_G | inimigoG[j];
+                        VGA_B = VGA_B | inimigoB[j];
+                    end
+                end
+                VGA_R = VGA_R | R_nave | R_municao1 | R_municao2;        
+                VGA_G = VGA_G | G_nave | G_municao1 | G_municao2;
+                VGA_B = VGA_B | B_nave | B_municao1 | B_municao2;            
+                if ((vivo_jogador == 0) || (|game_over)) begin
+                    // estado = 3;
+                end
+                if (~|vivo_inimigo) begin
+                    estado = 2;
+                end
+            end
+            2: begin
+                // Vitória jogador
+                VGA_R = R_vitoria;
+                VGA_G = G_vitoria;
+                VGA_B = ~B_vitoria;
+                if (~anterior & btn_D) begin
+                    estado = 0;
+                end
+                anterior = btn_D;
+            end
+            3: begin
+                // Derrota jogador
+                VGA_R = R_derrota;
+                VGA_G = G_derrota;
+                VGA_B = B_derrota;
+                if (~anterior & btn_D) begin
+                    estado = 0;
+                end
+                anterior = btn_D;
+            end
+            default: estado = 0; 
+        endcase
     end
 end
-
-
 
 
 
