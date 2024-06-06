@@ -82,8 +82,8 @@ always @(posedge clk or posedge reset) begin
         B <= 8'b0;
     end else if (((mem_X_municao - h_counter) < 1) && ((mem_Y_municao - v_counter) < 20)) begin
         R <= 255;
-        G <= 255;
-        B <= 255;
+        G <= 0;
+        B <= 0;
     end else begin
         R <= 8'b0;
         G <= 8'b0;

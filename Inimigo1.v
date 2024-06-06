@@ -43,47 +43,47 @@ module Inimigo1(
                 case (orig_y)
                     0: if ((orig_x >= 2) && (orig_x <= 5)) begin
                         R = 8'hFF;
-                        G = 8'hFF;
-                        B = 8'hFF;
+                        G = 8'h00;
+                        B = 8'h00;
                     end
                     1: if ((orig_x >= 1) && (orig_x <= 6)) begin
                         R = 8'hFF;
-                        G = 8'hFF;
-                        B = 8'hFF;
+                        G = 8'h00;
+                        B = 8'h00;
                     end
                     2: if ((orig_x >= 0) && (orig_x <= 7)) begin
                         R = 8'hFF;
-                        G = 8'hFF;
-                        B = 8'hFF;
+                        G = 8'h00;
+                        B = 8'h00;
                     end
                     3: if ((orig_x == 0) || (orig_x == 1) || 
                           (orig_x == 4) || (orig_x == 5) || 
                           (orig_x == 6) || (orig_x == 7)) begin
                         R = 8'hFF;
-                        G = 8'hFF;
-                        B = 8'hFF;
+                        G = 8'h00;
+                        B = 8'h00;
                     end
                     4: if ((orig_x >= 0) && (orig_x <= 7)) begin
                         R = 8'hFF;
-                        G = 8'hFF;
-                        B = 8'hFF;
+                        G = 8'h00;
+                        B = 8'h00;
                     end
                     5: if ((orig_x == 2) || (orig_x == 5)) begin
                         R = 8'hFF;
-                        G = 8'hFF;
-                        B = 8'hFF;
+                        G = 8'h00;
+                        B = 8'h00;
                     end
                     6: if ((orig_x == 1) || (orig_x == 3) || 
                           (orig_x == 4) || (orig_x == 6)) begin
                         R = 8'hFF;
-                        G = 8'hFF;
-                        B = 8'hFF;
+                        G = 8'h00;
+                        B = 8'h00;
                     end
                     7: if ((orig_x == 0) || (orig_x == 2) || 
                           (orig_x == 5) || (orig_x == 7)) begin
                         R = 8'hFF;
-                        G = 8'hFF;
-                        B = 8'hFF;
+                        G = 8'h00;
+                        B = 8'h00;
                     end
                 endcase
             end

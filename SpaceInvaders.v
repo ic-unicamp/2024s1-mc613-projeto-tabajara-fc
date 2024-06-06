@@ -73,10 +73,10 @@ nave nave(
     .v_counter(v_counter),
 	.reset(reset),
 	.clk(clk),
-	.btn_A(btn_A),
-	.btn_B(btn_B),
-	.btn_C(btn_C),
-	.btn_D(btn_D),
+	.btn_A(p_btn_A),
+	.btn_B(p_btn_B),
+	.btn_C(p_btn_C),
+	.btn_D(p_btn_D),
 	.posX_Municao2(posX_Municao2),
 	.posY_Municao2(posY_Municao2),
 	.tiro_ativo_jogador(tiro_ativo_jogador),
@@ -120,12 +120,7 @@ municao2 municao2(
    .B(B_municao2)
 );
 
-
-// assign derrota = (vivo_jogador == 0) || (|game_over); // Modificar
 wire [5:0] ID_enemy_tiro;
-assign posX_tiro_inimigo = posX[ID_enemy_tiro] + 10;
-assign posY_tiro_inimigo = posY[ID_enemy_tiro]- 4;
-assign tiro_ativo_inimigo = 1;
 
 // Variáveis intermediárias para as cores das naves
 //Fios
@@ -138,8 +133,8 @@ wire derrota;
 // INIMIGO 
 reg [23:0] vivo_inimigo;
 reg [23:0] colisao_inimigo;
-wire [10:0] posX_tiro_inimigo;
-wire [10:0] posY_tiro_inimigo;
+reg [10:0] posX_tiro_inimigo;
+reg [10:0] posY_tiro_inimigo;
 wire matar_bala;
 reg [23:0] game_over;
 wire [7:0] inimigoR [23:0];
@@ -190,6 +185,7 @@ reg [25:0] contador_movimento;
 reg [3:0] contador_mov_h;
 reg direction; // 0: direita; 1: esquerda
 
+// MOVIMENTO
 always @(posedge clk) begin
     if (reset) begin
         contador_movimento = 1;
@@ -202,7 +198,7 @@ always @(posedge clk) begin
             posY[k] <= 40 + k * 50;
         end
     end
-    else if(contador_movimento == 0) begin
+    else if(estado == 1 && contador_movimento == 0) begin
         if (contador_mov_h < 3) begin
             if (direction == 0) begin
                 for (i = 0; i < 8; i = i + 1) begin
@@ -255,7 +251,7 @@ endgenerate
 
 
 //Máquina de estados do jogo
-
+reg p_btn_A, p_btn_B, p_btn_C, p_btn_D;
 integer j;
 reg [1:0] estado;
 reg anterior;
@@ -271,6 +267,10 @@ always @(posedge clk) begin
                 VGA_R = R_vitoria;
                 VGA_G = ~G_vitoria;
                 VGA_B = B_vitoria;
+                p_btn_A = 1;
+                p_btn_B = 1;
+                p_btn_C = 1;
+
                 if ((~anterior & btn_D)) begin
                     estado = 1;
                 end
@@ -279,9 +279,16 @@ always @(posedge clk) begin
             1: begin    // Jogo em andamento
                 //Saida das cores: VGA_R, VGA_G, VGA_B
                 // Inicialmente, as cores são pretas (fundo)
+                p_btn_A = btn_A;
+                p_btn_B = btn_B;
+                p_btn_C = btn_C;
+                p_btn_D = btn_D;
+                posX_tiro_inimigo = posX[ID_enemy_tiro] + 10;
+                posY_tiro_inimigo = posY[ID_enemy_tiro] - 2;
+
                 VGA_R = 8'b0;
                 VGA_G = 8'b0;
-                VGA_B = 8'b0;    
+                VGA_B = 8'b0;
                 // Verifica se algum pixel da nave está na posição atual
                 for (j = 0; j < 24; j = j + 1) begin
                     if (vivo_inimigo[j] == 1) begin
@@ -294,7 +301,7 @@ always @(posedge clk) begin
                 VGA_G = VGA_G | G_nave | G_municao1 | G_municao2;
                 VGA_B = VGA_B | B_nave | B_municao1 | B_municao2;            
                 if ((vivo_jogador == 0) || (|game_over)) begin
-                    // estado = 3;
+                    estado = 3;
                 end
                 if (~|vivo_inimigo) begin
                     estado = 2;
