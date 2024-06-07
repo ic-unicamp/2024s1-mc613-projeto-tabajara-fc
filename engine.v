@@ -1,8 +1,9 @@
 module engine (
     input wire clk,
     input wire reset,
-    input wire [99:0] enemy_vivos, //Definir N_enemy como o numero de inimigos
-    input wire [31:0] N_enemy,
+    input wire [199:0] enemy_vivos, //Definir N_enemy como o numero de inimigos
+    input wire [5:0] COLUNAS,
+    input wire [5:0] LINHAS,
     input wire jogador_vivo,
     input wire vitoria_enemy,
     input wire btn_D,
@@ -26,32 +27,29 @@ assign estado_jogo = (|vitoria_enemy || ~jogador_vivo) ? 3 : (~|enemy_vivos) ? 2
 //Define o score atual
 reg [9:0] soma_pontos;
 integer j;
-always @(posedge clk) begin
-    if (restart) begin
-        soma_pontos = 0;
-    end
-    else begin
-        soma_pontos = 0;
-        for (j = 0; j < N_enemy; j = j + 1) begin
-            if (enemy_vivos[j] == 0) begin
-                soma_pontos = soma_pontos + 1;
-            end
+always @(enemy_vivos) begin
+    soma_pontos = 0;
+    for (j = 0 ; j < (100) ; j = j + 1 ) begin
+        if (enemy_vivos[j] == 0) begin
+            soma_pontos = soma_pontos + 1;
         end
     end
 end
 
+// assign score = soma_pontos;
 assign score = soma_pontos;
 
 // Define o inimigo que atira
 random_number rn_inst (
     .clk(clk),
     .reset(reset),
-    .N_enemy(N_enemy),
+    .max_value(N_enemy),
     .random_output(random_output)
 );
 
+assign N_enemy = (LINHAS * COLUNAS) - 1;
+
 reg [19:0] contador_x;
-wire [31:0] N_enemy;
 wire [31:0] random_output;
 reg [31:0] tiro_antigo;
 reg [19:0] contador_y;
@@ -62,8 +60,8 @@ always @(posedge clk ) begin
     if (restart) begin
         contador_x = 0;
         tiro_antigo = 0;
-        ID_enemy_tiro_X = 30;
-        ID_enemy_tiro_Y = 8;
+        ID_enemy_tiro_X = 0;
+        ID_enemy_tiro_Y = 0;
     end
     else begin
         if (contador_x == ATRASO_X) begin
