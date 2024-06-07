@@ -236,7 +236,7 @@ always @(posedge clk) begin
         end
         else begin
             if (direction == 0) begin
-                if (max_x + DIST_COLUNAS <= 790) begin
+                if (max_x + DELTA_X + contador_velocidade <= 760) begin
                     for (i = 0; i < (LINHAS * COLUNAS); i = i + 1) begin
                         posX[i] <= posX[i] + (DELTA_X + contador_velocidade);
                     end
@@ -247,7 +247,7 @@ always @(posedge clk) begin
                 end
             end
             else begin
-                if (min_x - DIST_COLUNAS > 120) begin
+                if (min_x - (DELTA_X + contador_velocidade) >= 150) begin
                     for (i = 0; i < (LINHAS * COLUNAS); i = i + 1) begin
                         posX[i] <= posX[i] - (DELTA_X + contador_velocidade);
                     end
