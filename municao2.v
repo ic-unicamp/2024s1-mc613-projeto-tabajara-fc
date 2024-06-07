@@ -22,7 +22,7 @@ reg [23:0] contador_tiro;
 reg tiro_ativo;
 
 // Parâmetros
-localparam Delay_Movimento = 24'd500000; // Ajuste conforme necessário
+localparam Delay_Movimento = 22'd200000; // Ajuste conforme necessário
 localparam Delay_Tiro = 24'd50000000; // Ajuste conforme necessário para controlar a frequência dos tiros
 
 // Contador para mover a munição pelo mapa

@@ -124,22 +124,22 @@ reg [5:0] ID_enemy_tiro;
 
 // Variáveis intermediárias para as cores das naves
 //Fios
-reg [9:0] posX [23:0];
-reg [9:0] posY [7:0];
+reg [9:0] posX [LINHAS * COLUNAS:0];
+reg [9:0] posY [LINHAS:0];
 wire [9:0] h_counter;
 wire [9:0] v_counter;
 wire derrota;
 
 // INIMIGO 
-reg [23:0] vivo_inimigo;
-reg [23:0] colisao_inimigo;
+reg [(LINHAS* COLUNAS):0] vivo_inimigo;
+reg [(LINHAS* COLUNAS):0] colisao_inimigo;
 reg [10:0] posX_tiro_inimigo;
 reg [10:0] posY_tiro_inimigo;
 wire matar_bala;
-reg [23:0] game_over;
-wire [7:0] inimigoR [23:0];
-wire [7:0] inimigoG [23:0];
-wire [7:0] inimigoB [23:0];
+reg [(LINHAS* COLUNAS):0] game_over;
+wire [7:0] inimigoR [(LINHAS* COLUNAS):0];
+wire [7:0] inimigoG [(LINHAS* COLUNAS):0];
+wire [7:0] inimigoB [(LINHAS* COLUNAS):0];
 
 //Fios de comunicação nave munição
 /*Posicoes dos modulos*/
@@ -187,7 +187,10 @@ reg mov_v;
 reg direction; // 0: direita; 1: esquerda
 localparam DELTA_X = 1;
 localparam DELTA_Y = 50;
-
+localparam COLUNAS = 13;
+localparam LINHAS = 5;
+localparam DIST_COLUNAS = 30;
+localparam DIST_LINHAS = 30;
 
 // MOVIMENTO
 reg [10:0] max_x, min_x;
@@ -197,10 +200,10 @@ always @(posedge clk) begin
         contador_velocidade = 0;
         mov_v = 0;
         direction = 0;
-        for (k = 0; k < 3; k = k + 1) begin
-            posY[k] <= 40 + k * 50;
-            for (i = 0; i < 8; i = i + 1) begin
-                posX[k * 8 + i] <= 150 + i * 60;
+        for (k = 0; k < LINHAS; k = k + 1) begin
+            posY[k] <= 40 + k * DIST_LINHAS;
+            for (i = 0; i < COLUNAS; i = i + 1) begin
+                posX[k * COLUNAS + i] <= 150 + i * DIST_COLUNAS;
             end
         end
     end
@@ -208,7 +211,7 @@ always @(posedge clk) begin
 
         max_x = 0;
         min_x = 900;
-        for (i = 0; i < 24; i = i + 1) begin
+        for (i = 0; i < (LINHAS * COLUNAS); i = i + 1) begin
             if (posX[i] > max_x && vivo_inimigo[i] == 1) begin
                 max_x = posX[i];
             end
@@ -217,7 +220,7 @@ always @(posedge clk) begin
             end
         end
         if (mov_v) begin
-            for (k = 0; k < 3; k = k + 1) begin
+            for (k = 0; k < LINHAS; k = k + 1) begin
                 posY[k] <= posY[k] + DELTA_Y;
             end
             mov_v = 0;
@@ -225,8 +228,8 @@ always @(posedge clk) begin
         end
         else begin
             if (direction == 0) begin
-                if (max_x + 60 <= 800) begin
-                    for (i = 0; i < 24; i = i + 1) begin
+                if (max_x + DIST_COLUNAS <= 760) begin
+                    for (i = 0; i < (LINHAS * COLUNAS); i = i + 1) begin
                         posX[i] <= posX[i] + (DELTA_X + contador_velocidade);
                     end
                 end
@@ -236,8 +239,8 @@ always @(posedge clk) begin
                 end
             end
             else begin
-                if (min_x - 60 > 120) begin
-                    for (i = 0; i < 24; i = i + 1) begin
+                if (min_x - DIST_COLUNAS > 120) begin
+                    for (i = 0; i < (LINHAS * COLUNAS); i = i + 1) begin
                         posX[i] <= posX[i] - (DELTA_X + contador_velocidade);
                     end
                 end
@@ -266,7 +269,7 @@ always @(posedge clk) begin
         contador_inimigo = contador_inimigo + 1;
     end
     contador_tiro = contador_tiro + 1;
-    if (contador_inimigo == 23) begin
+    if (contador_inimigo == (LINHAS * COLUNAS - 1)) begin
         contador_inimigo = 0;
     end
     if (contador_tiro == 10000000) begin
@@ -274,28 +277,44 @@ always @(posedge clk) begin
     end
 end
 
+reg [23:0] contador_troca;
+reg troca;
+always @(posedge clk) begin
+    if (reset || ~btn_D) begin
+        contador_troca = 0;
+        troca = 0;
+    end
+    else begin
+        if (contador_troca == 0) begin
+            troca = ~troca;
+        end
+        contador_troca = contador_troca + 1;
+    end
+end
+
 assign matar_bala = (|colisao_inimigo);
 
 genvar gv_i, gv_k;
 generate
-    for (gv_k = 0; gv_k < 3; gv_k = gv_k + 1) begin: row
-        for (gv_i = 0; gv_i < 8; gv_i = gv_i + 1) begin: inimigos
+    for (gv_k = 0; gv_k < LINHAS; gv_k = gv_k + 1) begin: row
+        for (gv_i = 0; gv_i < COLUNAS; gv_i = gv_i + 1) begin: inimigos
             Inimigo1 inimigo_inst (
                 .clk(clk),
-                .posX(posX[gv_k * 8 + gv_i]),
+                .posX(posX[gv_k * COLUNAS + gv_i]),
                 .posY(posY[gv_k]),
                 .h_counter(h_counter),
                 .v_counter(v_counter),
                 .reset(reset),
                 .btn_D(btn_D),
+                .troca(troca),
                 .posX_municao_player(posX_Municao1),
                 .posY_municao_player(posY_Municao1),
-                .R(inimigoR[gv_k * 8 + gv_i]),
-                .G(inimigoG[gv_k * 8 + gv_i]),
-                .B(inimigoB[gv_k * 8 + gv_i]),
-                .colisao(colisao_inimigo[gv_k * 8 + gv_i]),
-                .vivo(vivo_inimigo[gv_k * 8 + gv_i]),
-                .venceu(game_over[gv_k * 8 + gv_i]),
+                .R(inimigoR[gv_k * COLUNAS + gv_i]),
+                .G(inimigoG[gv_k * COLUNAS + gv_i]),
+                .B(inimigoB[gv_k * COLUNAS + gv_i]),
+                .colisao(colisao_inimigo[gv_k * COLUNAS + gv_i]),
+                .vivo(vivo_inimigo[gv_k * COLUNAS + gv_i]),
+                .venceu(game_over[gv_k * COLUNAS + gv_i]),
             );
         end
     end
@@ -341,7 +360,7 @@ always @(posedge clk) begin
                 VGA_G = 8'b0;
                 VGA_B = 8'b0;
                 // Verifica se algum pixel da nave está na posição atual
-                for (j = 0; j < 24; j = j + 1) begin
+                for (j = 0; j < (LINHAS * COLUNAS); j = j + 1) begin
                     if (vivo_inimigo[j] == 1) begin
                         VGA_R = VGA_R | inimigoR[j];
                         VGA_G = VGA_G | inimigoG[j];
