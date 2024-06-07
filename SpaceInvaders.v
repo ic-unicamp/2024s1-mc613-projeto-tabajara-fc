@@ -28,12 +28,14 @@ engine engine(
     .clk(clk),
     .reset(reset),
     .enemy_vivos(vivo_inimigo),
+    .N_enemy(N_enemy),
     .jogador_vivo(vivo_jogador),
     .vitoria_enemy(game_over),
     .btn_D(btn_D),
     .restart(),
     .score(resultado), // VOLTAR AQUI DPS
-    .ID_enemy_tiro(),
+    .ID_enemy_tiro_X(ID_enemy_tiro_X),
+    .ID_enemy_tiro_Y(ID_enemy_tiro_Y),
     .estado_jogo()
 );
 
@@ -120,7 +122,10 @@ municao2 municao2(
    .B(B_municao2)
 );
 
-reg [5:0] ID_enemy_tiro;
+reg [5:0] ID_enemy_tiro_X;
+reg [5:0] ID_enemy_tiro_Y;
+wire [31:0] N_enemy;
+assign N_enemy = COLUNAS * LINHAS;
 
 // Variáveis intermediárias para as cores das naves
 //Fios
@@ -253,26 +258,26 @@ end
 
 reg [23:0] contador_tiro;
 reg [6:0] contador_inimigo;
-always @(posedge clk) begin
-    if (reset || ~btn_D) begin
-        contador_tiro = 1;
-        contador_inimigo = 0;
-        ID_enemy_tiro = 0;
-    end
-    else if (estado == 1 && contador_tiro == 0) begin
-        if (vivo_inimigo[contador_inimigo]) begin
-            ID_enemy_tiro = contador_inimigo;
-        end
-        contador_inimigo = contador_inimigo + 1;
-    end
-    contador_tiro = contador_tiro + 1;
-    if (contador_inimigo == 23) begin
-        contador_inimigo = 0;
-    end
-    if (contador_tiro == 10000000) begin
-        contador_tiro = 0;
-    end
-end
+// always @(posedge clk) begin
+//     if (reset || ~btn_D) begin
+//         contador_tiro = 1;
+//         contador_inimigo = 0;
+//         ID_enemy_tiro = 0;
+//     end
+//     else if (estado == 1 && contador_tiro == 0) begin
+//         if (vivo_inimigo[contador_inimigo]) begin
+//             ID_enemy_tiro = contador_inimigo;
+//         end
+//         contador_inimigo = contador_inimigo + 1;
+//     end
+//     contador_tiro = contador_tiro + 1;
+//     if (contador_inimigo == 23) begin
+//         contador_inimigo = 0;
+//     end
+//     if (contador_tiro == 10000000) begin
+//         contador_tiro = 0;
+//     end
+// end
 
 assign matar_bala = (|colisao_inimigo);
 
@@ -335,8 +340,8 @@ always @(posedge clk) begin
                 p_btn_B = btn_B;
                 p_btn_C = btn_C;
                 p_btn_D = btn_D;
-                posX_tiro_inimigo = posX[ID_enemy_tiro] + 10;
-                posY_tiro_inimigo = posY[2] - 2;
+                posX_tiro_inimigo = posX[ID_enemy_tiro_X] + 10;
+                posY_tiro_inimigo = posY[ID_enemy_tiro_Y-1] +1;
                 VGA_R = 8'b0;
                 VGA_G = 8'b0;
                 VGA_B = 8'b0;
@@ -393,11 +398,21 @@ always @(posedge clk) begin
     VGA_CLK2 = ~VGA_CLK2;
 end
 
-display display(
-    .entrada(posX_tiro_inimigo),
+display display1(
+    .entrada(ID_enemy_tiro_X),
     .digito0(HEX0), // digito da direita
     .digito1(HEX1),
     .digito2(HEX2),
+    // .digito3(HEX3),
+    // .digito4(HEX4),
+    // .digito5(HEX5)// digito da esquerda
+);
+
+display display2(
+    .entrada(ID_enemy_tiro_Y),
+    .digito0(HEX3), // digito da direita
+    .digito1(HEX4),
+    .digito2(HEX5),
     // .digito3(HEX3),
     // .digito4(HEX4),
     // .digito5(HEX5)// digito da esquerda
@@ -407,19 +422,4 @@ display display(
 reg [31:0] resultado;
 
 integer contador;
-
-// always @(posedge clk ) begin
-//     if (reset) begin
-//         contador = 0;
-//         resultado = 0;
-//     end
-//     else begin
-//         contador = contador + 1;
-//         if (contador == 1000000) begin
-//             contador = 0;
-//             resultado = random_output;
-//         end
-//     end
-// end
-
 endmodule
