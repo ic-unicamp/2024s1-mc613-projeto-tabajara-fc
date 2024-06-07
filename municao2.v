@@ -22,8 +22,8 @@ reg [23:0] contador_tiro;
 reg tiro_ativo;
 
 // Parâmetros
-localparam Delay_Movimento = 17'd500000; // Ajuste conforme necessário
-localparam Delay_Tiro = 24'd10000000; // Ajuste conforme necessário para controlar a frequência dos tiros
+localparam Delay_Movimento = 22'd200000; // Ajuste conforme necessário
+localparam Delay_Tiro = 24'd50000000; // Ajuste conforme necessário para controlar a frequência dos tiros
 
 // Contador para mover a munição pelo mapa
 always @(posedge clk or posedge reset) begin
@@ -43,7 +43,7 @@ always @(posedge clk or posedge reset) begin
             contador_movimento <= 0;
         end
 
-        if (contador_tiro < Delay_Tiro) begin
+        if (contador_tiro < Delay_Tiro && tiro_ativo == 0) begin
             contador_tiro <= contador_tiro + 1;
         end else begin
             contador_tiro <= 0;
@@ -52,16 +52,18 @@ always @(posedge clk or posedge reset) begin
 
         // Parte que trata do movimento da munição
         if (tiro_ativo) begin
-            if (mem_Y_municao == 0 || mem_Y_municao >= 540) begin
+            if ((mem_Y_municao == 0 || mem_Y_municao >= 540)) begin
+                tiro_ativo <= 0; // Reseta o tiro ativo após disparar
                 mem_X_municao <= posX_inimigo; // Define a posição inicial da munição
                 mem_Y_municao <= posY_inimigo; // Define a posição inicial da munição
-                tiro_ativo <= 0; // Reseta o tiro ativo após disparar
-            end else if (contador_movimento == Delay_Movimento) begin
-                if (mem_Y_municao + 1 < 540) begin
-                    mem_Y_municao <= mem_Y_municao + 1;
-                end else begin
-                    mem_Y_municao <= 0; // Reseta a munição quando atinge o limite inferior
-                end
+            end
+        end
+            
+        if (contador_movimento == 1) begin
+            if (mem_Y_municao + 1 < 540) begin
+                mem_Y_municao <= mem_Y_municao + 1;
+            end else begin
+                mem_Y_municao <= 0; // Reseta a munição quando atinge o limite inferior
             end
         end
 
@@ -82,8 +84,8 @@ always @(posedge clk or posedge reset) begin
         B <= 8'b0;
     end else if (((mem_X_municao - h_counter) < 1) && ((mem_Y_municao - v_counter) < 20)) begin
         R <= 255;
-        G <= 255;
-        B <= 255;
+        G <= 0;
+        B <= 0;
     end else begin
         R <= 8'b0;
         G <= 8'b0;
