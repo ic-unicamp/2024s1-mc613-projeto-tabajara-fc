@@ -32,8 +32,8 @@ engine engine(
     .vitoria_enemy(game_over),
     .btn_D(btn_D),
     .restart(),
-    .score(resultado),
-    .ID_enemy_tiro(ID_enemy_tiro),
+    .score(resultado), // VOLTAR AQUI DPS
+    .ID_enemy_tiro(),
     .estado_jogo()
 );
 
@@ -120,7 +120,7 @@ municao2 municao2(
    .B(B_municao2)
 );
 
-wire [5:0] ID_enemy_tiro;
+reg [5:0] ID_enemy_tiro;
 
 // Variáveis intermediárias para as cores das naves
 //Fios
@@ -182,8 +182,8 @@ wire [7:0] B_vitoria;
 integer i, k, l;
 
 reg [20:0] contador_movimento;
-reg mov_v;
 reg [4:0] contador_velocidade;
+reg mov_v;
 reg direction; // 0: direita; 1: esquerda
 localparam DELTA_X = 1;
 localparam DELTA_Y = 50;
@@ -236,7 +236,7 @@ always @(posedge clk) begin
                 end
             end
             else begin
-                if (min_x - 60 > 100) begin
+                if (min_x - 60 > 120) begin
                     for (i = 0; i < 24; i = i + 1) begin
                         posX[i] <= posX[i] - (DELTA_X + contador_velocidade);
                     end
@@ -249,6 +249,29 @@ always @(posedge clk) begin
         end
     end
     contador_movimento = contador_movimento + 1;
+end
+
+reg [23:0] contador_tiro;
+reg [6:0] contador_inimigo;
+always @(posedge clk) begin
+    if (reset || ~btn_D) begin
+        contador_tiro = 1;
+        contador_inimigo = 0;
+        ID_enemy_tiro = 0;
+    end
+    else if (estado == 1 && contador_tiro == 0) begin
+        if (vivo_inimigo[contador_inimigo]) begin
+            ID_enemy_tiro = contador_inimigo;
+        end
+        contador_inimigo = contador_inimigo + 1;
+    end
+    contador_tiro = contador_tiro + 1;
+    if (contador_inimigo == 23) begin
+        contador_inimigo = 0;
+    end
+    if (contador_tiro == 10000000) begin
+        contador_tiro = 0;
+    end
 end
 
 assign matar_bala = (|colisao_inimigo);
@@ -313,7 +336,7 @@ always @(posedge clk) begin
                 p_btn_C = btn_C;
                 p_btn_D = btn_D;
                 posX_tiro_inimigo = posX[ID_enemy_tiro] + 10;
-                posY_tiro_inimigo = posY[ID_enemy_tiro] - 2;
+                posY_tiro_inimigo = posY[2] - 2;
                 VGA_R = 8'b0;
                 VGA_G = 8'b0;
                 VGA_B = 8'b0;
@@ -371,7 +394,7 @@ always @(posedge clk) begin
 end
 
 display display(
-    .entrada(resultado),
+    .entrada(posX_tiro_inimigo),
     .digito0(HEX0), // digito da direita
     .digito1(HEX1),
     .digito2(HEX2),

@@ -23,7 +23,7 @@ reg tiro_ativo;
 
 // Parâmetros
 localparam Delay_Movimento = 17'd500000; // Ajuste conforme necessário
-localparam Delay_Tiro = 24'd10000000; // Ajuste conforme necessário para controlar a frequência dos tiros
+localparam Delay_Tiro = 24'd50000000; // Ajuste conforme necessário para controlar a frequência dos tiros
 
 // Contador para mover a munição pelo mapa
 always @(posedge clk or posedge reset) begin
