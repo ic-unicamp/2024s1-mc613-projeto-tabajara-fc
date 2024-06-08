@@ -28,7 +28,8 @@ engine #(COLUNAS * LINHAS) engine(
     .clk(clk),
     .reset(reset),
     .enemy_vivos(vivo_inimigo),
-    .N_enemy(N_enemy),
+    .COLUNAS(COLUNAS),
+    .LINHAS(LINHAS),
     .jogador_vivo(vivo_jogador),
     .vitoria_enemy(game_over),
     .btn_D(btn_D),
@@ -125,7 +126,6 @@ municao2 municao2(
 reg [5:0] ID_enemy_tiro_X;
 reg [5:0] ID_enemy_tiro_Y;
 wire [31:0] N_enemy;
-assign N_enemy = COLUNAS * LINHAS;
 
 // Variáveis intermediárias para as cores das naves
 //Fios

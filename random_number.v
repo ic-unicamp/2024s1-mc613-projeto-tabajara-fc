@@ -21,11 +21,11 @@ always @(posedge clk) begin
     else begin
         numero = i;
         j = j + 1;
-        if (j == ATRASO_TIRO) begin
+        if (j > ATRASO_TIRO - 1) begin
             i = i + 1;
             j = 0;
         end
-        if (i == max_value) begin
+        if (i > max_value - 1) begin
             i = 0;
         end    
     end

@@ -47,7 +47,6 @@ end
 
 assign score = pontuacao;
 
-
 // Define o inimigo que atira
 random_number rn_inst (
     .clk(clk),
@@ -56,8 +55,9 @@ random_number rn_inst (
     .random_output(random_output)
 );
 
+assign N_enemy = (LINHAS * COLUNAS) - 1;
+
 reg [19:0] contador_x;
-// wire [31:0] N_enemy;
 wire [31:0] random_output;
 reg [31:0] tiro_antigo;
 reg [19:0] contador_y;
