@@ -40,7 +40,7 @@ always @(posedge clk) begin
     end
     else begin
         soma_pontos = 0;
-        for (j = 0; j < (LINHAS * COLUNAS); j = j + 1) begin
+        for (j = 0; j < (LINHAS * COLUNAS) ; j = j + 1) begin
             if (enemy_vivos[j] == 0) begin
                 soma_pontos = soma_pontos + 1;
             end

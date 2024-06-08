@@ -317,10 +317,13 @@ reg p_btn_A, p_btn_B, p_btn_C, p_btn_D;
 integer j;
 reg [1:0] estado;
 reg anterior;
+reg vit_anterior;
 always @(posedge clk) begin
     if (reset) begin
         estado = 0;
         anterior = 1;
+        max_resultado = 0;
+        vit_anterior = 0;
     end 
     else begin
         case (estado)
@@ -337,6 +340,7 @@ always @(posedge clk) begin
                     estado = 1;
                 end
                 anterior = btn_D;
+                
             end
             1: begin    // Jogo em andamento
                 //Saida das cores: VGA_R, VGA_G, VGA_B
@@ -360,7 +364,15 @@ always @(posedge clk) begin
                 end
                 VGA_R = VGA_R | R_nave | R_municao1 | R_municao2;        
                 VGA_G = VGA_G | G_nave | G_municao1 | G_municao2;
-                VGA_B = VGA_B | B_nave | B_municao1 | B_municao2;            
+                VGA_B = VGA_B | B_nave | B_municao1 | B_municao2;           
+                // Atualiza o resultado 
+                if (vit_anterior) begin
+                    atu_resultado = resultado + max_resultado;
+                end
+                else begin
+                    atu_resultado = resultado;
+                end
+                // Verifica se o jogo acabou
                 if ((vivo_jogador == 0) || (|game_over)) begin
                     estado = 3;
                 end
@@ -373,16 +385,25 @@ always @(posedge clk) begin
                 VGA_R = R_vitoria;
                 VGA_G = G_vitoria;
                 VGA_B = ~B_vitoria;
+                vit_anterior = 1;
+                if (atu_resultado > max_resultado) begin
+                    max_resultado = atu_resultado;
+                end                
                 if (~anterior & btn_D) begin
                     estado = 0;
                 end
                 anterior = btn_D;
+                
             end
             3: begin
                 // Derrota jogador
                 VGA_R = R_derrota;
                 VGA_G = G_derrota;
                 VGA_B = B_derrota;
+                vit_anterior = 0;
+                if (atu_resultado > max_resultado) begin
+                    max_resultado = atu_resultado;
+                end                
                 if (~anterior & btn_D) begin
                     estado = 0;
                 end
@@ -404,7 +425,7 @@ always @(posedge clk) begin
 end
 
 display display1(
-    .entrada(ID_enemy_tiro_X),
+    .entrada(atu_resultado),
     .digito0(HEX0), // digito da direita
     .digito1(HEX1),
     .digito2(HEX2),
@@ -414,7 +435,7 @@ display display1(
 );
 
 display display2(
-    .entrada(ID_enemy_tiro_Y),
+    .entrada(max_resultado),
     .digito0(HEX3), // digito da direita
     .digito1(HEX4),
     .digito2(HEX5),
@@ -425,6 +446,8 @@ display display2(
 
 
 reg [31:0] resultado;
+reg [9:0] atu_resultado;
+reg [9:0] max_resultado;
 
 integer contador;
 endmodule
