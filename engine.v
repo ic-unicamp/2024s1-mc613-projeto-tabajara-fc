@@ -16,7 +16,7 @@ module engine #(
     output wire [1:0] estado_jogo // 0 = jogo rodando, 1 = jogador venceu, 2 = jogador perdeu    
     );
 
-localparam ATRASO_X = 26'd1000000; // Atraso para mudar o x do inimigo atirar
+localparam ATRASO_X = 26'd100000; // Atraso para mudar o x do inimigo atirar
 localparam ATRASO_Y = 26'd1000000; // Atraso para mudar o x do inimigo atirar
 
 
@@ -67,21 +67,37 @@ reg agora;
 wire [9:0] N_enemy;
 
 integer k;
+integer i;
+integer count;
 
 always @(posedge clk) begin // Atraso da troca de atirador
     if (restart) begin
         contador_x = 0;
         tiro_antigo = 0;
         agora = 0;
+        count = 0; // Reinicializar o contador
     end
     else begin
         contador_x = contador_x + 1;
         if (contador_x == ATRASO_X) begin
             contador_x = 0;
-            agora = 1;
             if (enemy_vivos[random_output] == 1) begin
                 tiro_antigo = random_output;
+                agora = 1;
             end
+            else begin
+                count = 0; // Reinicializar o contador a cada ciclo
+                for (i = random_output + 1; (i < LINHAS * COLUNAS - 1) && count < 240; i = i +1) begin
+                    count = count + 1; // Incrementar o contador em cada iteração
+                    if ((enemy_vivos[random_output] == 1) & ~agora) begin
+                    tiro_antigo = random_output;
+                    agora = 1;
+                    end
+                end
+            end
+        end
+        else begin
+            agora = 0;
         end
     end
 end
