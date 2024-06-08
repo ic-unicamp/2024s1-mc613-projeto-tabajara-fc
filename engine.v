@@ -16,7 +16,7 @@ module engine #(
     output wire [1:0] estado_jogo // 0 = jogo rodando, 1 = jogador venceu, 2 = jogador perdeu    
     );
 
-localparam ATRASO_X = 26'd100000; // Atraso para mudar o x do inimigo atirar
+localparam ATRASO_X = 26'd10; // Atraso para mudar o x do inimigo atirar
 localparam ATRASO_Y = 26'd1000000; // Atraso para mudar o x do inimigo atirar
 
 
