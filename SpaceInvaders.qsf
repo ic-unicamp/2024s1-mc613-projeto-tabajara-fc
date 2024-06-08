@@ -870,7 +870,6 @@ set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_WE_N -e
 set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_RESET_N -entity DE1_SoC
 set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_CK_P -entity DE1_SoC
 set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_CK_N -entity DE1_SoC
-set_global_assignment -name VERILOG_FILE top1.v
 set_location_assignment PIN_AB12 -to reset
 set_location_assignment PIN_AF14 -to clk
 set_location_assignment PIN_AA14 -to btn_D

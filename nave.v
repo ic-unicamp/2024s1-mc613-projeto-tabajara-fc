@@ -22,11 +22,12 @@ module nave(
 	reg [10:0] memo_X_nave;
 	reg [10:0] mem_X_nave;
 	reg [18:0] contador_botao;
-	reg [25:0] contador_botao_c;
+	reg [25:0] contador_botao_c;   
 	reg [3:0] estado_nave;
 
     // Defina a escala do objeto
     localparam SCALE = 2;
+    localparam DELAY_TIRO = 40000000;
 
     // Defina a posição vertical inicial do objeto
     localparam START_Y = 490; // Modifique este valor para ajustar a posição vertical
@@ -53,7 +54,7 @@ always @(posedge clk) begin
 	 end else if (tiro_ativo_jogador == 1) begin
 		  contador_botao_c = contador_botao_c + 1;
 		  
-		  if(contador_botao_c >= 50000000)begin
+		  if(contador_botao_c >= DELAY_TIRO)begin
 				contador_botao_c = 0;
 				tiro_ativo_jogador = 0;
 		  end

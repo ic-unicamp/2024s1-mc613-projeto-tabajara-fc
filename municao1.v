@@ -21,7 +21,7 @@ reg [10:0] mem_Y_municao;
 reg [1:0] verifica_tiro;
 reg [18:0] contador;
 
-localparam Delay = 17'd500000; // Ajuste este valor conforme necessário
+localparam Delay = 17'd200000; // Ajuste este valor conforme necessário
 
 //contador para mover a municao pelo mapa
 always @(posedge clk) begin
