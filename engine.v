@@ -1,7 +1,9 @@
-module engine (
+module engine #(
+    parameter WIDTH // Define o tamanho padrão do array como 8 bits
+) (
     input wire clk,
     input wire reset,
-    input wire [99:0] enemy_vivos, //Definir N_enemy como o numero de inimigos
+    input wire [WIDTH-1:0] enemy_vivos, //Definir N_enemy como o numero de inimigos
     input wire [31:0] N_enemy,
     input wire jogador_vivo,
     input wire vitoria_enemy,
@@ -25,33 +27,37 @@ assign estado_jogo = (|vitoria_enemy || ~jogador_vivo) ? 3 : (~|enemy_vivos) ? 2
 
 //Define o score atual
 reg [9:0] soma_pontos;
+reg [9:0] pontuacao;
 integer j;
 always @(posedge clk) begin
     if (restart) begin
         soma_pontos = 0;
+        pontuacao = 0;
     end
     else begin
         soma_pontos = 0;
-        for (j = 0; j < N_enemy; j = j + 1) begin
+        for (j = 0; j < WIDTH; j = j + 1) begin
             if (enemy_vivos[j] == 0) begin
                 soma_pontos = soma_pontos + 1;
             end
         end
+        pontuacao = soma_pontos;
     end
 end
 
-assign score = soma_pontos;
+assign score = pontuacao;
+
 
 // Define o inimigo que atira
 random_number rn_inst (
     .clk(clk),
     .reset(reset),
-    .N_enemy(N_enemy),
+    .max_value(N_enemy),
     .random_output(random_output)
 );
 
 reg [19:0] contador_x;
-wire [31:0] N_enemy;
+// wire [31:0] N_enemy;
 wire [31:0] random_output;
 reg [31:0] tiro_antigo;
 reg [19:0] contador_y;
@@ -62,22 +68,28 @@ always @(posedge clk ) begin
     if (restart) begin
         contador_x = 0;
         tiro_antigo = 0;
-        ID_enemy_tiro_X = 30;
-        ID_enemy_tiro_Y = 8;
+        ID_enemy_tiro_X = 0;
+        ID_enemy_tiro_Y = 0;
     end
     else begin
         if (contador_x == ATRASO_X) begin
             tiro_antigo = random_output;
             if (enemy_vivos[tiro_antigo] == 1) begin
                 ID_enemy_tiro_X = tiro_antigo;
-                if (tiro_antigo < 8) begin
+                if (tiro_antigo < 13) begin
                     ID_enemy_tiro_Y = 0;
                 end
-                else if (tiro_antigo < 16) begin
+                else if (tiro_antigo < 26) begin
                     ID_enemy_tiro_Y = 1;
                 end
-                else begin
+                else if (tiro_antigo < 39) begin
                     ID_enemy_tiro_Y = 2;
+                end
+                else if (tiro_antigo < 52) begin
+                    ID_enemy_tiro_Y = 3;
+                end
+                else begin
+                    ID_enemy_tiro_Y = 4;
                 end
                 contador_x = 0;
             end
