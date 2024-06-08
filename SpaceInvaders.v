@@ -24,12 +24,10 @@ module SpaceInvaders(
 
 );
 
-engine #(COLUNAS * LINHAS) engine(
+engine #(LINHAS, COLUNAS) engine(
     .clk(clk),
     .reset(reset),
     .enemy_vivos(vivo_inimigo),
-    .COLUNAS(COLUNAS),
-    .LINHAS(LINHAS),
     .jogador_vivo(vivo_jogador),
     .vitoria_enemy(game_over),
     .btn_D(btn_D),
@@ -123,8 +121,8 @@ municao2 municao2(
    .B(B_municao2)
 );
 
-reg [5:0] ID_enemy_tiro_X;
-reg [5:0] ID_enemy_tiro_Y;
+reg [9:0] ID_enemy_tiro_X;
+reg [9:0] ID_enemy_tiro_Y;
 wire [31:0] N_enemy;
 
 // Variáveis intermediárias para as cores das naves
@@ -348,7 +346,7 @@ always @(posedge clk) begin
                 p_btn_C = btn_C;
                 p_btn_D = btn_D;
                 posX_tiro_inimigo = posX[ID_enemy_tiro_X] + 10;
-                posY_tiro_inimigo = posY[ID_enemy_tiro_Y] - 2;
+                posY_tiro_inimigo = posY[ID_enemy_tiro_Y] + 10;
                 VGA_R = 8'b0;
                 VGA_G = 8'b0;
                 VGA_B = 8'b0;
@@ -416,7 +414,7 @@ display display1(
 );
 
 display display2(
-    .entrada(resultado),
+    .entrada(ID_enemy_tiro_Y),
     .digito0(HEX3), // digito da direita
     .digito1(HEX4),
     .digito2(HEX5),
