@@ -20,6 +20,7 @@ reg [10:0] mem_Y_municao;
 reg [18:0] contador_movimento;
 reg [23:0] contador_tiro;
 reg tiro_ativo;
+reg reset_tiro;
 
 // Parâmetros
 localparam Delay_Movimento = 22'd200000; // Ajuste conforme necessário
@@ -31,39 +32,48 @@ always @(posedge clk or posedge reset) begin
         contador_movimento <= 0;
         contador_tiro <= 0;
         tiro_ativo <= 0;
+        reset_tiro <= 0;
         mem_X_municao <= 0;
         mem_Y_municao <= 0;
         posX_Municao2 <= 0;
         posY_Municao2 <= 0;
     end else begin
-        // Atualiza contadores
+        // Atualiza contador de movimento
         if (contador_movimento < Delay_Movimento) begin
             contador_movimento <= contador_movimento + 1;
         end else begin
             contador_movimento <= 0;
         end
 
-        if (contador_tiro < Delay_Tiro && tiro_ativo == 0) begin
-            contador_tiro <= contador_tiro + 1;
-        end else begin
-            contador_tiro <= 0;
-            tiro_ativo <= 1; // Ativa o tiro quando o contador atinge o limite
+        // Atualiza contador de tiro apenas se não há tiro ativo
+        if (~tiro_ativo) begin
+            if (contador_tiro < Delay_Tiro) begin
+                contador_tiro <= contador_tiro + 1;
+            end else begin
+                contador_tiro <= 0;
+                reset_tiro <= 1; // Ativa o tiro quando o contador atinge o limite
+                tiro_ativo <= 0;
+            end
         end
 
         // Parte que trata do movimento da munição
-        if (tiro_ativo) begin
+        if (~tiro_ativo && reset_tiro) begin
             if ((mem_Y_municao == 0 || mem_Y_municao >= 540)) begin
-                tiro_ativo <= 0; // Reseta o tiro ativo após disparar
                 mem_X_municao <= posX_inimigo; // Define a posição inicial da munição
                 mem_Y_municao <= posY_inimigo; // Define a posição inicial da munição
+                posX_Municao2 <= posX_inimigo; // Atualiza a posição de saída da munição
+                posY_Municao2 <= posY_inimigo; // Atualiza a posição de saída da munição
+                reset_tiro <= 0;
+                tiro_ativo <= 1;
             end
         end
             
-        if (contador_movimento == 1) begin
+        if (contador_movimento == 1 && tiro_ativo) begin
             if (mem_Y_municao + 1 < 540) begin
                 mem_Y_municao <= mem_Y_municao + 1;
             end else begin
                 mem_Y_municao <= 0; // Reseta a munição quando atinge o limite inferior
+                tiro_ativo <= 0; // Desativa o tiro ao atingir o limite inferior
             end
         end
 

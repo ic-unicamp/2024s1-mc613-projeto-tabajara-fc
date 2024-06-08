@@ -19,6 +19,7 @@ module Inimigo1(
 
     // Defina a escala do objeto
     localparam SCALE = 2;
+    localparam RED = 8'hF0;
 
 always @(h_counter or v_counter or reset or troca) begin
     integer orig_x;
@@ -43,41 +44,41 @@ always @(h_counter or v_counter or reset or troca) begin
             // Verifique o bit correspondente no padrão
             case (orig_y)
                 0: if ((orig_x >= 2) && (orig_x <= 5)) begin
-                    R = 8'hFF;
+                    R = RED;
                     G = 8'h00;
                     B = 8'h00;
                 end
                 1: if ((orig_x >= 1) && (orig_x <= 6)) begin
-                    R = 8'hFF;
+                    R = RED;
                     G = 8'h00;
                     B = 8'h00;
                 end
                 2: if ((orig_x >= 0) && (orig_x <= 7)) begin
-                    R = 8'hFF;
+                    R = RED;
                     G = 8'h00;
                     B = 8'h00;
                 end
                 3: if ((orig_x == 0) || (orig_x == 1) || 
                       (orig_x == 4) || (orig_x == 5) || 
                       (orig_x == 6) || (orig_x == 7)) begin
-                    R = 8'hFF;
+                    R = RED;
                     G = 8'h00;
                     B = 8'h00;
                 end
                 4: if ((orig_x >= 0) && (orig_x <= 7)) begin
-                    R = 8'hFF;
+                    R = RED;
                     G = 8'h00;
                     B = 8'h00;
                 end
                 5: if (troca) begin
                     if ((orig_x == 1) || (orig_x == 6)) begin
-                        R = 8'hFF;
+                        R = RED;
                         G = 8'h00;
                         B = 8'h00;
                     end
                 end else begin
                     if ((orig_x == 2) || (orig_x == 5)) begin
-                        R = 8'hFF;
+                        R = RED;
                         G = 8'h00;
                         B = 8'h00;
                     end
@@ -85,14 +86,14 @@ always @(h_counter or v_counter or reset or troca) begin
                 6: if (troca) begin
                     if ((orig_x == 0) || (orig_x == 2) || 
                         (orig_x == 5) || (orig_x == 7)) begin
-                        R = 8'hFF;
+                        R = RED;
                         G = 8'h00;
                         B = 8'h00;
                     end
                 end else begin
                     if ((orig_x == 1) || (orig_x == 3) || 
                         (orig_x == 4) || (orig_x == 6)) begin
-                        R = 8'hFF;
+                        R = RED;
                         G = 8'h00;
                         B = 8'h00;
                     end
@@ -100,14 +101,14 @@ always @(h_counter or v_counter or reset or troca) begin
                 7: if (troca) begin
                     if ((orig_x == 1) || (orig_x == 3) || 
                         (orig_x == 4) || (orig_x == 6)) begin
-                        R = 8'hFF;
+                        R = RED;
                         G = 8'h00;
                         B = 8'h00;
                     end
                 end else begin
                     if ((orig_x == 0) || (orig_x == 2) || 
                         (orig_x == 5) || (orig_x == 7)) begin
-                        R = 8'hFF;
+                        R = RED;
                         G = 8'h00;
                         B = 8'h00;
                     end

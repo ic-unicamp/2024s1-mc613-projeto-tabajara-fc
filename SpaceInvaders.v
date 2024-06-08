@@ -192,10 +192,11 @@ reg mov_v;
 reg direction; // 0: direita; 1: esquerda
 localparam DELTA_X = 1;
 localparam DELTA_Y = 50;
-localparam COLUNAS = 13;
-localparam LINHAS = 5;
+localparam COLUNAS = 10;
+localparam LINHAS = 4;
 localparam DIST_COLUNAS = 30;
 localparam DIST_LINHAS = 30;
+reg desloc;
 
 // MOVIMENTO
 reg [10:0] max_x, min_x;
@@ -204,12 +205,19 @@ always @(posedge clk) begin
         contador_movimento = 1;
         contador_velocidade = 0;
         mov_v = 0;
+        desloc = 0;
         direction = 0;
         for (k = 0; k < LINHAS; k = k + 1) begin
             posY[k] <= 40 + k * DIST_LINHAS;
             for (i = 0; i < COLUNAS; i = i + 1) begin
-                posX[k * COLUNAS + i] <= 150 + i * DIST_COLUNAS;
+                if (desloc == 0) begin
+                    posX[k * COLUNAS + i] <= 150 + i * DIST_COLUNAS;
+                end
+                else begin
+                    posX[k * COLUNAS + i] <= 160 + i * DIST_COLUNAS;
+                end
             end
+            desloc = ~desloc;
         end
     end
     else if(estado == 1 && contador_movimento == 0) begin
@@ -233,7 +241,7 @@ always @(posedge clk) begin
         end
         else begin
             if (direction == 0) begin
-                if (max_x + DIST_COLUNAS <= 760) begin
+                if (max_x + DELTA_X + contador_velocidade <= 760) begin
                     for (i = 0; i < (LINHAS * COLUNAS); i = i + 1) begin
                         posX[i] <= posX[i] + (DELTA_X + contador_velocidade);
                     end
@@ -244,7 +252,7 @@ always @(posedge clk) begin
                 end
             end
             else begin
-                if (min_x - DIST_COLUNAS > 120) begin
+                if (min_x - (DELTA_X + contador_velocidade) >= 150) begin
                     for (i = 0; i < (LINHAS * COLUNAS); i = i + 1) begin
                         posX[i] <= posX[i] - (DELTA_X + contador_velocidade);
                     end
