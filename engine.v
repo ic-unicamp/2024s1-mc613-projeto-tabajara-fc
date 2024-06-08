@@ -1,9 +1,10 @@
-module engine (
+module engine #(
+    parameter WIDTH // Define o tamanho padrão do array como 8 bits
+) (
     input wire clk,
     input wire reset,
-    input wire [199:0] enemy_vivos, //Definir N_enemy como o numero de inimigos
-    input wire [5:0] COLUNAS,
-    input wire [5:0] LINHAS,
+    input wire [WIDTH-1:0] enemy_vivos, //Definir N_enemy como o numero de inimigos
+    input wire [31:0] N_enemy,
     input wire jogador_vivo,
     input wire vitoria_enemy,
     input wire btn_D,
@@ -26,18 +27,25 @@ assign estado_jogo = (|vitoria_enemy || ~jogador_vivo) ? 3 : (~|enemy_vivos) ? 2
 
 //Define o score atual
 reg [9:0] soma_pontos;
+reg [9:0] pontuacao;
 integer j;
-always @(enemy_vivos) begin
-    soma_pontos = 0;
-    for (j = 0 ; j < (100) ; j = j + 1 ) begin
-        if (enemy_vivos[j] == 0) begin
-            soma_pontos = soma_pontos + 1;
+always @(posedge clk) begin
+    if (restart) begin
+        soma_pontos = 0;
+        pontuacao = 0;
+    end
+    else begin
+        soma_pontos = 0;
+        for (j = 0; j < WIDTH; j = j + 1) begin
+            if (enemy_vivos[j] == 0) begin
+                soma_pontos = soma_pontos + 1;
+            end
         end
+        pontuacao = soma_pontos;
     end
 end
 
-// assign score = soma_pontos;
-assign score = soma_pontos;
+assign score = pontuacao;
 
 // Define o inimigo que atira
 random_number rn_inst (
@@ -68,14 +76,20 @@ always @(posedge clk ) begin
             tiro_antigo = random_output;
             if (enemy_vivos[tiro_antigo] == 1) begin
                 ID_enemy_tiro_X = tiro_antigo;
-                if (tiro_antigo < 8) begin
+                if (tiro_antigo < 13) begin
                     ID_enemy_tiro_Y = 0;
                 end
-                else if (tiro_antigo < 16) begin
+                else if (tiro_antigo < 26) begin
                     ID_enemy_tiro_Y = 1;
                 end
-                else begin
+                else if (tiro_antigo < 39) begin
                     ID_enemy_tiro_Y = 2;
+                end
+                else if (tiro_antigo < 52) begin
+                    ID_enemy_tiro_Y = 3;
+                end
+                else begin
+                    ID_enemy_tiro_Y = 4;
                 end
                 contador_x = 0;
             end

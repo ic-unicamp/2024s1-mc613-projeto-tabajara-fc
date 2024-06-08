@@ -24,7 +24,7 @@ module SpaceInvaders(
 
 );
 
-engine engine(
+engine #(COLUNAS * LINHAS) engine(
     .clk(clk),
     .reset(reset),
     .enemy_vivos(vivo_inimigo),
@@ -261,27 +261,6 @@ end
 
 reg [23:0] contador_tiro;
 reg [6:0] contador_inimigo;
-  
-// always @(posedge clk) begin
-//     if (reset || ~btn_D) begin
-//         contador_tiro = 1;
-//         contador_inimigo = 0;
-//         ID_enemy_tiro = 0;
-//     end
-//     else if (estado == 1 && contador_tiro == 0) begin
-//         if (vivo_inimigo[contador_inimigo]) begin
-//             ID_enemy_tiro = contador_inimigo;
-//         end
-//         contador_inimigo = contador_inimigo + 1;
-//     end
-//     contador_tiro = contador_tiro + 1;
-//     if (contador_inimigo == 23) begin
-//         contador_inimigo = 0;
-//     end
-//     if (contador_tiro == 10000000) begin
-//         contador_tiro = 0;
-//     end
-// end
 
 reg [23:0] contador_troca;
 reg troca;
@@ -361,7 +340,7 @@ always @(posedge clk) begin
                 p_btn_C = btn_C;
                 p_btn_D = btn_D;
                 posX_tiro_inimigo = posX[ID_enemy_tiro_X] + 10;
-                posY_tiro_inimigo = posY[ID_enemy_tiro_Y-1] +1;
+                posY_tiro_inimigo = posY[ID_enemy_tiro_Y] - 2;
                 VGA_R = 8'b0;
                 VGA_G = 8'b0;
                 VGA_B = 8'b0;
