@@ -5,7 +5,7 @@ module random_number (
     output wire [8:0] random_output
 );
 
-localparam ATRASO_TIRO = 25'd15000000; // Ajuste conforme necessário
+localparam ATRASO_TIRO = 25'd45000000; // Ajuste conforme necessário
 
 reg [8:0] numero;
 integer i;
