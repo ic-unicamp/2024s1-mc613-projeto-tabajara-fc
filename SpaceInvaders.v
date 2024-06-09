@@ -49,24 +49,16 @@ vga vga(
     .VGA_VS(VGA_VS)
 );
 
-tela_derrota tela_derrota(
+telas telas(
     .clk(clk),
     .reset(reset),
     .h_counter(h_counter),
     .v_counter(v_counter),
-    .R(R_derrota),
-    .G(G_derrota),
-    .B(B_derrota)
-);
-
-tela_vitoria tela_vitoria(
-    .clk(clk),
-    .reset(reset),
-    .h_counter(h_counter),
-    .v_counter(v_counter),
-    .R(R_vitoria),
-    .G(G_vitoria),
-    .B(B_vitoria)
+    .troca(troca),
+    .modo(estado),
+    .R(R_tela),
+    .G(G_tela),
+    .B(B_tela)
 );
 
 nave nave(
@@ -173,13 +165,9 @@ wire [7:0] R_municao2;
 wire [7:0] G_municao2;
 wire [7:0] B_municao2;
 
-wire [7:0] R_derrota;
-wire [7:0] G_derrota;
-wire [7:0] B_derrota;
-
-wire [7:0] R_vitoria;
-wire [7:0] G_vitoria;
-wire [7:0] B_vitoria;
+wire [7:0] R_tela;
+wire [7:0] G_tela;
+wire [7:0] B_tela;
 
 // Inicializando as posições das naves inimigas
 integer i, k, l;
@@ -329,9 +317,9 @@ always @(posedge clk) begin
         case (estado)
             0: begin    // Pré-jogo
                 // Inicialmente, as cores são pretas (fundo)
-                VGA_R = R_vitoria;
-                VGA_G = ~G_vitoria;
-                VGA_B = B_vitoria;
+                VGA_R = R_tela;
+                VGA_G = G_tela;
+                VGA_B = B_tela;
                 p_btn_A = 1;
                 p_btn_B = 1;
                 p_btn_C = 1;
@@ -382,9 +370,9 @@ always @(posedge clk) begin
             end
             2: begin
                 // Vitória jogador
-                VGA_R = R_vitoria;
-                VGA_G = G_vitoria;
-                VGA_B = ~B_vitoria;
+                VGA_R = R_tela;
+                VGA_G = G_tela;
+                VGA_B = B_tela;
                 vit_anterior = 1;
                 if (atu_resultado > max_resultado) begin
                     max_resultado = atu_resultado;
@@ -397,9 +385,9 @@ always @(posedge clk) begin
             end
             3: begin
                 // Derrota jogador
-                VGA_R = R_derrota;
-                VGA_G = G_derrota;
-                VGA_B = B_derrota;
+                VGA_R = R_tela;
+                VGA_G = G_tela;
+                VGA_B = B_tela;
                 vit_anterior = 0;
                 if (atu_resultado > max_resultado) begin
                     max_resultado = atu_resultado;

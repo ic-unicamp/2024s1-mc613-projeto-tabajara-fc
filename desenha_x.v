@@ -1,4 +1,6 @@
-module draw_x(
+module draw_x #(
+    parameter SCALE = 10
+) (
     input wire clk,
     input wire reset,
     input wire [9:0] h_counter, // Contador horizontal
@@ -10,8 +12,7 @@ module draw_x(
     output reg [7:0] B
 );
 
-    // Parâmetros de posição e escala
-    parameter SCALE = 10;
+    // Parâmetros de posição e escalas
 
     // Padrão do X
     reg [63:0] X_PATTERN = 64'b10000001_01000010_00100100_00011000_00011000_00100100_01000010_10000001;

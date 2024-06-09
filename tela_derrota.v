@@ -1,27 +1,21 @@
-module tela_derrota(
+module tela_derrota #(
+    parameter SCALE = 2
+) (
     input clk,
     input reset,
     input [9:0] h_counter,
     input [9:0] v_counter,
+    input [9:0] posX,
+	input [9:0] posY,
+    input troca,
     output reg [7:0] R,
     output reg [7:0] G,
     output reg [7:0] B
 );
+    // Defina a escala do objeto
+    localparam RED = 8'hF0;
 
-// Defina a escala do objeto
-localparam SCALE = 1;
-
-// Coordenadas da caveira
-localparam SKULL_POS_X = 300; // Posição X inicial da caveira
-localparam SKULL_POS_Y = 200;  // Posição Y inicial da caveira
-
-// Padrão da caveira
-// Padrão da caveira
-// Padrão da caveira
-localparam [449:0] SKULL_PATTERN = 450'b000000000000000000000000000000000111100000000000111110000000000111100000000000011110000000111100000000000111110000000000111100000000000011110000000111100000000000111110000000000111100000000000011110000000111100000000000111110000000000111100000000000011110000000111100000000000111110000000000111100000000000011110000000111100000000000111110000000000111100000000000011110000000111111111111111000000111100000111111111111111000000111100000111111111111111000000111100000111111111111111000000111100000111111111111111000000111100000111111111111111000000111100000111111111111111000000111100000000000000000000000000000000;
-
-// Bloco para pintar a caveira na tela
-always @(h_counter or v_counter or reset) begin
+always @(h_counter or v_counter or reset or troca) begin
     integer orig_x;
     integer orig_y;
 
@@ -34,25 +28,86 @@ always @(h_counter or v_counter or reset) begin
         R = 8'b0;
         G = 8'b0;
         B = 8'b0;
-        // Desenhar a caveira
-        if ((h_counter >= SKULL_POS_X) && (h_counter < SKULL_POS_X + 640 * SCALE) && 
-            (v_counter >= SKULL_POS_Y) && (v_counter < SKULL_POS_Y + 480 * SCALE)) begin
+        // Defina o padrão do alienígena
+        if ((h_counter >= posX) && (h_counter < posX + 8 * SCALE) && 
+            (v_counter >= posY) && (v_counter < posY + 8 * SCALE)) begin
             // Calcule a posição na grade original de 8x8
-            orig_x = (h_counter - SKULL_POS_X) / SCALE;
-            orig_y = (v_counter - SKULL_POS_Y) / SCALE;
+            orig_x = (h_counter - posX) / SCALE;
+            orig_y = (v_counter - posY) / SCALE;
 
-            // Verifique o bit correspondente no padrão da caveira
-            if (SKULL_PATTERN[orig_y*30 + orig_x]) begin
-                // Defina a cor para branco
-                R = 255;
-                G = 255;
-                B = 255;
-            end
-            else begin
-                R = 0;
-                G = 0;
-                B = 0;
-            end
+            // Verifique o bit correspondente no padrão
+            case (orig_y)
+                0: if ((orig_x >= 2) && (orig_x <= 5)) begin
+                    R = RED;
+                    G = 8'h00;
+                    B = 8'h00;
+                end
+                1: if ((orig_x >= 1) && (orig_x <= 6)) begin
+                    R = RED;
+                    G = 8'h00;
+                    B = 8'h00;
+                end
+                2: if ((orig_x >= 0) && (orig_x <= 7)) begin
+                    R = RED;
+                    G = 8'h00;
+                    B = 8'h00;
+                end
+                3: if ((orig_x == 0) || (orig_x == 1) || 
+                      (orig_x == 4) || (orig_x == 5) || 
+                      (orig_x == 6) || (orig_x == 7)) begin
+                    R = RED;
+                    G = 8'h00;
+                    B = 8'h00;
+                end
+                4: if ((orig_x >= 0) && (orig_x <= 7)) begin
+                    R = RED;
+                    G = 8'h00;
+                    B = 8'h00;
+                end
+                5: if (troca) begin
+                    if ((orig_x == 1) || (orig_x == 6)) begin
+                        R = RED;
+                        G = 8'h00;
+                        B = 8'h00;
+                    end
+                end else begin
+                    if ((orig_x == 2) || (orig_x == 5)) begin
+                        R = RED;
+                        G = 8'h00;
+                        B = 8'h00;
+                    end
+                end
+                6: if (troca) begin
+                    if ((orig_x == 0) || (orig_x == 2) || 
+                        (orig_x == 5) || (orig_x == 7)) begin
+                        R = RED;
+                        G = 8'h00;
+                        B = 8'h00;
+                    end
+                end else begin
+                    if ((orig_x == 1) || (orig_x == 3) || 
+                        (orig_x == 4) || (orig_x == 6)) begin
+                        R = RED;
+                        G = 8'h00;
+                        B = 8'h00;
+                    end
+                end
+                7: if (troca) begin
+                    if ((orig_x == 1) || (orig_x == 3) || 
+                        (orig_x == 4) || (orig_x == 6)) begin
+                        R = RED;
+                        G = 8'h00;
+                        B = 8'h00;
+                    end
+                end else begin
+                    if ((orig_x == 0) || (orig_x == 2) || 
+                        (orig_x == 5) || (orig_x == 7)) begin
+                        R = RED;
+                        G = 8'h00;
+                        B = 8'h00;
+                    end
+                end
+            endcase
         end
     end
 end

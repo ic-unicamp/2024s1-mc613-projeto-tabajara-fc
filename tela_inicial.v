@@ -1,4 +1,4 @@
-module MeuModulo (
+module tela_inicial (
     input wire clk,
     input wire reset,
     input wire h_counter,
@@ -13,26 +13,20 @@ localparam POS_X = 200;
 localparam POS_Y = 200;
 localparam SEPARA = 200;
 
-Inimigo1 inimigo_inst (
+tela_derrota #(6) inimigo_inst (
     .clk(clk),
+    .reset(reset),
     .posX(POS_X + SEPARA),
-    .posY(POS_Y + 200),
+    .posY(POS_Y + SEPARA),
     .h_counter(h_counter),
     .v_counter(v_counter),
-    .reset(),
-    .btn_D(),
     .troca(troca),
-    .posX_municao_player(),
-    .posY_municao_player(),
     .R(R_inimigo),
     .G(G_inimigo),
-    .B(B_inimigo),
-    .colisao(),
-    .vivo(),
-    .venceu()
+    .B(B_inimigo)
 );
 
-desenha_x x_inst (
+desenha_x #(10) x_inst (
     .clk(clk),
     .reset(reset),
     .h_counter(h_counter),
@@ -44,26 +38,17 @@ desenha_x x_inst (
     .B(B_x)
 );
 
-
-nave nave(
-	.reset(reset),
-	.clk(clk),
+tela_vitoria #(4) nave (
+    .clk(clk),
+    .reset(reset),
     .h_counter(h_counter),
     .v_counter(v_counter),
-	.btn_A(),
-	.btn_B(),
-	.btn_C(),
-	.btn_D(),
-	.posX_Municao2(),
-	.posY_Municao2(),
-	.tiro_ativo_jogador(),
-	.vivo_jogador(),
-   .posX_Nave(POS_X - SEPARA),
-   .R(R_nave),
-   .G(G_nave),
-   .B(B_nave)
+    .posX(POS_X - SEPARA),
+    .posY(POS_Y - SEPARA),
+    .R(R_nave),
+    .G(G_nave),
+    .B(B_nave)
 );
-
 
 wire [7:0] R_inimigo;
 wire [7:0] G_inimigo;
@@ -71,5 +56,12 @@ wire [7:0] B_inimigo;
 wire [7:0] R_x;
 wire [7:0] G_x;
 wire [7:0] B_x;
+wire [7:0] R_nave;
+wire [7:0] G_nave;
+wire [7:0] B_nave;
+
+assign R = R_inimigo | R_x | R_nave;
+assign G = G_inimigo | G_x | G_nave;
+assign B = B_inimigo | B_x | B_nave;
 
 endmodule

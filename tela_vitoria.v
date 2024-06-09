@@ -1,26 +1,24 @@
-module tela_vitoria(
+module tela_vitoria #(
+    parameter SCALE = 6
+) (
     input clk,
     input reset,
     input [9:0] h_counter,
     input [9:0] v_counter,
+    input [9:0] POS_X,
+    input [9:0] POS_Y,
     output reg [7:0] R,
     output reg [7:0] G,
     output reg [7:0] B
 );
 
 // Defina a escala do objeto
-localparam SCALE = 6;
 
-// Coordenadas da caveira
-localparam SKULL_POS_X = 400; // Posição X inicial da caveira
-localparam SKULL_POS_Y = 250;  // Posição Y inicial da caveira
+// Coordenadas da nave
 
-// Padrão da caveira
-// Padrão da caveira
-// Padrão da caveira
-localparam [449:0] SKULL_PATTERN = 450'b000000000000000000000000000000000111100000000000111110000000000111100000000000011110000000111100000000000111110000000000111100000000000011110000000111100000000000111110000000000111100000000000011110000000111100000000000111110000000000111100000000000011110000000111100000000000111110000000000111100000000000011110000000111100000000000111110000000000111100000000000011110000000111111111111111000000111100000111111111111111000000111100000111111111111111000000111100000111111111111111000000111100000111111111111111000000111100000111111111111111000000111100000111111111111111000000111100000000000000000000000000000000;
+// Padrão da nave
 
-// Bloco para pintar a caveira na tela
+// Bloco para pintar a nave na tela
 always @(clk) begin
 	 
         integer orig_x;
@@ -37,11 +35,11 @@ always @(clk) begin
             B = 8'b0;
 
             // Defina o padrão da nave espacial
-            if ((h_counter >= SKULL_POS_X) && (h_counter < SKULL_POS_X + 11 * SCALE) && 
-                (v_counter >= SKULL_POS_Y) && (v_counter < SKULL_POS_Y + 11 * SCALE)) begin
+            if ((h_counter >= POS_X) && (h_counter < POS_X + 11 * SCALE) && 
+                (v_counter >= POS_Y) && (v_counter < POS_Y + 11 * SCALE)) begin
                 // Calcule a posição na grade original de 11x11
-                orig_x = (h_counter - SKULL_POS_X) / SCALE;
-                orig_y = (v_counter - SKULL_POS_Y) / SCALE;
+                orig_x = (h_counter - POS_X) / SCALE;
+                orig_y = (v_counter - POS_Y) / SCALE;
 
                 // Verifique o bit correspondente no padrão
                 case (orig_y)
