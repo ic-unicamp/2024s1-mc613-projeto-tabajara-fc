@@ -3,14 +3,14 @@ module draw_x(
     input wire reset,
     input wire [9:0] h_counter, // Contador horizontal
     input wire [9:0] v_counter, // Contador vertical
+    input wire [9:0] X_POS_X, // Posição X do X
+    input wire [9:0] X_POS_Y, // Posição Y do X
     output reg [7:0] R,
     output reg [7:0] G,
     output reg [7:0] B
 );
 
     // Parâmetros de posição e escala
-    parameter X_POS_X = 100;
-    parameter X_POS_Y = 100;
     parameter SCALE = 10;
 
     // Padrão do X

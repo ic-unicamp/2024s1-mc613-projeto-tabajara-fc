@@ -1,5 +1,7 @@
 /*modulo da nave*/
-module nave(
+module nave #(
+    parameter START_Y = 490 // Modifique este valor para ajustar a posição vertical
+) (
     input clk,
 	 input reset,
 	 input btn_A,
@@ -30,7 +32,7 @@ module nave(
     localparam DELAY_TIRO = 40000000;
 
     // Defina a posição vertical inicial do objeto
-    localparam START_Y = 490; // Modifique este valor para ajustar a posição vertical
+
 	 
 localparam BOTAO_DELAY = 20'd100000; // Ajuste este valor conforme necessário
 
