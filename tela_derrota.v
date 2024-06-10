@@ -44,47 +44,47 @@ always @(h_counter or v_counter or reset) begin
                     G = 8'hFF;
                     B = 8'hFF;
                 end
-                2: if ((orig_x == 0) || (orig_x >= 4 && orig_x <= 6) || (orig_x == 10)) begin
+                2: if (orig_x == 0 || orig_x == 10 || (orig_x >= 4 && orig_x <= 6)) begin
                     R = 8'hFF;
                     G = 8'hFF;
                     B = 8'hFF;
                 end
-                3: if ((orig_x == 0) || (orig_x >= 4 && orig_x <= 6) || (orig_x == 10)) begin
+                3: if (orig_x == 0 || orig_x == 10 || (orig_x >= 4 && orig_x <= 6)) begin
                     R = 8'hFF;
                     G = 8'hFF;
                     B = 8'hFF;
                 end
-                4: if (orig_x >= 0 && orig_x <= 10) begin
+                4: if (orig_x == 0 || orig_x == 10 || (orig_x >= 4 && orig_x <= 6)) begin
                     R = 8'hFF;
                     G = 8'hFF;
                     B = 8'hFF;
                 end
-                5: if ((orig_x % 2 == 1) && (orig_x <= 10)) begin
+                5: if (orig_x >= 0 && orig_x <= 10) begin
                     R = 8'hFF;
                     G = 8'hFF;
                     B = 8'hFF;
                 end
-                6: if ((orig_x == 1 || orig_x == 3 || orig_x == 5 || orig_x == 7 || orig_x == 9)) begin
+                6: if (orig_x !=5) begin
                     R = 8'hFF;
                     G = 8'hFF;
                     B = 8'hFF;
                 end
-                7: if (orig_x == 3 || orig_x == 7) begin
+                7: if (orig_x >= 0 && orig_x <= 10) begin
                     R = 8'hFF;
                     G = 8'hFF;
                     B = 8'hFF;
                 end
-                8: if (orig_x >= 4 && orig_x <= 6) begin
+                8: if (orig_x >= 1 && orig_x <= 9) begin
                     R = 8'hFF;
                     G = 8'hFF;
                     B = 8'hFF;
                 end
-                9: if (orig_x == 3 || orig_x == 7) begin
+                9: if (orig_x == 2 || orig_x == 4 || orig_x == 6 || orig_x == 8) begin
                     R = 8'hFF;
                     G = 8'hFF;
                     B = 8'hFF;
                 end
-                10: if (orig_x == 2 || orig_x == 8) begin
+                10: if (orig_x == 2 || orig_x == 4 || orig_x == 6 || orig_x == 8) begin
                     R = 8'hFF;
                     G = 8'hFF;
                     B = 8'hFF;
