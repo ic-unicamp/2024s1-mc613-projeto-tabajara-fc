@@ -6,8 +6,8 @@ module telas(
     input [1:0] estado,
     input troca,
     output reg [7:0] R,
-    output reg [7:8] G,
-    output reg [7:8] B
+    output reg [7:0] G,
+    output reg [7:0] B
 );
 
 
@@ -18,6 +18,10 @@ wire [7:0] B_derrota;
 wire [7:0] R_vitoria;
 wire [7:0] G_vitoria;
 wire [7:0] B_vitoria;
+
+wire [7:0] R_inicial;
+wire [7:0] G_inicial;
+wire [7:0] B_inicial;
 
 
 tela_vitoria tela_vitoria(
@@ -44,6 +48,7 @@ tela_inicial tela_inicial(
     .reset(reset),
     .h_counter(h_counter),
     .v_counter(v_counter),
+    .troca(troca),
     .R(R_inicial),
     .G(G_inicial),
     .B(B_inicial)
@@ -51,9 +56,9 @@ tela_inicial tela_inicial(
 always @(h_counter or v_counter or reset) begin
     case (estado)
         0: begin //tela inicial
-            R = R_vitoria;
-            G = G_vitoria;
-            B = B_vitoria & 0;
+            R = R_inicial;
+            G = G_inicial;
+            B = B_inicial;
         end
         1: begin //tela de jogo
             R = 0;

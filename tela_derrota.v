@@ -4,8 +4,8 @@ module tela_derrota(
     input [9:0] v_counter,
     input [10:0] mem_X_barra,
     output reg [7:0] R,
-    output reg [7:8] G,
-    output reg [7:8] B
+    output reg [7:0] G,
+    output reg [7:0] B
 );
 
     // Defina a escala do objeto
