@@ -1,8 +1,7 @@
 module tela_vitoria(
-    input [9:0] h_counter,
     input reset,
+    input [9:0] h_counter,
     input [9:0] v_counter,
-    input [10:0] mem_X_barra,
     output reg [7:0] R,
     output reg [7:8] G,
     output reg [7:8] B

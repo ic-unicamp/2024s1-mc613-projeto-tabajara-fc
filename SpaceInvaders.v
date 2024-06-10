@@ -49,24 +49,16 @@ vga vga(
     .VGA_VS(VGA_VS)
 );
 
-tela_derrota tela_derrota(
-    //.clk(clk),
+telas telas(
+    .clk(clk),
     .reset(reset),
     .h_counter(h_counter),
     .v_counter(v_counter),
-    .R(R_derrota),
-    .G(G_derrota),
-    .B(B_derrota)
-);
-
-tela_vitoria tela_vitoria(
-    //.clk(clk),
-    .reset(reset),
-    .h_counter(h_counter),
-    .v_counter(v_counter),
-    .R(R_vitoria),
-    .G(G_vitoria),
-    .B(B_vitoria)
+    .estado(estado),
+    .troca(troca),
+    .R(R_telas),
+    .G(G_telas),
+    .B(B_telas)
 );
 
 nave nave(
@@ -173,13 +165,9 @@ wire [7:0] R_municao2;
 wire [7:0] G_municao2;
 wire [7:0] B_municao2;
 
-wire [7:0] R_derrota;
-wire [7:0] G_derrota;
-wire [7:0] B_derrota;
-
-wire [7:0] R_vitoria;
-wire [7:0] G_vitoria;
-wire [7:0] B_vitoria;
+wire [7:0] R_telas;
+wire [7:0] G_telas;
+wire [7:0] B_telas;
 
 // Inicializando as posições das naves inimigas
 integer i, k, l;
@@ -190,7 +178,7 @@ reg mov_v;
 reg direction; // 0: direita; 1: esquerda
 localparam DELTA_X = 1;
 localparam DELTA_Y = 50;
-localparam COLUNAS = 1;
+localparam COLUNAS = 2;
 localparam LINHAS = 1;
 localparam DIST_COLUNAS = 30;
 localparam DIST_LINHAS = 30;
@@ -329,9 +317,9 @@ always @(posedge clk) begin
         case (estado)
             0: begin    // Pré-jogo
                 // Inicialmente, as cores são pretas (fundo)
-                VGA_R = R_vitoria;
-                VGA_G = G_vitoria;
-                VGA_B = B_vitoria;
+                VGA_R = R_telas;
+                VGA_G = G_telas;
+                VGA_B = B_telas;
                 p_btn_A = 1;
                 p_btn_B = 1;
                 p_btn_C = 1;
@@ -382,10 +370,11 @@ always @(posedge clk) begin
             end
             2: begin
                 // Vitória jogador
-                VGA_R = R_vitoria;
-                VGA_G = G_vitoria;
-                VGA_B = B_vitoria;
+                VGA_R = R_telas;
+                VGA_G = G_telas;
+                VGA_B = B_telas;
                 vit_anterior = 1;
+                atu_resultado = resultado;
                 if (atu_resultado > max_resultado) begin
                     max_resultado = atu_resultado;
                 end                
@@ -397,9 +386,9 @@ always @(posedge clk) begin
             end
             3: begin
                 // Derrota jogador
-                VGA_R = R_derrota;
-                VGA_G = G_derrota;
-                VGA_B = B_derrota;
+                VGA_R = R_telas;
+                VGA_G = G_telas;
+                VGA_B = B_telas;
                 vit_anterior = 0;
                 if (atu_resultado > max_resultado) begin
                     max_resultado = atu_resultado;
