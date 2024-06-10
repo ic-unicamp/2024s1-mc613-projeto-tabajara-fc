@@ -178,8 +178,8 @@ reg mov_v;
 reg direction; // 0: direita; 1: esquerda
 localparam DELTA_X = 1;
 localparam DELTA_Y = 50;
-localparam COLUNAS = 2;
-localparam LINHAS = 1;
+localparam COLUNAS = 9;
+localparam LINHAS = 5;
 localparam DIST_COLUNAS = 30;
 localparam DIST_LINHAS = 30;
 reg desloc;
