@@ -353,19 +353,20 @@ always @(posedge clk) begin
                 VGA_R = VGA_R | R_nave | R_municao1 | R_municao2;        
                 VGA_G = VGA_G | G_nave | G_municao1 | G_municao2;
                 VGA_B = VGA_B | B_nave | B_municao1 | B_municao2;           
-                // Verifica se o jogo acabou
-                if ((vivo_jogador == 0) || (|game_over)) begin
-                    estado = 3;
-                end
-                if (~|vivo_inimigo) begin
-                    estado = 2;
-                end
                 // Atualiza o resultado 
                 if (vit_anterior) begin
                     atu_resultado = resultado + max_resultado;
                 end
                 else begin
                     atu_resultado = resultado;
+                end
+                // Verifica se o jogo acabou
+                if ((vivo_jogador == 0) || (|game_over)) begin
+                    estado = 3;
+                end
+                if (~|vivo_inimigo) begin
+                    estado = 2;
+                    atu_resultado = atu_resultado + 1;
                 end
             end
             2: begin
@@ -374,7 +375,6 @@ always @(posedge clk) begin
                 VGA_G = G_telas;
                 VGA_B = B_telas;
                 vit_anterior = 1;
-                atu_resultado = resultado;
                 if (atu_resultado > max_resultado) begin
                     max_resultado = atu_resultado;
                 end                
