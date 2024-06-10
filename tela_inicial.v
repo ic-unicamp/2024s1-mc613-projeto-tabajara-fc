@@ -20,14 +20,14 @@ localparam N_RED = 8'h0;
 localparam N_GREEN = 8'hF0;
 localparam N_BLUE = 8'h0;
 localparam N_posX = 250;
-localparam N_posY = 200;
+localparam N_posY = 220;
 
 localparam X_SCALE = 6;
 localparam X_RED = 8'hF0;
 localparam X_GREEN = 8'hF0;
 localparam X_BLUE = 8'hF0;
-localparam X_posX = 430;
-localparam X_posY = 220;
+localparam X_posX = 445;
+localparam X_posY = 240;
 
 reg [7:0] R_inimigo;
 reg [7:0] G_inimigo;
