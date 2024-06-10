@@ -50,7 +50,7 @@ vga vga(
 );
 
 tela_derrota tela_derrota(
-    .clk(clk),
+    //.clk(clk),
     .reset(reset),
     .h_counter(h_counter),
     .v_counter(v_counter),
@@ -60,7 +60,7 @@ tela_derrota tela_derrota(
 );
 
 tela_vitoria tela_vitoria(
-    .clk(clk),
+    //.clk(clk),
     .reset(reset),
     .h_counter(h_counter),
     .v_counter(v_counter),
@@ -190,8 +190,8 @@ reg mov_v;
 reg direction; // 0: direita; 1: esquerda
 localparam DELTA_X = 1;
 localparam DELTA_Y = 50;
-localparam COLUNAS = 10;
-localparam LINHAS = 4;
+localparam COLUNAS = 1;
+localparam LINHAS = 1;
 localparam DIST_COLUNAS = 30;
 localparam DIST_LINHAS = 30;
 reg desloc;
@@ -220,7 +220,7 @@ always @(posedge clk) begin
     end
     else if(estado == 1 && contador_movimento == 0) begin
 
-        max_x = 0;
+        max_x = 150;
         min_x = 900;
         for (i = 0; i < (LINHAS * COLUNAS); i = i + 1) begin
             if (posX[i] > max_x && vivo_inimigo[i] == 1) begin
@@ -330,7 +330,7 @@ always @(posedge clk) begin
             0: begin    // Pré-jogo
                 // Inicialmente, as cores são pretas (fundo)
                 VGA_R = R_vitoria;
-                VGA_G = ~G_vitoria;
+                VGA_G = G_vitoria;
                 VGA_B = B_vitoria;
                 p_btn_A = 1;
                 p_btn_B = 1;
@@ -384,7 +384,7 @@ always @(posedge clk) begin
                 // Vitória jogador
                 VGA_R = R_vitoria;
                 VGA_G = G_vitoria;
-                VGA_B = ~B_vitoria;
+                VGA_B = B_vitoria;
                 vit_anterior = 1;
                 if (atu_resultado > max_resultado) begin
                     max_resultado = atu_resultado;
