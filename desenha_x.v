@@ -1,4 +1,4 @@
-module draw_x #(
+module desenha_x #(
     parameter SCALE = 10
 ) (
     input wire clk,

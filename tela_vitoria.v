@@ -5,8 +5,8 @@ module tela_vitoria #(
     input reset,
     input [9:0] h_counter,
     input [9:0] v_counter,
-    input [9:0] POS_X,
-    input [9:0] POS_Y,
+    input [9:0] pos_X,
+    input [9:0] pos_Y,
     output reg [7:0] R,
     output reg [7:0] G,
     output reg [7:0] B
@@ -35,11 +35,11 @@ always @(clk) begin
             B = 8'b0;
 
             // Defina o padrão da nave espacial
-            if ((h_counter >= POS_X) && (h_counter < POS_X + 11 * SCALE) && 
-                (v_counter >= POS_Y) && (v_counter < POS_Y + 11 * SCALE)) begin
+            if ((h_counter >= pos_X) && (h_counter < pos_X + 11 * SCALE) && 
+                (v_counter >= pos_Y) && (v_counter < pos_Y + 11 * SCALE)) begin
                 // Calcule a posição na grade original de 11x11
-                orig_x = (h_counter - POS_X) / SCALE;
-                orig_y = (v_counter - POS_Y) / SCALE;
+                orig_x = (h_counter - pos_X) / SCALE;
+                orig_y = (v_counter - pos_Y) / SCALE;
 
                 // Verifique o bit correspondente no padrão
                 case (orig_y)

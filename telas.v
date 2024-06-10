@@ -1,4 +1,4 @@
-module tela (
+module telas (
     input wire clk,
     input wire reset,
     input wire h_counter,
@@ -31,8 +31,8 @@ tela_derrota #(10) tela_derrota(
     .reset(reset),
     .h_counter(h_counter),
     .v_counter(v_counter),
-    .posX(POS_X),
-    .posY(POS_Y),
+    .pos_X(POS_X),
+    .pos_Y(POS_Y),
     .R(R_derrota),
     .G(G_derrota),
     .B(B_derrota)
@@ -43,8 +43,8 @@ tela_vitoria #(6) tela_vitoria(
     .reset(reset),
     .h_counter(h_counter),
     .v_counter(v_counter),
-    .posX(POS_X),
-    .posY(POS_Y),
+    .pos_X(POS_X),
+    .pos_Y(POS_Y),
     .R(R_vitoria),
     .G(G_vitoria),
     .B(B_vitoria)
@@ -83,7 +83,6 @@ always @(posedge clk) begin
             G_real = G_derrota;
             B_real = B_derrota;
         end
-        default: 
     endcase
 end
 

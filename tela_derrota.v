@@ -5,8 +5,8 @@ module tela_derrota #(
     input reset,
     input [9:0] h_counter,
     input [9:0] v_counter,
-    input [9:0] posX,
-	input [9:0] posY,
+    input [9:0] pos_X,
+	input [9:0] pos_Y,
     input troca,
     output reg [7:0] R,
     output reg [7:0] G,
@@ -29,11 +29,11 @@ always @(h_counter or v_counter or reset or troca) begin
         G = 8'b0;
         B = 8'b0;
         // Defina o padrão do alienígena
-        if ((h_counter >= posX) && (h_counter < posX + 8 * SCALE) && 
-            (v_counter >= posY) && (v_counter < posY + 8 * SCALE)) begin
+        if ((h_counter >= pos_X) && (h_counter < pos_X + 8 * SCALE) && 
+            (v_counter >= pos_Y) && (v_counter < pos_Y + 8 * SCALE)) begin
             // Calcule a posição na grade original de 8x8
-            orig_x = (h_counter - posX) / SCALE;
-            orig_y = (v_counter - posY) / SCALE;
+            orig_x = (h_counter - pos_X) / SCALE;
+            orig_y = (v_counter - pos_Y) / SCALE;
 
             // Verifique o bit correspondente no padrão
             case (orig_y)

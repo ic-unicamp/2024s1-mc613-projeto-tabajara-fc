@@ -16,8 +16,8 @@ localparam SEPARA = 200;
 tela_derrota #(6) inimigo_inst (
     .clk(clk),
     .reset(reset),
-    .posX(POS_X + SEPARA),
-    .posY(POS_Y + SEPARA),
+    .pos_X(POS_X + SEPARA),
+    .pos_Y(POS_Y + SEPARA),
     .h_counter(h_counter),
     .v_counter(v_counter),
     .troca(troca),
@@ -43,8 +43,8 @@ tela_vitoria #(4) nave (
     .reset(reset),
     .h_counter(h_counter),
     .v_counter(v_counter),
-    .posX(POS_X - SEPARA),
-    .posY(POS_Y - SEPARA),
+    .pos_X(POS_X - SEPARA),
+    .pos_Y(POS_Y - SEPARA),
     .R(R_nave),
     .G(G_nave),
     .B(B_nave)
