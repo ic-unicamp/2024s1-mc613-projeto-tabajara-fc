@@ -27,8 +27,8 @@ localparam Delay_Movimento = 22'd200000; // Ajuste conforme necessário
 localparam Delay_Tiro = 24'd50000000; // Ajuste conforme necessário para controlar a frequência dos tiros
 
 // Contador para mover a munição pelo mapa
-always @(posedge clk or posedge reset) begin
-    if (reset) begin
+always @(posedge clk) begin
+    if (~(btn_D) || (reset)) begin
         contador_movimento <= 0;
         contador_tiro <= 0;
         tiro_ativo <= 0;

@@ -10,9 +10,9 @@
 	input colisao_inimigo, 
 	output reg [10:0] posX_Municao1,
 	output reg [10:0] posY_Municao1,
-   	output reg [7:0]R,
-   	output reg [7:0]G,
-   	output reg [7:0]B
+   output reg [7:0]R,
+   output reg [7:0]G,
+   output reg [7:0]B
 );
 
 //variaveis internas
