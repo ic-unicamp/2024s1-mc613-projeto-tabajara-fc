@@ -17,7 +17,7 @@ botão C: Terceiro botão grande da esquerda para a direita, à direita do botã
 
 botão D: Quarto botão grande da esquerda para a direita, à direita do botão C.
 
-## Space Invaders
+### Space Invaders
 
 Para jogar, primeiro é preciso resetar usando o último switch da esquerda para a direita. Subir e depois descer.
 
